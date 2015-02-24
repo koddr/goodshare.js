@@ -36,7 +36,7 @@
 						title:	document.title,
 						image:	$('meta[property="og:image"]').attr('content'),
 						text:	$('meta[name="description"]').attr('content'),
-					}, 
+					},
 					$(_element).data(), _options);
 			            
 				/*
