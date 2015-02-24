@@ -34,7 +34,7 @@
 						url:	location.href,
 						title:	document.title,
 						image:	$('meta[property="og:image"]').attr('content'),
-						text:	$('meta[name="description"]').attr('content'),
+						text:	$('meta[name="description"]').attr('content')
 					},
 					$(_element).data(), _options);
 			            
@@ -92,7 +92,7 @@
 					url:    location.href,
 					title:  document.title,
 					image:  '',
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://vkontakte.ru/share.php?'
@@ -113,7 +113,7 @@
 			
 				var options = $.extend({
 					url:    location.href,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1'
@@ -133,7 +133,7 @@
 					url:    location.href,
 					title:  document.title,
 					image:  '',
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://www.facebook.com/sharer.php?s=100'
@@ -154,7 +154,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://livejournal.com/update.bml?'
@@ -173,14 +173,12 @@
 			
 				var options = $.extend({
 					url:        location.href,
-					count_url:  location.href,
-					title:      document.title,
+					title:      document.title
 				}, _options);
 				
 				return 'http://twitter.com/share?'
 					+ 'text='      + encodeURIComponent(options.title)
-					+ '&url='      + encodeURIComponent(options.url)
-					+ '&counturl=' + encodeURIComponent(options.count_url);
+					+ '&url='      + encodeURIComponent(options.url);
 			
 			},
 		    
@@ -192,7 +190,7 @@
 			gp: function(_options) {
 				
 				var options = $.extend({
-					url:    location.href,	
+					url:    location.href
 				}, _options);
 			
 				return 'https://plus.google.com/share?url='
@@ -211,7 +209,7 @@
 					url:    location.href,
 					title:  document.title,
 					image:  '',
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://connect.mail.ru/share?'
@@ -232,7 +230,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://www.linkedin.com/shareArticle?mini=true'
@@ -252,7 +250,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://www.tumblr.com/share/link?'
@@ -272,7 +270,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'https://www.blogger.com/blog-this.g?'
@@ -291,7 +289,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'https://www.pinterest.com/pin/create/button/?'
@@ -310,7 +308,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'https://www.evernote.com/clip.action?'
@@ -330,7 +328,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://digg.com/submit?'
@@ -349,7 +347,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   '',
+					text:   ''
 				}, _options);
 				
 				return 'http://zakladki.yandex.ru/newlink.xml?'
