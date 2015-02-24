@@ -64,20 +64,57 @@ We use `event.preventDefault()` for event "click". So don't be afraid to use lin
 ## Usage
 
 ```html
-<a class="goodshare" data-type="vk">ВКонтакте</a> 
-<a class="goodshare" data-type="fb">Facebook</a> 
-<a class="goodshare" data-type="tw">Twitter</a> 
-<a class="goodshare" data-type="lj">LiveJournal</a> 
-<a class="goodshare" data-type="ok">Одноклассники</a> 
-<a class="goodshare" data-type="mr">Мой Мир@Mail.Ru</a> 
-<a class="goodshare" data-type="gp">Google+</a> 
-<a class="goodshare" data-type="li">LinkedIn</a> 
-<a class="goodshare" data-type="tm">tumblr</a> 
-<a class="goodshare" data-type="pt">Pinterest</a> 
-<a class="goodshare" data-type="bl">Blogger</a> 
-<a class="goodshare" data-type="di">Digg</a> 
-<a class="goodshare" data-type="yz">Яндекс.Закладки</a> 
-<a class="goodshare" data-type="en">Evernote</a>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My page with goodshare.js</title>
+    <style>
+	  html, body {font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; text-align: center;}
+      a {color: #ffffff; display: inline-block; width: 150px; padding: 10px; margin: 2px auto; cursor: pointer;}
+      a[data-type="vk"] {background: #45668e;}
+      a[data-type="fb"] {background: #3b5998;}
+      a[data-type="tw"] {background: #55acee;}
+      a[data-type="lj"] {background: #062734;}
+      a[data-type="ok"] {background: #ed812b;}
+      a[data-type="mr"] {background: #168de2;}
+      a[data-type="gp"] {background: #dd4b39;}
+      a[data-type="li"] {background: #0976b4;}
+      a[data-type="tm"] {background: #35465c;}
+      a[data-type="pt"] {background: #cc2127;}
+      a[data-type="bl"] {background: #f57d00;}
+      a[data-type="di"] {background: #000000;}
+      a[data-type="en"] {background: #7ac142;}
+      a[data-type="yz"] {background: #ffcc00;}
+    </style>
+  </head>
+  <body>
+    <h1>My page with goodshare.js</h1>
+    <p>Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs.<br />
+	    Easy to install and configuring on any of your website!</p>
+    <div>
+      <a href="#" class="goodshare" data-type="vk">ВКонтакте</a> 
+      <a href="#" class="goodshare" data-type="fb">Facebook</a> 
+      <a href="#" class="goodshare" data-type="tw">Twitter</a> 
+      <a href="#" class="goodshare" data-type="lj">LiveJournal</a> 
+      <a href="#" class="goodshare" data-type="ok">Одноклассники</a> 
+      <a href="#" class="goodshare" data-type="mr">Мой Мир@Mail.Ru</a> 
+      <a href="#" class="goodshare" data-type="gp">Google+</a> 
+      <a href="#" class="goodshare" data-type="li">LinkedIn</a> 
+      <a href="#" class="goodshare" data-type="tm">tumblr</a> 
+      <a href="#" class="goodshare" data-type="pt">Pinterest</a> 
+      <a href="#" class="goodshare" data-type="bl">Blogger</a> 
+      <a href="#" class="goodshare" data-type="di">Digg</a> 
+      <a href="#" class="goodshare" data-type="en">Evernote</a> 
+      <a href="#" class="goodshare" data-type="yz">Яндекс.Закладки</a>
+    </div>
+    <p>See goodshare.js on GitHub: https://github.com/iacmru/goodshare.js</p>
+    <!-- jQuery 1.11.2 min version from Google CDN JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- goodshare.js min version from RawGit CDN -->
+    <script src="https://cdn.rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
+  </body>
+</html>
 ```
 
 ## Developer
