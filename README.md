@@ -61,7 +61,9 @@ We use `event.preventDefault()` for event "click". So don't be afraid to use lin
 <a href="#">My link</a>
 ```
 
-## Usage
+## Usage example
+
+This example shows one of decoration options with all supported social networks. Colors were taken from [here](http://brandcolors.net/).
 
 ```html
 <!DOCTYPE html>
