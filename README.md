@@ -54,7 +54,41 @@ Plugin works with any HTML tags, whether `<a>` or `<span>` or other. So you can 
 <div class="goodshare" data-type="li">Share this to LinkedIn</div>
 ```
 
-### Note for links
+### List of attributes
+
+You can change these attributes as needed for your project:
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description (default value)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data-type</td>
+<td>[required] Type (name) of social network (default: "vk")</td>
+</tr>
+<tr>
+<td>data-url</td>
+<td>(optional) Current page URL (default: browser adress field)</td>
+</tr>
+<tr>
+<td>data-title</td>
+<td>(optional) Current page title (default: head title)</td>
+</tr>
+<tr>
+<td>data-image</td>
+<td>(optional) Current page image URL (default: meta property="og:image")</td>
+</tr>
+<tr>
+<td>data-text</td>
+<td>(optional) Current page description text (default: meta name="description")</td>
+</tr>
+</tbody>
+</table>
+
+### Note for `<a>...</a>` links
 
 We use `event.preventDefault()` for event "click". So don't be afraid to use links like this:
 ```html
