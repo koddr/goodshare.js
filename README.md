@@ -2,6 +2,8 @@
 Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs. Easy to install and configuring on any of your website!
 
 Feature of this plugin: extensive documentation, developer support, SEO friendly, many options for customization of appearance.
+
+If you are looking for a demo, it is [here](https://github.com/iacmru/goodshare.js#usage-example).
 ## Install
 Download [goodshare.js](https://github.com/iacmru/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder:
 * for development version: ``./path/to/your/project/folder/js/goodshare.js``
@@ -99,7 +101,9 @@ We use `event.preventDefault()` for event "click". So don't be afraid to use lin
 
 ## Usage example
 
-This example shows one of decoration options with all supported social networks. Colors were taken from [here](http://brandcolors.net/).
+This example shows one of decoration options with all supported social networks.
+
+[Live demo](http://iacmru.github.io/goodshare.js/demo.html)
 
 ```html
 <!DOCTYPE html>
