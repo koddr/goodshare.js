@@ -28,9 +28,8 @@
 					text = current document <meta name="description" ... />
 				*/
 				
-				var 
-			        	self = goodshare, 
-			        	options = $.extend({
+				var self = goodshare, 
+					options = $.extend({
 						type:	'vk',
 						url:	location.href,
 						title:	document.title,
@@ -55,8 +54,8 @@
 							If it's <a> put into href
 						*/
 					            
-				                $(_element).prop('href', link);
-				                return true;
+		                $(_element).prop('href', link);
+		                return true;
 				                
 					}
 					else {
@@ -64,21 +63,21 @@
 						/*
 							If it's no <a> go to link
 						*/
-				                
-				                location.href = link;
-				                return false;
+			                
+		                location.href = link;
+		                return false;
 				                
 					}
-			        }
-			        else {
-				        
+		        }
+		        else {
+			        
 					/*
 						Popup opened
 					*/
 			            
 					return false;
-					
-			        }
+				
+		        }
 		        
 			},
 		
