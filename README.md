@@ -22,11 +22,17 @@ If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit
 
 ## List of supported social networks and microblogs
 
-[ВКонтакте](http://vk.com), [Facebook](http://facebook.com), [Одноклассники](http://ok.ru), [Мой Мир@Mail.Ru](http://my.mail.ru), [Google+](http://plus.google.ru), [LinkedIn](http://linkedin.com), [Twitter](http://twitter.com), [LiveJournal](http://livejournal.com), [tumblr](http://tumblr.com), [Blogger](http://blogger.com), [Pinterest](http://pinterest.com), [Digg](http://digg.com), [Evernote](http://evernote.com), [Яндекс.Закладки](http://zakladki.yandex.ru).
+`vk` [ВКонтакте](http://vk.com), `fb` [Facebook](http://facebook.com), `ok` [Одноклассники](http://ok.ru), `mr` [Мой Мир@Mail.Ru](http://my.mail.ru), `gp` [Google+](http://plus.google.ru), `li` [LinkedIn](http://linkedin.com), `tw` [Twitter](http://twitter.com), `lj` [LiveJournal](http://livejournal.com), `tm` [tumblr](http://tumblr.com), `bl` [Blogger](http://blogger.com), `pt` [Pinterest](http://pinterest.com), `di` [Digg](http://digg.com), `en` [Evernote](http://evernote.com), `yz` [Яндекс.Закладки](http://zakladki.yandex.ru).
 
 If you don't see your social network, please [let us know](https://github.com/iacmru/goodshare.js#developer) and we'll try to add it!
 
 ## Usage
+
+Plugin works with any HTML tags, whether `<a>` or `<span>` or any other. So you can choose any element and add required attributes: `class="goodshare"` and `data-type=".."`. For example:
+
+```html
+<button class="goodshare" data-type="tw">Share this to Twitter</button> 
+```
 
 ```html
 <a class="goodshare" data-type="vk">ВКонтакте</a> 
