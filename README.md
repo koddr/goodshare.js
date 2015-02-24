@@ -11,7 +11,7 @@ Add in project template (or something else):
 <!-- jQuery 1.11.2 min version from Google CDN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<!-- checkit.js min version -->
+<!-- goodshare.js min version -->
 <script src="../path/to/your/project/folder/js/goodshare.min.js"></script>
 ```
 If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
@@ -22,7 +22,20 @@ If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit
 
 ## List of supported social networks and microblogs
 
-`vk` [ВКонтакте](http://vk.com), `fb` [Facebook](http://facebook.com), `ok` [Одноклассники](http://ok.ru), `mr` [Мой Мир@Mail.Ru](http://my.mail.ru), `gp` [Google+](http://plus.google.ru), `li` [LinkedIn](http://linkedin.com), `tw` [Twitter](http://twitter.com), `lj` [LiveJournal](http://livejournal.com), `tm` [tumblr](http://tumblr.com), `bl` [Blogger](http://blogger.com), `pt` [Pinterest](http://pinterest.com), `di` [Digg](http://digg.com), `en` [Evernote](http://evernote.com), `yz` [Яндекс.Закладки](http://zakladki.yandex.ru).
+* `vk` [ВКонтакте](http://vk.com)
+* `fb` [Facebook](http://facebook.com)
+* `ok` [Одноклассники](http://ok.ru)
+* `mr` [Мой Мир@Mail.Ru](http://my.mail.ru)
+* `gp` [Google+](http://plus.google.ru)
+* `li` [LinkedIn](http://linkedin.com)
+* `tw` [Twitter](http://twitter.com)
+* `lj` [LiveJournal](http://livejournal.com)
+* `tm` [tumblr](http://tumblr.com)
+* `bl` [Blogger](http://blogger.com)
+* `pt` [Pinterest](http://pinterest.com)
+* `di` [Digg](http://digg.com)
+* `en` [Evernote](http://evernote.com)
+* `yz` [Яндекс.Закладки](http://zakladki.yandex.ru)
 
 If you don't see your social network, please [let us know](https://github.com/iacmru/goodshare.js#developer) and we'll try to add it!
 
