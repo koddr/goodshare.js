@@ -41,9 +41,9 @@ Plugin works with any HTML tags, whether `<a>` or `<span>` or other. So you can 
 <div class="goodshare" data-type="li">Share this to LinkedIn</div>
 ```
 
-### Note for `<a href="...">...</a>`
+### Note for links `<a href="...">...</a>`
 
-Because we use `event.preventDefault();` for the event "click", don't afraid of reloading page.
+We use `event.preventDefault();` for event "click".
 
 ## Usage
 
