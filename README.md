@@ -26,13 +26,26 @@ If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit
 
 If you don't see your social network, please [let us know](https://github.com/iacmru/goodshare.js#developer) and we'll try to add it!
 
-## Usage
+## Description
 
-Plugin works with any HTML tags, whether `<a>` or `<span>` or any other. So you can choose any element and add required attributes: `class="goodshare"` and `data-type=".."`. For example:
+Plugin works with any HTML tags, whether `<a>` or `<span>` or other. So you can choose any and add required attributes: `class="goodshare"` and `data-type=".."`. For example:
 
 ```html
-<button class="goodshare" data-type="tw">Share this to Twitter</button> 
+<!-- Create button with share to Twitter -->
+<button class="goodshare" data-type="tw">Share this to Twitter</button>
+
+<!-- Create link with share to Facebook -->
+<a href="#" class="goodshare" data-type="fb">Share this to Facebook</a>
+
+<!-- Create div container with share to LinkedIn -->
+<div class="goodshare" data-type="li">Share this to LinkedIn</div>
 ```
+
+### Note for `<a href="...">...</a>`
+
+Because we use `event.preventDefault();` for the event "click", don't afraid of reloading page.
+
+## Usage
 
 ```html
 <a class="goodshare" data-type="vk">ВКонтакте</a> 
