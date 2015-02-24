@@ -159,7 +159,7 @@
 				
 				return 'http://livejournal.com/update.bml?'
 					+ 'subject='        + encodeURIComponent(options.title)
-					+ '&event='         + encodeURIComponent(options.text + '<br/><a href="' + options.url + '">' + options.title + '</a>')
+					+ '&event='         + encodeURIComponent('<a href="' + options.url + '">' + options.title + '</a> ' + options.text)
 					+ '&transform=1';
 			
 			},
