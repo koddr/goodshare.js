@@ -48,7 +48,7 @@ If you don't see your social network, please [let us know](https://github.com/ia
 
 ## Description
 
-Plugin works with any HTML tags, whether `<a>` or `<div>` or `<button>` or other. So you can choose any and add required attributes: `class="goodshare"` and `data-type=".."`. For example:
+Plugin works with any HTML tags: `<a>` or `<div>` or `<button>` or other. So you can choose any and add required attributes: class `goodshare` and `data-type`. For example:
 
 ```html
 <!-- Create button with share to Twitter -->
