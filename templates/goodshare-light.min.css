@@ -1,0 +1,31 @@
+/*
+	@author Interactive agency "Central marketing" http://iacm.ru
+	@copyright Copyright (c) 2015, Interactive agency "Central marketing"	
+	@license http://opensource.org/licenses/MIT The MIT License (MIT)
+	@version 2.0 at 24/02/2015 (19:45)
+	
+	goodshare.js
+	
+	Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs.
+	Easy to install and configuring on any of your website!
+*/
+.goodshare-light{color:#333333;}
+.goodshare-light a{color:#333333;text-decoration:none;border:1px solid #333333;}
+.goodshare-light a:hover{color:#333333;text-decoration:none;border:1px solid #333333;}
+.goodshare-light [data-type]{padding:4px 8px;cursor:pointer;border:1px solid #333333;}
+.goodshare-light [data-type="vk"]{background:#ffffff;}
+.goodshare-light [data-type="fb"]{background:#ffffff;}
+.goodshare-light [data-type="tw"]{background:#ffffff;}
+.goodshare-light [data-type="lj"]{background:#ffffff;}
+.goodshare-light [data-type="ok"]{background:#ffffff;}
+.goodshare-light [data-type="mr"]{background:#ffffff;}
+.goodshare-light [data-type="gp"]{background:#ffffff;}
+.goodshare-light [data-type="li"]{background:#ffffff;}
+.goodshare-light [data-type="tm"]{background:#ffffff;}
+.goodshare-light [data-type="pt"]{background:#ffffff;}
+.goodshare-light [data-type="bl"]{background:#ffffff;}
+.goodshare-light [data-type="di"]{background:#ffffff;}
+.goodshare-light [data-type="en"]{background:#ffffff;}
+.goodshare-light [data-type="yz"]{background:#ffffff;}
+.goodshare-light.roundedge [data-type]{border-radius:3px;}
+.goodshare-light.round [data-type]{border-radius:100%;}
