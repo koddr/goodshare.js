@@ -110,8 +110,6 @@ This example shows one of decoration options with all supported social networks.
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta property="og:image" content="https://avatars1.githubusercontent.com/u/11155743?v=3&s=460" />
-    <meta name="description" content="Useful jQuery plugin that will help your website visitors share a link on social networks." />
     <title>My page with goodshare.js</title>
     <style>
 	  html, body {font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; text-align: center;}
