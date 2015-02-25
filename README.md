@@ -45,7 +45,7 @@ If you don't see your social network, please [let us know](https://github.com/ia
 
 ## Description
 
-Plugin works with any HTML tags, whether `<a>` or `<span>` or other. So you can choose any and add required attributes: `class="goodshare"` and `data-type=".."`. For example:
+Plugin works with any HTML tags, whether `<a>` or `<div>` or `<button>` or other. So you can choose any and add required attributes: `class="goodshare"` and `data-type=".."`. For example:
 
 ```html
 <!-- Create button with share to Twitter -->
@@ -56,6 +56,9 @@ Plugin works with any HTML tags, whether `<a>` or `<span>` or other. So you can 
 
 <!-- Create div container with share to LinkedIn -->
 <div class="goodshare" data-type="li">Share this to LinkedIn</div>
+
+<!-- Create icon from Fontello.com with share to Google+ -->
+<i class="goodshare icon-google-plus" data-type="gp"></i>
 ```
 
 ### List of attributes
@@ -92,7 +95,7 @@ You can change these attributes as needed for your project:
 </tbody>
 </table>
 
-### Note for `<a>...</a>` links
+### Note for `<a>` links
 
 We use `event.preventDefault()` for event "click". So don't be afraid to use links like this:
 ```html
