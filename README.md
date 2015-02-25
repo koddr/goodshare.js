@@ -2,7 +2,7 @@
 Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs. Easy to install and configuring on any of your website!
 
 ### Features
-Extensive documentation, developer support, SEO friendly, many options for customization of appearance, high working speed.
+Simple install, extensive documentation, developer support, SEO friendly, many options for customization of appearance, high speed.
 
 ### Demo
 If you're looking for a demo, it's [here](http://iacmru.github.io/goodshare.js/demo.html).
