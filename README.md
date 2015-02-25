@@ -71,7 +71,7 @@ You can change these attributes as needed for your project:
 <thead>
 <tr>
 <th>Attribute</th>
-<th>Description (default value)</th>
+<th>Description (default: value)</th>
 </tr>
 </thead>
 <tbody>
