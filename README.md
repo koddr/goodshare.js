@@ -3,7 +3,7 @@ Useful jQuery plugin that will help your website visitors share a link on social
 
 Feature of this plugin: extensive documentation, developer support, SEO friendly, many options for customization of appearance.
 
-If you are looking for a demo, it is [here](https://github.com/iacmru/goodshare.js#usage-example).
+If you're looking for a demo, it's [here](https://github.com/iacmru/goodshare.js#usage-example).
 ## Install
 Download [goodshare.js](https://github.com/iacmru/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder:
 * for development version: ``./path/to/your/project/folder/js/goodshare.js``
