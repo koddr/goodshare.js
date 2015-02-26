@@ -165,6 +165,43 @@ This example shows one of decoration options with all supported social networks.
 </html>
 ```
 
+### Templates
+
+If you want to add our template for goodshare.js to your project, see this example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My page with template for goodshare.js</title>
+    ...
+    <!-- Template [template_name]: goodshare-[template_name].min.css RawGit CDN -->
+    <link href="https://cdn.rawgit.com/iacmru/goodshare.js/master/templates/goodshare-[template_name].min.css" rel="stylesheet" />
+    ...
+  </head>
+  <body>
+    ...
+    <div class="goodshare-[template_name]">
+      <a href="#" class="goodshare" data-type="vk">ВКонтакте</a> 
+      <a href="#" class="goodshare" data-type="fb">Facebook</a> 
+      <a href="#" class="goodshare" data-type="tw">Twitter</a>
+      ...
+    </div>
+    ...
+    <!-- jQuery 1.11.2 min version from Google CDN JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- goodshare.js min version from RawGit CDN -->
+    <script src="https://cdn.rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
+  </body>
+</html>
+```
+List of avable template names:
+* `goodshare-color` Color
+* `goodshare-dark` Dark
+* `goodshare-light` Light
+* `goodshare-smooth` Smooth
+
 ## Developer
 
 Development and maintenance of `goodshare.js` project engaged in [Interactive agency «Central marketing»](http://iacm.ru). If you want to write a «thank you» or ask us about something, use [this](mailto:support@iacm.ru) e-mail.
