@@ -137,7 +137,8 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="bl"] {background: #f57d00;}
       a[data-type="di"] {background: #000000;}
       a[data-type="en"] {background: #7ac142;}
-      a[data-type="yz"] {background: #ffcc00;}
+      a[data-type="rd"] {background: #ffcc00;}
+      a[data-type="yz"] {background: #5f99cf;}
     </style>
   </head>
   <body>
@@ -158,6 +159,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="bl">Blogger</a> 
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
+      <a href="#" class="goodshare" data-type="rd">Reddit</a> 
       <a href="#" class="goodshare" data-type="yz">Яндекс.Закладки</a>
     </div>
     <p>See goodshare.js on GitHub: https://github.com/iacmru/goodshare.js</p>
