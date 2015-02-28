@@ -375,6 +375,25 @@
 					+ '&title='	+ encodeURIComponent(options.title);
 			        
 			},
+			
+			/*
+				Surfingbird
+				http://www.surfingbird.ru
+			*/
+		    
+			sb: function(_options) {
+				
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title,
+					text:   ''
+				}, _options);
+				
+				return 'http://surfingbird.ru/share?'
+					+ 'url='	+ encodeURIComponent(options.url)
+					+ '&title='	+ encodeURIComponent(options.title);
+			        
+			},
 					
 			/*
 				Popup
