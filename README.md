@@ -15,9 +15,11 @@ Since `v2.0` we added two version of plugin:
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
 
 ## Install `main` version (with SVG icons)
-Download [goodshare.js](https://github.com/iacmru/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder:
-* for development version: ``./path/to/your/project/folder/js/goodshare.js``
-* for production version: ``./path/to/your/project/folder/js/goodshare.min.js``
+
+Please go to our beautiful and functional configurator.
+
+## Install `custom` version (without SVG icons)
+Download [goodshare.js](https://github.com/iacmru/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare-custom.js``.
 
 Add in project template (or something else):
 
@@ -26,15 +28,9 @@ Add in project template (or something else):
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <!-- goodshare.js min version -->
-<script src="../path/to/your/project/folder/js/goodshare.min.js"></script>
+<script src="../path/to/your/project/folder/js/goodshare-custom.js"></script>
 ```
 If you want place plugin version via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
-
-```javascript
-<script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
-```
-
-## Install `custom` version
 
 ```javascript
 <script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare-custom.js"></script>
