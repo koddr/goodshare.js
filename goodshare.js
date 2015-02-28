@@ -356,6 +356,25 @@
 					+ '&descr='	+ encodeURIComponent(options.text);
 			        
 			},
+			
+			/*
+				Reddit
+				http://www.reddit.com
+			*/
+		    
+			rd: function(_options) {
+				
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title,
+					text:   ''
+				}, _options);
+				
+				return 'http://www.reddit.com/submit?'
+					+ 'url='	+ encodeURIComponent(options.url)
+					+ '&title='	+ encodeURIComponent(options.title);
+			        
+			},
 					
 			/*
 				Popup
