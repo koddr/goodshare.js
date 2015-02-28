@@ -166,7 +166,7 @@ This example shows one of decoration options with all supported social networks.
     <!-- jQuery 1.11.2 min version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- goodshare.js min version from RawGit CDN -->
-    <script src="https://cdn.rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
+    <script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
   </body>
 </html>
 ```
