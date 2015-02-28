@@ -27,7 +27,7 @@ Add in project template (or something else):
 If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
 
 ```javascript
-<script src="https://cdn.rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
+<script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
 ```
 
 ## List of supported social networks and microblogs
