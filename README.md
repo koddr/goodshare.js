@@ -7,10 +7,14 @@ Useful jQuery plugin that will help your website visitors share a link on social
 ### Features
 Simple install, can work through СDN, extensive documentation, developer support, SEO friendly, many options for customization of appearance, clean code without scripts tracking user activity on the page, high speed.
 
+Since `v2.0` we added two version of plugin:
+* `main`: included SVG icons ``goodshare.js`` (and min version ``goodshare.min.js``);
+* `custom`: lite version for developers without SVG icons ``goodshare-custom.js``.
+
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
 
-## Install
+## Install `main` version (with SVG icons)
 Download [goodshare.js](https://github.com/iacmru/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder:
 * for development version: ``./path/to/your/project/folder/js/goodshare.js``
 * for production version: ``./path/to/your/project/folder/js/goodshare.min.js``
@@ -24,10 +28,16 @@ Add in project template (or something else):
 <!-- goodshare.js min version -->
 <script src="../path/to/your/project/folder/js/goodshare.min.js"></script>
 ```
-If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
+If you want place plugin version via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
 
 ```javascript
 <script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
+```
+
+## Install `custom` version
+
+```javascript
+<script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare-custom.js"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -168,8 +178,8 @@ This example shows one of decoration options with all supported social networks.
     <p>See goodshare.js on GitHub: https://github.com/iacmru/goodshare.js</p>
     <!-- jQuery 1.11.2 min version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- goodshare.js min version from RawGit CDN -->
-    <script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare.min.js"></script>
+    <!-- goodshare.js custom version from RawGit CDN -->
+    <script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare-custom.js"></script>
   </body>
 </html>
 ```
