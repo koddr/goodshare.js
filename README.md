@@ -27,10 +27,10 @@ Add in project template (or something else):
 <!-- jQuery 1.11.2 min version from Google CDN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<!-- goodshare.js min version -->
+<!-- goodshare.js custom version -->
 <script src="../path/to/your/project/folder/js/goodshare-custom.js"></script>
 ```
-If you want place plugin version via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
+If you want place `custom` plugin version via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
 
 ```javascript
 <script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare-custom.js"></script>
