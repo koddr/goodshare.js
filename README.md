@@ -8,8 +8,8 @@ Useful jQuery plugin that will help your website visitors share a link on social
 Simple install, can work through СDN, extensive documentation, developer support, SEO friendly, many options for customization of appearance, clean code without scripts tracking user activity on the page, high speed.
 
 Since `v2.0` we added two version of plugin:
-* `main`: this version used for our configurator and included SVG icons for beautiful view on Retina displays (``goodshare.js`` and min version ``goodshare.min.js``);
-* `custom`: lite version for developers without SVG icons ``goodshare-custom.js``.
+* `main`: this version used for our configurator and included SVG icons for beautiful view on Retina displays (dev version ``goodshare.js`` and min version ``goodshare.min.js``);
+* `custom`: lite version for developers without SVG icons for manual installation (only dev version ``goodshare-custom.js``).
 
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
