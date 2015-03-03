@@ -437,7 +437,7 @@
 		
 		$.each(goodshare.svgicons, function(index, value) {
 			
-			$('SVG[data-type="' + index + '"] PATH').attr('d', value);
+			$('svg[data-type="' + index + '"] path').attr('d', value);
 			
 		});
 		
