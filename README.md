@@ -120,8 +120,6 @@ We use `event.preventDefault()` for event "click". So don't be afraid to use lin
 
 This example shows one of decoration options with all supported social networks.
 
-[Live demo](http://goodshare.ru/examples.html)
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
