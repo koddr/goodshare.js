@@ -19,7 +19,7 @@ If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examp
 Please go to our beautiful and functional configurator.
 
 ## Install `custom` version (without SVG icons)
-Download [goodshare.js](https://github.com/iacmru/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare-custom.js``.
+Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare-custom.js``.
 
 Add in project template (or something else):
 
@@ -33,7 +33,7 @@ Add in project template (or something else):
 If you want place `custom` plugin version via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
 
 ```javascript
-<script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare-custom.js"></script>
+<script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare-custom.js"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -55,7 +55,7 @@ If you want place `custom` plugin version via fast CDN (special thanks to [RawGi
 * `yz` [Яндекс.Закладки](http://zakladki.yandex.ru)
 * `sb` [Surfingbird](http://surfingbird.ru)
 
-If you don't see your social network, please [let us know](https://github.com/iacmru/goodshare.js#developer) and we'll try to add it!
+If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
 
 ## Description
 
@@ -169,11 +169,11 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="yz">Яндекс.Закладки</a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird</a>
     </div>
-    <p>See goodshare.js on GitHub: https://github.com/iacmru/goodshare.js</p>
+    <p>See goodshare.js on GitHub: https://github.com/enjoyiacm/goodshare.js</p>
     <!-- jQuery 1.11.2 min version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- goodshare.js custom version from RawGit CDN -->
-    <script src="https://rawgit.com/iacmru/goodshare.js/master/goodshare-custom.js"></script>
+    <script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare-custom.js"></script>
   </body>
 </html>
 ```
@@ -184,4 +184,4 @@ Development and maintenance of `goodshare.js` project engaged in [Interactive ag
 
 ## License
 
-[The MIT License (MIT)](https://github.com/iacmru/goodshare.js/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/enjoyiacm/goodshare.js/blob/master/LICENSE)
