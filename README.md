@@ -16,7 +16,7 @@ If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examp
 
 ## Install `main` version (with SVG icons)
 
-Please go to our beautiful and functional configurator.
+[COMING SOON] Please go to our beautiful and functional configurator. [/COMING SOON]
 
 ## Install `custom` version (without SVG icons)
 Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare-custom.js``.
