@@ -121,7 +121,7 @@ We use `event.preventDefault()` for event "click". So don't be afraid to use lin
 ```
 ## Counters
 
-To display counter, just add an attribute ``data-counter`` to element that will container numbers. For example:
+To display counter, just add ``data-counter`` attribute to element that will contain numbers. For example:
 
 ```html
 <!-- Create link with share to Facebook and counter -->
