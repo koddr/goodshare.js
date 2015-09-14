@@ -26,7 +26,7 @@ Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master
 Add to your project template (or something else):
 
 ```javascript
-<!-- jQuery 1.11.2 min version from Google CDN JS -->
+<!-- jQuery 1.11.2 minify version from Google CDN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <!-- goodshare.js minify version -->
@@ -191,7 +191,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="sb">Surfingbird</a>
     </div>
     <p>See goodshare.js on GitHub: https://github.com/enjoyiacm/goodshare.js</p>
-    <!-- jQuery 1.11.2 min version from Google CDN JS -->
+    <!-- jQuery 1.11.2 minify version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- goodshare.js minify version from RawGit CDN -->
     <script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare.min.js"></script>
