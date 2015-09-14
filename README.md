@@ -46,7 +46,7 @@ If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit
 * `fb` [Facebook](http://facebook.com)
 * `ok` [Одноклассники](http://ok.ru)
 * `mr` [Мой Мир@Mail.Ru](http://my.mail.ru)
-* `gp` [Google+](http://plus.google.ru)
+* `gp` [Google Plus](http://plus.google.ru)
 * `li` [LinkedIn](http://linkedin.com)
 * `tw` [Twitter](http://twitter.com)
 * `lj` [LiveJournal](http://livejournal.com)
@@ -119,6 +119,25 @@ We use `event.preventDefault()` for event "click". So don't be afraid to use lin
 ```html
 <a href="#">My link</a>
 ```
+## Counters
+
+To display counter, just add an attribute ``data-counter="..."`` to element that will container numbers. For example:
+
+```html
+<!-- Create link with share to Facebook and counter -->
+<a href="#" class="goodshare" data-type="fb">
+	Share this to Facebook
+	<span data-counter="fb"></span>
+</a>
+```
+
+Value of ``data-counter="..."`` attribute, see in this list of supported social networks and microblogs:
+
+* `vk` [Вконтакте](http://vk.com)
+* `fb` [Facebook](http://facebook.com)
+* `ok` [Одноклассники](http://ok.ru)
+* `gp` [Google Plus](http://plus.google.ru)
+* `tw` [Twitter](http://twitter.com)
 
 ## Usage example
 
