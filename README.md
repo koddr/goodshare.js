@@ -101,12 +101,12 @@ You can change these attributes as needed for your project:
 <td>(optional) Current page title (default: head title)</td>
 </tr>
 <tr>
-<td>data-image</td>
-<td>(optional) Current page image URL (default: meta property="og:image")</td>
-</tr>
-<tr>
 <td>data-text</td>
 <td>(optional) Current page description text (default: meta name="description")</td>
+</tr>
+<tr>
+<td>data-image</td>
+<td>(optional) Current page image URL (default: meta property="og:image")</td>
 </tr>
 </tbody>
 </table>
