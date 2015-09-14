@@ -10,10 +10,12 @@ Simple install, can work through СDN, extensive documentation, developer suppor
 In ``v3.0`` we did:
 * Add [share counters](https://github.com/enjoyiacm/goodshare.js#counters) for social networks:
   * Вконтакте
-  * Одноклассники
   * Facebook
-  * Twitter
+  * Одноклассники
   * Google Plus
+  * Twitter
+  * LinkedIn
+  * Pinterest
 * Re-bild script code & fix bugs.
 
 ### Demo
@@ -136,6 +138,8 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `ok` [Одноклассники](http://ok.ru)
 * `gp` [Google Plus](http://plus.google.ru)
 * `tw` [Twitter](http://twitter.com)
+* `li` [LinkedIn](http://linkedin.com)
+* `pt` [Pinterest](http://pinterest.com)
 
 ## Usage example
 
@@ -180,9 +184,9 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="ok">Одноклассники <span data-counter="ok"></span></a> 
       <a href="#" class="goodshare" data-type="mr">Мой Мир@Mail.Ru</a> 
       <a href="#" class="goodshare" data-type="gp">Google Plus <span data-counter="gp"></span></a> 
-      <a href="#" class="goodshare" data-type="li">LinkedIn</a> 
+      <a href="#" class="goodshare" data-type="li">LinkedIn <span data-counter="li"></span></a> 
       <a href="#" class="goodshare" data-type="tm">tumblr</a> 
-      <a href="#" class="goodshare" data-type="pt">Pinterest</a> 
+      <a href="#" class="goodshare" data-type="pt">Pinterest <span data-counter="pt"></span></a> 
       <a href="#" class="goodshare" data-type="bl">Blogger</a> 
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
