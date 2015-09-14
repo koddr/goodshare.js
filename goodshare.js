@@ -55,11 +55,11 @@
 			 *	Share link > Odnoklassniki
 			 *	http://ok.ru
 			 */		    
-			ok: function() {			
+			ok: function(_options) {			
 				var options = $.extend({
 					url:    location.href,
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1'
 					+ '&st.comments=' + encodeURIComponent(options.text)
 					+ '&st._surl='    + encodeURIComponent(options.url);			
@@ -68,13 +68,13 @@
 			 *	Share link > Facebook
 			 *	http://facebook.com
 			 */
-			fb: function() {			
+			fb: function(_options) {			
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					image:  '',
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://www.facebook.com/sharer.php?'
 					+ 'u='     + encodeURIComponent(options.url);			
 			},		
@@ -82,12 +82,12 @@
 			 *	Share link > LiveJournal
 			 *	http://livejournal.com
 			 */		    
-			lj: function() {			
+			lj: function(_options) {			
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://livejournal.com/update.bml?'
 					+ 'subject='        + encodeURIComponent(options.title)
 					+ '&event='         + encodeURIComponent('<a href="' + options.url + '">' + options.title + '</a> ' + options.text)
@@ -97,11 +97,11 @@
 			 *	Share link > Twitter
 			 *	http://twitter.com
 			 */		    
-			tw: function() {			
+			tw: function(_options) {			
 				var options = $.extend({
 					url:        location.href,
 					title:      document.title
-				});				
+				}, _options);				
 				return 'http://twitter.com/share?'
 					+ 'url='      + encodeURIComponent(options.url)		
 					+ '&text='      + encodeURIComponent(options.title);
@@ -110,10 +110,10 @@
 			 *	Share link > Google Plus
 			 *	http://plus.google.com
 			 */		    
-			gp: function() {				
+			gp: function(_options) {				
 				var options = $.extend({
 					url:    location.href
-				});			
+				}, _options);			
 				return 'https://plus.google.com/share?url='
 					+ encodeURIComponent(options.url);					
 			},		
@@ -121,13 +121,13 @@
 			 *	Share link > My@Mail.Ru
 			 *	http://my.mail.ru
 			 */		    
-			mr: function() {			
+			mr: function(_options) {			
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					image:  '',
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://connect.mail.ru/share?'
 					+ 'url='          + encodeURIComponent(options.url)
 					+ '&title='       + encodeURIComponent(options.title)
@@ -138,12 +138,12 @@
 			 *	Share link > LinkedIn
 			 *	http://linkedin.com
 			 */		    
-			li: function() {				
+			li: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://www.linkedin.com/shareArticle?'
 					+ 'url='       + encodeURIComponent(options.url);			        
 			},			
@@ -151,12 +151,12 @@
 			 *	Share link > tumblr
 			 *	http://tumblr.com
 			 */		    
-			tm: function() {				
+			tm: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://www.tumblr.com/share/link?'
 					+ 'url='		+ encodeURIComponent(options.url)
 					+ '&name='     		+ encodeURIComponent(options.title)
@@ -166,12 +166,12 @@
 			 *	Share link > Blogger
 			 *	https://www.blogger.com
 			 */		    
-			bl: function() {				
+			bl: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'https://www.blogger.com/blog-this.g?'
 					+ 'u='	+ encodeURIComponent(options.url)
 					+ '&n='	+ encodeURIComponent(options.title);			        
@@ -180,12 +180,12 @@
 			 *	Share link > Pinterest
 			 *	http://www.pinterest.com
 			 */		    
-			pt: function() {				
+			pt: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'https://www.pinterest.com/pin/create/button/?'
 					+ 'url='		+ encodeURIComponent(options.url)
 					+ '&description='	+ encodeURIComponent(options.title);			        
@@ -194,12 +194,12 @@
 			 *	Share link > Evernote
 			 *	http://www.evernote.com
 			 */		    
-			en: function() {				
+			en: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'https://www.evernote.com/clip.action?'
 					+ 'url='	+ encodeURIComponent(options.url)
 					+ '&title='	+ encodeURIComponent(options.title)
@@ -209,12 +209,12 @@
 			 *	Share link > Digg
 			 *	http://www.digg.com
 			 */		    
-			di: function() {				
+			di: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://digg.com/submit?'
 					+ 'url='	+ encodeURIComponent(options.url)
 					+ '&title='	+ encodeURIComponent(options.title);			        
@@ -223,12 +223,12 @@
 			 *	Share link > Yandex.Zakladki
 			 *	http://zakladki.yandex.ru
 			 */		    
-			yz: function() {				
+			yz: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://zakladki.yandex.ru/newlink.xml?'
 					+ 'url='	+ encodeURIComponent(options.url)
 					+ '&name='	+ encodeURIComponent(options.title)
@@ -238,11 +238,11 @@
 			 *	Share link > Reddit
 			 *	http://www.reddit.com
 			 */		    
-			rd: function() {				
+			rd: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title
-				});				
+				}, _options);				
 				return 'http://www.reddit.com/submit?'
 					+ 'url='	+ encodeURIComponent(options.url)
 					+ '&title='	+ encodeURIComponent(options.title);			        
@@ -251,12 +251,12 @@
 			 *	Share link > Surfingbird
 			 *	http://www.surfingbird.ru
 			 */		    
-			sb: function() {				
+			sb: function(_options) {				
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
 					text:   ''
-				});				
+				}, _options);				
 				return 'http://surfingbird.ru/share?'
 					+ 'url='		+ encodeURIComponent(options.url)
 					+ '&title='		+ encodeURIComponent(options.title)			        
