@@ -124,8 +124,8 @@ To display counter, just add ``data-counter`` attribute to element that will con
 ```html
 <!-- Create link with share to Facebook and counter -->
 <a href="#" class="goodshare" data-type="fb">
-	Share this to Facebook
-	<span data-counter="fb"></span>
+  Share this to Facebook
+  <span data-counter="fb"></span>
 </a>
 ```
 
