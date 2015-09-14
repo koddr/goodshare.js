@@ -7,19 +7,18 @@ Useful jQuery plugin that will help your website visitors share a link on social
 ### Features
 Simple install, can work through СDN, extensive documentation, developer support, SEO friendly, many options for customization of appearance, clean code without scripts tracking user activity on the page, high speed.
 
-Since `v2.0` we added two version of plugin:
-* `main`: this version used for our configurator and included SVG icons for beautiful view on Retina displays (dev version ``goodshare.js`` and min version ``goodshare.min.js``);
-* `custom`: lite version for developers without SVG icons for manual installation (only dev version ``goodshare-custom.js``).
+In ``v3.0`` we did:
+* Add share counters to social networks (Вконтакте, Одноклассники, Facebook, Twitter, Google Plus);
+* Re-bild script code & fix bugs.
 
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
 
-## Install `main` version (with SVG icons)
+## Install
 
 [COMING SOON] Please go to our beautiful and functional configurator. [/COMING SOON]
 
-## Install `custom` version (without SVG icons)
-Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare-custom.js``.
+Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare.min.js``.
 
 Add in project template (or something else):
 
@@ -28,17 +27,17 @@ Add in project template (or something else):
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <!-- goodshare.js custom version -->
-<script src="../path/to/your/project/folder/js/goodshare-custom.js"></script>
+<script src="../path/to/your/project/folder/js/goodshare.min.js"></script>
 ```
 If you want place `custom` plugin version via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
 
 ```javascript
-<script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare-custom.js"></script>
+<script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare.min.js"></script>
 ```
 
 ## List of supported social networks and microblogs
 
-* `vk` [ВКонтакте](http://vk.com)
+* `vk` [Вконтакте](http://vk.com)
 * `fb` [Facebook](http://facebook.com)
 * `ok` [Одноклассники](http://ok.ru)
 * `mr` [Мой Мир@Mail.Ru](http://my.mail.ru)
@@ -173,7 +172,7 @@ This example shows one of decoration options with all supported social networks.
     <!-- jQuery 1.11.2 min version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- goodshare.js custom version from RawGit CDN -->
-    <script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare-custom.js"></script>
+    <script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare.min.js"></script>
   </body>
 </html>
 ```
