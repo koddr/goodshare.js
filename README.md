@@ -8,7 +8,12 @@ Useful jQuery plugin that will help your website visitors share a link on social
 Simple install, can work through СDN, extensive documentation, developer support, SEO friendly, many options for customization of appearance, clean code without scripts tracking user activity on the page, high speed.
 
 In ``v3.0`` we did:
-* Add share counters to social networks (Вконтакте, Одноклассники, Facebook, Twitter, Google Plus);
+* Add [share counters](https://github.com/enjoyiacm/goodshare.js#counters) for social networks:
+  * Вконтакте
+  * Одноклассники
+  * Facebook
+  * Twitter
+  * Google Plus
 * Re-bild script code & fix bugs.
 
 ### Demo
@@ -26,10 +31,10 @@ Add in project template (or something else):
 <!-- jQuery 1.11.2 min version from Google CDN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<!-- goodshare.js custom version -->
+<!-- goodshare.js minify version -->
 <script src="../path/to/your/project/folder/js/goodshare.min.js"></script>
 ```
-If you want place `custom` plugin version via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
+If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
 
 ```javascript
 <script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare.min.js"></script>
@@ -179,7 +184,7 @@ This example shows one of decoration options with all supported social networks.
 
 ## Developer
 
-Development and maintenance of `goodshare.js` project engaged in [Interactive agency «Central marketing»](http://iacm.ru). If you want to write a «thank you» or ask us about something, use [this](mailto:support@iacm.ru) e-mail.
+Development and maintenance of `goodshare.js` project engaged in [Interactive agency «Central marketing»](http://iacm.ru). If you want to write a «thank you» or ask us about something, use [this](mailto:welcome@iacm.ru) e-mail.
 
 ## License
 
