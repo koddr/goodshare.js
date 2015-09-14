@@ -47,7 +47,7 @@
 					+ 'url='          + encodeURIComponent(options.url)
 					+ '&title='       + encodeURIComponent(options.title)
 					+ '&description=' + encodeURIComponent(options.text)
-					+ '&image='       + encodeURIComponent(options.image);					
+					+ '&image='       + encodeURIComponent(options.image);
 			},		
 			/*
 			 *	Share link > Odnoklassniki
@@ -73,11 +73,8 @@
 					image:  '',
 					text:   ''
 				});				
-				return 'http://www.facebook.com/sharer.php?s=100'
-					+ '&p[title]='     + encodeURIComponent(options.title)
-					+ '&p[summary]='   + encodeURIComponent(options.text)
-					+ '&p[url]='       + encodeURIComponent(options.url)
-					+ '&p[images][0]=' + encodeURIComponent(options.image);			
+				return 'http://www.facebook.com/sharer.php?'
+					+ 'u='     + encodeURIComponent(options.url);			
 			},		
 			/*
 			 *	Share link > LiveJournal
@@ -104,8 +101,8 @@
 					title:      document.title
 				});				
 				return 'http://twitter.com/share?'
-					+ 'text='      + encodeURIComponent(options.title)
-					+ '&url='      + encodeURIComponent(options.url);			
+					+ 'url='      + encodeURIComponent(options.url)		
+					+ '&text='      + encodeURIComponent(options.title);
 			},		    
 			/*
 			 *	Share link > Google Plus
@@ -145,10 +142,8 @@
 					title:  document.title,
 					text:   ''
 				});				
-				return 'http://www.linkedin.com/shareArticle?mini=true'
-					+ '&url='       + encodeURIComponent(options.url)
-					+ '&title='     + encodeURIComponent(options.title)
-					+ '&summary='   + encodeURIComponent(options.text);			        
+				return 'http://www.linkedin.com/shareArticle?'
+					+ 'url='       + encodeURIComponent(options.url);			        
 			},			
 			/*
 			 *	Share link > tumblr
@@ -244,8 +239,7 @@
 			rd: function() {				
 				var options = $.extend({
 					url:    location.href,
-					title:  document.title,
-					text:   ''
+					title:  document.title
 				});				
 				return 'http://www.reddit.com/submit?'
 					+ 'url='	+ encodeURIComponent(options.url)
@@ -262,8 +256,9 @@
 					text:   ''
 				});				
 				return 'http://surfingbird.ru/share?'
-					+ 'url='	+ encodeURIComponent(options.url)
-					+ '&title='	+ encodeURIComponent(options.title);			        
+					+ 'url='			+ encodeURIComponent(options.url)
+					+ '&title='			+ encodeURIComponent(options.title)			        
+					+ '&description='	+ encodeURIComponent(options.text);
 			},					
 			/*
 			 *	Popup window
