@@ -21,11 +21,9 @@ If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examp
 
 ## Install
 
-[COMING SOON] Please go to our beautiful and functional configurator. [/COMING SOON]
-
 Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare.min.js``.
 
-Add in project template (or something else):
+Add to your project template (or something else):
 
 ```javascript
 <!-- jQuery 1.11.2 min version from Google CDN JS -->
