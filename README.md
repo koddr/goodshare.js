@@ -121,7 +121,7 @@ We use `event.preventDefault()` for event "click". So don't be afraid to use lin
 ```
 ## Counters
 
-To display counter, just add an attribute ``data-counter="..."`` to element that will container numbers. For example:
+To display counter, just add an attribute ``data-counter`` to element that will container numbers. For example:
 
 ```html
 <!-- Create link with share to Facebook and counter -->
@@ -131,7 +131,7 @@ To display counter, just add an attribute ``data-counter="..."`` to element that
 </a>
 ```
 
-Value of ``data-counter="..."`` attribute, see in this list of supported social networks and microblogs:
+Value of ``data-counter`` attribute, see in this list of supported social networks and microblogs:
 
 * `vk` [Вконтакте](http://vk.com)
 * `fb` [Facebook](http://facebook.com)
@@ -173,15 +173,15 @@ This example shows one of decoration options with all supported social networks.
   <body>
     <h1>My page with goodshare.js</h1>
     <p>Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs.<br />
-	    Easy to install and configuring on any of your website!</p>
+    Easy to install and configuring on any of your website!</p>
     <div>
-      <a href="#" class="goodshare" data-type="vk">ВКонтакте</a> 
-      <a href="#" class="goodshare" data-type="fb">Facebook</a> 
-      <a href="#" class="goodshare" data-type="tw">Twitter</a> 
+      <a href="#" class="goodshare" data-type="vk">Вконтакте <span data-counter="vk"></span></a> 
+      <a href="#" class="goodshare" data-type="fb">Facebook <span data-counter="fb"></span></a> 
+      <a href="#" class="goodshare" data-type="tw">Twitter <span data-counter="tw"></span></a> 
       <a href="#" class="goodshare" data-type="lj">LiveJournal</a> 
-      <a href="#" class="goodshare" data-type="ok">Одноклассники</a> 
+      <a href="#" class="goodshare" data-type="ok">Одноклассники <span data-counter="ok"></span></a> 
       <a href="#" class="goodshare" data-type="mr">Мой Мир@Mail.Ru</a> 
-      <a href="#" class="goodshare" data-type="gp">Google+</a> 
+      <a href="#" class="goodshare" data-type="gp">Google Plus <span data-counter="gp"></span></a> 
       <a href="#" class="goodshare" data-type="li">LinkedIn</a> 
       <a href="#" class="goodshare" data-type="tm">tumblr</a> 
       <a href="#" class="goodshare" data-type="pt">Pinterest</a> 
@@ -195,7 +195,7 @@ This example shows one of decoration options with all supported social networks.
     <p>See goodshare.js on GitHub: https://github.com/enjoyiacm/goodshare.js</p>
     <!-- jQuery 1.11.2 min version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- goodshare.js custom version from RawGit CDN -->
+    <!-- goodshare.js minify version from RawGit CDN -->
     <script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare.min.js"></script>
   </body>
 </html>
