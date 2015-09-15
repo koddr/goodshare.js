@@ -5,7 +5,7 @@
 Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs. Easy to install and configuring on any of your website!
 
 ### Features
-Simple install, can work through СDN, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, high speed.
+Simple install, can work through СDN, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 In ``v3.0`` we did:
 * Add [share counters](https://github.com/enjoyiacm/goodshare.js#counters) for social networks:
