@@ -347,6 +347,15 @@
 			else $('[data-counter="li"]').text(response.count);
 		});
 		/*
+		 *	Share counter > tumblr
+		 *	http://tumblr.com
+		 */
+		$.getJSON('http://api.tumblr.com/v2/share/stats?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+			if (response.response.note_count > 999 && response.response.note_count <= 999999) $('[data-counter="tm"]').text(response.response.note_count/1000 + 'k');
+			else if (response.response.note_count > 999999) $('[data-counter="tm"]').text((response.response.note_count/1000000).toFixed(3) + 'M');
+			else $('[data-counter="tm"]').text(response.response.note_count);
+		});
+		/*
 		 *	Share counter > Pinterest
 		 *	http://pinterest.com
 		 */
