@@ -121,7 +121,7 @@ We use `event.preventDefault()` for event "click". So don't be afraid to use lin
 ```
 ## Counters
 
-To display counter, just add ``data-counter`` attribute to element that will contain numbers. For example:
+To display counter, just add ``data-counter`` attribute to HTML element that will contain numbers. For example:
 
 ```html
 <!-- Create link with share to Facebook and counter -->
@@ -129,6 +129,20 @@ To display counter, just add ``data-counter`` attribute to element that will con
   Share this to Facebook
   <span data-counter="fb"></span>
 </a>
+```
+
+**Note:** You may put this attribute to any element, even that hasn't class ``goodshare``. For example:
+
+```html
+<!-- Create link with share to Facebook -->
+<a href="#" class="goodshare" data-type="fb">Share this to Facebook</a>
+...
+...
+<!-- Create external Facebook share counter -->
+<div>
+  <div>All Facebook shares:</div>
+  <div data-counter="fb"></div>
+</div>
 ```
 
 Value of ``data-counter`` attribute, see in this list of supported social networks and microblogs:
