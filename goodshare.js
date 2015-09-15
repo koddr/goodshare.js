@@ -338,6 +338,23 @@
 			}
 		});
 		/*
+		 *	Share counter > My@Mail.Ru
+		 *	http://my.mail.ru
+		 */
+		$.getJSON('http://connect.mail.ru/share_count?url_list=' + encodeURIComponent(location.href) + '&callback=1&func=?', function(response) {
+			var url_list = encodeURIComponent(location.href);
+			for (var url_list in response) {
+				if (response.hasOwnProperty(url_list)) {
+					var count = response[url_list].shares;
+					break;
+				}
+			}
+			if ($.isEmptyObject(response)) $('[data-counter="mr"]').text('0');
+			else if (count > 999 && count <= 999999) $('[data-counter="mr"]').text(count/1000 + 'k');
+			else if (count > 999999) $('[data-counter="mr"]').text((count/1000000).toFixed(3) + 'M');
+			else $('[data-counter="mr"]').text(count);
+		});
+		/*
 		 *	Share counter > LinkedIn
 		 *	http://linkedin.com
 		 */
