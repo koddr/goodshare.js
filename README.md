@@ -154,6 +154,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `gp` [Google Plus](http://plus.google.ru)
 * `tw` [Twitter](http://twitter.com)
 * `li` [LinkedIn](http://linkedin.com)
+* `tm` [tumblr](http://tumblr.com)
 * `pt` [Pinterest](http://pinterest.com)
 
 ## Usage example
