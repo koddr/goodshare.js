@@ -56,7 +56,7 @@ If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit
 * `di` [Digg](http://digg.com)
 * `en` [Evernote](http://evernote.com)
 * `rd` [Reddit](http://reddit.com)
-* `yz` [Яндекс.Закладки](http://zakladki.yandex.ru)
+* ~~`yz` [Яндекс.Закладки](http://zakladki.yandex.ru)~~
 * `sb` [Surfingbird](http://surfingbird.ru)
 
 If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
@@ -182,7 +182,6 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="di"] {background: #000000;}
       a[data-type="en"] {background: #7ac142;}
       a[data-type="rd"] {background: #ffcc00;}
-      a[data-type="yz"] {background: #5f99cf;}
       a[data-type="sb"] {background: #26B1F6;}
     </style>
   </head>
@@ -204,8 +203,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="bl">Blogger</a> 
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
-      <a href="#" class="goodshare" data-type="rd">Reddit</a> 
-      <a href="#" class="goodshare" data-type="yz">Яндекс.Закладки</a>
+      <a href="#" class="goodshare" data-type="rd">Reddit</a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird</a>
     </div>
     <p>See goodshare.js on GitHub: https://github.com/enjoyiacm/goodshare.js</p>
