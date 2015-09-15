@@ -232,6 +232,20 @@
 					+ '&title='	+ encodeURIComponent(options.title);
 			},
 			/*
+			 *	Share link > Pocket
+			 *	https://getpocket.com
+			 */
+			po: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title,
+					text:   ''
+				}, _options);
+				return 'https://getpocket.com/save?'
+					+ 'url='		+ encodeURIComponent(options.url)
+					+ '&title='		+ encodeURIComponent(options.title);
+			},
+			/*
 			 *	Share link > Surfingbird
 			 *	http://www.surfingbird.ru
 			 */
