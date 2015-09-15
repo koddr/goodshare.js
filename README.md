@@ -104,7 +104,7 @@ You can change these attributes as needed for your project:
 </tr>
 <tr>
 <td>data-text</td>
-<td>(optional) Current page description text (default: meta name="description")</td>
+<td>(optional) Current page description text (default: meta property="og:description")</td>
 </tr>
 <tr>
 <td>data-image</td>
