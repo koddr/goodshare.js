@@ -19,14 +19,14 @@
 				 *	(social) type = vk
 				 *	url = current browser adress stroke
 				 *	title = current document <title>
-				 *	text = current document <meta name="description" ... />
+				 *	text = current document <meta property="og:description" ... />
 				 *	image = current document <meta property="og:image" ... />
 				 */				
 				var self = goodshare, options = $.extend({
 					type:	'vk',
 					url:	location.href,
 					title:	document.title,
-					text:	$('meta[name="description"]').attr('content'),
+					text:	$('meta[property="og:description"]').attr('content'),
 					image:	$('meta[property="og:image"]').attr('content')
 				}, $(_element).data(), _options);
 				/*
