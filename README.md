@@ -15,6 +15,7 @@ In ``v3.0`` we did:
   * Google Plus
   * Twitter
   * LinkedIn
+  * tumblr
   * Pinterest
 * Re-bild script code & fix bugs.
 
@@ -199,7 +200,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="mr">Мой Мир@Mail.Ru</a> 
       <a href="#" class="goodshare" data-type="gp">Google Plus <span data-counter="gp"></span></a> 
       <a href="#" class="goodshare" data-type="li">LinkedIn <span data-counter="li"></span></a> 
-      <a href="#" class="goodshare" data-type="tm">tumblr</a> 
+      <a href="#" class="goodshare" data-type="tm">tumblr <span data-counter="tm"></span></a> 
       <a href="#" class="goodshare" data-type="pt">Pinterest <span data-counter="pt"></span></a> 
       <a href="#" class="goodshare" data-type="bl">Blogger</a> 
       <a href="#" class="goodshare" data-type="di">Digg</a> 
