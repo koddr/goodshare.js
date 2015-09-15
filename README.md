@@ -182,6 +182,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="di"] {background: #000000;}
       a[data-type="en"] {background: #7ac142;}
       a[data-type="rd"] {background: #ffcc00;}
+      a[data-type="po"] {background: #d3505a;}
       a[data-type="sb"] {background: #26B1F6;}
     </style>
   </head>
@@ -204,6 +205,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
       <a href="#" class="goodshare" data-type="rd">Reddit</a>
+      <a href="#" class="goodshare" data-type="po">Pocket</a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird</a>
     </div>
     <p>See goodshare.js on GitHub: https://github.com/enjoyiacm/goodshare.js</p>
