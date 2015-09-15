@@ -90,8 +90,7 @@
 				}, _options);				
 				return 'http://livejournal.com/update.bml?'
 					+ 'subject='        + encodeURIComponent(options.title)
-					+ '&event='         + encodeURIComponent('<a href="' + options.url + '">' + options.title + '</a> ' + options.text)
-					+ '&transform=1';			
+					+ '&event='         + encodeURIComponent('<a href="' + options.url + '">' + options.title + '</a> ' + options.text);			
 			},		
 			/*
 			 *	Share link > Twitter
