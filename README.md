@@ -56,7 +56,6 @@ If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit
 * `di` [Digg](http://digg.com)
 * `en` [Evernote](http://evernote.com)
 * `rd` [Reddit](http://reddit.com)
-* ~~`yz` [Яндекс.Закладки](http://zakladki.yandex.ru)~~
 * `sb` [Surfingbird](http://surfingbird.ru)
 
 If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
