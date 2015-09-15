@@ -12,6 +12,7 @@ In ``v3.0`` we did:
   * Вконтакте
   * Facebook
   * Одноклассники
+  * Мой Мир@Mail.Ru
   * Google Plus
   * Twitter
   * LinkedIn
@@ -151,6 +152,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `vk` [Вконтакте](http://vk.com)
 * `fb` [Facebook](http://facebook.com)
 * `ok` [Одноклассники](http://ok.ru)
+* `mr` [Мой Мир@Mail.Ru](http://my.mail.ru)
 * `gp` [Google Plus](http://plus.google.ru)
 * `tw` [Twitter](http://twitter.com)
 * `li` [LinkedIn](http://linkedin.com)
@@ -198,7 +200,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="tw">Twitter <span data-counter="tw"></span></a> 
       <a href="#" class="goodshare" data-type="lj">LiveJournal</a> 
       <a href="#" class="goodshare" data-type="ok">Одноклассники <span data-counter="ok"></span></a> 
-      <a href="#" class="goodshare" data-type="mr">Мой Мир@Mail.Ru</a> 
+      <a href="#" class="goodshare" data-type="mr">Мой Мир@Mail.Ru <span data-counter="mr"></span></a> 
       <a href="#" class="goodshare" data-type="gp">Google Plus <span data-counter="gp"></span></a> 
       <a href="#" class="goodshare" data-type="li">LinkedIn <span data-counter="li"></span></a> 
       <a href="#" class="goodshare" data-type="tm">tumblr <span data-counter="tm"></span></a> 
