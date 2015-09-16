@@ -175,7 +175,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="vk"] {background: #45668e;}
       a[data-type="fb"] {background: #3b5998;}
       a[data-type="tw"] {background: #55acee;}
-      a[data-type="lj"] {background: #062734;}
+      a[data-type="lj"] {background: #004359;}
       a[data-type="ok"] {background: #ed812b;}
       a[data-type="mr"] {background: #168de2;}
       a[data-type="gp"] {background: #dd4b39;}
@@ -185,7 +185,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="bl"] {background: #f57d00;}
       a[data-type="di"] {background: #000000;}
       a[data-type="en"] {background: #7ac142;}
-      a[data-type="rd"] {background: #ffcc00;}
+      a[data-type="rd"] {background: #cee3f8;}
       a[data-type="po"] {background: #d3505a;}
       a[data-type="sb"] {background: #26B1F6;}
     </style>
