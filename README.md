@@ -185,7 +185,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="bl"] {background: #f57d00;}
       a[data-type="di"] {background: #000000;}
       a[data-type="en"] {background: #7ac142;}
-      a[data-type="rd"] {background: #cee3f8;}
+      a[data-type="rd"] {background: #5f99cf;}
       a[data-type="po"] {background: #d3505a;}
       a[data-type="sb"] {background: #26B1F6;}
     </style>
