@@ -225,6 +225,10 @@ This example shows one of decoration options with all supported social networks.
 
 Development and maintenance of `goodshare.js` project engaged in [Interactive agency «Central marketing»](http://iacm.ru). If you want to write a «thank you» or ask us about something, [use this e-mail](mailto:support@goodshare.ru).
 
+## Your help
+
+If you want help, we will be glad reviews about `goodshare.js` on personal blogs (including Twitter), online media or specialized IT-portals. Thank you!
+
 ## License
 
 [The MIT License (MIT)](https://github.com/enjoyiacm/goodshare.js/blob/master/LICENSE)
