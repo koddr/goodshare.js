@@ -89,8 +89,8 @@
 					text:   ''
 				}, _options);
 				return 'http://livejournal.com/update.bml?'
-					+ 'subject='        + encodeURIComponent(options.title)
-					+ '&event='         + encodeURIComponent('<a href="' + options.url + '">' + options.title + '</a> ' + options.text);
+					+ 'subject='	+ encodeURIComponent(options.title)
+					+ '&event='     + encodeURIComponent('<a href="' + options.url + '">' + options.title + '</a> ' + options.text);
 			},
 			/*
 			 *	Share link > Twitter
@@ -103,7 +103,7 @@
 				}, _options);
 				return 'http://twitter.com/share?'
 					+ 'url='      + encodeURIComponent(options.url)
-					+ '&text='      + encodeURIComponent(options.title);
+					+ '&text='    + encodeURIComponent(options.title);
 			},
 			/*
 			 *	Share link > Google Plus
@@ -273,7 +273,7 @@
 		 */
 		$.getJSON('https://vk.com/share.php?act=count&index=1&url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
 		VK = {};
-	        VK.Share = {};
+		VK.Share = {};
 		VK.Share.count = function(index, count) {
 			if (count > 999 && count <= 999999) $('[data-counter="vk"]').text(count/1000 + 'k');
 			else if (count > 999999) $('[data-counter="vk"]').text((count/1000000).toFixed(3) + 'M');
@@ -284,7 +284,8 @@
 		 *	http://facebook.com
 		 */
 		$.getJSON('http://graph.facebook.com/?id=' + encodeURIComponent(location.href), function(response) {
-			if (response.shares > 999 && response.shares <= 999999) $('[data-counter="fb"]').text(response.shares/1000 + 'k');
+			if ($.type(response.shares) === 'undefined') $('[data-counter="fb"]').text('0');
+			else if (response.shares > 999 && response.shares <= 999999) $('[data-counter="fb"]').text(response.shares/1000 + 'k');
 			else if (response.shares > 999999) $('[data-counter="fb"]').text((response.shares/1000000).toFixed(3) + 'M');
 			else $('[data-counter="fb"]').text(response.shares);
 		});
