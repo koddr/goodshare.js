@@ -223,7 +223,7 @@ This example shows one of decoration options with all supported social networks.
 
 ## Developer
 
-Development and maintenance of `goodshare.js` project engaged in [Interactive agency «Central marketing»](http://iacm.ru). If you want to write a «thank you» or ask us about something, use [this](mailto:welcome@iacm.ru) e-mail.
+Development and maintenance of `goodshare.js` project engaged in [Interactive agency «Central marketing»](http://iacm.ru). If you want to write a «thank you» or ask us about something, use [this](mailto:support@goodshare.ru) e-mail.
 
 ## License
 
