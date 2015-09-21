@@ -48,7 +48,7 @@ If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit
 * `fb` [Facebook](http://facebook.com)
 * `ok` [Одноклассники](http://ok.ru)
 * `mr` [Мой Мир@Mail.Ru](http://my.mail.ru)
-* `gp` [Google Plus](http://plus.google.ru)
+* `gp` [Google Plus](http://plus.google.com)
 * `li` [LinkedIn](http://linkedin.com)
 * `tw` [Twitter](http://twitter.com)
 * `lj` [LiveJournal](http://livejournal.com)
