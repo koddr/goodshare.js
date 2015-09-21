@@ -174,15 +174,15 @@ This example shows one of decoration options with all supported social networks.
       a {color: #ffffff; display: inline-block; width: 150px; padding: 10px; margin: 2px auto; cursor: pointer;}
       a[data-type="vk"] {background: #45668e;}
       a[data-type="fb"] {background: #3b5998;}
-      a[data-type="tw"] {background: #55acee;}
-      a[data-type="lj"] {background: #004359;}
       a[data-type="ok"] {background: #ed812b;}
       a[data-type="mr"] {background: #168de2;}
       a[data-type="gp"] {background: #dd4b39;}
       a[data-type="li"] {background: #0976b4;}
+      a[data-type="tw"] {background: #55acee;}
+      a[data-type="lj"] {background: #004359;}
       a[data-type="tm"] {background: #35465c;}
-      a[data-type="pt"] {background: #cc2127;}
       a[data-type="bl"] {background: #f57d00;}
+      a[data-type="pt"] {background: #cc2127;}
       a[data-type="di"] {background: #000000;}
       a[data-type="en"] {background: #7ac142;}
       a[data-type="rd"] {background: #5f99cf;}
@@ -197,15 +197,15 @@ This example shows one of decoration options with all supported social networks.
     <div>
       <a href="#" class="goodshare" data-type="vk">Вконтакте <span data-counter="vk"></span></a> 
       <a href="#" class="goodshare" data-type="fb">Facebook <span data-counter="fb"></span></a> 
-      <a href="#" class="goodshare" data-type="tw">Twitter <span data-counter="tw"></span></a> 
-      <a href="#" class="goodshare" data-type="lj">LiveJournal</a> 
       <a href="#" class="goodshare" data-type="ok">Одноклассники <span data-counter="ok"></span></a> 
       <a href="#" class="goodshare" data-type="mr">Мой Мир@Mail.Ru <span data-counter="mr"></span></a> 
       <a href="#" class="goodshare" data-type="gp">Google Plus <span data-counter="gp"></span></a> 
       <a href="#" class="goodshare" data-type="li">LinkedIn <span data-counter="li"></span></a> 
+      <a href="#" class="goodshare" data-type="tw">Twitter <span data-counter="tw"></span></a> 
+      <a href="#" class="goodshare" data-type="lj">LiveJournal</a> 
       <a href="#" class="goodshare" data-type="tm">tumblr <span data-counter="tm"></span></a> 
-      <a href="#" class="goodshare" data-type="pt">Pinterest <span data-counter="pt"></span></a> 
       <a href="#" class="goodshare" data-type="bl">Blogger</a> 
+      <a href="#" class="goodshare" data-type="pt">Pinterest <span data-counter="pt"></span></a> 
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
       <a href="#" class="goodshare" data-type="rd">Reddit</a>
