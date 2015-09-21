@@ -14,8 +14,8 @@ In ``v3.0`` we did:
   * Одноклассники
   * Мой Мир@Mail.Ru
   * Google Plus
-  * Twitter
   * LinkedIn
+  * Twitter 
   * tumblr
   * Pinterest
 * Re-bild script code & fix bugs.
@@ -154,8 +154,8 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `ok` [Одноклассники](http://ok.ru)
 * `mr` [Мой Мир@Mail.Ru](http://my.mail.ru)
 * `gp` [Google Plus](http://plus.google.ru)
-* `tw` [Twitter](http://twitter.com)
 * `li` [LinkedIn](http://linkedin.com)
+* `tw` [Twitter](http://twitter.com)
 * `tm` [tumblr](http://tumblr.com)
 * `pt` [Pinterest](http://pinterest.com)
 
