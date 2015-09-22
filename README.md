@@ -1,5 +1,7 @@
 #### Документацию и примеры на русском языке — вы можете [найти тут](http://goodshare.ru/).
 
+![goodshare.js logo github](http://goodshare.ru/assets/images/goodshare-logo-github.jpg)
+
 # goodshare.js
 
 Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs. Easy to install and configuring on any of your website!
