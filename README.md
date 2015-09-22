@@ -39,6 +39,7 @@ Add to your project template (or something else):
 If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.jsdelivr.com) project and [this issue](https://github.com/enjoyiacm/goodshare.js/issues/2)), use this:
 
 ```javascript
+<!-- Latest goodshare.js minify version from jsDelivr CDN -->
 <script src="https://cdn.jsdelivr.net/jquery.goodshare.js/latest/goodshare.min.js"></script>
 ```
 
@@ -215,7 +216,7 @@ This example shows one of decoration options with all supported social networks.
     <p>See goodshare.js on GitHub: https://github.com/enjoyiacm/goodshare.js</p>
     <!-- jQuery 1.11.2 minify version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- goodshare.js minify version from RawGit CDN -->
+    <!-- Latest goodshare.js minify version from jsDelivr CDN -->
     <script src="https://cdn.jsdelivr.net/jquery.goodshare.js/latest/goodshare.min.js"></script>
   </body>
 </html>
