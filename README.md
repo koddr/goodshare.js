@@ -36,10 +36,10 @@ Add to your project template (or something else):
 <!-- goodshare.js minify version -->
 <script src="../path/to/your/project/folder/js/goodshare.min.js"></script>
 ```
-If you want place plugin via fast CDN (special thanks to [RawGit](https://rawgit.com/) project), use this:
+If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.jsdelivr.com) project and [this issue](https://github.com/enjoyiacm/goodshare.js/issues/2)), use this:
 
 ```javascript
-<script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/latest/goodshare.min.js"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -216,7 +216,7 @@ This example shows one of decoration options with all supported social networks.
     <!-- jQuery 1.11.2 minify version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- goodshare.js minify version from RawGit CDN -->
-    <script src="https://rawgit.com/enjoyiacm/goodshare.js/master/goodshare.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.goodshare.js/latest/goodshare.min.js"></script>
   </body>
 </html>
 ```
