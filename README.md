@@ -1,6 +1,6 @@
 ![goodshare.js logo github](http://goodshare.ru/assets/images/goodshare-logo-github.jpg)
 
-> Внимание! Документацию и примеры на русском языке — вы можете найти на [официальном сайте](http://goodshare.ru/).
+> Внимание! Документацию, примеры использования и рекомендации по установке на **русском языке**&nbsp;— вы можете найти на [официальном сайте](http://goodshare.ru/).
 
 # goodshare.js
 
