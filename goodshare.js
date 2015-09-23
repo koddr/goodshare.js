@@ -1,22 +1,24 @@
 /*
- *	@author Interactive agency "Central marketing" http://iacm.ru
- *	@copyright Copyright (c) 2015, Interactive agency "Central marketing"	
+ *	@author Interactive agency «Central marketing» http://centralmarketing.ru
+ *	@copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *	@license http://opensource.org/licenses/MIT The MIT License (MIT)
- *	@version 3.0 at 14/09/2015 (16:50)
+ *	@version 3.1 at 24/09/2015 (02:30)
  *	
  *	goodshare.js
  *	
  *	Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs.
  *	Easy to install and configuring on any of your website!
+ *	
+ *	@category jQuery plugin
  */
-;(function($, document, window, undefined) {
+;(function($, window, document, undefined) {
 	$(document).ready(function() {
 		goodshare = {
 			init: function(_element, _options) {
 				/*
 				 *	Default options:
 				 *	
-				 *	(social) type = vk
+				 *	type = vk
 				 *	url = current browser adress stroke
 				 *	title = current document <title>
 				 *	text = current document <meta property="og:description" ... />
@@ -36,7 +38,7 @@
 			},
 			/*
 			 *	Share link > Vkontakte
-			 *	http://vk.com
+			 *	@see http://vk.com
 			 */
 			vk: function(_options) {
 				var options = $.extend({
@@ -53,7 +55,7 @@
 			},
 			/*
 			 *	Share link > Odnoklassniki
-			 *	http://ok.ru
+			 *	@see http://ok.ru
 			 */
 			ok: function(_options) {
 				var options = $.extend({
@@ -66,7 +68,7 @@
 			},
 			/*
 			 *	Share link > Facebook
-			 *	http://facebook.com
+			 *	@see http://facebook.com
 			 */
 			fb: function(_options) {
 				var options = $.extend({
@@ -80,7 +82,7 @@
 			},
 			/*
 			 *	Share link > LiveJournal
-			 *	http://livejournal.com
+			 *	@see http://livejournal.com
 			 */
 			lj: function(_options) {
 				var options = $.extend({
@@ -94,7 +96,7 @@
 			},
 			/*
 			 *	Share link > Twitter
-			 *	http://twitter.com
+			 *	@see http://twitter.com
 			 */
 			tw: function(_options) {
 				var options = $.extend({
@@ -107,7 +109,7 @@
 			},
 			/*
 			 *	Share link > Google Plus
-			 *	http://plus.google.com
+			 *	@see http://plus.google.com
 			 */
 			gp: function(_options) {
 				var options = $.extend({
@@ -118,7 +120,7 @@
 			},
 			/*
 			 *	Share link > My@Mail.Ru
-			 *	http://my.mail.ru
+			 *	@see http://my.mail.ru
 			 */
 			mr: function(_options) {
 				var options = $.extend({
@@ -135,7 +137,7 @@
 			},
 			/*
 			 *	Share link > LinkedIn
-			 *	http://linkedin.com
+			 *	@see http://linkedin.com
 			 */
 			li: function(_options) {
 				var options = $.extend({
@@ -148,7 +150,7 @@
 			},
 			/*
 			 *	Share link > tumblr
-			 *	http://tumblr.com
+			 *	@see http://tumblr.com
 			 */
 			tm: function(_options) {
 				var options = $.extend({
@@ -163,7 +165,7 @@
 			},
 			/*
 			 *	Share link > Blogger
-			 *	https://www.blogger.com
+			 *	@see https://www.blogger.com
 			 */
 			bl: function(_options) {
 				var options = $.extend({
@@ -177,7 +179,7 @@
 			},
 			/*
 			 *	Share link > Pinterest
-			 *	http://www.pinterest.com
+			 *	@see http://www.pinterest.com
 			 */
 			pt: function(_options) {
 				var options = $.extend({
@@ -191,7 +193,7 @@
 			},
 			/*
 			 *	Share link > Evernote
-			 *	http://www.evernote.com
+			 *	@see http://www.evernote.com
 			 */
 			en: function(_options) {
 				var options = $.extend({
@@ -206,7 +208,7 @@
 			},
 			/*
 			 *	Share link > Digg
-			 *	http://www.digg.com
+			 *	@see http://www.digg.com
 			 */
 			di: function(_options) {
 				var options = $.extend({
@@ -220,7 +222,7 @@
 			},
 			/*
 			 *	Share link > Reddit
-			 *	http://www.reddit.com
+			 *	@see http://www.reddit.com
 			 */
 			rd: function(_options) {
 				var options = $.extend({
@@ -233,7 +235,7 @@
 			},
 			/*
 			 *	Share link > Pocket
-			 *	https://getpocket.com
+			 *	@see https://getpocket.com
 			 */
 			po: function(_options) {
 				var options = $.extend({
@@ -242,12 +244,12 @@
 					text:   ''
 				}, _options);
 				return 'https://getpocket.com/save?'
-					+ 'url='		+ encodeURIComponent(options.url)
-					+ '&title='		+ encodeURIComponent(options.title);
+					+ 'url='	+ encodeURIComponent(options.url)
+					+ '&title='	+ encodeURIComponent(options.title);
 			},
 			/*
 			 *	Share link > Surfingbird
-			 *	http://www.surfingbird.ru
+			 *	@see http://www.surfingbird.ru
 			 */
 			sb: function(_options) {
 				var options = $.extend({
@@ -264,54 +266,58 @@
 			 *	Popup window
 			 */		    
 			popup: function(url) {
-				return window.open(url, '', 'toolbar=0,status=0,scrollbars=0,width=626,height=436');
+				return window.open(url, '', 'toolbar=0,status=0,scrollbars=0,width=630,height=440');
 			}
 		};
 		/*
+		 *	Function roundCount()
+		 *	Return rounded and pretty value of share count.
+		 *
+		 *	@example roundCount(response.shares) // For Facebook counter
+		 */
+		var roundCount = function(number) {
+			if (number > 999 && number <= 999999) var result = number/1000 + 'k';
+			else if (number > 999999) var result = '>1M';
+			else var result = number;
+			return result;
+		};
+		/*
 		 *	Share counter > Vkontakte
-		 *	http://vk.com
+		 *	@see http://vk.com/dev
 		 */
 		$.getJSON('https://vk.com/share.php?act=count&index=1&url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
 		VK = {};
 		VK.Share = {};
 		VK.Share.count = function(index, count) {
-			if (count > 999 && count <= 999999) $('[data-counter="vk"]').text(count/1000 + 'k');
-			else if (count > 999999) $('[data-counter="vk"]').text((count/1000000).toFixed(3) + 'M');
-			else $('[data-counter="vk"]').text(count);
+			$('[data-counter="vk"]').text(roundCount(count));
 		};
 		/*
 		 *	Share counter > Facebook
-		 *	http://facebook.com
+		 *	@see https://developers.facebook.com
 		 */
-		$.getJSON('http://graph.facebook.com/?id=' + encodeURIComponent(location.href), function(response) {
+		$.getJSON('http://graph.facebook.com/?id=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
 			if ($.type(response.shares) === 'undefined') $('[data-counter="fb"]').text('0');
-			else if (response.shares > 999 && response.shares <= 999999) $('[data-counter="fb"]').text(response.shares/1000 + 'k');
-			else if (response.shares > 999999) $('[data-counter="fb"]').text((response.shares/1000000).toFixed(3) + 'M');
-			else $('[data-counter="fb"]').text(response.shares);
+			else $('[data-counter="fb"]').text(roundCount(response.shares));
 		});
 		/*
 		 *	Share counter > Odnoklassniki
-		 *	http://ok.ru
+		 *	@see https://apiok.ru
 		 */
 		$.getJSON('https://connect.ok.ru/dk?st.cmd=extLike&uid=1&ref=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
 		ODKL = {};
 		ODKL.updateCount = function(index, count) {
-			if (count > 999 && count <= 999999) $('[data-counter="ok"]').text(count/1000 + 'k');
-			else if (count > 999999) $('[data-counter="ok"]').text((count/1000000).toFixed(3) + 'M');
-			else $('[data-counter="ok"]').text(count);
+			$('[data-counter="ok"]').text(roundCount(count));
 		};
 		/*
 		 *	Share counter > Twitter
-		 *	http://twitter.com
+		 *	@see https://dev.twitter.com
 		 */
 		$.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			if (response.count > 999 && response.count <= 999999) $('[data-counter="tw"]').text(response.count/1000 + 'k');
-			else if (response.count > 999999) $('[data-counter="tw"]').text((response.count/1000000).toFixed(3) + 'M');
-			else $('[data-counter="tw"]').text(response.count);
+			$('[data-counter="tw"]').text(roundCount(response.count));
 		});
 		/*
 		 *	Share counter > Google Plus
-		 *	http://plus.google.com
+		 *	@see https://developers.google.com/+/
 		 */
 		$.ajax({
 			type: 'POST',
@@ -333,61 +339,51 @@
 				'apiVersion': 'v1'
 			}),
 			success: function(response) {
-				if (response.result.metadata.globalCounts.count > 999 && response.result.metadata.globalCounts.count <= 999999) $('[data-counter="gp"]').text(response.result.metadata.globalCounts.count/1000 + 'k');
-				else if (response.result.metadata.globalCounts.count > 999999) $('[data-counter="gp"]').text((response.result.metadata.globalCounts.count/1000000).toFixed(3) + 'M');
-				else $('[data-counter="gp"]').text(response.result.metadata.globalCounts.count);
+				$('[data-counter="gp"]').text(roundCount(response.result.metadata.globalCounts.count));
 			}
 		});
 		/*
 		 *	Share counter > My@Mail.Ru
-		 *	http://my.mail.ru
+		 *	@see http://api.mail.ru
 		 */
 		$.getJSON('http://connect.mail.ru/share_count?url_list=' + encodeURIComponent(location.href) + '&callback=1&func=?', function(response) {
-			var url_list = encodeURIComponent(location.href);
-			for (var url_list in response) {
-				if (response.hasOwnProperty(url_list)) {
-					var count = response[url_list].shares;
+			var getURL = encodeURIComponent(location.href);
+			for (var getURL in response) {
+				if (response.hasOwnProperty(getURL)) {
+					var count = response[getURL].shares;
 					break;
 				}
 			}
 			if ($.isEmptyObject(response)) $('[data-counter="mr"]').text('0');
-			else if (count > 999 && count <= 999999) $('[data-counter="mr"]').text(count/1000 + 'k');
-			else if (count > 999999) $('[data-counter="mr"]').text((count/1000000).toFixed(3) + 'M');
-			else $('[data-counter="mr"]').text(count);
+			else $('[data-counter="mr"]').text(roundCount(count));
 		});
 		/*
 		 *	Share counter > LinkedIn
-		 *	http://linkedin.com
+		 *	@see https://developer.linkedin.com
 		 */
 		$.getJSON('http://www.linkedin.com/countserv/count/share?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			if (response.count > 999 && response.count <= 999999) $('[data-counter="li"]').text(response.count/1000 + 'k');
-			else if (response.count > 999999) $('[data-counter="li"]').text((response.count/1000000).toFixed(3) + 'M');
-			else $('[data-counter="li"]').text(response.count);
+			$('[data-counter="li"]').text(roundCount(response.count));
 		});
 		/*
 		 *	Share counter > tumblr
-		 *	http://tumblr.com
+		 *	@see https://www.tumblr.com/developers
 		 */
 		$.getJSON('http://api.tumblr.com/v2/share/stats?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			if (response.response.note_count > 999 && response.response.note_count <= 999999) $('[data-counter="tm"]').text(response.response.note_count/1000 + 'k');
-			else if (response.response.note_count > 999999) $('[data-counter="tm"]').text((response.response.note_count/1000000).toFixed(3) + 'M');
-			else $('[data-counter="tm"]').text(response.response.note_count);
+			$('[data-counter="tm"]').text(roundCount(response.response.note_count));
 		});
 		/*
 		 *	Share counter > Pinterest
-		 *	http://pinterest.com
+		 *	@see https://developers.pinterest.com
 		 */
 		$.getJSON('http://api.pinterest.com/v1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			if (response.count > 999 && response.count <= 999999) $('[data-counter="pt"]').text(response.count/1000 + 'k');
-			else if (response.count > 999999) $('[data-counter="pt"]').text((response.count/1000000).toFixed(3) + 'M');
-			else $('[data-counter="pt"]').text(response.count);
-		});
+			$('[data-counter="pt"]').text(roundCount(response.count));
+		});		
 		/*
-		 *	Init goodshare link click
+		 *	Init goodshare.js click
 		 */
 		$(document).on('click', '.goodshare', function(event) {
 			event.preventDefault();
 			goodshare.init(this);
 		});
 	});	
-})(jQuery, document, window);
+})(jQuery, window, document);
