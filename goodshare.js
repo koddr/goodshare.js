@@ -1,15 +1,15 @@
 /*
- *	@author Interactive agency «Central marketing» http://centralmarketing.ru
- *	@copyright Copyright (c) 2015, Interactive agency «Central marketing»	
- *	@license http://opensource.org/licenses/MIT The MIT License (MIT)
- *	@version 3.1.1 at 24/09/2015 (17:05)
- *	
- *	goodshare.js
- *	
- *	Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs.
- *	Easy to install and configuring on any of your website!
- *	
- *	@category jQuery plugin
+ *  @author Interactive agency «Central marketing» http://centralmarketing.ru
+ *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
+ *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
+ *  @version 3.1.1 at 24/09/2015 (17:05)
+ *  
+ *  goodshare.js
+ *  
+ *  Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs.
+ *  Easy to install and configuring on any of your website!
+ *  
+ *  @category jQuery plugin
  */
 ;(function($, window, document, undefined) {
 	$(document).ready(function() {
