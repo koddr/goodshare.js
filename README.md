@@ -9,18 +9,7 @@ Useful jQuery plugin that will help your website visitors share a link on social
 ### Features
 Simple install, can work through СDN, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-In ``v3.0`` we did:
-* Add [share counters](https://github.com/enjoyiacm/goodshare.js#counters) for social networks:
-  * Вконтакте
-  * Facebook
-  * Одноклассники
-  * Мой Мир@Mail.Ru
-  * Google Plus
-  * LinkedIn
-  * Twitter 
-  * tumblr
-  * Pinterest
-* Re-bild script code & fix bugs.
+Since ``v3.0`` we added [share counters](https://github.com/enjoyiacm/goodshare.js#counters) for most popular social networks and reorganize code.
 
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
@@ -63,6 +52,7 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 * `rd` [Reddit](http://reddit.com)
 * `po` [Pocket](https://getpocket.com)
 * `sb` [Surfingbird](http://surfingbird.ru)
+* `bf` [Buffer](http://buffer.com)
 
 If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
 
@@ -191,6 +181,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="rd"] {background: #5f99cf;}
       a[data-type="po"] {background: #d3505a;}
       a[data-type="sb"] {background: #26B1F6;}
+      a[data-type="bf"] {background: #323b43;}
     </style>
   </head>
   <body>
@@ -214,8 +205,9 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="rd">Reddit</a>
       <a href="#" class="goodshare" data-type="po">Pocket</a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird</a>
+      <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
     </div>
-    <p>See goodshare.js on GitHub: https://github.com/enjoyiacm/goodshare.js</p>
+    <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.2 minify version from Google CDN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest goodshare.js minify version from jsDelivr CDN -->
