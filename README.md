@@ -151,6 +151,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `tw` [Twitter](http://twitter.com)
 * `tm` [tumblr](http://tumblr.com)
 * `pt` [Pinterest](http://pinterest.com)
+* `bf` [Buffer](http://buffer.com)
 
 ## Usage example
 
