@@ -230,6 +230,19 @@
 					+ '&title=' + encodeURIComponent(options.title);
 			},
 			/*
+			 *  Share link > StumbleUpon
+			 *  @see http://www.stumbleupon.com
+			 */
+			su: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'http://www.stumbleupon.com/submit?'
+					+ 'url='    + encodeURIComponent(options.url)
+					+ '&title=' + encodeURIComponent(options.title);
+			},
+			/*
 			 *  Share link > Pocket
 			 *  @see https://getpocket.com
 			 */
@@ -387,12 +400,21 @@
 			$('[data-counter="pt"]').text(roundCount(response.count));
 		});
 		/*
+		 *  Share counter > StumbleUpon
+		 *  @see http://help.stumbleupon.com
+		 */
+		$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
+		+ encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
+			var count = $.parseJSON(response.query.results.html.body);
+			$('[data-counter="su"]').text(roundCount(count.result.views));
+		});
+		/*
 		 *  Share counter > Pocket
 		 *  @see https://widgets.getpocket.com/v1/button?count=horizontal&url=[URL_HERE]
 		 */		
-		$.getJSON('http://anyorigin.com/dev/get?url=' + encodeURIComponent('https://widgets.getpocket.com/v1/button?count=horizontal&url=' + location.href) + '&callback=?', function(response) {
-			var count = $(response.contents).find('em#cnt').text();
-			$('[data-counter="po"]').text(roundCount(count));
+		$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
+		+ encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
+			$('[data-counter="po"]').text(roundCount(response.query.results.html.body.div.a.span.em.content));
 		});
 		/*
 		 *  Share counter > Buffer
