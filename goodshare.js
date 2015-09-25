@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.1.3 at 25/09/2015 (15:05)
+ *  @version 3.1.4 at 25/09/2015 (22:50)
  *  
  *  goodshare.js
  *  
@@ -294,7 +294,7 @@
 		 *  Function roundCount()
 		 *  Return rounded and pretty value of share count.
 		 *  
-		 *  @example roundCount(response.shares) // For Facebook counter
+		 *  @example roundCount(response.shares) // Rounded value of Facebook counter.
 		 */
 		var roundCount = function(number) {
 			if (number > 999 && number <= 999999) var result = number/1000 + 'k';
@@ -303,127 +303,160 @@
 			return result;
 		};
 		/*
+		 *  Function existCount()
+		 *  Check exist counter element.
+		 *  
+		 *  @example existCount('[data-counter="fb"]') // Checked exist Facebook counter element.
+		 */
+		var existCount = function(element) {
+			return ($(element).length > 0);
+		};
+		/*
 		 *  Share counter > Vkontakte
 		 *  @see http://vk.com/dev
 		 */
-		$.getJSON('https://vk.com/share.php?act=count&index=1&url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
-		VK = {};
-		VK.Share = {};
-		VK.Share.count = function(index, count) {
-			$('[data-counter="vk"]').text(roundCount(count));
+		if (existCount('[data-counter="vk"]')) {
+			$.getJSON('https://vk.com/share.php?act=count&index=1&url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
+			VK = {};
+			VK.Share = {};
+			VK.Share.count = function(index, count) {
+				$('[data-counter="vk"]').text(roundCount(count));
+			}
 		};
 		/*
 		 *  Share counter > Facebook
 		 *  @see https://developers.facebook.com
 		 */
-		$.getJSON('http://graph.facebook.com/?id=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			if ($.type(response.shares) === 'undefined') $('[data-counter="fb"]').text('0');
-			else $('[data-counter="fb"]').text(roundCount(response.shares));
-		});
+		if (existCount('[data-counter="fb"]')) {
+			$.getJSON('http://graph.facebook.com/?id=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				if ($.type(response.shares) === 'undefined') $('[data-counter="fb"]').text('0');
+				else $('[data-counter="fb"]').text(roundCount(response.shares));
+			})
+		};
 		/*
 		 *	Share counter > Odnoklassniki
 		 *	@see https://apiok.ru
 		 */
-		$.getJSON('https://connect.ok.ru/dk?st.cmd=extLike&uid=1&ref=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
-		ODKL = {};
-		ODKL.updateCount = function(index, count) {
-			$('[data-counter="ok"]').text(roundCount(count));
+		if (existCount('[data-counter="ok"]')) {
+			$.getJSON('https://connect.ok.ru/dk?st.cmd=extLike&uid=1&ref=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
+			ODKL = {};
+			ODKL.updateCount = function(index, count) {
+				$('[data-counter="ok"]').text(roundCount(count));
+			}
 		};
 		/*
 		 *  Share counter > Twitter
 		 *  @see https://dev.twitter.com
 		 */
-		$.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			$('[data-counter="tw"]').text(roundCount(response.count));
-		});
+		if (existCount('[data-counter="tw"]')) {
+			$.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$('[data-counter="tw"]').text(roundCount(response.count));
+			})
+		};
 		/*
 		 *  Share counter > Google Plus
 		 *  @see https://developers.google.com/+/
 		 */
-		$.ajax({
-			type: 'POST',
-			url: 'https://clients6.google.com/rpc',
-			processData: true,
-			contentType: 'application/json',
-			data: JSON.stringify({
-				'method': 'pos.plusones.get',
-				'id': location.href,
-				'params': {
-					'nolog': true,
+		if (existCount('[data-counter="gp"]')) {
+			$.ajax({
+				type: 'POST',
+				url: 'https://clients6.google.com/rpc',
+				processData: true,
+				contentType: 'application/json',
+				data: JSON.stringify({
+					'method': 'pos.plusones.get',
 					'id': location.href,
-					'source': 'widget',
-					'userId': '@viewer',
-					'groupId': '@self'
-				},
-				'jsonrpc': '2.0',
-				'key': 'p',
-				'apiVersion': 'v1'
-			}),
-			success: function(response) {
-				$('[data-counter="gp"]').text(roundCount(response.result.metadata.globalCounts.count));
-			}
-		});
+					'params': {
+						'nolog': true,
+						'id': location.href,
+						'source': 'widget',
+						'userId': '@viewer',
+						'groupId': '@self'
+					},
+					'jsonrpc': '2.0',
+					'key': 'p',
+					'apiVersion': 'v1'
+				}),
+				success: function(response) {
+					$('[data-counter="gp"]').text(roundCount(response.result.metadata.globalCounts.count));
+				}
+			})
+		};
 		/*
 		 *  Share counter > My@Mail.Ru
 		 *  @see http://api.mail.ru
 		 */
-		$.getJSON('http://connect.mail.ru/share_count?url_list=' + encodeURIComponent(location.href) + '&callback=1&func=?', function(response) {
-			var url = encodeURIComponent(location.href);
-			for (var url in response) {
-				if (response.hasOwnProperty(url)) {
-					var count = response[url].shares;
-					break;
+		if (existCount('[data-counter="mr"]')) {
+			$.getJSON('http://connect.mail.ru/share_count?url_list=' + encodeURIComponent(location.href) + '&callback=1&func=?', function(response) {
+				var url = encodeURIComponent(location.href);
+				for (var url in response) {
+					if (response.hasOwnProperty(url)) {
+						var count = response[url].shares;
+						break;
+					}
 				}
-			}
-			if ($.isEmptyObject(response)) $('[data-counter="mr"]').text('0');
-			else $('[data-counter="mr"]').text(roundCount(count));
-		});
+				if ($.isEmptyObject(response)) $('[data-counter="mr"]').text('0');
+				else $('[data-counter="mr"]').text(roundCount(count));
+			})
+		};
 		/*
 		 *  Share counter > LinkedIn
 		 *  @see https://developer.linkedin.com
 		 */
-		$.getJSON('http://www.linkedin.com/countserv/count/share?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			$('[data-counter="li"]').text(roundCount(response.count));
-		});
+		if (existCount('[data-counter="li"]')) {
+			$.getJSON('http://www.linkedin.com/countserv/count/share?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$('[data-counter="li"]').text(roundCount(response.count));
+			})
+		}
 		/*
 		 *  Share counter > tumblr
 		 *  @see https://www.tumblr.com/developers
 		 */
-		$.getJSON('http://api.tumblr.com/v2/share/stats?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			$('[data-counter="tm"]').text(roundCount(response.response.note_count));
-		});
+		if (existCount('[data-counter="tm"]')) {
+			$.getJSON('http://api.tumblr.com/v2/share/stats?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$('[data-counter="tm"]').text(roundCount(response.response.note_count));
+			})
+		};
 		/*
 		 *  Share counter > Pinterest
 		 *  @see https://developers.pinterest.com
 		 */
-		$.getJSON('http://api.pinterest.com/v1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			$('[data-counter="pt"]').text(roundCount(response.count));
-		});
+		if (existCount('[data-counter="pt"]')) {
+			$.getJSON('http://api.pinterest.com/v1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$('[data-counter="pt"]').text(roundCount(response.count));
+			})
+		};
 		/*
 		 *  Share counter > StumbleUpon
 		 *  @see http://help.stumbleupon.com
 		 */
-		$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
-		+ encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
-			var count = $.parseJSON(response.query.results.html.body);
-			if (count.result.views === undefined) $('[data-counter="su"]').text('0');
-			else $('[data-counter="su"]').text(roundCount(count.result.views));
-		});
+		if (existCount('[data-counter="su"]')) {
+			$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
+			+ encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
+				var count = $.parseJSON(response.query.results.html.body);
+				if (count.result.views === undefined) $('[data-counter="su"]').text('0');
+				else $('[data-counter="su"]').text(roundCount(count.result.views));
+			})
+		};
 		/*
 		 *  Share counter > Pocket
 		 *  @see https://widgets.getpocket.com/v1/button?count=horizontal&url=[URL_HERE]
-		 */		
-		$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
-		+ encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
-			$('[data-counter="po"]').text(roundCount(response.query.results.html.body.div.a.span.em.content));
-		});
+		 */
+		if (existCount('[data-counter="po"]')) {
+			$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
+			+ encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
+				$('[data-counter="po"]').text(roundCount(response.query.results.html.body.div.a.span.em.content));
+			})
+		};
 		/*
 		 *  Share counter > Buffer
 		 *  @see https://buffer.com/developers
 		 */
-		$.getJSON('https://api.bufferapp.com/1/links/shares.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-			$('[data-counter="bf"]').text(roundCount(response.shares));
-		});
+		if (existCount('[data-counter="bf"]')) {
+			$.getJSON('https://api.bufferapp.com/1/links/shares.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$('[data-counter="bf"]').text(roundCount(response.shares));
+			})
+		};
 		/*
 		 *  Init goodshare.js click
 		 */
