@@ -37,8 +37,8 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
 
 ```javascript
-<!-- jQuery 1.11.3 minify version and latest goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js"></script>
+<!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -223,8 +223,8 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
-    <!-- jQuery 1.11.3 minify version and latest 3.x goodshare.js minify version from jsDelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js"></script>
+    <!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1"></script>
   </body>
 </html>
 ```
