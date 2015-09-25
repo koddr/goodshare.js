@@ -50,6 +50,7 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 * `di` [Digg](http://digg.com)
 * `en` [Evernote](http://evernote.com)
 * `rd` [Reddit](http://reddit.com)
+* `su` [StumbleUpon](http://www.stumbleupon.com)
 * `po` [Pocket](https://getpocket.com)
 * `sb` [Surfingbird](http://surfingbird.ru)
 * `bf` [Buffer](http://buffer.com)
@@ -151,8 +152,11 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `tw` [Twitter](http://twitter.com)
 * `tm` [tumblr](http://tumblr.com)
 * `pt` [Pinterest](http://pinterest.com)
+* `su` [StumbleUpon](http://www.stumbleupon.com)
 * `po` [Pocket](https://getpocket.com)
 * `bf` [Buffer](http://buffer.com)
+
+**Note:** ``StumbleUpon`` and ``Pocket`` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use (associated with limit queries to Yahoo).
 
 ## Usage example
 
@@ -181,6 +185,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="di"] {background: #000000;}
       a[data-type="en"] {background: #7ac142;}
       a[data-type="rd"] {background: #5f99cf;}
+      a[data-type="su"] {background: #eb4924;}
       a[data-type="po"] {background: #d3505a;}
       a[data-type="sb"] {background: #26B1F6;}
       a[data-type="bf"] {background: #323b43;}
@@ -205,6 +210,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
       <a href="#" class="goodshare" data-type="rd">Reddit</a>
+      <a href="#" class="goodshare" data-type="su">StumbleUpon <span data-counter="su"></span></a>
       <a href="#" class="goodshare" data-type="po">Pocket <span data-counter="po"></span></a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird</a>
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
