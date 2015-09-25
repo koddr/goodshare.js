@@ -406,7 +406,8 @@
 		$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
 		+ encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
 			var count = $.parseJSON(response.query.results.html.body);
-			$('[data-counter="su"]').text(roundCount(count.result.views));
+			if (count.result.views === undefined) $('[data-counter="su"]').text('0');
+			else $('[data-counter="su"]').text(roundCount(count.result.views));
 		});
 		/*
 		 *  Share counter > Pocket
