@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.1.2 at 25/09/2015 (09:50)
+ *  @version 3.1.3 at 25/09/2015 (15:05)
  *  
  *  goodshare.js
  *  
