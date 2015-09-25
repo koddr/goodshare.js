@@ -151,6 +151,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `tw` [Twitter](http://twitter.com)
 * `tm` [tumblr](http://tumblr.com)
 * `pt` [Pinterest](http://pinterest.com)
+* `po` [Pocket](https://getpocket.com)
 * `bf` [Buffer](http://buffer.com)
 
 ## Usage example
@@ -204,7 +205,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
       <a href="#" class="goodshare" data-type="rd">Reddit</a>
-      <a href="#" class="goodshare" data-type="po">Pocket</a>
+      <a href="#" class="goodshare" data-type="po">Pocket <span data-counter="po"></span></a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird</a>
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
     </div>
