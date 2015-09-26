@@ -329,7 +329,7 @@
 		 */
 		if (existCount('[data-counter="fb"]')) {
 			$.getJSON('http://graph.facebook.com/?id=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-				if ($.type(response.shares) === 'undefined') $('[data-counter="fb"]').text('0');
+				if (response.shares === undefined) $('[data-counter="fb"]').text('0');
 				else $('[data-counter="fb"]').text(roundCount(response.shares));
 			})
 		};
