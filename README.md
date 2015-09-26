@@ -159,11 +159,16 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `tw` [Twitter](http://twitter.com)
 * `tm` [tumblr](http://tumblr.com)
 * `pt` [Pinterest](http://pinterest.com)
+* `rd` [Reddit](http://reddit.com)
 * `su` [StumbleUpon](http://www.stumbleupon.com)
+* `po` [Pocket](https://getpocket.com)
+* `sb` [Surfingbird](http://surfingbird.ru)
 * `po` [Pocket](https://getpocket.com)
 * `bf` [Buffer](http://buffer.com)
 
-**Note:** ``StumbleUpon`` and ``Pocket`` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use (associated with limit queries to Yahoo).
+**Note:** ``StumbleUpon`` and ``Pocket`` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
+
+**Note:** ``Surfingbird`` counter use [Any Origin](http://anyorigin.com/). It may impose some restrictions on use requests to their server (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
 
 ## Usage example
 
@@ -216,10 +221,10 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="pt">Pinterest <span data-counter="pt"></span></a> 
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
-      <a href="#" class="goodshare" data-type="rd">Reddit</a>
+      <a href="#" class="goodshare" data-type="rd">Reddit <span data-counter="rd"></span></a>
       <a href="#" class="goodshare" data-type="su">StumbleUpon <span data-counter="su"></span></a>
       <a href="#" class="goodshare" data-type="po">Pocket <span data-counter="po"></span></a>
-      <a href="#" class="goodshare" data-type="sb">Surfingbird</a>
+      <a href="#" class="goodshare" data-type="sb">Surfingbird <span data-counter="sb"></span></a>
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
