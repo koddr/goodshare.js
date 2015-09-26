@@ -174,6 +174,8 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 
 This example shows one of decoration options with all supported social networks.
 
+![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github.jpg)
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
