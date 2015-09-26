@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.1.4 at 25/09/2015 (22:50)
+ *  @version 3.1.5 at 26/09/2015 (13:30)
  *  
  *  goodshare.js
  *  
@@ -427,6 +427,17 @@
 			})
 		};
 		/*
+		 *  Share counter > Reddit
+		 *  @see https://www.reddit.com/dev/api
+		 */
+		if (existCount('[data-counter="rd"]')) {
+			$.getJSON('https://www.reddit.com/api/info.json?url=' + encodeURIComponent(location.href) + '&jsonp=?', function(response) {
+				var count = response.data.children;
+				if (count.length === 0) $('[data-counter="rd"]').text('0');
+				else $('[data-counter="rd"]').text(roundCount(count[0].data.score));
+			})
+		};
+		/*
 		 *  Share counter > StumbleUpon
 		 *  @see http://help.stumbleupon.com
 		 */
@@ -446,6 +457,16 @@
 			$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
 			+ encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
 				$('[data-counter="po"]').text(roundCount(response.query.results.html.body.div.a.span.em.content));
+			})
+		};
+		/*
+		 *  Share counter > Surfingbird
+		 *  @see http://surfingbird.ru/button?url=[URL_HERE]
+		 */
+		if (existCount('[data-counter="sb"]')) {
+			$.getJSON('http://anyorigin.com/dev/get?url=' + encodeURIComponent('http://surfingbird.ru/button?url=' + location.href) + '&callback=?', function(response) {
+				var count = $(response.contents).find('span.stats-num').text();
+				$('[data-counter="sb"]').text(roundCount(count));
 			})
 		};
 		/*
