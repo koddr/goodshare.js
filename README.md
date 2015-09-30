@@ -230,7 +230,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="po">Pocket <span data-counter="po"></span></a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird <span data-counter="sb"></span></a>
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
-      <a href="#" class="goodshare" data-type="ra">Readability</span></a>
+      <a href="#" class="goodshare" data-type="ra">Readability</a>
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
