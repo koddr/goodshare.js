@@ -284,6 +284,17 @@
 					+ '&text=' + encodeURIComponent(options.title);
 			},
 			/*
+			 *  Share link > Readability
+			 *  @see http://www.readability.com
+			 */
+			ra: function(_options) {
+				var options = $.extend({
+					url:    location.href
+				}, _options);
+				return 'http://www.readability.com/save?'
+					+ 'url='   + encodeURIComponent(options.url);
+			},
+			/*
 			 *  Popup window
 			 */		    
 			popup: function(url) {
