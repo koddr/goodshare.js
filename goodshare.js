@@ -305,7 +305,7 @@
 		 *  Function getCount()
 		 *  Set count to all elements with data-counter attribute.
 		 *  
-		 *  @example refreshCount() // Get all counters
+		 *  @example getCount() // Get all counters
 		 */
 		var getCount = function() {
 			/*
