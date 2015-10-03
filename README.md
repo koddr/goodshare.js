@@ -13,9 +13,7 @@ Simple install, can work through СDN, extensive documentation, developer suppor
 
 At ver. ``3.0`` we added [share counters](https://github.com/enjoyiacm/goodshare.js#counters) for most popular social networks and reorganize code.
 
-At ver. ``3.1.7`` we added external function ``getCount()``, which updates social share counters from your script. This can be useful if you create an element button in document after loading DOM.
-
-How to use: place ``$(document).getCount();`` in your script.
+At ver. ``3.1.7`` we added an external function ``getCount()`` that updates counter from any place of your script. This can be useful if you create share buttons when the DOM is fully loaded. [Small demo can be found on JSFiddle](https://jsfiddle.net/730xnkzr/).
 
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
