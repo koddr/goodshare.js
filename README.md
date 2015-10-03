@@ -164,7 +164,6 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `su` [StumbleUpon](http://www.stumbleupon.com)
 * `po` [Pocket](https://getpocket.com)
 * `sb` [Surfingbird](http://surfingbird.ru)
-* `po` [Pocket](https://getpocket.com)
 * `bf` [Buffer](http://buffer.com)
 
 **Note:** ``StumbleUpon`` and ``Pocket`` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
