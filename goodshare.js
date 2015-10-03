@@ -305,9 +305,9 @@
 		 *  Function getCount()
 		 *  Set count to all elements with data-counter attribute.
 		 *  
-		 *  @example getCount() // Get all counters
+		 *  @example $(document).getCount(); // Get all counters
 		 */
-		var getCount = function() {
+		$.fn.getCount = function() {
 			/*
 			 *  Function roundCount()
 			 *  Return rounded and pretty value of share count.
@@ -507,6 +507,6 @@
 		/*
 		 *  Init share counters.
 		 */
-		getCount();
+		$(document).getCount();
 	});	
 })(jQuery, window, document);
