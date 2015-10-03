@@ -31,14 +31,14 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 
 ```javascript
 <!-- Latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.1/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.1.6/goodshare.min.js"></script>
 ```
 
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
 
 ```javascript
 <!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1"></script>
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1.6"></script>
 ```
 
 ## List of supported social networks and microblogs
