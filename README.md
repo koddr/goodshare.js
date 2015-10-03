@@ -9,9 +9,13 @@ Useful jQuery plugin that will help your website visitors share a link on social
 ### Features
 Simple install, can work through СDN, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
+#### Changes
+
 At ver. ``3.0`` we added [share counters](https://github.com/enjoyiacm/goodshare.js#counters) for most popular social networks and reorganize code.
 
-At ver. ``3.1.7`` we added external function ``getCount()``, which updates social share counters from your script. This can be useful if you create an element button in document after loading DOM. How to use: place ``$(document).getCount();`` in your script.
+At ver. ``3.1.7`` we added external function ``getCount()``, which updates social share counters from your script. This can be useful if you create an element button in document after loading DOM.
+
+How to use: place ``$(document).getCount();`` in your script.
 
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
