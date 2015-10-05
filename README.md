@@ -35,7 +35,7 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 
 ```javascript
 <!-- Latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.1.7/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.1.8/goodshare.min.js"></script>
 ```
 
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
@@ -61,10 +61,12 @@ For more speed and profit, use «all in one» solution from [jsDelivr](http://ww
 * `di` [Digg](http://digg.com)
 * `en` [Evernote](http://evernote.com)
 * `rd` [Reddit](http://reddit.com)
+* `de` [Delicious](http://www.delicious.com)
 * `su` [StumbleUpon](http://www.stumbleupon.com)
 * `po` [Pocket](https://getpocket.com)
 * `sb` [Surfingbird](http://surfingbird.ru)
 * `bf` [Buffer](http://buffer.com)
+* `ip` [Instapaper](http://www.instapaper.com)
 * `ra` [Readability](http://www.readability.com)
 
 If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
@@ -203,10 +205,12 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="di"] {background: #000000;}
       a[data-type="en"] {background: #7ac142;}
       a[data-type="rd"] {background: #5f99cf;}
+      a[data-type="de"] {background: #3399ff;}
       a[data-type="su"] {background: #eb4924;}
       a[data-type="po"] {background: #d3505a;}
       a[data-type="sb"] {background: #26B1F6;}
       a[data-type="bf"] {background: #323b43;}
+      a[data-type="ip"] {background: #428bca;}
       a[data-type="ra"] {background: #990000;}
     </style>
   </head>
@@ -229,15 +233,17 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="di">Digg</a> 
       <a href="#" class="goodshare" data-type="en">Evernote</a> 
       <a href="#" class="goodshare" data-type="rd">Reddit <span data-counter="rd"></span></a>
+      <a href="#" class="goodshare" data-type="de">Delicious</a>
       <a href="#" class="goodshare" data-type="su">StumbleUpon <span data-counter="su"></span></a>
       <a href="#" class="goodshare" data-type="po">Pocket <span data-counter="po"></span></a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird <span data-counter="sb"></span></a>
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
+      <a href="#" class="goodshare" data-type="ip">Instapaper</a>
       <a href="#" class="goodshare" data-type="ra">Readability</a>
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1.7"></script>
+    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1.8"></script>
   </body>
 </html>
 ```
