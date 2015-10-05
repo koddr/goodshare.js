@@ -180,7 +180,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 
 This example shows one of decoration options with all supported social networks.
 
-![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver2.jpg)
+![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver3.png)
 
 ```html
 <!DOCTYPE html>
