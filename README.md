@@ -42,7 +42,7 @@ For more speed and profit, use «all in one» solution from [jsDelivr](http://ww
 
 ```javascript
 <!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1.7"></script>
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1.8"></script>
 ```
 
 ## List of supported social networks and microblogs
