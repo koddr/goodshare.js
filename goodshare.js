@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.1.7 at 03/10/2015 (23:00)
+ *  @version 3.1.8 at 05/10/2015 (12:50)
  *  
  *  goodshare.js
  *  
@@ -187,7 +187,7 @@
 				return 'https://www.pinterest.com/pin/create/button/?'
 					+ 'url='          + encodeURIComponent(options.url)
 					+ '&description=' + encodeURIComponent(options.title);
-			},
+			},			
 			/*
 			 *  Share link > Evernote
 			 *  @see http://www.evernote.com
@@ -226,6 +226,19 @@
 					title:  document.title
 				}, _options);
 				return 'http://www.reddit.com/submit?'
+					+ 'url='    + encodeURIComponent(options.url)
+					+ '&title=' + encodeURIComponent(options.title);
+			},
+			/*
+			 *  Share link > Delicious
+			 *  @see https://delicious.com
+			 */
+			de: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'https://delicious.com/save?'
 					+ 'url='    + encodeURIComponent(options.url)
 					+ '&title=' + encodeURIComponent(options.title);
 			},
@@ -282,6 +295,19 @@
 				return 'https://buffer.com/add?'
 					+ 'url='   + encodeURIComponent(options.url)
 					+ '&text=' + encodeURIComponent(options.title);
+			},
+			/*
+			 *  Share link > Instapaper
+			 *  @see https://www.instapaper.com
+			 */
+			ip: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'https://www.instapaper.com/edit?'
+					+ 'url='    + encodeURIComponent(options.url)
+					+ '&title=' + encodeURIComponent(options.title);
 			},
 			/*
 			 *  Share link > Readability
