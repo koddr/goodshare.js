@@ -157,10 +157,11 @@
 					title:  document.title,
 					text:   ''
 				}, _options);
-				return 'http://www.tumblr.com/share/link?'
-					+ 'url='          + encodeURIComponent(options.url)
-					+ '&name='        + encodeURIComponent(options.title)
-					+ '&description=' + encodeURIComponent(options.text);
+				return 'https://www.tumblr.com/widgets/share/tool?'
+					+ 'canonicalUrl=' + encodeURIComponent(options.url)
+					+ '&title='       + encodeURIComponent(options.title)
+					+ '&caption='     + encodeURIComponent(options.text)
+					+ '&posttype=link';
 			},
 			/*
 			 *  Share link > Blogger
