@@ -103,7 +103,7 @@
 				}, _options);
 				return 'http://twitter.com/share?'
 					+ 'url='   + encodeURIComponent(options.url)
-					+ '&text=' + encodeURIComponent(options.title);
+					+ '&text=' + encodeURIComponent(options.text);
 			},
 			/*
 			 *  Share link > Google Plus
@@ -145,6 +145,7 @@
 				return 'http://www.linkedin.com/shareArticle?'
 					+ 'url='        + encodeURIComponent(options.url)
 					+ '&text='      + encodeURIComponent(options.title)
+					+ '&summary='	+ encodeURIComponent(options.text)
 					+ '&mini=true';
 			},
 			/*
