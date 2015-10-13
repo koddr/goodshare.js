@@ -140,11 +140,13 @@
 			li: function(_options) {
 				var options = $.extend({
 					url:    location.href,
-					title:  document.title
+					title:  document.title,
+					text:   $('meta[property="og:description"]').attr('content')
 				}, _options);
 				return 'http://www.linkedin.com/shareArticle?'
 					+ 'url='        + encodeURIComponent(options.url)
 					+ '&text='      + encodeURIComponent(options.title)
+					+ '&summary='	+ encodeURIComponent(options.text)
 					+ '&mini=true';
 			},
 			/*
