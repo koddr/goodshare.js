@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.1.8 at 05/10/2015 (12:50)
+ *  @version 3.1.9 at 16/10/2015 (0:30)
  *  
  *  goodshare.js
  *  
@@ -44,8 +44,8 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:	'',
-					image:	''
+					text:	$('meta[property="og:description"]').attr('content'),
+					image:	$('meta[property="og:image"]').attr('content')
 				}, _options);
 				return 'http://vk.com/share.php?'
 					+ 'url='          + encodeURIComponent(options.url)
@@ -86,7 +86,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   ''
+					text:   $('meta[property="og:description"]').attr('content')
 				}, _options);
 				return 'http://livejournal.com/update.bml?'
 					+ 'subject=' + encodeURIComponent(options.title)
@@ -124,8 +124,8 @@
 				var options = $.extend({
 					url:	location.href,
 					title:	document.title,
-					image:	'',
-					text:	''
+					text:	$('meta[property="og:description"]').attr('content'),
+					image:	$('meta[property="og:image"]').attr('content')
 				}, _options);
 				return 'http://connect.mail.ru/share?'
 					+ 'url='          + encodeURIComponent(options.url)
@@ -157,12 +157,12 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   ''
+					text:   $('meta[property="og:description"]').attr('content')
 				}, _options);
 				return 'https://www.tumblr.com/widgets/share/tool?'
-					+ 'canonicalUrl=' + encodeURIComponent(options.url)
-					+ '&title='       + encodeURIComponent(options.title)
-					+ '&caption='     + encodeURIComponent(options.text)
+					+ 'canonicalUrl='   + encodeURIComponent(options.url)
+					+ '&title='         + encodeURIComponent(options.title)
+					+ '&caption='       + encodeURIComponent(options.text)
 					+ '&posttype=link';
 			},
 			/*
@@ -199,7 +199,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   ''
+					text:   $('meta[property="og:description"]').attr('content')
 				}, _options);
 				return 'https://www.evernote.com/clip.action?'
 					+ 'url='    + encodeURIComponent(options.url)
@@ -279,7 +279,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   ''
+					text:   $('meta[property="og:description"]').attr('content')
 				}, _options);
 				return 'http://surfingbird.ru/share?'
 					+ 'url='          + encodeURIComponent(options.url)
@@ -364,10 +364,11 @@
 			 */
 			if (existCount('[data-counter="vk"]')) {
 				$.getJSON('https://vk.com/share.php?act=count&index=1&url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
-				VK = {};
-				VK.Share = {};
-				VK.Share.count = function(index, count) {
-					$('[data-counter="vk"]').text(roundCount(count));
+				if (!window.VK) VK = {};
+				VK.Share = {
+					count: function(index, count) {
+						$('[data-counter="vk"]').text(roundCount(count));
+					}
 				};
 			};
 			/*
@@ -386,7 +387,7 @@
 			 */
 			if (existCount('[data-counter="ok"]')) {
 				$.getJSON('https://connect.ok.ru/dk?st.cmd=extLike&uid=1&ref=' + encodeURIComponent(location.href) + '&callback=?', function(response) {});
-				ODKL = {};
+				if (!window.ODKL) ODKL = {};
 				ODKL.updateCount = function(index, count) {
 					$('[data-counter="ok"]').text(roundCount(count));
 				};
