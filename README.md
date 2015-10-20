@@ -35,14 +35,14 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 
 ```javascript
 <!-- Latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.1.9/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.0/goodshare.min.js"></script>
 ```
 
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
 
 ```javascript
-<!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1.9"></script>
+<!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.0"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -68,6 +68,7 @@ For more speed and profit, use «all in one» solution from [jsDelivr](http://ww
 * `bf` [Buffer](http://buffer.com)
 * `ip` [Instapaper](http://www.instapaper.com)
 * `ra` [Readability](http://www.readability.com)
+* `xi` [Xing](http://www.xing.com)
 
 If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
 
@@ -171,16 +172,15 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `po` [Pocket](https://getpocket.com)
 * `sb` [Surfingbird](http://surfingbird.ru)
 * `bf` [Buffer](http://buffer.com)
+* `xi` [Xing](http://www.xing.com)
 
-**Note:** ``StumbleUpon`` and ``Pocket`` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
-
-**Note:** ``Surfingbird`` counter use [Any Origin](http://anyorigin.com/). It may impose some restrictions on use requests to their server (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
+**Note:** ``StumbleUpon``, ``Pocket`` and ``Xing`` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
 
 ## Usage example
 
 This example shows one of decoration options with all supported social networks.
 
-![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver3.png)
+![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver4.png)
 
 ```html
 <!DOCTYPE html>
@@ -212,6 +212,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="bf"] {background: #323b43;}
       a[data-type="ip"] {background: #428bca;}
       a[data-type="ra"] {background: #990000;}
+      a[data-type="xi"] {background: #cfdc00;}
     </style>
   </head>
   <body>
@@ -240,10 +241,11 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
       <a href="#" class="goodshare" data-type="ip">Instapaper</a>
       <a href="#" class="goodshare" data-type="ra">Readability</a>
+      <a href="#" class="goodshare" data-type="xi">Xing</a>
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.1.9"></script>
+    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.0"></script>
   </body>
 </html>
 ```
