@@ -25,7 +25,7 @@ Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master
 Add to your project template (or something else):
 
 ```javascript
-<!-- jQuery 1.11.2 minify version from Google CDN JS -->
+<!-- jQuery 1.11.3 minify version from Google CDN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <!-- goodshare.js minify version -->
@@ -34,7 +34,7 @@ Add to your project template (or something else):
 If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.jsdelivr.com) project and [this issue](https://github.com/enjoyiacm/goodshare.js/issues/2)), use this:
 
 ```javascript
-<!-- Latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
+<!-- Latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
 <script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.0/goodshare.min.js"></script>
 ```
 
@@ -189,7 +189,7 @@ This example shows one of decoration options with all supported social networks.
     <meta charset="utf-8" />
     <title>My page with goodshare.js</title>
     <style>
-	  html, body {font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; text-align: center;}
+      html, body {font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; text-align: center;}
       a {color: #ffffff; display: inline-block; width: 150px; padding: 10px; margin: 2px auto; cursor: pointer;}
       a[data-type="vk"] {background: #45668e;}
       a[data-type="fb"] {background: #3b5998;}
@@ -244,7 +244,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="xi">Xing</a>
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
-    <!-- jQuery 1.11.3 minify version and latest 3.1.x goodshare.js minify version from jsDelivr CDN -->
+    <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
     <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.0"></script>
   </body>
 </html>
