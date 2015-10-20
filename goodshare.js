@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.1.9 at 16/10/2015 (0:30)
+ *  @version 3.2.0 at 20/10/2015 (18:55)
  *  
  *  goodshare.js
  *  
@@ -323,6 +323,17 @@
 				return 'http://www.readability.com/save?'
 					+ 'url='   + encodeURIComponent(options.url);
 			},
+      /*
+			 *  Share link > Xing
+			 *  @see https://www.xing.com
+			 */
+			xi: function(_options) {
+				var options = $.extend({
+					url:    location.href
+				}, _options);
+				return 'https://www.xing.com/spi/shares/new?'
+					+ 'url='  + encodeURIComponent(options.url);
+			},
 			/*
 			 *  Popup window
 			 */		    
@@ -508,22 +519,22 @@
 				});
 			};
 			/*
-			 *  Share counter > Surfingbird
-			 *  @see http://surfingbird.ru/button?url=[URL_HERE]
-			 */
-			if (existCount('[data-counter="sb"]')) {
-				$.getJSON('http://anyorigin.com/dev/get?url=' + encodeURIComponent('http://surfingbird.ru/button?url=' + location.href) + '&callback=?', function(response) {
-					var count = $(response.contents).find('span.stats-num').text();
-					$('[data-counter="sb"]').text(roundCount(count));
-				});
-			};
-			/*
 			 *  Share counter > Buffer
 			 *  @see https://buffer.com/developers
 			 */
 			if (existCount('[data-counter="bf"]')) {
 				$.getJSON('https://api.bufferapp.com/1/links/shares.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
 					$('[data-counter="bf"]').text(roundCount(response.shares));
+				});
+			};
+			/*
+			 *  Share counter > Xing
+			 *  @see https://www.xing-share.com/app/share?op=get_share_button;counter=top;url=[URL_HERE]
+			 */
+			if (existCount('[data-counter="xi"]')) {
+				$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
+				+ encodeURIComponent('select * from html where url="https://www.xing-share.com/app/share?op=get_share_button;counter=top;url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
+					$('[data-counter="xi"]').text(roundCount(response.query.results.html.body.div[0].div[0].span.content));
 				});
 			};
 		};
@@ -538,5 +549,5 @@
 		 *  Init share counters.
 		 */
 		$(document).getCount();
-	});	
+	});
 })(jQuery, window, document);
