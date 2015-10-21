@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.2.0 at 20/10/2015 (18:55)
+ *  @version 3.2.1 at 21/10/2015 (19:35)
  *  
  *  goodshare.js
  *  
@@ -185,10 +185,12 @@
 			pt: function(_options) {
 				var options = $.extend({
 					url:    location.href,
-					title:  document.title
+					title:  document.title,
+					image:  $('meta[property="og:image"]').attr('content')
 				}, _options);
 				return 'https://www.pinterest.com/pin/create/button/?'
 					+ 'url='          + encodeURIComponent(options.url)
+					+ '&media='       + encodeURIComponent(options.image)
 					+ '&description=' + encodeURIComponent(options.title);
 			},			
 			/*
@@ -323,7 +325,7 @@
 				return 'http://www.readability.com/save?'
 					+ 'url='   + encodeURIComponent(options.url);
 			},
-      /*
+			/*
 			 *  Share link > Xing
 			 *  @see https://www.xing.com
 			 */
@@ -549,5 +551,5 @@
 		 *  Init share counters.
 		 */
 		$(document).getCount();
-	});
+	});	
 })(jQuery, window, document);
