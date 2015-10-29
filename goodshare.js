@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.2.1 at 21/10/2015 (19:35)
+ *  @version 3.2.2 at 29/10/2015 (22:35)
  *  
  *  goodshare.js
  *  
@@ -335,6 +335,19 @@
 				}, _options);
 				return 'https://www.xing.com/spi/shares/new?'
 					+ 'url='  + encodeURIComponent(options.url);
+			},
+			/*
+			 *  Share link > Viber
+			 *  @see http://www.viber.com/ru/developers/share_on_viber
+			 *  @category Mobile or desktop Viber client
+			 */
+			vi: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'viber://forward?'
+					+ 'text='  + encodeURIComponent(options.title + ' ' + options.url);
 			},
 			/*
 			 *  Popup window
