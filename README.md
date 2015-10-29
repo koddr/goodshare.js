@@ -15,6 +15,8 @@ At ver. ``3.0`` we added [share counters](https://github.com/enjoyiacm/goodshare
 
 At ver. ``3.1.7`` we added an external function ``getCount()`` that updates counter from any place of your script. This can be useful if you create share buttons when the DOM is fully loaded. [Small demo can be found on JSFiddle](https://jsfiddle.net/730xnkzr/#run).
 
+At ver. ``3.2.2`` we added special share buttons to mobile apps or desktop clients (like Viber).
+
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
 
@@ -35,14 +37,14 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 
 ```javascript
 <!-- Latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.1/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.2/goodshare.min.js"></script>
 ```
 
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
 
 ```javascript
 <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.1"></script>
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.2"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -71,6 +73,10 @@ For more speed and profit, use «all in one» solution from [jsDelivr](http://ww
 * `xi` [Xing](http://www.xing.com)
 
 If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
+
+### For mobile apps or desktop clients only
+
+* `vi` [Viber](http://www.viber.com)
 
 ## Description
 
@@ -180,7 +186,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 
 This example shows one of decoration options with all supported social networks.
 
-![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver4.png)
+![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver5.png)
 
 ```html
 <!DOCTYPE html>
@@ -213,6 +219,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="ip"] {background: #428bca;}
       a[data-type="ra"] {background: #990000;}
       a[data-type="xi"] {background: #cfdc00;}
+      a[data-type="vi"] {background: #8F5DB7;}
     </style>
   </head>
   <body>
@@ -241,11 +248,12 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
       <a href="#" class="goodshare" data-type="ip">Instapaper</a>
       <a href="#" class="goodshare" data-type="ra">Readability</a>
-      <a href="#" class="goodshare" data-type="xi">Xing</a>
+      <a href="#" class="goodshare" data-type="xi">Xing <span data-counter="xi"></span></a>
+      <a href="#" class="goodshare" data-type="vi">Viber</span></a>
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.1"></script>
+    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.2"></script>
   </body>
 </html>
 ```
