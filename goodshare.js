@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.2.2 at 29/10/2015 (22:35)
+ *  @version 3.2.3 at 30/10/2015 (13:45)
  *  
  *  goodshare.js
  *  
@@ -337,9 +337,22 @@
 					+ 'url='  + encodeURIComponent(options.url);
 			},
 			/*
-			 *  Share link > Viber
+			 *  Mobile > Share link > Telegram
+			 *  @see https://telegram.org/faq
+			 *  @category iOS, Android devices
+			 */
+			tg: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'tg://msg?'
+					+ 'text='  + encodeURIComponent(options.title + ' ' + options.url);
+			},
+			/*
+			 *  Mobile > Share link > Viber
 			 *  @see http://www.viber.com/ru/developers/share_on_viber
-			 *  @category Mobile or desktop Viber client
+			 *  @category iOS, Android devices
 			 */
 			vi: function(_options) {
 				var options = $.extend({
@@ -348,6 +361,32 @@
 				}, _options);
 				return 'viber://forward?'
 					+ 'text='  + encodeURIComponent(options.title + ' ' + options.url);
+			},
+			/*
+			 *  Mobile > Share link > WhatsApp
+			 *  @see http://whatsapp-sharing.com
+			 *  @category iOS, Android devices
+			 */
+			wa: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'whatsapp://send?'
+					+ 'text='  + encodeURIComponent(options.title + ' ' + options.url);
+			},
+			/*
+			 *  Mobile > Share link > LINE
+			 *  @see https://media.line.me/howto/en/
+			 *  @category iOS, Android devices
+			 */
+			ln: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'line://msg/text/'
+					+ encodeURIComponent(options.title + ' ' + options.url);
 			},
 			/*
 			 *  Popup window
