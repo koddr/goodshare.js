@@ -15,7 +15,7 @@ At ver. ``3.0`` we added [share counters](https://github.com/enjoyiacm/goodshare
 
 At ver. ``3.1.7`` we added an external function ``getCount()`` that updates counter from any place of your script. This can be useful if you create share buttons when the DOM is fully loaded. [Small demo can be found on JSFiddle](https://jsfiddle.net/730xnkzr/#run).
 
-At ver. ``3.2.2`` we added special share buttons for mobile apps or desktop clients only (like Viber).
+At ver. ``3.2.2`` we added special share buttons for mobile Apps, like Telegram or Viber.
 
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
@@ -37,14 +37,14 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 
 ```javascript
 <!-- Latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.2/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.3/goodshare.min.js"></script>
 ```
 
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
 
 ```javascript
 <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.2"></script>
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.3"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -74,9 +74,12 @@ For more speed and profit, use «all in one» solution from [jsDelivr](http://ww
 
 If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
 
-### For mobile apps or desktop clients only
+### For iOS/Android mobile devices
 
+* `tg` [Telegram](https://telegram.org)
 * `vi` [Viber](http://www.viber.com)
+* `wa` [WhatsApp](http://www.whatsapp.com)
+* `ln` [LINE](http://line.me/en/)
 
 ## Description
 
@@ -186,7 +189,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 
 This example shows one of decoration options with all supported social networks.
 
-![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver5.png)
+![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver6.png)
 
 ```html
 <!DOCTYPE html>
@@ -219,7 +222,10 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="ip"] {background: #428bca;}
       a[data-type="ra"] {background: #990000;}
       a[data-type="xi"] {background: #cfdc00;}
-      a[data-type="vi"] {background: #8F5DB7;}
+      a[data-type="tg"] {background: #0088cc;}
+      a[data-type="vi"] {background: #8f5db7;}
+      a[data-type="wa"] {background: #43d854;}
+      a[data-type="ln"] {background: #00c300;}
     </style>
   </head>
   <body>
@@ -249,11 +255,18 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="ip">Instapaper</a>
       <a href="#" class="goodshare" data-type="ra">Readability</a>
       <a href="#" class="goodshare" data-type="xi">Xing <span data-counter="xi"></span></a>
+    </div>
+    </div>
+    <div>
+      <h2>For iOS/Android mobile devices</h2>
+      <a href="#" class="goodshare" data-type="tg">Telegram</span></a>
       <a href="#" class="goodshare" data-type="vi">Viber</span></a>
+      <a href="#" class="goodshare" data-type="wa">WhatsApp</span></a>
+      <a href="#" class="goodshare" data-type="ln">LINE</span></a>
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.2"></script>
+    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.3"></script>
   </body>
 </html>
 ```
