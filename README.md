@@ -256,7 +256,6 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="ra">Readability</a>
       <a href="#" class="goodshare" data-type="xi">Xing <span data-counter="xi"></span></a>
     </div>
-    </div>
     <div>
       <h2>For iOS/Android mobile devices</h2>
       <a href="#" class="goodshare" data-type="tg">Telegram</span></a>
