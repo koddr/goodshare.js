@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.2.3 at 30/10/2015 (13:45)
+ *  @version 3.2.3 at 01/11/2015 (12:15)
  *  
  *  goodshare.js
  *  
@@ -13,6 +13,14 @@
  */
 ;(function($, window, document, undefined) {
 	$(document).ready(function() {
+		/*
+		*  Variables
+		*/
+		var metaOGDescription = ($('meta[property="og:description"]').attr('content')) ? $('meta[property="og:description"]').attr('content') : '';
+		var metaOGImage = ($('meta[property="og:image"]').attr('content')) ? $('meta[property="og:image"]').attr('content') : '';
+		/*
+		*  Main function
+		*/
 		goodshare = {
 			init: function(_element, _options) {
 				/*
@@ -28,8 +36,8 @@
 					type:	'vk',
 					url:	location.href,
 					title:	document.title,
-					text:	$('meta[property="og:description"]').attr('content'),
-					image:	$('meta[property="og:image"]').attr('content')
+					text:   metaOGDescription,
+					image:	metaOGImage
 				}, $(_element).data(), _options);
 				/*
 				 *  Open popup
@@ -44,8 +52,8 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:	$('meta[property="og:description"]').attr('content'),
-					image:	$('meta[property="og:image"]').attr('content')
+					text:   metaOGDescription,
+					image:	metaOGImage
 				}, _options);
 				return 'http://vk.com/share.php?'
 					+ 'url='          + encodeURIComponent(options.url)
@@ -86,7 +94,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   $('meta[property="og:description"]').attr('content')
+					text:   metaOGDescription
 				}, _options);
 				return 'http://livejournal.com/update.bml?'
 					+ 'subject=' + encodeURIComponent(options.title)
@@ -98,7 +106,7 @@
 			 */
 			tw: function(_options) {
 				var options = $.extend({
-					url:	location.href,
+					url:    location.href,
 					title:  document.title
 				}, _options);
 				return 'http://twitter.com/share?'
@@ -122,10 +130,10 @@
 			 */
 			mr: function(_options) {
 				var options = $.extend({
-					url:	location.href,
-					title:	document.title,
-					text:	$('meta[property="og:description"]').attr('content'),
-					image:	$('meta[property="og:image"]').attr('content')
+					url:    location.href,
+					title:  document.title,
+					text:	  metaOGDescription,
+					image:	metaOGImage
 				}, _options);
 				return 'http://connect.mail.ru/share?'
 					+ 'url='          + encodeURIComponent(options.url)
@@ -141,7 +149,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   $('meta[property="og:description"]').attr('content')
+					text:   metaOGDescription
 				}, _options);
 				return 'http://www.linkedin.com/shareArticle?'
 					+ 'url='        + encodeURIComponent(options.url)
@@ -157,7 +165,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   $('meta[property="og:description"]').attr('content')
+					text:   metaOGDescription
 				}, _options);
 				return 'https://www.tumblr.com/widgets/share/tool?'
 					+ 'canonicalUrl='   + encodeURIComponent(options.url)
@@ -201,7 +209,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   $('meta[property="og:description"]').attr('content')
+					text:   metaOGDescription
 				}, _options);
 				return 'https://www.evernote.com/clip.action?'
 					+ 'url='    + encodeURIComponent(options.url)
@@ -281,7 +289,7 @@
 				var options = $.extend({
 					url:    location.href,
 					title:  document.title,
-					text:   $('meta[property="og:description"]').attr('content')
+					text:   metaOGDescription
 				}, _options);
 				return 'http://surfingbird.ru/share?'
 					+ 'url='          + encodeURIComponent(options.url)
@@ -320,7 +328,7 @@
 			 */
 			ra: function(_options) {
 				var options = $.extend({
-					url:    location.href
+					url:  location.href
 				}, _options);
 				return 'http://www.readability.com/save?'
 					+ 'url='   + encodeURIComponent(options.url);
@@ -331,7 +339,7 @@
 			 */
 			xi: function(_options) {
 				var options = $.extend({
-					url:    location.href
+					url:  location.href
 				}, _options);
 				return 'https://www.xing.com/spi/shares/new?'
 					+ 'url='  + encodeURIComponent(options.url);
