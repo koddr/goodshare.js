@@ -357,7 +357,7 @@
 				}, _options);
 				return 'https://wordpress.com/wp-admin/press-this.php?'
 					+ 'u='   + encodeURIComponent(options.url)
-					+ '&t='   + encodeURIComponent(options.title)
+					+ '&t='  + encodeURIComponent(options.title)
 					+ '&s='  + encodeURIComponent(options.text)
 					+ '&i='  + encodeURIComponent(options.image)
 					+ '&v=2'
