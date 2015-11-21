@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.2.3 at 01/11/2015 (12:15)
+ *  @version 3.2.4 at 21/11/2015 (14:35)
  *  
  *  goodshare.js
  *  
@@ -345,6 +345,24 @@
 					+ 'url='  + encodeURIComponent(options.url);
 			},
 			/*
+			 *  Share link > WordPress
+			 *  @see https://www.wordpress.com
+			 */
+			wp: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title,
+					text:   metaOGDescription,
+					image:  metaOGImage
+				}, _options);
+				return 'https://wordpress.com/wp-admin/press-this.php?'
+					+ 'u='   + encodeURIComponent(options.url)
+					+ '&t='   + encodeURIComponent(options.title)
+					+ '&s='  + encodeURIComponent(options.text)
+					+ '&i='  + encodeURIComponent(options.image)
+					+ '&v=2'
+			},
+			/*
 			 *  Mobile > Share link > Telegram
 			 *  @see https://telegram.org/faq
 			 *  @category iOS, Android devices
@@ -469,11 +487,11 @@
 			 *  Share counter > Twitter
 			 *  @see https://dev.twitter.com
 			 */
-			if (existCount('[data-counter="tw"]')) {
+			/*if (existCount('[data-counter="tw"]')) {
 				$.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
 					$('[data-counter="tw"]').text(roundCount(response.count));
 				});
-			};
+			};*/
 			/*
 			 *  Share counter > Google Plus
 			 *  @see https://developers.google.com/+/
