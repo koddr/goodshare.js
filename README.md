@@ -37,14 +37,14 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 
 ```javascript
 <!-- Latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.3/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.4/goodshare.min.js"></script>
 ```
 
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
 
 ```javascript
 <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.3"></script>
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.4"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -71,6 +71,7 @@ For more speed and profit, use «all in one» solution from [jsDelivr](http://ww
 * `ip` [Instapaper](http://www.instapaper.com)
 * `ra` [Readability](http://www.readability.com)
 * `xi` [Xing](http://www.xing.com)
+* `wp` [WordPress](http://www.wordpress.com)
 
 If you don't see your social network, please [let us know](https://github.com/enjoyiacm/goodshare.js#developer) and we'll try to add it!
 
@@ -173,7 +174,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `mr` [Мой Мир@Mail.Ru](http://my.mail.ru)
 * `gp` [Google Plus](http://plus.google.ru)
 * `li` [LinkedIn](http://linkedin.com)
-* `tw` [Twitter](http://twitter.com)
+* ~~`tw` [Twitter](http://twitter.com)~~
 * `tm` [tumblr](http://tumblr.com)
 * `pt` [Pinterest](http://pinterest.com)
 * `rd` [Reddit](http://reddit.com)
@@ -185,11 +186,13 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 
 **Note:** ``StumbleUpon``, ``Pocket`` and ``Xing`` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
 
+**Note:** After stop supporting Twitter API v1.0 (20 Nov 2015), old way to get ``Twitter`` share counter is not working. But we search way to use Twitter API 1.1 to fix it (if you know how — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
+
 ## Usage example
 
 This example shows one of decoration options with all supported social networks.
 
-![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver6.png)
+![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver7.png)
 
 ```html
 <!DOCTYPE html>
@@ -222,6 +225,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="ip"] {background: #428bca;}
       a[data-type="ra"] {background: #990000;}
       a[data-type="xi"] {background: #cfdc00;}
+      a[data-type="wp"] {background: #0087be;}
       a[data-type="tg"] {background: #0088cc;}
       a[data-type="vi"] {background: #8f5db7;}
       a[data-type="wa"] {background: #43d854;}
@@ -239,7 +243,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="mr">Мой Мир@Mail.Ru <span data-counter="mr"></span></a> 
       <a href="#" class="goodshare" data-type="gp">Google Plus <span data-counter="gp"></span></a> 
       <a href="#" class="goodshare" data-type="li">LinkedIn <span data-counter="li"></span></a> 
-      <a href="#" class="goodshare" data-type="tw">Twitter <span data-counter="tw"></span></a> 
+      <a href="#" class="goodshare" data-type="tw">Twitter</a> 
       <a href="#" class="goodshare" data-type="lj">LiveJournal</a> 
       <a href="#" class="goodshare" data-type="tm">tumblr <span data-counter="tm"></span></a> 
       <a href="#" class="goodshare" data-type="bl">Blogger</a> 
@@ -255,6 +259,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="ip">Instapaper</a>
       <a href="#" class="goodshare" data-type="ra">Readability</a>
       <a href="#" class="goodshare" data-type="xi">Xing <span data-counter="xi"></span></a>
+      <a href="#" class="goodshare" data-type="wp">WordPress</a>
     </div>
     <div>
       <h2>For iOS/Android mobile devices</h2>
@@ -265,7 +270,7 @@ This example shows one of decoration options with all supported social networks.
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.3"></script>
+    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.4"></script>
   </body>
 </html>
 ```
