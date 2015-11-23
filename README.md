@@ -17,7 +17,7 @@ At ver. ``3.1.7`` we added an external function ``getCount()`` that updates coun
 
 At ver. ``3.2.2`` we added special share buttons for mobile Apps, like Telegram or Viber.
 
-At ver. ``3.2.4`` we drop support Twitter share count, 'cause official Twitter API update to version 1.1 and stop supporting old way to get URL share count (see [this](https://twittercommunity.com/t/a-new-design-for-tweet-and-follow-buttons/52791) blog post). This is [small instruction](https://github.com/enjoyiacm/goodshare.js#instruction) if you need it for ONLY one domain.
+At ver. ``3.2.4`` we drop support Twitter share count, 'cause official Twitter API update to version 1.1 and stop supporting old way to get URL share count (see [this](https://twittercommunity.com/t/a-new-design-for-tweet-and-follow-buttons/52791) blog post). This is [small instruction](https://github.com/enjoyiacm/goodshare.js#instruction-how-to-get-twitter-share-counter-after-api-11-changes) if you need it for ONLY one domain.
 
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
