@@ -203,7 +203,7 @@ if (existCount('[data-counter="tw"]')) {
 ```
 Save and upload to your server.
 
-**Note:** We **do not authors** of web-service *opensharecount.com*, if something not working — write to their support please!
+**Note:** We're **not** authors of the web site *opensharecount.com*, if something not working — write to their support please!
 
 ## Usage example
 
