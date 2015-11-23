@@ -17,6 +17,8 @@ At ver. ``3.1.7`` we added an external function ``getCount()`` that updates coun
 
 At ver. ``3.2.2`` we added special share buttons for mobile Apps, like Telegram or Viber.
 
+At ver. ``3.2.4`` we drop support Twitter share count, 'cause official Twitter API update to version 1.1 and stop supporting old way to get URL share count (see [this](https://twittercommunity.com/t/a-new-design-for-tweet-and-follow-buttons/52791) blog post). This is [small instruction](https://github.com/enjoyiacm/goodshare.js#instruction) if you need it for ONLY one domain.
+
 ### Demo
 If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examples.html).
 
@@ -174,7 +176,6 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * `mr` [Мой Мир@Mail.Ru](http://my.mail.ru)
 * `gp` [Google Plus](http://plus.google.ru)
 * `li` [LinkedIn](http://linkedin.com)
-* ~~`tw` [Twitter](http://twitter.com)~~
 * `tm` [tumblr](http://tumblr.com)
 * `pt` [Pinterest](http://pinterest.com)
 * `rd` [Reddit](http://reddit.com)
@@ -186,7 +187,23 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 
 **Note:** ``StumbleUpon``, ``Pocket`` and ``Xing`` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
 
-**Note:** After stop supporting Twitter API v1.0 (20 Nov 2015), old way to get ``Twitter`` share counter is not working. But we search way to use Twitter API 1.1 to fix it (if you know how — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
+### Instruction: how to get Twitter share counter after API 1.1 changes
+
+* Go to http://opensharecount.com and register (need auth with your Twitter account);
+* Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip);
+* Found lines [490-494](https://github.com/enjoyiacm/goodshare.js/blob/master/goodshare.js#L490-L494) and replace with this code:
+
+```javascript
+if (existCount('[data-counter="tw"]')) {
+  var domain = 'http://example.com'; // It's domain that you entered when registering on http://opensharecount.com
+  $.getJSON('http://opensharecount.com/count.json?url=' + encodeURIComponent(domain) + '&callback=?', function(response) {
+    $('[data-counter="tw"]').text(roundCount(response.count));
+  });
+};
+```
+Save and upload to your server.
+
+**Note:** We **do not authors** of web-service *opensharecount.com*, if something not working — write to their support please!
 
 ## Usage example
 
