@@ -300,7 +300,7 @@ Development and maintenance of `goodshare.js` project engaged in [Interactive ag
 
 If you want help, we will be glad reviews about `goodshare.js` on personal blogs (including Twitter), online media or specialized IT-portals. Thank you!
 
-And.. yes, we will be glad [donate some money](http://goodshare.ru/thanks.html) if `goodshare.js` makes your site beautyful!
+And.. yes, we will be glad when you [donate some money](http://goodshare.ru/thanks.html) if `goodshare.js` makes your site beautyful!
 
 ## License
 
