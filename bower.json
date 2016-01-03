@@ -1,0 +1,15 @@
+{
+    "name": "goodshare.js",
+    "version": "3.2.4",
+    "main": [
+        "./goodshare.js"
+    ],
+    "ignore": [
+        ".idea",
+        ".gitignore",
+        "package.json",
+        "gulpfile.js",
+        ".editorconfig",
+        "test/"
+    ]
+}
