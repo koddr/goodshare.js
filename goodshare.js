@@ -1,14 +1,14 @@
 /*
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
- *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»	
+ *  @copyright Copyright (c) 2015, Interactive agency «Central marketing»
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
  *  @version 3.2.4 at 21/11/2015 (14:35)
- *  
+ *
  *  goodshare.js
- *  
+ *
  *  Useful jQuery plugin that will help your website visitors share a link on social networks and microblogs.
  *  Easy to install and configuring on any of your website!
- *  
+ *
  *  @category jQuery plugin
  */
 ;(function($, window, document, undefined) {
@@ -16,8 +16,8 @@
 		/*
 		*  Variables
 		*/
-		var metaOGDescription = ($('meta[property="og:description"]').attr('content')) ? $('meta[property="og:description"]').attr('content') : '';
-		var metaOGImage = ($('meta[property="og:image"]').attr('content')) ? $('meta[property="og:image"]').attr('content') : '';
+		var metaOGDescription = $('meta[property="og:description"]').attr('content') || '';
+		var metaOGImage = $('meta[property="og:image"]').attr('content') || '';
 		/*
 		*  Main function
 		*/
@@ -25,7 +25,7 @@
 			init: function(_element, _options) {
 				/*
 				 *  Default options:
-				 *  
+				 *
 				 *  type = vk
 				 *  url = current browser adress stroke
 				 *  title = current document <title>
@@ -200,7 +200,7 @@
 					+ 'url='          + encodeURIComponent(options.url)
 					+ '&media='       + encodeURIComponent(options.image)
 					+ '&description=' + encodeURIComponent(options.title);
-			},			
+			},
 			/*
 			 *  Share link > Evernote
 			 *  @see http://www.evernote.com
@@ -416,7 +416,7 @@
 			},
 			/*
 			 *  Popup window
-			 */		    
+			 */
 			popup: function(url) {
 				return window.open(url, '', 'toolbar=0,status=0,scrollbars=0,width=630,height=440');
 			}
@@ -424,14 +424,14 @@
 		/*
 		 *  Function getCount()
 		 *  Set count to all elements with data-counter attribute.
-		 *  
+		 *
 		 *  @example $(document).getCount(); // Get all counters
 		 */
 		$.fn.getCount = function() {
 			/*
 			 *  Function roundCount()
 			 *  Return rounded and pretty value of share count.
-			 *  
+			 *
 			 *  @example roundCount(response.shares) // Rounded value of Facebook counter
 			 */
 			var roundCount = function(number) {
@@ -443,7 +443,7 @@
 			/*
 			 *  Function existCount()
 			 *  Check exist counter element.
-			 *  
+			 *
 			 *  @example existCount('[data-counter="fb"]') // Checked exist Facebook counter element
 			 */
 			var existCount = function(element) {
@@ -467,7 +467,7 @@
 			 *  @see https://developers.facebook.com
 			 */
 			if (existCount('[data-counter="fb"]')) {
-				$.getJSON('http://graph.facebook.com/?id=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$.getJSON('https://graph.facebook.com/?id=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
 					if (response.shares === undefined) $('[data-counter="fb"]').text('0');
 					else $('[data-counter="fb"]').text(roundCount(response.shares));
 				});
@@ -526,7 +526,7 @@
 			 *  @see http://api.mail.ru
 			 */
 			if (existCount('[data-counter="mr"]')) {
-				$.getJSON('http://connect.mail.ru/share_count?url_list=' + encodeURIComponent(location.href) + '&callback=1&func=?', function(response) {
+				$.getJSON('https://connect.mail.ru/share_count?url_list=' + encodeURIComponent(location.href) + '&callback=1&func=?', function(response) {
 					var url = encodeURIComponent(location.href);
 					for (var url in response) {
 						if (response.hasOwnProperty(url)) {
@@ -543,7 +543,7 @@
 			 *  @see https://developer.linkedin.com
 			 */
 			if (existCount('[data-counter="li"]')) {
-				$.getJSON('http://www.linkedin.com/countserv/count/share?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$.getJSON('https://www.linkedin.com/countserv/count/share?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
 					$('[data-counter="li"]').text(roundCount(response.count));
 				});
 			}
@@ -552,7 +552,7 @@
 			 *  @see https://www.tumblr.com/developers
 			 */
 			if (existCount('[data-counter="tm"]')) {
-				$.getJSON('http://api.tumblr.com/v2/share/stats?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$.getJSON('https://api.tumblr.com/v2/share/stats?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
 					$('[data-counter="tm"]').text(roundCount(response.response.note_count));
 				});
 			};
@@ -561,7 +561,7 @@
 			 *  @see https://developers.pinterest.com
 			 */
 			if (existCount('[data-counter="pt"]')) {
-				$.getJSON('http://api.pinterest.com/v1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+				$.getJSON('https://api.pinterest.com/v1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
 					$('[data-counter="pt"]').text(roundCount(response.count));
 				});
 			};
@@ -581,7 +581,7 @@
 			 *  @see http://help.stumbleupon.com
 			 */
 			if (existCount('[data-counter="su"]')) {
-				$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
+				$.getJSON('https://query.yahooapis.com/v1/public/yql?q='
 				+ encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
 					var count = $.parseJSON(response.query.results.html.body);
 					if (count.result.views === undefined) $('[data-counter="su"]').text('0');
@@ -593,7 +593,7 @@
 			 *  @see https://widgets.getpocket.com/v1/button?count=horizontal&url=[URL_HERE]
 			 */
 			if (existCount('[data-counter="po"]')) {
-				$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
+				$.getJSON('https://query.yahooapis.com/v1/public/yql?q='
 				+ encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
 					$('[data-counter="po"]').text(roundCount(response.query.results.html.body.div.a.span.em.content));
 				});
@@ -612,7 +612,7 @@
 			 *  @see https://www.xing-share.com/app/share?op=get_share_button;counter=top;url=[URL_HERE]
 			 */
 			if (existCount('[data-counter="xi"]')) {
-				$.getJSON('http://query.yahooapis.com/v1/public/yql?q=' 
+				$.getJSON('https://query.yahooapis.com/v1/public/yql?q='
 				+ encodeURIComponent('select * from html where url="https://www.xing-share.com/app/share?op=get_share_button;counter=top;url=' + location.href + '" and xpath="*"') + '&format=json&callback=?', function(response) {
 					$('[data-counter="xi"]').text(roundCount(response.query.results.html.body.div[0].div[0].span.content));
 				});
@@ -629,5 +629,5 @@
 		 *  Init share counters.
 		 */
 		$(document).getCount();
-	});	
+	});
 })(jQuery, window, document);
