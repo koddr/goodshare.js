@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2016, Interactive agency «Central marketing»
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.2.5 at 19/01/2016 (08:20)
+ *  @version 3.2.6 at 21/03/2016 (11:20)
  *
  *  goodshare.js
  *
@@ -297,6 +297,19 @@
 					+ '&description=' + encodeURIComponent(options.text);
 			},
 			/*
+			 *  Share link > LiveInternet
+			 *  @see http://www.liveinternet.ru
+			 */
+			lr: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'http://www.liveinternet.ru/journal_post.php?action=n_add&'
+					+ 'cnurl='    + encodeURIComponent(options.url)
+					+ '&cntitle=' + encodeURIComponent(options.title);
+			},
+			/*
 			 *  Share link > Buffer
 			 *  @see http://buffer.com
 			 */
@@ -483,15 +496,6 @@
 					$('[data-counter="ok"]').text(roundCount(count));
 				};
 			};
-			/*
-			 *  Share counter > Twitter
-			 *  @see https://dev.twitter.com
-			 */
-			/*if (existCount('[data-counter="tw"]')) {
-				$.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-					$('[data-counter="tw"]').text(roundCount(response.count));
-				});
-			};*/
 			/*
 			 *  Share counter > Google Plus
 			 *  @see https://developers.google.com/+/
