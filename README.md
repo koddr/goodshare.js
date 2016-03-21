@@ -28,7 +28,7 @@ Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master
 
 Add to your project template (or something else):
 
-```javascript
+```html
 <!-- jQuery 1.11.3 minify version from Google CDN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -37,16 +37,16 @@ Add to your project template (or something else):
 ```
 If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.jsdelivr.com) project and [this issue](https://github.com/enjoyiacm/goodshare.js/issues/2)), use this:
 
-```javascript
+```html
 <!-- Latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.5/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.6/goodshare.min.js"></script>
 ```
 
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
 
-```javascript
+```html
 <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.5"></script>
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.6"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -192,9 +192,14 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 
 * Go to http://opensharecount.com and register (need auth with your Twitter account);
 * Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip);
-* Found lines [490-494](https://github.com/enjoyiacm/goodshare.js/blob/master/goodshare.js#L490-L494) and replace with this code:
+* Open ``goodshare.js`` file from ZIP;
+* Found line [623](https://github.com/enjoyiacm/goodshare.js/blob/master/goodshare.js#L623) and add this code after:
 
 ```javascript
+/*
+*  Share counter > Twitter
+*  @see http://opensharecount.com
+*/
 if (existCount('[data-counter="tw"]')) {
   var domain = 'http://example.com'; // It's domain that you entered when registering on http://opensharecount.com
   $.getJSON('http://opensharecount.com/count.json?url=' + encodeURIComponent(domain) + '&callback=?', function(response) {
@@ -239,6 +244,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="su"] {background: #eb4924;}
       a[data-type="po"] {background: #d3505a;}
       a[data-type="sb"] {background: #26B1F6;}
+      a[data-type="lr"] {background: #000000;}
       a[data-type="bf"] {background: #323b43;}
       a[data-type="ip"] {background: #428bca;}
       a[data-type="ra"] {background: #990000;}
@@ -273,6 +279,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="su">StumbleUpon <span data-counter="su"></span></a>
       <a href="#" class="goodshare" data-type="po">Pocket <span data-counter="po"></span></a>
       <a href="#" class="goodshare" data-type="sb">Surfingbird <span data-counter="sb"></span></a>
+      <a href="#" class="goodshare" data-type="lr">LiveInternet</a>
       <a href="#" class="goodshare" data-type="bf">Buffer <span data-counter="bf"></span></a>
       <a href="#" class="goodshare" data-type="ip">Instapaper</a>
       <a href="#" class="goodshare" data-type="ra">Readability</a>
@@ -288,7 +295,7 @@ This example shows one of decoration options with all supported social networks.
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.5"></script>
+    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.6"></script>
   </body>
 </html>
 ```
