@@ -69,6 +69,7 @@ For more speed and profit, use «all in one» solution from [jsDelivr](http://ww
 * `su` [StumbleUpon](http://www.stumbleupon.com)
 * `po` [Pocket](https://getpocket.com)
 * `sb` [Surfingbird](http://surfingbird.ru)
+* `lr` [LiveInternet](http://liveinternet.ru)
 * `bf` [Buffer](http://buffer.com)
 * `ip` [Instapaper](http://www.instapaper.com)
 * `ra` [Readability](http://www.readability.com)
