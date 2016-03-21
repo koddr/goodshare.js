@@ -16,8 +16,6 @@
 		/*
 		*  Variables
 		*/
-		var ww=630;
-                var wh=440;
 		var metaOGDescription = $('meta[property="og:description"]').attr('content') || '';
 		var metaOGImage = $('meta[property="og:image"]').attr('content') || '';
 		/*
@@ -433,7 +431,7 @@
 			 *  Popup window
 			 */
 			popup: function(url) {
-				return window.open(url, '', 'left='+((screen.width-ww)/2)+',top='+((screen.height-wh)/2)+',toolbar=0,status=0,scrollbars=0,width='+ww+',height='+wh+'');
+				return window.open(url, '', 'left=' + (screen.width - 630)/2 + ',top=' + (screen.height - 440)/2 + ',toolbar=0,status=0,scrollbars=0,menubar=0,location=0,width=630,height=440');
 			}
 		};
 		/*
