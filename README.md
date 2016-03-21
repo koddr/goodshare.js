@@ -215,7 +215,7 @@ Save and upload to your server.
 
 This example shows one of decoration options with all supported social networks.
 
-![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver8.png)
+![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver9.png)
 
 ```html
 <!DOCTYPE html>
