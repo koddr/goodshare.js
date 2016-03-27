@@ -39,14 +39,14 @@ If you want place plugin via fast CDN (special thanks to [jsDelivr](http://www.j
 
 ```html
 <!-- Latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.7/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.8/goodshare.min.js"></script>
 ```
 
 For more speed and profit, use «all in one» solution from [jsDelivr](http://www.jsdelivr.com) CDN:
 
 ```html
 <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.7"></script>
+<script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.8"></script>
 ```
 
 ## List of supported social networks and microblogs
@@ -75,6 +75,7 @@ For more speed and profit, use «all in one» solution from [jsDelivr](http://ww
 * `ra` [Readability](http://www.readability.com)
 * `xi` [Xing](http://www.xing.com)
 * `wp` [WordPress](http://www.wordpress.com)
+* `bd` [Baidu](http://www.baidu.com)
 * `rr` [Renren](http://www.renren.com)
 * `wb` [Weibo](http://www.weibo.com)
 
@@ -195,7 +196,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * Go to http://opensharecount.com and register (need auth with your Twitter account);
 * Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip);
 * Open ``goodshare.js`` file from ZIP;
-* Found line [649](https://github.com/enjoyiacm/goodshare.js/blob/master/goodshare.js#L649) and add this code after:
+* Found line [665](https://github.com/enjoyiacm/goodshare.js/blob/master/goodshare.js#L665) and add this code after:
 
 ```javascript
 /*
@@ -217,7 +218,7 @@ Save and upload to your server.
 
 This example shows one of decoration options with all supported social networks.
 
-![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver10.png)
+![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver11.png)
 
 ```html
 <!DOCTYPE html>
@@ -256,6 +257,7 @@ This example shows one of decoration options with all supported social networks.
       a[data-type="vi"] {background: #8f5db7;}
       a[data-type="wa"] {background: #43d854;}
       a[data-type="ln"] {background: #00c300;}
+      a[data-type="bd"] {background: #2529d8;}
       a[data-type="rr"] {background: #53a9d7;}
       a[data-type="wb"] {background: #c53220;}
     </style>
@@ -289,6 +291,7 @@ This example shows one of decoration options with all supported social networks.
       <a href="#" class="goodshare" data-type="ra">Readability</a>
       <a href="#" class="goodshare" data-type="xi">Xing <span data-counter="xi"></span></a>
       <a href="#" class="goodshare" data-type="wp">WordPress</a>
+      <a href="#" class="goodshare" data-type="bd">Baidu</a>
       <a href="#" class="goodshare" data-type="rr">Renren</a>
       <a href="#" class="goodshare" data-type="wb">Weibo</a>
     </div>
@@ -301,7 +304,7 @@ This example shows one of decoration options with all supported social networks.
     </div>
     <p>See goodshare.js on GitHub: <a href="https://github.com/enjoyiacm/goodshare.js" target="_blank">https://github.com/enjoyiacm/goodshare.js</a></p>.
     <!-- jQuery 1.11.3 minify version and latest 3.2.x goodshare.js minify version from jsDelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.7"></script>
+    <script src="https://cdn.jsdelivr.net/g/jquery@1.11.3,jquery.goodshare.js@3.2.8"></script>
   </body>
 </html>
 ```
