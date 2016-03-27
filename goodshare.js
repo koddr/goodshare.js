@@ -376,6 +376,22 @@
 					+ '&v=2'
 			},
 			/*
+			 *  Share link > Baidu
+			 *  @see http://www.baidu.com
+			 */
+			bd: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title,
+					text:   metaOGDescription
+				}, _options);
+				return 'http://cang.baidu.com/do/add?'
+					+ 'it='      + encodeURIComponent(options.title)
+					+ '&iu='     + encodeURIComponent(options.url)
+					+ '&dc='     + encodeURIComponent(options.text)
+					+ '&fr=ien';
+			},
+			/*
 			 *  Share link > Renren
 			 *  @see http://www.renren.com
 			 */
