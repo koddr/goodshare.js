@@ -2,7 +2,7 @@
  *  @author Interactive agency «Central marketing» http://centralmarketing.ru
  *  @copyright Copyright (c) 2016, Interactive agency «Central marketing»
  *  @license http://opensource.org/licenses/MIT The MIT License (MIT)
- *  @version 3.2.6 at 21/03/2016 (11:20)
+ *  @version 3.2.7 at 27/03/2016 (15:30)
  *
  *  goodshare.js
  *
@@ -374,6 +374,32 @@
 					+ '&s='  + encodeURIComponent(options.text)
 					+ '&i='  + encodeURIComponent(options.image)
 					+ '&v=2'
+			},
+			/*
+			 *  Share link > Renren
+			 *  @see http://www.renren.com
+			 */
+			rr: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'http://share.renren.com/share/buttonshare.do?'
+					+ 'link='   + encodeURIComponent(options.url)
+					+ '&title=' + encodeURIComponent(options.title);
+			},
+			/*
+			 *  Share link > Weibo
+			 *  @see http://www.weibo.com
+			 */
+			wb: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'http://service.weibo.com/share/share.php?'
+					+ 'url='    + encodeURIComponent(options.url)
+					+ '&title=' + encodeURIComponent(options.title);
 			},
 			/*
 			 *  Mobile > Share link > Telegram
