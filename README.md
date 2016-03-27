@@ -195,7 +195,7 @@ Value of ``data-counter`` attribute, see in this list of supported social networ
 * Go to http://opensharecount.com and register (need auth with your Twitter account);
 * Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip);
 * Open ``goodshare.js`` file from ZIP;
-* Found line [623](https://github.com/enjoyiacm/goodshare.js/blob/master/goodshare.js#L623) and add this code after:
+* Found line [649](https://github.com/enjoyiacm/goodshare.js/blob/master/goodshare.js#L649) and add this code after:
 
 ```javascript
 /*
