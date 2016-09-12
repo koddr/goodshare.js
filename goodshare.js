@@ -83,7 +83,7 @@
 					url:    location.href,
 					title:  document.title
 				}, _options);
-				return 'http://www.facebook.com/sharer.php?'
+				return 'https://facebook.com/sharer/sharer.php?'
 					+ 'u=' + encodeURIComponent(options.url);
 			},
 			/*
@@ -523,8 +523,8 @@
 			 */
 			if (existCount('[data-counter="fb"]')) {
 				$.getJSON('https://graph.facebook.com/?id=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-					if (response.shares === undefined) $('[data-counter="fb"]').text('0');
-					else $('[data-counter="fb"]').text(roundCount(response.shares));
+					if (response.share === undefined) $('[data-counter="fb"]').text('0');
+					else $('[data-counter="fb"]').text(roundCount(response.share.share_count));
 				});
 			};
 			/*
