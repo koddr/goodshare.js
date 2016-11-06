@@ -1,15 +1,11 @@
 {
-    "name": "goodshare.js",
-    "version": "3.2.8",
-    "main": [
-        "./goodshare.js"
-    ],
-    "ignore": [
-        ".idea",
-        ".gitignore",
-        "package.json",
-        "gulpfile.js",
-        ".editorconfig",
-        "test/"
-    ]
+  "name": "goodshare.js",
+  "version": "3.2.9",
+  "main": [
+    "./goodshare.js"
+  ],
+  "ignore": [
+    ".idea",
+    ".gitignore"
+  ]
 }
