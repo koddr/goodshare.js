@@ -313,7 +313,7 @@ This example shows one of decoration options with all supported social networks.
 
 ## Developer
 
-Development and maintenance of `goodshare.js` project engaged in [Interactive agency «Central marketing»](http://centralmarketing.ru). If you want to write a «thank you» or ask us about something, [use this e-mail](mailto:support@goodshare.ru).
+Development and maintenance of `goodshare.js` project engaged by Vikky Shostak + [Koddr](https://koddr.me). If you want to write a «thank you» or ask us about something, [use this e-mail](mailto:support@goodshare.ru).
 
 ## Your help
 
