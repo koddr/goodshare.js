@@ -24,7 +24,9 @@ If you're looking for a simple basic demo, it's [here](http://goodshare.ru/examp
 
 ## Install
 
-Download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip) from GitHub. Place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare.min.js``.
+`$ bower install goodsharejs`
+
+Or download [goodshare.js](https://github.com/enjoyiacm/goodshare.js/archive/master.zip) from GitHub and place plugin file to your project folder: ``./path/to/your/project/folder/js/goodshare.min.js``.
 
 Add to your project template (or something else):
 
