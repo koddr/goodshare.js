@@ -548,12 +548,11 @@
        *  Share counter > Google Plus
        *  @see https://developers.google.com/+/
        */
-			if (existCount('[data-counter="gp"]')) {
-				$.getJSON('https://share.yandex.ru/gpp.xml?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
-					if (response.share === undefined) $('[data-counter="gp"]').text('0');
-					else $('[data-counter="gp"]').text(roundCount(response.share.share_count));
-				});
-			};
+      if (existCount('[data-counter="gp"]')) {
+      	$.getJSON('https://share.yandex.ru/gpp.xml?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+	  $('[data-counter="gp"]').text(response);
+	});
+      };
       /*
        *  Share counter > My@Mail.Ru
        *  @see http://api.mail.ru
