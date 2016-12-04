@@ -548,32 +548,12 @@
        *  Share counter > Google Plus
        *  @see https://developers.google.com/+/
        */
-      if (existCount('[data-counter="gp"]')) {
-        $.ajax({
-          type: 'POST',
-          url: 'https://clients6.google.com/rpc',
-          processData: true,
-          contentType: 'application/json',
-          data: JSON.stringify({
-            'method': 'pos.plusones.get',
-            'id': location.href,
-            'params': {
-              'nolog': true,
-              'id': location.href,
-              'source': 'widget',
-              'userId': '@viewer',
-              'groupId': '@self'
-            },
-            'jsonrpc': '2.0',
-            'key': 'p',
-            'apiVersion': 'v1'
-          }),
-          success: function (response) {
-            $('[data-counter="gp"]').text(roundCount(response.result.metadata.globalCounts.count));
-          }
-        });
-      }
-      ;
+			if (existCount('[data-counter="gp"]')) {
+				$.getJSON('https://share.yandex.ru/gpp.xml?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+					if (response.share === undefined) $('[data-counter="gp"]').text('0');
+					else $('[data-counter="gp"]').text(roundCount(response.share.share_count));
+				});
+			};
       /*
        *  Share counter > My@Mail.Ru
        *  @see http://api.mail.ru
