@@ -549,31 +549,10 @@
        *  @see https://developers.google.com/+/
        */
       if (existCount('[data-counter="gp"]')) {
-        $.ajax({
-          type: 'POST',
-          url: 'https://clients6.google.com/rpc',
-          processData: true,
-          contentType: 'application/json',
-          data: JSON.stringify({
-            'method': 'pos.plusones.get',
-            'id': location.href,
-            'params': {
-              'nolog': true,
-              'id': location.href,
-              'source': 'widget',
-              'userId': '@viewer',
-              'groupId': '@self'
-            },
-            'jsonrpc': '2.0',
-            'key': 'p',
-            'apiVersion': 'v1'
-          }),
-          success: function (response) {
-            $('[data-counter="gp"]').text(roundCount(response.result.metadata.globalCounts.count));
-          }
-        });
-      }
-      ;
+      	$.getJSON('https://share.yandex.ru/gpp.xml?url=' + encodeURIComponent(location.href) + '&callback=?', function(response) {
+	  $('[data-counter="gp"]').text(response);
+	});
+      };
       /*
        *  Share counter > My@Mail.Ru
        *  @see http://api.mail.ru
