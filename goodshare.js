@@ -423,14 +423,13 @@
        *  @see https://telegram.org/faq
        *  @category iOS, Android devices
        */
-      tg: function (_options) {
-        var options = $.extend({
-          url: location.href,
-          title: document.title
-        }, _options);
-        return 'tg://msg?'
-          + 'text=' + encodeURIComponent(options.title + ' ' + options.url);
-      },
+			tg: function(_options) {
+				var options = $.extend({
+					url:    location.href,
+					title:  document.title
+				}, _options);
+				return 'https://telegram.me/share/url?url=' + encodeURIComponent(options.url);
+			},      
       /*
        *  Mobile > Share link > Viber
        *  @see http://www.viber.com/ru/developers/share_on_viber
