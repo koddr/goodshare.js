@@ -14,7 +14,7 @@ class Telegram {
   }
   
   shareWindow() {
-    let share_url = 'tg://msg?text=' + this.url;
+    let share_url = 'https://telegram.me/share/url?url=' + this.url;
     
     document.body
       .querySelectorAll("[data-social=telegram]")

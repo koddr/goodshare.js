@@ -30,7 +30,7 @@ var Telegram = function () {
   _createClass(Telegram, [{
     key: 'shareWindow',
     value: function shareWindow() {
-      var share_url = 'tg://msg?text=' + this.url;
+      var share_url = 'https://telegram.me/share/url?url=' + this.url;
 
       document.body.querySelectorAll("[data-social=telegram]").forEach(function (item) {
         item.addEventListener('click', function (event) {
