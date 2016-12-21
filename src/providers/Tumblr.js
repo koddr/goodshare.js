@@ -5,27 +5,16 @@
  *
  *  goodshare.js
  *
- *  Vkontakte (https://vk.com) provider.
+ *  Tumblr (https://tumblr.com) provider.
  */
 
 class Tumblr {
   constructor(url = document.location.href,
               title = document.title,
-              description = document.head.querySelector("meta[name=description]").content) {
+              description = document.head.querySelector('meta[name=description]').content) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = encodeURIComponent(description);
-  }
-  
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
   }
   
   shareWindow() {
@@ -33,35 +22,34 @@ class Tumblr {
       '&title=' + this.title + '&caption=' + this.description + '&posttype=link';
     
     document.body
-      .querySelectorAll("[data-social=tumblr]")
+      .querySelectorAll('[data-social=tumblr]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let count_url = 'https://api.tumblr.com/v2/share/stats?url=' + this.url;
+    let script = document.createElement('script');
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://api.tumblr.com/v2/share/stats?url=' + this.url + '&callback=' + callback;
+  
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=tumblr]')
+        .forEach(function (item) {
+          item.innerHTML = counter.response.note_count;
+        });
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.json();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=tumblr]")
-          .forEach(function (item) {
-            return item.innerHTML = counter.response.note_count;
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let tumblr_share = new Tumblr().shareWindow();

@@ -15,14 +15,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  *
  *  goodshare.js
  *
- *  Vkontakte (https://vk.com) provider.
+ *  Tumblr (https://tumblr.com) provider.
  */
 
 var Tumblr = function () {
   function Tumblr() {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.location.href;
     var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.title;
-    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.head.querySelector("meta[name=description]").content;
+    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.head.querySelector('meta[name=description]').content;
 
     _classCallCheck(this, Tumblr);
 
@@ -36,38 +36,30 @@ var Tumblr = function () {
     value: function shareWindow() {
       var share_url = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + this.url + '&title=' + this.title + '&caption=' + this.description + '&posttype=link';
 
-      document.body.querySelectorAll("[data-social=tumblr]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=tumblr]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
     key: 'getCounter',
     value: function getCounter() {
-      var count_url = 'https://api.tumblr.com/v2/share/stats?url=' + this.url;
+      var script = document.createElement('script');
+      var callback = ('cb_' + Math.random()).replace('.', '');
+      var count_url = 'https://api.tumblr.com/v2/share/stats?url=' + this.url + '&callback=' + callback;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.json();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=tumblr]").forEach(function (item) {
-          return item.innerHTML = counter.response.note_count;
+      window[callback] = function (counter) {
+        document.body.querySelectorAll('[data-counter=tumblr]').forEach(function (item) {
+          item.innerHTML = counter.response.note_count;
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: 'checkStatus',
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 

@@ -10,22 +10,11 @@
 
 class Pinterest {
   constructor(url = document.location.href,
-              description = document.head.querySelector("meta[name=description]").content,
-              image = document.head.querySelector("link[rel=image_src]").href) {
+              description = document.head.querySelector('meta[name=description]').content,
+              image = document.head.querySelector('link[rel=image_src]').href) {
     this.url = encodeURIComponent(url);
     this.description = encodeURIComponent(description);
     this.image = encodeURIComponent(image);
-  }
-  
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
   }
   
   shareWindow() {
@@ -33,35 +22,33 @@ class Pinterest {
       '&description=' + this.description + '&media=' + this.image;
     
     document.body
-      .querySelectorAll("[data-social=pinterest]")
+      .querySelectorAll('[data-social=pinterest]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
+    let script = document.createElement('script');
     let count_url = 'http://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + this.url;
+  
+    window['receiveCount'] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=pinterest]')
+        .forEach(function (item) {
+          item.innerHTML = counter.count;
+        });
     
-    fetch(count_url, {method: 'get', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.text();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=pinterest]")
-          .forEach(function (item) {
-            return item.innerHTML = JSON.parse(counter.match(/receiveCount\((.*?)\)$/)[1]).count || 0;
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let pinterest_share = new Pinterest().shareWindow();

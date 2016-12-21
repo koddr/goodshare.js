@@ -32,40 +32,33 @@ var Odnoklassniki = function () {
   _createClass(Odnoklassniki, [{
     key: 'shareWindow',
     value: function shareWindow() {
-      var share_url = 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + this.url + '&st.comments=' + this.title;
+      var share_url = 'https://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + this.url + '&st.comments=' + this.title;
 
-      document.body.querySelectorAll("[data-social=odnoklassniki]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=odnoklassniki]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
     key: 'getCounter',
     value: function getCounter() {
+      window.ODKL = {};
+
+      var script = document.createElement('script');
       var count_url = 'https://connect.ok.ru/dk?st.cmd=extLike&uid=1&ref=' + this.url;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.text();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=odnoklassniki]").forEach(function (item) {
-          return item.innerHTML = counter.match(/\'(\d+)\'\)\;$/)[1] / 1;
+      window.ODKL.updateCount = function (counter) {
+        document.body.querySelectorAll('[data-counter=odnoklassniki]').forEach(function (item) {
+          item.innerHTML = counter;
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: 'checkStatus',
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 

@@ -1,7 +1,5 @@
 'use strict';
 
-require('whatwg-fetch');
-
 var _Vkontakte = require('./providers/Vkontakte');
 
 var _Facebook = require('./providers/Facebook');

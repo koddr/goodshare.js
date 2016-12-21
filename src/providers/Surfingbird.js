@@ -11,21 +11,10 @@
 class Surfingbird {
   constructor(url = document.location.href,
               title = document.title,
-              description = document.head.querySelector("meta[name=description]").content) {
+              description = document.head.querySelector('meta[name=description]').content) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = encodeURIComponent(description);
-  }
-  
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
   }
   
   shareWindow() {
@@ -33,35 +22,37 @@ class Surfingbird {
       '&description=' + this.description;
     
     document.body
-      .querySelectorAll("[data-social=surfingbird]")
+      .querySelectorAll('[data-social=surfingbird]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let count_url = 'https://surfingbird.ru/button?url=' + this.url;
+    let script = document.createElement('script');
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://query.yahooapis.com/v1/public/yql?q='
+      + encodeURIComponent('select * from html where url="https://surfingbird.ru/button?url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
+  
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=surfingbird]')
+        .forEach(function (item) {
+          item.innerHTML = (counter.results.length > 0)
+            ? (counter.results[0]).match(/span class="stats-num">(\d+)</)[1] / 1
+            : 0;
+        });
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.text();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=surfingbird]")
-          .forEach(function (item) {
-            return item.innerHTML = counter.match(/span class="stats-num">(\d+)</)[1] / 1;
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let surfingbird_share = new Surfingbird().shareWindow();

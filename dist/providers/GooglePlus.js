@@ -32,38 +32,30 @@ var GooglePlus = function () {
     value: function shareWindow() {
       var share_url = 'https://plus.google.com/share?url=' + this.url;
 
-      document.body.querySelectorAll("[data-social=googleplus]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=googleplus]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
     key: 'getCounter',
     value: function getCounter() {
-      var count_url = 'https://plusone.google.com/_/+1/fastbutton?url=' + this.url;
+      var script = document.createElement('script');
+      var callback = ('cb_' + Math.random()).replace('.', '');
+      var count_url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from html where url="https://plusone.google.com/_/+1/fastbutton?url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.text();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=googleplus]").forEach(function (item) {
-          return item.innerHTML = counter.match(/script type="text\/javascript">window.__SSR = \{c: (\d+).0/)[1] / 1;
+      window[callback] = function (counter) {
+        document.body.querySelectorAll('[data-counter=googleplus]').forEach(function (item) {
+          item.innerHTML = counter.results[0].match(/javascript">window.__SSR = \{c: (\d+).0/) != null ? counter.results[0].match(/javascript">window.__SSR = \{c: (\d+).0/)[1] / 1 : 0;
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: 'checkStatus',
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 

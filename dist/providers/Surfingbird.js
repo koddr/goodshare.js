@@ -22,7 +22,7 @@ var Surfingbird = function () {
   function Surfingbird() {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.location.href;
     var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.title;
-    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.head.querySelector("meta[name=description]").content;
+    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.head.querySelector('meta[name=description]').content;
 
     _classCallCheck(this, Surfingbird);
 
@@ -36,38 +36,30 @@ var Surfingbird = function () {
     value: function shareWindow() {
       var share_url = 'https://surfingbird.ru/share?url=' + this.url + '&title=' + this.title + '&description=' + this.description;
 
-      document.body.querySelectorAll("[data-social=surfingbird]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=surfingbird]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
     key: 'getCounter',
     value: function getCounter() {
-      var count_url = 'https://surfingbird.ru/button?url=' + this.url;
+      var script = document.createElement('script');
+      var callback = ('cb_' + Math.random()).replace('.', '');
+      var count_url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from html where url="https://surfingbird.ru/button?url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.text();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=surfingbird]").forEach(function (item) {
-          return item.innerHTML = counter.match(/span class="stats-num">(\d+)</)[1] / 1;
+      window[callback] = function (counter) {
+        document.body.querySelectorAll('[data-counter=surfingbird]').forEach(function (item) {
+          item.innerHTML = counter.results.length > 0 ? counter.results[0].match(/span class="stats-num">(\d+)</)[1] / 1 : 0;
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: 'checkStatus',
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 

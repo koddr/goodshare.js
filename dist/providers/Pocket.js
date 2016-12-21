@@ -34,38 +34,30 @@ var Pocket = function () {
     value: function shareWindow() {
       var share_url = 'https://getpocket.com/save?url=' + this.url + '&title=' + this.title;
 
-      document.body.querySelectorAll("[data-social=pocket]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=pocket]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
     key: 'getCounter',
     value: function getCounter() {
-      var count_url = 'https://widgets.getpocket.com/v1/button?label=pocket&count=vertical&align=left&v=1&url=' + this.url + "&src=" + this.url;
+      var script = document.createElement('script');
+      var callback = ('cb_' + Math.random()).replace('.', '');
+      var count_url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.text();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=pocket]").forEach(function (item) {
-          return item.innerHTML = counter.match(/em id="cnt">(\d+)</)[1] / 1;
+      window[callback] = function (counter) {
+        document.body.querySelectorAll('[data-counter=pocket]').forEach(function (item) {
+          item.innerHTML = counter.results.length > 0 ? counter.results[0].match(/em id="cnt">(\d+)</)[1] / 1 : 0;
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: 'checkStatus',
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 
@@ -73,4 +65,4 @@ var Pocket = function () {
 }();
 
 var pocket_share = exports.pocket_share = new Pocket().shareWindow();
-var pocket_counter = exports.pocket_counter = new Pocket().getCounter();
+var pocket_counter = exports.pocket_counter = new Pocket('http://habrahabr.ru').getCounter();

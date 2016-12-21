@@ -34,22 +34,22 @@ var Reddit = function () {
     value: function shareWindow() {
       var share_url = 'https://reddit.com/submit?url=' + this.url + '&title=' + this.title;
 
-      document.body.querySelectorAll("[data-social=reddit]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=reddit]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
     key: 'getCounter',
     value: function getCounter() {
-      var count_url = 'https://reddit.com/api/info.json?url=' + this.url;
+      var script = document.createElement('script');
+      var callback = ('cb_' + Math.random()).replace('.', '');
+      var count_url = 'https://www.reddit.com/api/info.json?url=' + this.url + '&jsonp=' + callback;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.json();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=reddit]").forEach(function (item) {
+      window[callback] = function (counter) {
+        document.body.querySelectorAll('[data-counter=reddit]').forEach(function (item) {
           if (counter.data.children.length > 0) {
             var total_count = 0;
 
@@ -57,25 +57,17 @@ var Reddit = function () {
               total_count += counter.data.children[i].data.score;
             }
 
-            return item.innerHTML = total_count;
+            item.innerHTML = total_count;
           } else {
-            return item.innerHTML = 0;
+            item.innerHTML = 0;
           }
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: 'checkStatus',
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 

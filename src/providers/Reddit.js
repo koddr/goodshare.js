@@ -14,61 +14,49 @@ class Reddit {
     this.title = encodeURIComponent(title);
   }
   
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
-  }
-  
   shareWindow() {
     let share_url = 'https://reddit.com/submit?url=' + this.url + '&title=' + this.title;
     
     document.body
-      .querySelectorAll("[data-social=reddit]")
+      .querySelectorAll('[data-social=reddit]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let count_url = 'https://reddit.com/api/info.json?url=' + this.url;
+    let script = document.createElement('script');
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://www.reddit.com/api/info.json?url=' + this.url + '&jsonp=' + callback;
+  
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=reddit]')
+        .forEach(function (item) {
+          if (counter.data.children.length > 0) {
+            let total_count = 0;
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.json();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=reddit]")
-          .forEach(function (item) {
-            if (counter.data.children.length > 0) {
-              let total_count = 0;
-              
-              for (let i = 0; i < counter.data.children.length; i++) {
-                total_count += counter.data.children[i].data.score;
-              }
-              
-              return item.innerHTML = total_count;
+            for (let i = 0; i < counter.data.children.length; i++) {
+              total_count += counter.data.children[i].data.score;
             }
-            else {
-              return item.innerHTML = 0;
-            }
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+    
+            item.innerHTML = total_count;
+          }
+          else {
+            item.innerHTML = 0;
+          }
+        });
+    
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let reddit_share = new Reddit().shareWindow();

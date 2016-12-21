@@ -32,7 +32,7 @@ Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js
 * `linkedin` [LinkedIn](http://linkedin.com)
 * `twitter` [Twitter](http://twitter.com)
 * `livejournal` [LiveJournal](http://livejournal.com)
-* `tumblr` [tumblr](http://tumblr.com)
+* `tumblr` [Tumblr](http://tumblr.com)
 * `blogger` [Blogger](http://blogger.com)
 * `pinterest` [Pinterest](http://pinterest.com)
 * `digg` [Digg](http://digg.com)
@@ -108,7 +108,7 @@ Value of `data-counter` attribute, see in this list of supported social networks
 * `moimir` [Мой Мир@Mail.Ru](http://my.mail.ru)
 * `googleplus` [Google Plus](http://plus.google.ru)
 * `linkedin` [LinkedIn](http://linkedin.com)
-* `tumblr` [tumblr](http://tumblr.com)
+* `tumblr` [Tumblr](http://tumblr.com)
 * `pinterest` [Pinterest](http://pinterest.com)
 * `reddit` [Reddit](http://reddit.com)
 * `stumbleupon` [StumbleUpon](http://www.stumbleupon.com)
@@ -116,6 +116,8 @@ Value of `data-counter` attribute, see in this list of supported social networks
 * `surfingbird` [Surfingbird](http://surfingbird.ru)
 * `buffer` [Buffer](http://buffer.com)
 * `xing` [Xing](http://www.xing.com)
+
+**Note:** `Google Plus`, `Surfingbird`, `StumbleUpon`, `Pocket` and `Xing` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
 
 ### How to get Twitter share counter after API 1.1 changes?
 

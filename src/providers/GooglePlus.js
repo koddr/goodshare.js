@@ -13,51 +13,41 @@ class GooglePlus {
     this.url = encodeURIComponent(url);
   }
   
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
-  }
-  
   shareWindow() {
     let share_url = 'https://plus.google.com/share?url=' + this.url;
     
     document.body
-      .querySelectorAll("[data-social=googleplus]")
+      .querySelectorAll('[data-social=googleplus]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let count_url = 'https://plusone.google.com/_/+1/fastbutton?url=' + this.url;
+    let script = document.createElement('script');
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://query.yahooapis.com/v1/public/yql?q='
+      + encodeURIComponent('select * from html where url="https://plusone.google.com/_/+1/fastbutton?url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
+  
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=googleplus]')
+        .forEach(function (item) {
+          item.innerHTML = ((counter.results[0]).match(/javascript">window.__SSR = \{c: (\d+).0/) != null)
+            ? (counter.results[0]).match(/javascript">window.__SSR = \{c: (\d+).0/)[1] / 1
+            : 0;
+        });
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.text();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=googleplus]")
-          .forEach(function (item) {
-            return item.innerHTML = counter
-                .match(/script type="text\/javascript">window.__SSR = \{c: (\d+).0/)[1] / 1;
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let googleplus_share = new GooglePlus().shareWindow();

@@ -14,55 +14,38 @@ class Buffer {
     this.title = encodeURIComponent(title);
   }
   
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
-  }
-  
   shareWindow() {
     let share_url = 'https://buffer.com/add?url=' + this.url + '&text=' + this.title;
     
     document.body
-      .querySelectorAll("[data-social=buffer]")
+      .querySelectorAll('[data-social=buffer]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let count_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + this.url;
+    let script = document.createElement('script');
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + this.url + '&callback=' + callback;
+  
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=buffer]')
+        .forEach(function (item) {
+          item.innerHTML = (counter.shares) ? counter.shares : 0;
+        });
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.json();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=buffer]")
-          .forEach(function (item) {
-            if (counter.shares) {
-              return item.innerHTML = counter.shares;
-            }
-            else {
-              return item.innerHTML = 0;
-            }
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let buffer_share = new Buffer().shareWindow();

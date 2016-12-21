@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -22,59 +22,47 @@ var MoiMir = function () {
   function MoiMir() {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.location.href;
     var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.title;
-    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.head.querySelector("meta[name=description]").content;
-    var image = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : document.head.querySelector("link[rel=image_src]").href;
+    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.head.querySelector('meta[name=description]').content;
+    var image = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : document.head.querySelector('link[rel=image_src]').href;
 
     _classCallCheck(this, MoiMir);
 
-    this.url = encodeURIComponent(url);
+    this.url = url;
     this.title = encodeURIComponent(title);
     this.description = encodeURIComponent(description);
     this.image = encodeURIComponent(image);
   }
 
   _createClass(MoiMir, [{
-    key: "shareWindow",
+    key: 'shareWindow',
     value: function shareWindow() {
-      var share_url = 'http://connect.mail.ru/share?url=' + this.url + '&title=' + this.title + '&description=' + this.description + '&imageurl=' + this.image;
+      var share_url = 'http://connect.mail.ru/share?url=' + encodeURIComponent(this.url) + '&title=' + this.title + '&description=' + this.description + '&imageurl=' + this.image;
 
-      document.body.querySelectorAll("[data-social=moimir]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=moimir]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
-    key: "getCounter",
+    key: 'getCounter',
     value: function getCounter() {
-      var page_url = this.url;
-      var count_url = 'https://connect.mail.ru/share_count?url_list=' + page_url;
+      var script = document.createElement('script');
+      var this_url = encodeURIComponent(this.url.replace(/^.*?:\/\//, ''));
+      var callback = ('cb_' + Math.random()).replace('.', '');
+      var count_url = 'https://appsmail.ru/share/count/' + this_url + '?callback=' + callback;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.json();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=moimir]").forEach(function (item) {
-          for (page_url in counter) {
-            if (counter.hasOwnProperty(page_url)) {
-              return item.innerHTML = counter[page_url].shares;
-            }
-          }
+      window[callback] = function (counter) {
+        document.body.querySelectorAll('[data-counter=moimir]').forEach(function (item) {
+          item.innerHTML = counter.share_mm;
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: "checkStatus",
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 

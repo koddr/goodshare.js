@@ -34,42 +34,30 @@ var Buffer = function () {
     value: function shareWindow() {
       var share_url = 'https://buffer.com/add?url=' + this.url + '&text=' + this.title;
 
-      document.body.querySelectorAll("[data-social=buffer]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=buffer]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
     key: 'getCounter',
     value: function getCounter() {
-      var count_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + this.url;
+      var script = document.createElement('script');
+      var callback = ('cb_' + Math.random()).replace('.', '');
+      var count_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + this.url + '&callback=' + callback;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.json();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=buffer]").forEach(function (item) {
-          if (counter.shares) {
-            return item.innerHTML = counter.shares;
-          } else {
-            return item.innerHTML = 0;
-          }
+      window[callback] = function (counter) {
+        document.body.querySelectorAll('[data-counter=buffer]').forEach(function (item) {
+          item.innerHTML = counter.shares ? counter.shares : 0;
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: 'checkStatus',
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 

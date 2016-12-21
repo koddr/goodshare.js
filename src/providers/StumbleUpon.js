@@ -14,55 +14,41 @@ class StumbleUpon {
     this.title = encodeURIComponent(title);
   }
   
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
-  }
-  
   shareWindow() {
     let share_url = 'https://stumbleupon.com/submit?url=' + this.url + '&title=' + this.title;
     
     document.body
-      .querySelectorAll("[data-social=stumbleupon]")
+      .querySelectorAll('[data-social=stumbleupon]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let count_url = 'https://stumbleupon.com/services/1.01/badge.getinfo?url=' + this.url;
+    let script = document.createElement('script');
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://query.yahooapis.com/v1/public/yql?q='
+      + encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.json();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=stumbleupon]")
-          .forEach(function (item) {
-            if (counter.result.views) {
-              return item.innerHTML = counter.result.views;
-            }
-            else {
-              return item.innerHTML = 0;
-            }
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=stumbleupon]')
+        .forEach(function (item) {
+          item.innerHTML = ((counter.results[0]).match(/"views":(\d+),/) != null)
+            ? (counter.results[0]).match(/"views":(\d+),/)[1] / 1
+            : 0;
+        });
+      
+      script.parentNode.removeChild(script);
+    };
+    
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let stumbleupon_share = new StumbleUpon().shareWindow();

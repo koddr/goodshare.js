@@ -22,7 +22,7 @@ var LinkedIn = function () {
   function LinkedIn() {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.location.href;
     var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.title;
-    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.head.querySelector("meta[name=description]").content;
+    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.head.querySelector('meta[name=description]').content;
 
     _classCallCheck(this, LinkedIn);
 
@@ -36,38 +36,30 @@ var LinkedIn = function () {
     value: function shareWindow() {
       var share_url = 'http://www.linkedin.com/shareArticle?url=' + this.url + '&text=' + this.title + '&summary=' + this.description + '&mini=true';
 
-      document.body.querySelectorAll("[data-social=linkedin]").forEach(function (item) {
+      document.body.querySelectorAll('[data-social=linkedin]').forEach(function (item) {
         item.addEventListener('click', function (event) {
           event.preventDefault();
-          return window.open(share_url, 'Share window', 'width=400, height=400');
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
       });
     }
   }, {
     key: 'getCounter',
     value: function getCounter() {
-      var count_url = 'https://www.linkedin.com/countserv/count/share?url=' + this.url;
+      var script = document.createElement('script');
+      var callback = ('cb_' + Math.random()).replace('.', '');
+      var count_url = 'https://www.linkedin.com/countserv/count/share?url=' + this.url + '&callback=' + callback;
 
-      fetch(count_url, { method: 'GET', mode: 'cors' }).then(this.checkStatus).then(function (response) {
-        return response.text();
-      }).then(function (counter) {
-        document.body.querySelectorAll("[data-counter=linkedin]").forEach(function (item) {
-          return item.innerHTML = counter.count;
+      window[callback] = function (counter) {
+        document.body.querySelectorAll('[data-counter=linkedin]').forEach(function (item) {
+          item.innerHTML = counter.count;
         });
-      }).catch(function (error) {
-        console.log('Request failed!', error);
-      });
-    }
-  }], [{
-    key: 'checkStatus',
-    value: function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
+
+        script.parentNode.removeChild(script);
+      };
+
+      script.src = count_url;
+      document.body.appendChild(script);
     }
   }]);
 

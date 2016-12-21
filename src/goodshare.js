@@ -10,8 +10,6 @@
  *  any of your website!
  */
 
-import 'whatwg-fetch';
-
 /**
  *  Import social networks providers with share counter.
  */

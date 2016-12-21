@@ -14,51 +14,40 @@ class Odnoklassniki {
     this.title = encodeURIComponent(title);
   }
   
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
-  }
-  
   shareWindow() {
-    let share_url = 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + this.url +
+    let share_url = 'https://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + this.url +
       '&st.comments=' + this.title;
     
     document.body
-      .querySelectorAll("[data-social=odnoklassniki]")
+      .querySelectorAll('[data-social=odnoklassniki]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
+    window.ODKL = {};
+  
+    let script = document.createElement('script');
     let count_url = 'https://connect.ok.ru/dk?st.cmd=extLike&uid=1&ref=' + this.url;
+  
+    window.ODKL.updateCount = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=odnoklassniki]')
+        .forEach(function (item) {
+          item.innerHTML = counter;
+        });
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.text();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=odnoklassniki]")
-          .forEach(function (item) {
-            return item.innerHTML = counter.match(/\'(\d+)\'\)\;$/)[1] / 1;
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let odnoklassniki_share = new Odnoklassniki().shareWindow();

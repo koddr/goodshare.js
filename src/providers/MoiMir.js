@@ -11,65 +11,49 @@
 class MoiMir {
   constructor(url = document.location.href,
               title = document.title,
-              description = document.head.querySelector("meta[name=description]").content,
-              image = document.head.querySelector("link[rel=image_src]").href) {
-    this.url = encodeURIComponent(url);
+              description = document.head.querySelector('meta[name=description]').content,
+              image = document.head.querySelector('link[rel=image_src]').href) {
+    this.url = url;
     this.title = encodeURIComponent(title);
     this.description = encodeURIComponent(description);
     this.image = encodeURIComponent(image);
   }
   
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
-  }
-  
   shareWindow() {
-    let share_url = 'http://connect.mail.ru/share?url=' + this.url +
+    let share_url = 'http://connect.mail.ru/share?url=' + encodeURIComponent(this.url) +
       '&title=' + this.title + '&description=' + this.description +
       '&imageurl=' + this.image;
     
     document.body
-      .querySelectorAll("[data-social=moimir]")
+      .querySelectorAll('[data-social=moimir]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let page_url = this.url;
-    let count_url = 'https://connect.mail.ru/share_count?url_list=' + page_url;
+    let script = document.createElement('script');
+    let this_url = encodeURIComponent((this.url).replace(/^.*?:\/\//, ''));
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://appsmail.ru/share/count/' + this_url + '?callback=' + callback;
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.json();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=moimir]")
-          .forEach(function (item) {
-            for (page_url in counter) {
-              if (counter.hasOwnProperty(page_url)) {
-                return item.innerHTML = counter[page_url].shares;
-              }
-            }
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=moimir]')
+        .forEach(function (item) {
+          item.innerHTML = counter.share_mm;
+        });
+      
+      script.parentNode.removeChild(script);
+    };
+    
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let moimir_share = new MoiMir().shareWindow();

@@ -11,21 +11,10 @@
 class LinkedIn {
   constructor(url = document.location.href,
               title = document.title,
-              description = document.head.querySelector("meta[name=description]").content) {
+              description = document.head.querySelector('meta[name=description]').content) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = encodeURIComponent(description);
-  }
-  
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
   }
   
   shareWindow() {
@@ -33,35 +22,34 @@ class LinkedIn {
       '&text=' + this.title + '&summary=' + this.description + '&mini=true';
     
     document.body
-      .querySelectorAll("[data-social=linkedin]")
+      .querySelectorAll('[data-social=linkedin]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let count_url = 'https://www.linkedin.com/countserv/count/share?url=' + this.url;
+    let script = document.createElement('script');
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://www.linkedin.com/countserv/count/share?url=' + this.url + '&callback=' + callback;
+  
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=linkedin]')
+        .forEach(function (item) {
+          item.innerHTML = counter.count;
+        });
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.text();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=linkedin]")
-          .forEach(function (item) {
-            return item.innerHTML = counter.count;
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let linkedin_share = new LinkedIn().shareWindow();

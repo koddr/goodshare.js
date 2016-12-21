@@ -14,52 +14,42 @@ class Pocket {
     this.title = encodeURIComponent(title);
   }
   
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    else {
-      let error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
-  }
-  
   shareWindow() {
     let share_url = 'https://getpocket.com/save?url=' + this.url + '&title=' + this.title;
     
     document.body
-      .querySelectorAll("[data-social=pocket]")
+      .querySelectorAll('[data-social=pocket]')
       .forEach(function (item) {
         item
           .addEventListener('click', function (event) {
             event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
+            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
           });
       });
   }
   
   getCounter() {
-    let count_url = 'https://widgets.getpocket.com/v1/button?label=pocket&count=vertical&align=left&v=1&url=' +
-      this.url + "&src=" + this.url;
+    let script = document.createElement('script');
+    let callback = ('cb_' + Math.random()).replace('.', '');
+    let count_url = 'https://query.yahooapis.com/v1/public/yql?q='
+    + encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
+  
+    window[callback] = (counter) => {
+      document.body
+        .querySelectorAll('[data-counter=pocket]')
+        .forEach(function (item) {
+          item.innerHTML = (counter.results.length > 0)
+            ? (counter.results[0]).match(/em id="cnt">(\d+)</)[1] / 1
+            : 0;
+        });
     
-    fetch(count_url, {method: 'GET', mode: 'cors'})
-      .then(this.checkStatus)
-      .then((response) => {
-        return response.text();
-      })
-      .then((counter) => {
-        document.body
-          .querySelectorAll("[data-counter=pocket]")
-          .forEach(function (item) {
-            return item.innerHTML = counter.match(/em id="cnt">(\d+)</)[1] / 1;
-          });
-      })
-      .catch((error) => {
-        console.log('Request failed!', error);
-      });
-  };
+      script.parentNode.removeChild(script);
+    };
+  
+    script.src = count_url;
+    document.body.appendChild(script);
+  }
 }
 
 export let pocket_share = new Pocket().shareWindow();
-export let pocket_counter = new Pocket().getCounter();
+export let pocket_counter = new Pocket('http://habrahabr.ru').getCounter();
