@@ -168,4 +168,4 @@ If you want help, we will be glad reviews about `goodshare.js` on personal blogs
 
 ## License
 
-[The MIT License (MIT)](https://github.com/koddr/goodshare.js/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/koddr/goodshare.js/blob/master/LICENSE.md)
