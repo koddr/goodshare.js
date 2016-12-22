@@ -47,7 +47,7 @@ var Pinterest = function () {
     key: 'getCounter',
     value: function getCounter() {
       var script = document.createElement('script');
-      var count_url = 'http://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + this.url;
+      var count_url = 'https://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + this.url;
 
       window['receiveCount'] = function (counter) {
         document.body.querySelectorAll('[data-counter=pinterest]').forEach(function (item) {
