@@ -1,4 +1,5 @@
 .gitignore
 .idea/
 .babelrc
+npm-debug.log
 node_modules/
