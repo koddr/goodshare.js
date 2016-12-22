@@ -9,7 +9,7 @@ Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website 
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-## [Yes. We have a simple live demo! Just click me :D](http://goodshare.ru/examples/example-1.html)
+### Yes. We have a simple live demo! [Just click me :D](http://goodshare.ru/examples/example-1.html)
 
 ## Install via `npm` (recommended)
 
