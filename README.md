@@ -9,7 +9,9 @@ Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website 
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-### Yes. We have a simple live demo! [Just click me :D](http://goodshare.ru/examples/example-1.html)
+### Live demo
+
+Yes. We have a simple live demo! [Just click me](http://goodshare.ru/examples/example-1.html) :D
 
 ## Install via `npm` (recommended)
 
@@ -74,7 +76,7 @@ Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js
 * `whatsapp` [WhatsApp](http://www.whatsapp.com)
 * `line` [LINE](http://line.me/en/)
 
-## Description
+## Share links
 
 Plugin works with any HTML tags: `<a>` or `<div>` or `<button>` or other. So you can choose any and add required attributes `data-social`. For example:
 
@@ -99,7 +101,7 @@ We use `event.preventDefault()` for event «click». So don't be afraid to use l
 ```html
 <a href="#" data-social="...">My link</a>
 ```
-## Counters
+## Share counters
 
 To display counter, just add `data-counter` attribute to HTML element that will contain numbers. For example:
 
