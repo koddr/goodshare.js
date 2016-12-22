@@ -23,9 +23,7 @@ $ npm install goodshare.js
 
 ```html
 <!-- Latest goodshare.js minify version -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/latest/goodshare.min.js" 
-  integrity="sha256-h7NjXmp5KL9xju2PnJPLvI8G51iEonmZdL1EhO4vTL4=" 
-  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/latest/goodshare.min.js"></script>
 ```
 
 ## Old way to install
