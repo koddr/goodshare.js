@@ -140,6 +140,20 @@ Simple solution for single domain: http://opensharecount.com
 
 **Note:** We're **not** authors of the web site *opensharecount.com*, if something not working&nbsp;&mdash; write to their support please!
 
+## Customization
+
+For replace share and/or counter URL (by default, getting from `window.location.href`)&nbsp;&mdash; just create new object with URL you want. For example:
+
+```html
+<script>
+  // For share link
+  new Facebook('http://your-another-site.com/').shareWindow();
+  
+  // For share count
+  new Facebook('http://your-another-site.com/').shareWindow();
+</script>
+```
+
 ## Modules for popular CMS
 
 * Drupal 7.x: https://github.com/nosov33/drupal_goodshare
