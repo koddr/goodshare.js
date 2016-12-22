@@ -4,10 +4,12 @@
 
 Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website visitors share a link on social networks and microblogs or mobile messengers. Easy to install and configuring on any of your website!
 
-**Warning! No more depending on jQuery!** Since `4.0.0` we **don't support** old jQuery versions (`3.2.9` and lower) of `goodshare.js`. Thank you jQuery, but ES6 is better and cleaner.
+**Warning! No more depending on jQuery!** Since `4.0.0`, we'll no longer support the old `goodshare.js` version (`3.2.9` and lower). Thank you jQuery, but ES6 is better and cleaner.
 
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+
+## [Yes. We have a simple live demo! Just click me :D](http://goodshare.ru/examples/example-1.html)
 
 ## Install via `npm` (recommended)
 
@@ -136,13 +138,7 @@ Simple solution for single domain: http://opensharecount.com
 
 **Note:** We're **not** authors of the web site *opensharecount.com*, if something not working&nbsp;&mdash; write to their support please!
 
-## Example
-
-This example shows one of decoration options with all supported social networks.
-
-![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver11.png)
-
-## Modules for CMS
+## Modules for popular CMS
 
 * Drupal 7.x: https://github.com/nosov33/drupal_goodshare
 
