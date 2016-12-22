@@ -4,19 +4,24 @@
 
 Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website visitors share a link on social networks and microblogs or mobile messengers. Easy to install and configuring on any of your website!
 
-**Warning!** Since `4.0.0` we **don't support** old jQuery versions of `goodshare.js`. Thank you jQuery, but ES6 is better and cleaner.
+**Warning! No more depending on jQuery!** Since `4.0.0` we **don't support** old jQuery versions (`3.2.9` and lower) of `goodshare.js`. Thank you jQuery, but ES6 is better and cleaner.
 
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 ## Install via `npm` (recommended)
 
-`$ npm install goodshare.js`
+```bash
+$ npm install goodshare.js
+```
 
-## Fast CDN
+## Work through CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/4.0.1/goodshare.min.js" integrity="sha256-h7NjXmp5KL9xju2PnJPLvI8G51iEonmZdL1EhO4vTL4=" crossorigin="anonymous"></script>
+<!-- Latest goodshare.js minify version -->
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/latest/goodshare.min.js" 
+  integrity="sha256-h7NjXmp5KL9xju2PnJPLvI8G51iEonmZdL1EhO4vTL4=" 
+  crossorigin="anonymous"></script>
 ```
 
 ## Old way to install
@@ -123,19 +128,23 @@ Value of `data-counter` attribute, see in this list of supported social networks
 * `buffer` [Buffer](http://buffer.com)
 * `xing` [Xing](http://www.xing.com)
 
-**Note:** `Google Plus`, `Surfingbird`, `StumbleUpon`, `Pocket` and `Xing` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know — [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
+**Note:** `Google Plus`, `Surfingbird`, `StumbleUpon`, `Pocket` and `Xing` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know&nbsp;&mdash; [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
 
 ### How to get Twitter share counter after API 1.1 changes?
 
 Simple solution for single domain: http://opensharecount.com
 
-**Note:** We're **not** authors of the web site *opensharecount.com*, if something not working — write to their support please!
+**Note:** We're **not** authors of the web site *opensharecount.com*, if something not working&nbsp;&mdash; write to their support please!
 
 ## Example
 
 This example shows one of decoration options with all supported social networks.
 
 ![goodshare.js usage example github](http://goodshare.ru/assets/images/goodshare-usage-example-github-ver11.png)
+
+## Modules for CMS
+
+* Drupal 7.x: https://github.com/nosov33/drupal_goodshare
 
 ## Developers
 
