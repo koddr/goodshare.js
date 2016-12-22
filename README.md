@@ -13,6 +13,12 @@ Simple install, extensive documentation, developer support, **SEO friendly**, ma
 
 `$ npm install goodshare.js`
 
+## Fast CDN
+
+```html
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/4.0.1/goodshare.min.js" integrity="sha256-h7NjXmp5KL9xju2PnJPLvI8G51iEonmZdL1EhO4vTL4=" crossorigin="anonymous"></script>
+```
+
 ## Old way to install
 
 Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js/master/goodshare.min.js) and place file to your project template (before close `body` tag):
