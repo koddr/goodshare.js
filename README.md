@@ -1,4 +1,4 @@
-![goodshare.js logo github](http://goodshare.ru/assets/images/goodshare-logo-github.jpg)
+![goodshare.js logo github](http://goodshare.ru/assets/images/goodshare-logo-github-v3.jpg)
 
 # goodshare.js
 
