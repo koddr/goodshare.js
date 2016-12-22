@@ -150,7 +150,7 @@ For replace share and/or counter URL (by default, getting from `window.location.
   new Facebook('http://your-another-site.com/').shareWindow();
   
   // For share count
-  new Facebook('http://your-another-site.com/').shareWindow();
+  new Facebook('http://your-another-site.com/').getCounter();
 </script>
 ```
 
