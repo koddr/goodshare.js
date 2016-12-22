@@ -22,8 +22,8 @@ $ npm install goodshare.js
 ## Work through CDN
 
 ```html
-<!-- Latest goodshare.js minify version -->
-<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/latest/goodshare.min.js"></script>
+<!-- goodshare.js minify version -->
+<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/4/goodshare.min.js"></script>
 ```
 
 ## Old way to install
