@@ -11,7 +11,7 @@ Simple install, extensive documentation, developer support, **SEO friendly**, ma
 
 ### Live demo
 
-Yes. We have a simple live demo! [Just click me](http://goodshare.ru/examples/example-1.html) :D
+Yes. We have a simple live demo! [Just click me](https://koddr.me/projects/examples/goodshare-js) :D
 
 ## Install via `npm` (recommended)
 
