@@ -1,6 +1,6 @@
 ![goodshare.js logo github](https://koddr.me/images/projects/goodshare.js-logo-github.jpg)
 
-# goodshare.js [![GitHub version](https://badge.fury.io/gh/koddr%2Fgoodshare.js.svg)](https://badge.fury.io/gh/koddr%2Fgoodshare.js)
+# goodshare.js [![npm version](https://badge.fury.io/js/goodshare.js.svg)](https://badge.fury.io/js/goodshare.js)
 
 Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website visitors share a link on social networks and microblogs or mobile messengers. Easy to install and configuring on any of your website!
 
