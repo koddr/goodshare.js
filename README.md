@@ -152,6 +152,23 @@ For replace share and/or counter URL (by default, getting from `window.location.
 </script>
 ```
 
+### How to reorganize social networks? Simple!
+
+* First, clone `goodshare.js` repository to you computer:
+
+```bash
+$ cd ~/my-develop-dir/
+$ git clone https://github.com/koddr/goodshare.js.git
+```
+
+* Next, open file `./src/goodshare.js` at your favorite IDE;
+* Comment out or delete unwanted lines with social networks providers;
+* Last, run `npm` build (require [Node.js](https://nodejs.org/en/)):
+
+```bash
+$ npm run build
+```
+
 ## Modules for popular CMS
 
 * Drupal 7.x: https://github.com/nosov33/drupal_goodshare
