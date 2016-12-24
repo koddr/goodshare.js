@@ -163,10 +163,11 @@ $ git clone https://github.com/koddr/goodshare.js.git
 
 * Next, open file `./src/goodshare.js` at your favorite IDE;
 * Comment out or delete unwanted lines with social networks providers;
-* Last, run `npm` build (require [Node.js](https://nodejs.org/en/)):
+* Last, run build and packing to minify file (required [Babel](http://babeljs.io) and [Webpack](https://webpack.github.io)):
 
 ```bash
-$ npm run build
+$ babel src -d dist
+$ webpack ./dist/goodshare.js ./goodshare.min.js -p
 ```
 
 ## Modules for popular CMS
