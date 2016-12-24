@@ -15,36 +15,34 @@ class Odnoklassniki {
   }
   
   shareWindow() {
+    let share_elements = document.querySelectorAll('[data-social=odnoklassniki]');
     let share_url = 'https://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + this.url +
       '&st.comments=' + this.title;
     
-    document.body
-      .querySelectorAll('[data-social=odnoklassniki]')
-      .forEach(function (item) {
-        item
-          .addEventListener('click', function (event) {
-            event.preventDefault();
-            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
-          });
-      });
+    [...share_elements].forEach((item) => {
+      item
+        .addEventListener('click', function (event) {
+          event.preventDefault();
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+        });
+    });
   }
   
   getCounter() {
-    window.ODKL = {};
-  
     let script = document.createElement('script');
+    let count_elements = document.querySelectorAll('[data-counter=odnoklassniki]');
     let count_url = 'https://connect.ok.ru/dk?st.cmd=extLike&uid=1&ref=' + this.url;
-  
-    window.ODKL.updateCount = (counter) => {
-      document.body
-        .querySelectorAll('[data-counter=odnoklassniki]')
-        .forEach(function (item) {
-          item.innerHTML = counter;
-        });
     
+    window.ODKL = {};
+    
+    window.ODKL.updateCount = (counter) => {
+      [...count_elements].forEach((item) => {
+        item.innerHTML = counter;
+      });
+      
       script.parentNode.removeChild(script);
     };
-  
+    
     script.src = count_url;
     document.body.appendChild(script);
   }

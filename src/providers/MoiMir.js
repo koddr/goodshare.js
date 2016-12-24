@@ -11,8 +11,8 @@
 class MoiMir {
   constructor(url = document.location.href,
               title = document.title,
-              description = document.head.querySelector('meta[name=description]').content,
-              image = document.head.querySelector('link[rel=image_src]').href) {
+              description = document.querySelector('meta[name=description]').content,
+              image = document.querySelector('link[rel=image_src]').href) {
     this.url = url;
     this.title = encodeURIComponent(title);
     this.description = encodeURIComponent(description);
@@ -20,33 +20,31 @@ class MoiMir {
   }
   
   shareWindow() {
+    let share_elements = document.querySelectorAll('[data-social=moimir]');
     let share_url = 'http://connect.mail.ru/share?url=' + encodeURIComponent(this.url) +
       '&title=' + this.title + '&description=' + this.description +
       '&imageurl=' + this.image;
     
-    document.body
-      .querySelectorAll('[data-social=moimir]')
-      .forEach(function (item) {
-        item
-          .addEventListener('click', function (event) {
-            event.preventDefault();
-            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
-          });
-      });
+    [...share_elements].forEach((item) => {
+      item
+        .addEventListener('click', function (event) {
+          event.preventDefault();
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+        });
+    });
   }
   
   getCounter() {
     let script = document.createElement('script');
     let this_url = encodeURIComponent((this.url).replace(/^.*?:\/\//, ''));
-    let callback = ('cb_' + Math.random()).replace('.', '');
+    let callback = ('goodshare_' + Math.random()).replace('.', '');
+    let count_elements = document.querySelectorAll('[data-counter=moimir]');
     let count_url = 'https://appsmail.ru/share/count/' + this_url + '?callback=' + callback;
     
     window[callback] = (counter) => {
-      document.body
-        .querySelectorAll('[data-counter=moimir]')
-        .forEach(function (item) {
-          item.innerHTML = counter.share_mm;
-        });
+      [...count_elements].forEach((item) => {
+        item.innerHTML = counter.share_mm;
+      });
       
       script.parentNode.removeChild(script);
     };

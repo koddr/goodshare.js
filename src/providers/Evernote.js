@@ -11,25 +11,24 @@
 class Evernote {
   constructor(url = document.location.href,
               title = document.title,
-              description = document.head.querySelector("meta[name=description]").content) {
+              description = document.querySelector('meta[name=description]').content) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = encodeURIComponent(description);
   }
   
   shareWindow() {
+    let share_elements = document.querySelectorAll('[data-social=evernote]');
     let share_url = 'https://www.evernote.com/clip.action?url=' + this.url +
       '&title=' + this.title + '&body=' + this.description;
     
-    document.body
-      .querySelectorAll("[data-social=evernote]")
-      .forEach(function (item) {
-        item
-          .addEventListener('click', function (event) {
-            event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
-          });
-      });
+    [...share_elements].forEach((item) => {
+      item
+        .addEventListener('click', function (event) {
+          event.preventDefault();
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+        });
+    });
   }
 }
 

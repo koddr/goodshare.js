@@ -15,30 +15,28 @@ class Facebook {
   }
   
   shareWindow() {
+    let share_elements = document.querySelectorAll('[data-social=facebook]');
     let share_url = 'https://facebook.com/sharer/sharer.php?u=' + this.url + '&t=' + this.title;
     
-    document.body
-      .querySelectorAll('[data-social=facebook]')
-      .forEach(function (item) {
-        item
-          .addEventListener('click', function (event) {
-            event.preventDefault();
-            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
-          });
-      });
+    [...share_elements].forEach((item) => {
+      item
+        .addEventListener('click', function (event) {
+          event.preventDefault();
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+        });
+    });
   }
   
   getCounter() {
     let script = document.createElement('script');
-    let callback = ('cb_' + Math.random()).replace('.', '');
+    let callback = ('goodshare_' + Math.random()).replace('.', '');
+    let count_elements = document.querySelectorAll('[data-counter=facebook]');
     let count_url = 'https://graph.facebook.com/?id=' + this.url + '&callback=' + callback;
     
     window[callback] = (counter) => {
-      document.body
-        .querySelectorAll('[data-counter=facebook]')
-        .forEach(function (item) {
-          item.innerHTML = (counter.share) ? counter.share.share_count : 0;
-        });
+      [...count_elements].forEach((item) => {
+        item.innerHTML = (counter.share) ? counter.share.share_count : 0;
+      });
       
       script.parentNode.removeChild(script);
     };

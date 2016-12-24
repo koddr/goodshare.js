@@ -15,33 +15,32 @@ class StumbleUpon {
   }
   
   shareWindow() {
+    let share_elements = document.querySelectorAll('[data-social=stumbleupon]');
     let share_url = 'https://stumbleupon.com/submit?url=' + this.url + '&title=' + this.title;
     
-    document.body
-      .querySelectorAll('[data-social=stumbleupon]')
-      .forEach(function (item) {
-        item
-          .addEventListener('click', function (event) {
-            event.preventDefault();
-            return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
-          });
-      });
+    [...share_elements].forEach((item) => {
+      item
+        .addEventListener('click', function (event) {
+          event.preventDefault();
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+        });
+    });
   }
   
   getCounter() {
     let script = document.createElement('script');
-    let callback = ('cb_' + Math.random()).replace('.', '');
+    let callback = ('goodshare_' + Math.random()).replace('.', '');
+    let share_elements = document.querySelectorAll('[data-counter=stumbleupon]');
     let count_url = 'https://query.yahooapis.com/v1/public/yql?q='
-      + encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
+      + encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url='
+        + this.url + '" and xpath="*"') + '&callback=' + callback;
     
     window[callback] = (counter) => {
-      document.body
-        .querySelectorAll('[data-counter=stumbleupon]')
-        .forEach(function (item) {
-          item.innerHTML = ((counter.results[0]).match(/"views":(\d+),/) != null)
-            ? (counter.results[0]).match(/"views":(\d+),/)[1] / 1
-            : 0;
-        });
+      [...share_elements].forEach((item) => {
+        item.innerHTML = ((counter.results[0]).match(/"views":(\d+),/) != null)
+          ? (counter.results[0]).match(/"views":(\d+),/)[1] / 1
+          : 0;
+      });
       
       script.parentNode.removeChild(script);
     };

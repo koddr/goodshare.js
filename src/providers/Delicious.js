@@ -15,17 +15,16 @@ class Delicious {
   }
   
   shareWindow() {
+    let share_elements = document.querySelectorAll('[data-social=delicious]');
     let share_url = 'https://del.icio.us/save?url=' + this.url + '&title=' + this.title;
     
-    document.body
-      .querySelectorAll("[data-social=delicious]")
-      .forEach(function (item) {
-        item
-          .addEventListener('click', function (event) {
-            event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
-          });
-      });
+    [...share_elements].forEach((item) => {
+      item
+        .addEventListener('click', function (event) {
+          event.preventDefault();
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+        });
+    });
   }
 }
 

@@ -14,17 +14,16 @@ class Readability {
   }
   
   shareWindow() {
+    let share_elements = document.querySelectorAll('[data-social=readability]');
     let share_url = 'http://www.readability.com/save?url=' + this.url;
     
-    document.body
-      .querySelectorAll("[data-social=readability]")
-      .forEach(function (item) {
-        item
-          .addEventListener('click', function (event) {
-            event.preventDefault();
-            return window.open(share_url, 'Share window', 'width=400, height=400');
-          });
-      });
+    [...share_elements].forEach((item) => {
+      item
+        .addEventListener('click', function (event) {
+          event.preventDefault();
+          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+        });
+    });
   }
 }
 
