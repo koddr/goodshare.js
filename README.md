@@ -62,7 +62,7 @@ Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js
 * `xing` [Xing](http://www.xing.com)
 * `wordpress` [WordPress](http://www.wordpress.com)
 * `baidu` [Baidu](http://www.baidu.com)
-* `renren` [Renren](http://www.renren.com)
+* `renren` [RenRen](http://www.renren.com)
 * `weibo` [Weibo](http://www.weibo.com)
 
 **Note:** If you don't see your social network, please [let us know](https://github.com/koddr/goodshare.js/issues/new) and we'll try to add it!
