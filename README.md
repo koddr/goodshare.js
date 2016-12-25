@@ -92,6 +92,19 @@ Plugin works with any HTML tags: `<a>` or `<div>` or `<button>` or other. So you
 <i class="icon-google-plus" data-social="googleplus"></i>
 ```
 
+### Note for `description` and `image`
+
+By default, `goodshare.js` search this tags for get description and image (for some social networks):
+
+```html
+<head>
+  ...
+  <meta name="description" content="Current page description."/>
+  <link rel="image_src" href="http://your-site.com/path/to/image.jpg"/>
+  ...
+</head>
+```
+
 ### Note for `<a>` links
 
 We use `event.preventDefault()` for event «click». So don't be afraid to use links like this:
@@ -99,6 +112,7 @@ We use `event.preventDefault()` for event «click». So don't be afraid to use l
 ```html
 <a href="#" data-social="...">My link</a>
 ```
+
 ## Share counters
 
 To display counter, just add `data-counter` attribute to HTML element that will contain numbers. For example:
@@ -138,21 +152,7 @@ Simple solution for single domain: http://opensharecount.com
 
 **Note:** We're **not** authors of the web site *opensharecount.com*, if something not working&nbsp;&mdash; write to their support please!
 
-## Customization
-
-For replace share and/or counter URL (by default, getting from `window.location.href`)&nbsp;&mdash; just create new object with URL you want. For example:
-
-```html
-<script>
-  // For share link
-  new Facebook('http://your-another-site.com/').shareWindow();
-  
-  // For share count
-  new Facebook('http://your-another-site.com/').getCounter();
-</script>
-```
-
-### How to reorganize social networks? Simple!
+## How to reorganize social networks? Simple!
 
 * First, clone `goodshare.js` repository to you computer:
 
@@ -168,6 +168,29 @@ $ git clone https://github.com/koddr/goodshare.js.git
 ```bash
 $ babel src -d dist
 $ webpack ./dist/goodshare.js ./goodshare.min.js -p
+```
+
+### Customize share link
+
+If you want to replace any default share parameters (URL, title, descripton, image)&nbsp;&mdash; just edit social network provider and re-build script.
+
+```javascript
+export let vkontakte_share = new Vkontakte(
+  'http://your-another-site.com/', // URL
+  'New title of current page', // title
+  'New description of current page.', // description
+  'http://your-another-site.com/path/to/new-image.jpg' // image
+).shareWindow();
+```
+
+### Customize share counter
+
+If you want to replace default share counter URL (get from `window.location.href`)&nbsp;&mdash; just edit social network provider and re-build script.
+
+```javascript
+export let vkontakte_counter = new Vkontakte(
+  'http://your-another-site.com/' // URL
+).getCounter();
 ```
 
 ## Modules for popular CMS
