@@ -16,7 +16,7 @@ Simple install, extensive documentation, developer support, **SEO friendly**, ma
 ## Install via `npm` (recommended)
 
 ```bash
-$ npm install goodshare.js
+$ npm install goodshare.js --save
 ```
 
 ## Work through CDN
