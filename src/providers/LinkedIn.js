@@ -11,10 +11,10 @@
 class LinkedIn {
   constructor(url = document.location.href,
               title = document.title,
-              description = document.querySelector('meta[name=description]').content) {
+              description = document.querySelector('meta[name=description]')) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
-    this.description = encodeURIComponent(description);
+    this.description = (description) ? encodeURIComponent(description.content) : '';
   }
   
   shareWindow() {

@@ -10,11 +10,11 @@
 
 class Pinterest {
   constructor(url = document.location.href,
-              description = document.querySelector('meta[name=description]').content,
-              image = document.querySelector('link[rel=image_src]').href) {
+              description = document.querySelector('meta[name=description]'),
+              image = document.querySelector('link[rel=image_src]')) {
     this.url = encodeURIComponent(url);
-    this.description = encodeURIComponent(description);
-    this.image = encodeURIComponent(image);
+    this.description = (description) ? encodeURIComponent(description.content) : '';
+    this.image = (image) ? encodeURIComponent(image.href) : '';
   }
   
   shareWindow() {

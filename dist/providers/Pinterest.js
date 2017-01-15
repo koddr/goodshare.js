@@ -23,14 +23,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Pinterest = function () {
   function Pinterest() {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.location.href;
-    var description = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.querySelector('meta[name=description]').content;
-    var image = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.querySelector('link[rel=image_src]').href;
+    var description = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.querySelector('meta[name=description]');
+    var image = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.querySelector('link[rel=image_src]');
 
     _classCallCheck(this, Pinterest);
 
     this.url = encodeURIComponent(url);
-    this.description = encodeURIComponent(description);
-    this.image = encodeURIComponent(image);
+    this.description = description ? encodeURIComponent(description.content) : '';
+    this.image = image ? encodeURIComponent(image.href) : '';
   }
 
   _createClass(Pinterest, [{

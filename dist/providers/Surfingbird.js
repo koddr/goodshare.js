@@ -24,13 +24,13 @@ var Surfingbird = function () {
   function Surfingbird() {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.location.href;
     var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.title;
-    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.querySelector('meta[name=description]').content;
+    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.querySelector('meta[name=description]');
 
     _classCallCheck(this, Surfingbird);
 
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
-    this.description = encodeURIComponent(description);
+    this.description = description ? encodeURIComponent(description.content) : '';
   }
 
   _createClass(Surfingbird, [{
