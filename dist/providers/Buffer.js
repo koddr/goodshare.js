@@ -52,16 +52,18 @@ var Buffer = function () {
       var count_elements = document.querySelectorAll('[data-counter=buffer]');
       var count_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + this.url + '&callback=' + callback;
 
-      window[callback] = function (counter) {
-        [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
-          item.innerHTML = counter.shares ? counter.shares : 0;
-        });
+      if (count_elements.length > 0) {
+        window[callback] = function (counter) {
+          [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
+            item.innerHTML = counter.length > 0 ? counter.shares : 0;
+          });
 
-        script.parentNode.removeChild(script);
-      };
+          script.parentNode.removeChild(script);
+        };
 
-      script.src = count_url;
-      document.body.appendChild(script);
+        script.src = count_url;
+        document.body.appendChild(script);
+      }
     }
   }]);
 

@@ -35,16 +35,18 @@ class Odnoklassniki {
     
     window.ODKL = {};
     
-    window.ODKL.updateCount = (counter) => {
-      [...count_elements].forEach((item) => {
-        item.innerHTML = counter;
-      });
+    if (count_elements.length > 0) {
+      window.ODKL.updateCount = (counter) => {
+        [...count_elements].forEach((item) => {
+          item.innerHTML = counter;
+        });
+        
+        script.parentNode.removeChild(script);
+      };
       
-      script.parentNode.removeChild(script);
-    };
-    
-    script.src = count_url;
-    document.body.appendChild(script);
+      script.src = count_url;
+      document.body.appendChild(script);
+    }
   }
 }
 

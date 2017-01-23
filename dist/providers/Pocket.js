@@ -52,16 +52,18 @@ var Pocket = function () {
       var count_elements = document.querySelectorAll('[data-counter=pocket]');
       var count_url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url=' + this.url + '" and xpath="*"') + '&callback=' + callback;
 
-      window[callback] = function (counter) {
-        [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
-          item.innerHTML = counter.results.length > 0 ? counter.results[0].match(/em id="cnt">(\d+)</)[1] / 1 : 0;
-        });
+      if (count_elements.length > 0) {
+        window[callback] = function (counter) {
+          [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
+            item.innerHTML = counter.results.length > 0 ? counter.results[0].match(/em id="cnt">(\d+)</)[1] / 1 : 0;
+          });
 
-        script.parentNode.removeChild(script);
-      };
+          script.parentNode.removeChild(script);
+        };
 
-      script.src = count_url;
-      document.body.appendChild(script);
+        script.src = count_url;
+        document.body.appendChild(script);
+      }
     }
   }]);
 

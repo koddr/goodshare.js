@@ -53,16 +53,18 @@ var Pinterest = function () {
       var count_elements = document.querySelectorAll('[data-counter=pinterest]');
       var count_url = 'https://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + this.url;
 
-      window['receiveCount'] = function (counter) {
-        [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
-          item.innerHTML = counter.count;
-        });
+      if (count_elements.length > 0) {
+        window['receiveCount'] = function (counter) {
+          [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
+            item.innerHTML = counter.length > 0 ? counter.count : 0;
+          });
 
-        script.parentNode.removeChild(script);
-      };
+          script.parentNode.removeChild(script);
+        };
 
-      script.src = count_url;
-      document.body.appendChild(script);
+        script.src = count_url;
+        document.body.appendChild(script);
+      }
     }
   }]);
 

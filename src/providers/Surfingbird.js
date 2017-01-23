@@ -39,18 +39,20 @@ class Surfingbird {
       + encodeURIComponent('select * from html where url="https://surfingbird.ru/button?url='
         + this.url + '" and xpath="*"') + '&callback=' + callback;
     
-    window[callback] = (counter) => {
-      [...count_elements].forEach((item) => {
-        item.innerHTML = (counter.results.length > 0)
-          ? (counter.results[0]).match(/span class="stats-num">(\d+)</)[1] / 1
-          : 0;
-      });
+    if (count_elements.length > 0) {
+      window[callback] = (counter) => {
+        [...count_elements].forEach((item) => {
+          item.innerHTML = (counter.results.length > 0)
+            ? (counter.results[0]).match(/span class="stats-num">(\d+)</)[1] / 1
+            : 0;
+        });
+        
+        script.parentNode.removeChild(script);
+      };
       
-      script.parentNode.removeChild(script);
-    };
-    
-    script.src = count_url;
-    document.body.appendChild(script);
+      script.src = count_url;
+      document.body.appendChild(script);
+    }
   }
 }
 

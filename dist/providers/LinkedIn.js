@@ -54,16 +54,18 @@ var LinkedIn = function () {
       var count_elements = document.querySelectorAll('[data-counter=linkedin]');
       var count_url = 'https://www.linkedin.com/countserv/count/share?url=' + this.url + '&callback=' + callback;
 
-      window[callback] = function (counter) {
-        [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
-          item.innerHTML = counter.count;
-        });
+      if (count_elements.length > 0) {
+        window[callback] = function (counter) {
+          [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
+            item.innerHTML = counter.count;
+          });
 
-        script.parentNode.removeChild(script);
-      };
+          script.parentNode.removeChild(script);
+        };
 
-      script.src = count_url;
-      document.body.appendChild(script);
+        script.src = count_url;
+        document.body.appendChild(script);
+      }
     }
   }]);
 

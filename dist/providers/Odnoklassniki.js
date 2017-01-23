@@ -53,16 +53,18 @@ var Odnoklassniki = function () {
 
       window.ODKL = {};
 
-      window.ODKL.updateCount = function (counter) {
-        [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
-          item.innerHTML = counter;
-        });
+      if (count_elements.length > 0) {
+        window.ODKL.updateCount = function (counter) {
+          [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
+            item.innerHTML = counter;
+          });
 
-        script.parentNode.removeChild(script);
-      };
+          script.parentNode.removeChild(script);
+        };
 
-      script.src = count_url;
-      document.body.appendChild(script);
+        script.src = count_url;
+        document.body.appendChild(script);
+      }
     }
   }]);
 

@@ -35,18 +35,20 @@ class Pocket {
       + encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url='
         + this.url + '" and xpath="*"') + '&callback=' + callback;
     
-    window[callback] = (counter) => {
-      [...count_elements].forEach((item) => {
-        item.innerHTML = (counter.results.length > 0)
-          ? (counter.results[0]).match(/em id="cnt">(\d+)</)[1] / 1
-          : 0;
-      });
+    if (count_elements.length > 0) {
+      window[callback] = (counter) => {
+        [...count_elements].forEach((item) => {
+          item.innerHTML = (counter.results.length > 0)
+            ? (counter.results[0]).match(/em id="cnt">(\d+)</)[1] / 1
+            : 0;
+        });
+        
+        script.parentNode.removeChild(script);
+      };
       
-      script.parentNode.removeChild(script);
-    };
-    
-    script.src = count_url;
-    document.body.appendChild(script);
+      script.src = count_url;
+      document.body.appendChild(script);
+    }
   }
 }
 

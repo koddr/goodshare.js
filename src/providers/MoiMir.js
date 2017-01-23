@@ -41,16 +41,18 @@ class MoiMir {
     let count_elements = document.querySelectorAll('[data-counter=moimir]');
     let count_url = 'https://appsmail.ru/share/count/' + this_url + '?callback=' + callback;
     
-    window[callback] = (counter) => {
-      [...count_elements].forEach((item) => {
-        item.innerHTML = counter.share_mm;
-      });
+    if (count_elements.length > 0) {
+      window[callback] = (counter) => {
+        [...count_elements].forEach((item) => {
+          item.innerHTML = counter.share_mm;
+        });
+        
+        script.parentNode.removeChild(script);
+      };
       
-      script.parentNode.removeChild(script);
-    };
-    
-    script.src = count_url;
-    document.body.appendChild(script);
+      script.src = count_url;
+      document.body.appendChild(script);
+    }
   }
 }
 

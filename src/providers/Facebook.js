@@ -33,16 +33,18 @@ class Facebook {
     let count_elements = document.querySelectorAll('[data-counter=facebook]');
     let count_url = 'https://graph.facebook.com/?id=' + this.url + '&callback=' + callback;
     
-    window[callback] = (counter) => {
-      [...count_elements].forEach((item) => {
-        item.innerHTML = (counter.share) ? counter.share.share_count : 0;
-      });
-      
-      script.parentNode.removeChild(script);
-    };
+    if (count_elements.length > 0) {
+      window[callback] = (counter) => {
+        [...count_elements].forEach((item) => {
+          item.innerHTML = (counter.share) ? counter.share.share_count : 0;
+        });
     
-    script.src = count_url;
-    document.body.appendChild(script);
+        script.parentNode.removeChild(script);
+      };
+  
+      script.src = count_url;
+      document.body.appendChild(script);
+    }
   }
 }
 

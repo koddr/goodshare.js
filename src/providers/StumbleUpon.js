@@ -30,23 +30,25 @@ class StumbleUpon {
   getCounter() {
     let script = document.createElement('script');
     let callback = ('goodshare_' + Math.random()).replace('.', '');
-    let share_elements = document.querySelectorAll('[data-counter=stumbleupon]');
+    let count_elements = document.querySelectorAll('[data-counter=stumbleupon]');
     let count_url = 'https://query.yahooapis.com/v1/public/yql?q='
       + encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url='
         + this.url + '" and xpath="*"') + '&callback=' + callback;
     
-    window[callback] = (counter) => {
-      [...share_elements].forEach((item) => {
-        item.innerHTML = ((counter.results[0]).match(/"views":(\d+),/) != null)
-          ? (counter.results[0]).match(/"views":(\d+),/)[1] / 1
-          : 0;
-      });
+    if (count_elements.length > 0) {
+      window[callback] = (counter) => {
+        [...count_elements].forEach((item) => {
+          item.innerHTML = ((counter.results[0]).match(/"views":(\d+),/) != null)
+            ? (counter.results[0]).match(/"views":(\d+),/)[1] / 1
+            : 0;
+        });
+        
+        script.parentNode.removeChild(script);
+      };
       
-      script.parentNode.removeChild(script);
-    };
-    
-    script.src = count_url;
-    document.body.appendChild(script);
+      script.src = count_url;
+      document.body.appendChild(script);
+    }
   }
 }
 

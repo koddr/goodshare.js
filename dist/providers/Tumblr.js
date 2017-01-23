@@ -54,16 +54,18 @@ var Tumblr = function () {
       var count_elements = document.querySelectorAll('[data-counter=tumblr]');
       var count_url = 'https://api.tumblr.com/v2/share/stats?url=' + this.url + '&callback=' + callback;
 
-      window[callback] = function (counter) {
-        [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
-          item.innerHTML = counter.response.note_count;
-        });
+      if (count_elements.length > 0) {
+        window[callback] = function (counter) {
+          [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
+            item.innerHTML = counter.response.note_count;
+          });
 
-        script.parentNode.removeChild(script);
-      };
+          script.parentNode.removeChild(script);
+        };
 
-      script.src = count_url;
-      document.body.appendChild(script);
+        script.src = count_url;
+        document.body.appendChild(script);
+      }
     }
   }]);
 

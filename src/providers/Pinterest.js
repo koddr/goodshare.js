@@ -36,16 +36,18 @@ class Pinterest {
     let count_elements = document.querySelectorAll('[data-counter=pinterest]');
     let count_url = 'https://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + this.url;
     
-    window['receiveCount'] = (counter) => {
-      [...count_elements].forEach((item) => {
-        item.innerHTML = counter.count;
-      });
+    if (count_elements.length > 0) {
+      window['receiveCount'] = (counter) => {
+        [...count_elements].forEach((item) => {
+          item.innerHTML = (counter.length > 0) ? counter.count : 0;
+        });
+        
+        script.parentNode.removeChild(script);
+      };
       
-      script.parentNode.removeChild(script);
-    };
-    
-    script.src = count_url;
-    document.body.appendChild(script);
+      script.src = count_url;
+      document.body.appendChild(script);
+    }
   }
 }
 
