@@ -199,7 +199,7 @@ export let vkontakte_counter = new Vkontakte(
 
 ## Developers
 
-Development and maintenance of `goodshare.js` project engaged by Vikky Shostak ([Koddr](https://koddr.me)). If you want to write a «thank you» or ask us about something, [use this e-mail](mailto:koddr.me@yandex.ru).
+Development and maintenance of `goodshare.js` project engaged by Vikky Shostak ([Koddr](https://koddr.me)). If you want to write a «thank you» or ask us about something, [use this e-mail](mailto:koddr.me@gmail.com).
 
 ## Your help
 
