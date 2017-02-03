@@ -33,15 +33,16 @@ class Reddit {
     let count_elements = document.querySelectorAll('[data-counter=reddit]');
     let count_url = 'https://www.reddit.com/api/info.json?url=' + this.url + '&jsonp=' + callback;
   
-    window[callback] = (counter) => {
-      [...count_elements].forEach((item) => {
+    if (count_elements.length > 0) {
+      window[callback] = (counter) => {
+        [...count_elements].forEach((item) => {
           if (counter.data.children.length > 0) {
             let total_count = 0;
-    
+        
             for (let i = 0; i < counter.data.children.length; i++) {
               total_count += counter.data.children[i].data.score;
             }
-    
+        
             item.innerHTML = total_count;
           }
           else {
@@ -49,11 +50,12 @@ class Reddit {
           }
         });
     
-      script.parentNode.removeChild(script);
-    };
+        script.parentNode.removeChild(script);
+      };
   
-    script.src = count_url;
-    document.body.appendChild(script);
+      script.src = count_url;
+      document.body.appendChild(script);
+    }
   }
 }
 

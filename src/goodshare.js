@@ -3,7 +3,7 @@
  *  Copyright (c) 2017 Koddr https://koddr.me
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
- *  goodshare.js v4.0.4 at 15/01/2017 (19:35)
+ *  goodshare.js v4.0.6 at 03/02/2017 (20:00)
  *
  *  Useful modern JavaScript solution that will help your website visitors share a
  *  link on social networks and microblogs. Easy to install and configuring on

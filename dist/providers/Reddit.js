@@ -52,26 +52,28 @@ var Reddit = function () {
       var count_elements = document.querySelectorAll('[data-counter=reddit]');
       var count_url = 'https://www.reddit.com/api/info.json?url=' + this.url + '&jsonp=' + callback;
 
-      window[callback] = function (counter) {
-        [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
-          if (counter.data.children.length > 0) {
-            var total_count = 0;
+      if (count_elements.length > 0) {
+        window[callback] = function (counter) {
+          [].concat(_toConsumableArray(count_elements)).forEach(function (item) {
+            if (counter.data.children.length > 0) {
+              var total_count = 0;
 
-            for (var i = 0; i < counter.data.children.length; i++) {
-              total_count += counter.data.children[i].data.score;
+              for (var i = 0; i < counter.data.children.length; i++) {
+                total_count += counter.data.children[i].data.score;
+              }
+
+              item.innerHTML = total_count;
+            } else {
+              item.innerHTML = 0;
             }
+          });
 
-            item.innerHTML = total_count;
-          } else {
-            item.innerHTML = 0;
-          }
-        });
+          script.parentNode.removeChild(script);
+        };
 
-        script.parentNode.removeChild(script);
-      };
-
-      script.src = count_url;
-      document.body.appendChild(script);
+        script.src = count_url;
+        document.body.appendChild(script);
+      }
     }
   }]);
 
