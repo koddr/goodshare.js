@@ -4,7 +4,8 @@
   "description": "Useful modern JavaScript solution that will help your website visitors share a link on social networks and microblogs. Easy to install and configuring on any of your website!",
   "main": "goodshare.min.js",
   "scripts": {
-    "build": "babel src -d dist && ./node_modules/.bin/webpack ./dist/goodshare.js ./goodshare.min.js -p"
+    "dev": "babel src -d dist && ./node_modules/.bin/webpack ./dist/goodshare.js ./goodshare.js",
+    "prod": "babel src -d dist && ./node_modules/.bin/webpack ./dist/goodshare.js ./goodshare.min.js -p"
   },
   "repository": {
     "type": "git",
