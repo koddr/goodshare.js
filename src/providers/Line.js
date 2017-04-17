@@ -15,12 +15,14 @@ class Line {
   
   shareWindow() {
     let share_elements = document.querySelectorAll('[data-social=line]');
-    let share_url = 'line://msg/text/' + this.url;
-    
+    let thisUrl = this.url;
+
     [...share_elements].forEach((item) => {
       item
         .addEventListener('click', function (event) {
           event.preventDefault();
+          item.hasAttribute('data-target') ? thisUrl = encodeURIComponent(item.getAttribute('data-target')) : null;
+          let share_url = 'line://msg/text/' + thisUrl;
           return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
     });

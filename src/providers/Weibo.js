@@ -16,12 +16,16 @@ class Weibo {
   
   shareWindow() {
     let share_elements = document.querySelectorAll('[data-social=weibo]');
-    let share_url = 'http://service.weibo.com/share/share.php?url=' + this.url + '&title=' + this.title;
+    let thisUrl = this.url;
+    let thisTitle = this.title;
     
     [...share_elements].forEach((item) => {
       item
         .addEventListener('click', function (event) {
           event.preventDefault();
+          item.hasAttribute('data-target') ? thisUrl = encodeURIComponent(item.getAttribute('data-target')) : null;
+          item.hasAttribute('data-title') ? thisTitle = encodeURIComponent(item.getAttribute('data-title')) : null;
+          let share_url = 'http://service.weibo.com/share/share.php?url=' + thisUrl + '&title=' + thisTitle;
           return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
     });
