@@ -19,13 +19,18 @@ class Baidu {
   
   shareWindow() {
     let share_elements = document.querySelectorAll('[data-social=baidu]');
-    let share_url = 'https://cang.baidu.com/do/add?iu=' + this.url +
-      '&it=' + this.title + '&dc=' + this.description + '&fr=ien';
-  
+    let thisUrl = this.url;
+    let thisTitle = this.title;
+    let thisDescription = this.description;
+
     [...share_elements].forEach((item) => {
       item
         .addEventListener('click', function (event) {
           event.preventDefault();
+          item.hasAttribute('data-target') ? thisUrl = encodeURIComponent(item.getAttribute('data-target')) : null;
+          item.hasAttribute('data-title') ? thisTitle = encodeURIComponent(item.getAttribute('data-title')) : null;
+          item.hasAttribute('data-description') ? thisDescription = encodeURIComponent(item.getAttribute('data-description')) : null;
+          let share_url = 'https://cang.baidu.com/do/add?iu=' + thisUrl + '&it=' + thisTitle + '&dc=' + thisDescription + '&fr=ien';
           return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
     });

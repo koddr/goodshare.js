@@ -21,13 +21,21 @@ class WordPress {
   
   shareWindow() {
     let share_elements = document.querySelectorAll('[data-social=wordpress]');
-    let share_url = 'https://wordpress.com/wp-admin/press-this.php?u=' + this.url +
-      '&t=' + this.title + '&s=' + this.description + '&i=' + this.image + '&v=2';
+    let thisUrl = this.url;
+    let thisTitle = this.title;
+    let thisDescription = this.description;
+    let thisImage = this.image;
   
     [...share_elements].forEach((item) => {
       item
         .addEventListener('click', function (event) {
           event.preventDefault();
+          item.hasAttribute('data-target') ? thisUrl = encodeURIComponent(item.getAttribute('data-target')) : null;
+          item.hasAttribute('data-title') ? thisTitle = encodeURIComponent(item.getAttribute('data-title')) : null;
+          item.hasAttribute('data-description') ? thisDescription = encodeURIComponent(item.getAttribute('data-description')) : null;
+          item.hasAttribute('data-image') ? thisImage = encodeURIComponent(item.getAttribute('data-image')) : null;
+          let share_url = 'https://wordpress.com/wp-admin/press-this.php?u=' + thisUrl +
+            '&t=' + thisTitle + '&s=' + thisDescription + '&i=' + thisImage + '&v=2';
           return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
     });

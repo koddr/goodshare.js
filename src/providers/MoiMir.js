@@ -20,38 +20,55 @@ class MoiMir {
   }
   
   shareWindow() {
+    let thisUrl = this.url;
+    let thisTitle = this.title;
+    let thisDescription = this.description;
+    let thisImage = this.image;
     let share_elements = document.querySelectorAll('[data-social=moimir]');
-    let share_url = 'http://connect.mail.ru/share?url=' + encodeURIComponent(this.url) +
-      '&title=' + this.title + '&description=' + this.description +
-      '&imageurl=' + this.image;
     
     [...share_elements].forEach((item) => {
       item
         .addEventListener('click', function (event) {
           event.preventDefault();
+          item.hasAttribute('data-target') ? thisUrl = item.getAttribute('data-target') : null;
+          item.hasAttribute('data-title') ? thisTitle = encodeURIComponent(item.getAttribute('data-title')) : null;
+          item.hasAttribute('data-description') ? thisDescription = encodeURIComponent(item.getAttribute('data-description')) : null;
+          item.hasAttribute('data-image') ? thisImage = encodeURIComponent(item.getAttribute('data-image')) : null;
+          let share_url = 'http://connect.mail.ru/share?url=' + encodeURIComponent(thisUrl) +
+            '&title=' + thisTitle + '&description=' + thisDescription +
+            '&imageurl=' + thisImage;
           return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
     });
   }
   
   getCounter() {
-    let script = document.createElement('script');
-    let this_url = encodeURIComponent((this.url).replace(/^.*?:\/\//, ''));
-    let callback = ('goodshare_' + Math.random()).replace('.', '');
     let count_elements = document.querySelectorAll('[data-counter=moimir]');
-    let count_url = 'https://appsmail.ru/share/count/' + this_url + '?callback=' + callback;
-    
+
     if (count_elements.length > 0) {
-      window[callback] = (counter) => {
-        [...count_elements].forEach((item) => {
-          item.innerHTML = counter.share_mm;
-        });
-        
-        script.parentNode.removeChild(script);
-      };
-      
-      script.src = count_url;
-      document.body.appendChild(script);
+      let script = [];
+      let thisUrl = encodeURIComponent((this.url).replace(/^.*?:\/\//, ''));
+      [...count_elements].forEach((item) => {
+        let id, callback;
+        if (item.hasAttribute('data-id')) {
+          id = item.getAttribute('data-id');
+          callback = ('mail_' + id);
+          thisUrl = encodeURIComponent(item.parentNode.getAttribute('data-target').replace(/^.*?:\/\//, ''));
+        }
+        else{
+          id = 0;
+          callback = ('mail_' + Math.random()).replace('.', '');
+        }
+        script[id] = document.createElement('script');
+        let count_url = 'https://appsmail.ru/share/count/' + thisUrl + '?callback=' + callback;
+        window[callback] = (counter) => {
+          let count = counter.share_mm ? counter.share_mm : 0;
+          item.innerHTML = count;
+          script[id].parentNode.removeChild(script[id]);
+        };
+        script[id].src = count_url;
+        document.body.appendChild(script[id]);
+      });
     }
   }
 }

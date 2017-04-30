@@ -16,34 +16,49 @@ class Buffer {
   
   shareWindow() {
     let share_elements = document.querySelectorAll('[data-social=buffer]');
-    let share_url = 'https://buffer.com/add?url=' + this.url + '&text=' + this.title;
-    
+    let thisUrl = this.url;
+    let thisTitle = this.title;
+
     [...share_elements].forEach((item) => {
       item
         .addEventListener('click', function (event) {
           event.preventDefault();
+          item.hasAttribute('data-target') ? thisUrl = encodeURIComponent(item.getAttribute('data-target')) : null;
+          item.hasAttribute('data-title') ? thisTitle = encodeURIComponent(item.getAttribute('data-title')) : null;
+          let share_url = 'https://buffer.com/add?url=' + thisUrl + '&text=' + thisTitle;
           return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
     });
   }
   
   getCounter() {
-    let script = document.createElement('script');
-    let callback = ('goodshare_' + Math.random()).replace('.', '');
     let count_elements = document.querySelectorAll('[data-counter=buffer]');
-    let count_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + this.url + '&callback=' + callback;
-    
     if (count_elements.length > 0) {
-      window[callback] = (counter) => {
+        let script = [];
+        let thisUrl = this.url;
+        let count_url, itemCountUrl;
+
         [...count_elements].forEach((item) => {
-          item.innerHTML = (counter.length > 0) ? counter.shares : 0;
+            let id, callback;
+            if (item.hasAttribute('data-id')) {
+                id = item.getAttribute('data-id');
+                callback = ('buffer_' + id);
+                itemCountUrl = item.parentNode.getAttribute('data-target');
+                itemCountUrl !== '' ? thisUrl = encodeURIComponent(itemCountUrl) : null;
+            }
+            else{
+                id = 0;
+                callback = ('buffer_' + Math.random()).replace('.', '');
+            }
+            script[id] = document.createElement('script');
+            count_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + thisUrl + '&callback=' + callback;
+            window[callback] = (counter) => {
+                item.innerHTML = typeof(counter.shares) !== 'undefined' ? counter.shares : 0;
+                script[id].parentNode.removeChild(script[id]);
+            };
+            script[id].src = count_url;
+            document.body.appendChild(script[id]);
         });
-        
-        script.parentNode.removeChild(script);
-      };
-      
-      script.src = count_url;
-      document.body.appendChild(script);
     }
   }
 }

@@ -28,33 +28,44 @@ class Reddit {
   }
   
   getCounter() {
-    let script = document.createElement('script');
-    let callback = ('goodshare_' + Math.random()).replace('.', '');
     let count_elements = document.querySelectorAll('[data-counter=reddit]');
-    let count_url = 'https://www.reddit.com/api/info.json?url=' + this.url + '&jsonp=' + callback;
-  
     if (count_elements.length > 0) {
-      window[callback] = (counter) => {
-        [...count_elements].forEach((item) => {
+      let script = [];
+      let thisUrl = this.url;
+      let count_url, itemCountUrl;
+
+      [...count_elements].forEach((item) => {
+        let id, callback;
+        if (item.hasAttribute('data-id')) {
+          id = item.getAttribute('data-id');
+          callback = ('reddit_' + id);
+          itemCountUrl = item.parentNode.getAttribute('data-target');
+          itemCountUrl !== '' ? thisUrl = encodeURIComponent(itemCountUrl) : null;
+        }
+        else{
+          id = 0;
+          callback = ('reddit_' + Math.random()).replace('.', '');
+        }
+        script[id] = document.createElement('script');
+        count_url = 'https://www.reddit.com/api/info.json?url=' + thisUrl + '&jsonp=' + callback;
+        window[callback] = (counter) => {
           if (counter.data.children.length > 0) {
             let total_count = 0;
-        
+
             for (let i = 0; i < counter.data.children.length; i++) {
               total_count += counter.data.children[i].data.score;
             }
-        
+
             item.innerHTML = total_count;
           }
           else {
             item.innerHTML = 0;
           }
-        });
-    
-        script.parentNode.removeChild(script);
-      };
-  
-      script.src = count_url;
-      document.body.appendChild(script);
+          script[id].parentNode.removeChild(script[id]);
+        };
+        script[id].src = count_url;
+        document.body.appendChild(script[id]);
+      });
     }
   }
 }

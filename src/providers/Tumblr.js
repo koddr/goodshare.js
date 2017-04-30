@@ -18,36 +18,54 @@ class Tumblr {
   }
   
   shareWindow() {
+    let thisUrl = this.url;
+    let thisTitle = this.title;
+    let thisDescription = this.description;
     let share_elements = document.querySelectorAll('[data-social=tumblr]');
-    let share_url = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + this.url +
-      '&title=' + this.title + '&caption=' + this.description + '&posttype=link';
     
     [...share_elements].forEach((item) => {
       item
         .addEventListener('click', function (event) {
           event.preventDefault();
+          item.hasAttribute('data-target') ? thisUrl = encodeURIComponent(item.getAttribute('data-target')) : null;
+          item.hasAttribute('data-title') ? thisTitle = encodeURIComponent(item.getAttribute('data-title')) : null;
+          item.hasAttribute('data-description')
+            ? thisDescription = encodeURIComponent(item.getAttribute('data-description')) : null;
+          let share_url = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + thisUrl +
+            '&title=' + thisTitle + '&caption=' + thisDescription + '&posttype=link';
           return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
     });
   }
   
   getCounter() {
-    let script = document.createElement('script');
-    let callback = ('goodshare_' + Math.random()).replace('.', '');
     let count_elements = document.querySelectorAll('[data-counter=tumblr]');
-    let count_url = 'https://api.tumblr.com/v2/share/stats?url=' + this.url + '&callback=' + callback;
-    
     if (count_elements.length > 0) {
-      window[callback] = (counter) => {
-        [...count_elements].forEach((item) => {
+      let script = [];
+      let thisUrl = this.url;
+      let count_url, itemCountUrl;
+
+      [...count_elements].forEach((item) => {
+        let id, callback;
+        if (item.hasAttribute('data-id')) {
+          id = item.getAttribute('data-id');
+          callback = ('tumblr_' + id);
+          itemCountUrl = item.parentNode.getAttribute('data-target');
+          itemCountUrl !== '' ? thisUrl = encodeURIComponent(itemCountUrl) : null;
+        }
+        else{
+          id = 0;
+          callback = ('tumblr_' + Math.random()).replace('.', '');
+        }
+        script[id] = document.createElement('script');
+        count_url = 'https://api.tumblr.com/v2/share/stats?url=' + thisUrl + '&callback=' + callback;
+        window[callback] = (counter) => {
           item.innerHTML = counter.response.note_count;
-        });
-        
-        script.parentNode.removeChild(script);
-      };
-      
-      script.src = count_url;
-      document.body.appendChild(script);
+          script[id].parentNode.removeChild(script[id]);
+        };
+        script[id].src = count_url;
+        document.body.appendChild(script[id]);
+      });
     }
   }
 }

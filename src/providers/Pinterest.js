@@ -18,35 +18,57 @@ class Pinterest {
   }
   
   shareWindow() {
+    let thisUrl = this.url;
+    let thisDescription = this.description;
+    let thisImage = this.image;
     let share_elements = document.querySelectorAll('[data-social=pinterest]');
-    let share_url = 'https://www.pinterest.com/pin/create/button/?url=' + this.url +
-      '&description=' + this.description + '&media=' + this.image;
     
     [...share_elements].forEach((item) => {
+      item.hasAttribute('data-id') ? item.setAttribute('id', 'pinterest-'+item.getAttribute('data-id')) : null;
       item
         .addEventListener('click', function (event) {
           event.preventDefault();
+          item.hasAttribute('data-target') ? thisUrl = encodeURIComponent(item.getAttribute('data-target')) : null;
+          item.hasAttribute('data-description') ? thisDescription = encodeURIComponent(item.getAttribute('data-description')) : null;
+          item.hasAttribute('data-image') ? thisImage = encodeURIComponent(item.getAttribute('data-image')) : null;
+          let share_url = 'https://www.pinterest.com/pin/create/button/?url=' + thisUrl +
+            '&description=' + thisDescription + '&media=' + thisImage;
           return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
         });
     });
   }
   
   getCounter() {
-    let script = document.createElement('script');
+    window.pinterestUrls = [];
     let count_elements = document.querySelectorAll('[data-counter=pinterest]');
-    let count_url = 'https://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + this.url;
-    
+
     if (count_elements.length > 0) {
-      window['receiveCount'] = (counter) => {
-        [...count_elements].forEach((item) => {
-          item.innerHTML = (counter.length > 0) ? counter.count : 0;
-        });
-        
-        script.parentNode.removeChild(script);
-      };
-      
-      script.src = count_url;
-      document.body.appendChild(script);
+      let script = [];
+      let thisUrl = this.url;
+      let count_url, itemCountUrl;
+
+      [...count_elements].forEach((item) => {
+        let id, callback;
+        if (item.hasAttribute('data-id')) {
+          id = item.getAttribute('data-id');
+          callback = ('pinterest_' + id);
+          itemCountUrl = item.parentNode.getAttribute('data-target');
+          itemCountUrl !== '' ? thisUrl = encodeURIComponent(itemCountUrl) : null;
+        }
+        else{
+          id = 0;
+          callback = ('pinterest_' + Math.random()).replace('.', '');
+        }
+        script[id] = document.createElement('script');
+        count_url = 'https://api.pinterest.com/v1/urls/count.json?callback='+callback+'&url=' + thisUrl;
+        window[callback] = (counter) => {
+          let count = counter.count > 0 ? counter.count : 0;
+          item.innerHTML = count;
+          script[id].parentNode.removeChild(script[id]);
+        };
+        script[id].src = count_url;
+        document.body.appendChild(script[id]);
+      });
     }
   }
 }
