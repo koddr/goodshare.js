@@ -6,6 +6,8 @@ Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website 
 
 **Warning! No more depending on jQuery!** Since `4.0.0`, we'll no longer support the old `goodshare.js` version (`3.2.9` and lower). Thank you jQuery, but ES6 is better and cleaner.
 
+**Browser support.** Branch `4.x` of `goodshare.js` do not support IE11 and older (check [ES6 support](https://kangax.github.io/compat-table/es6/#ie11) table). For working with zombie browsers, please use polyfills and Babel (for `goodshare.min.js` too!).
+
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
