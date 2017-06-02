@@ -1,15 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 /**
  *  Vikky Shostak <vikkyshostak@gmail.com>
  *  Copyright (c) 2016 Koddr https://koddr.me
@@ -20,35 +8,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  *  Evernote (https://evernote.com) provider.
  */
 
-var Evernote = function () {
-  function Evernote() {
-    var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.location.href;
-    var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.title;
-    var description = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : document.querySelector('meta[name=description]');
-
-    _classCallCheck(this, Evernote);
-
+class Evernote {
+  constructor(url = document.location.href, title = document.title, description = document.querySelector('meta[name=description]')) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = description ? encodeURIComponent(description.content) : '';
   }
 
-  _createClass(Evernote, [{
-    key: 'shareWindow',
-    value: function shareWindow() {
-      var share_elements = document.querySelectorAll('[data-social=evernote]');
-      var share_url = 'https://www.evernote.com/clip.action?url=' + this.url + '&title=' + this.title + '&body=' + this.description;
+  shareWindow() {
+    let share_elements = document.querySelectorAll('[data-social=evernote]');
+    let share_url = 'https://www.evernote.com/clip.action?url=' + this.url + '&title=' + this.title + '&body=' + this.description;
 
-      [].concat(_toConsumableArray(share_elements)).forEach(function (item) {
-        item.addEventListener('click', function (event) {
-          event.preventDefault();
-          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
-        });
+    [...share_elements].forEach(item => {
+      item.addEventListener('click', function (event) {
+        event.preventDefault();
+        return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
-    }
-  }]);
+    });
+  }
+}
 
-  return Evernote;
-}();
-
-var evernote_share = exports.evernote_share = new Evernote().shareWindow();
+export let evernote_share = new Evernote().shareWindow();

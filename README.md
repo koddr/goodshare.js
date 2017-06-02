@@ -11,10 +11,6 @@ Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website 
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-### Live demo
-
-~~Yes. We have a simple live demo! [Just click me](https://koddr.me/projects/examples/goodshare-js) :D~~ Comming soon.
-
 ## Install via `npm` (recommended)
 
 ```bash
@@ -42,7 +38,7 @@ Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js
 * `vkontakte` [Вконтакте](http://vk.com)
 * `facebook` [Facebook](http://facebook.com)
 * `odnoklassniki` [Одноклассники](http://ok.ru)
-* `mymailru` [Мой Мир@Mail.Ru](http://my.mail.ru)
+* `moimir` [Мой Мир@Mail.Ru](http://my.mail.ru)
 * `googleplus` [Google Plus](http://plus.google.com)
 * `linkedin` [LinkedIn](http://linkedin.com)
 * `twitter` [Twitter](http://twitter.com)
