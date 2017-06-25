@@ -1,5 +1,7 @@
 'use strict';
 
+require('./polyfill/array.from');
+
 var _Vkontakte = require('./providers/Vkontakte');
 
 var _Facebook = require('./providers/Facebook');
