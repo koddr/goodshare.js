@@ -63,11 +63,108 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 30);
+/******/ 	return __webpack_require__(__webpack_require__.s = 31);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+// Production steps of ECMA-262, Edition 6, 22.1.2.1
+// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill
+exports.default = function () {
+    if (!Array.from) {
+        Array.from = function () {
+            var toStr = Object.prototype.toString;
+            var isCallable = function isCallable(fn) {
+                return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+            };
+            var toInteger = function toInteger(value) {
+                var number = Number(value);
+                if (isNaN(number)) {
+                    return 0;
+                }
+                if (number === 0 || !isFinite(number)) {
+                    return number;
+                }
+                return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
+            };
+            var maxSafeInteger = Math.pow(2, 53) - 1;
+            var toLength = function toLength(value) {
+                var len = toInteger(value);
+                return Math.min(Math.max(len, 0), maxSafeInteger);
+            };
+
+            // The length property of the from method is 1.
+            return function from(arrayLike /*, mapFn, thisArg */) {
+                // 1. Let C be the this value.
+                var C = this;
+
+                // 2. Let items be ToObject(arrayLike).
+                var items = Object(arrayLike);
+
+                // 3. ReturnIfAbrupt(items).
+                if (arrayLike == null) {
+                    throw new TypeError('Array.from requires an array-like object - not null or undefined');
+                }
+
+                // 4. If mapfn is undefined, then let mapping be false.
+                var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+                var T;
+                if (typeof mapFn !== 'undefined') {
+                    // 5. else
+                    // 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
+                    if (!isCallable(mapFn)) {
+                        throw new TypeError('Array.from: when provided, the second argument must be a function');
+                    }
+
+                    // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
+                    if (arguments.length > 2) {
+                        T = arguments[2];
+                    }
+                }
+
+                // 10. Let lenValue be Get(items, "length").
+                // 11. Let len be ToLength(lenValue).
+                var len = toLength(items.length);
+
+                // 13. If IsConstructor(C) is true, then
+                // 13. a. Let A be the result of calling the [[Construct]] internal method
+                // of C with an argument list containing the single item len.
+                // 14. a. Else, Let A be ArrayCreate(len).
+                var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+
+                // 16. Let k be 0.
+                var k = 0;
+                // 17. Repeat, while k < len… (also steps a - h)
+                var kValue;
+                while (k < len) {
+                    kValue = items[k];
+                    if (mapFn) {
+                        A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+                    } else {
+                        A[k] = kValue;
+                    }
+                    k += 1;
+                }
+                // 18. Let putStatus be Put(A, "length", len, true).
+                A.length = len;
+                // 20. Return A.
+                return A;
+            };
+        }();
+    }
+}();
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -127,7 +224,7 @@ var Baidu = function () {
 var baidu_share = exports.baidu_share = new Baidu().shareWindow();
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -185,7 +282,7 @@ var Blogger = function () {
 var blogger_share = exports.blogger_share = new Blogger().shareWindow();
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -265,7 +362,7 @@ var buffer_share = exports.buffer_share = new Buffer().shareWindow();
 var buffer_counter = exports.buffer_counter = new Buffer().getCounter();
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -323,7 +420,7 @@ var Delicious = function () {
 var delicious_share = exports.delicious_share = new Delicious().shareWindow();
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -381,7 +478,7 @@ var Digg = function () {
 var digg_share = exports.digg_share = new Digg().shareWindow();
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -441,7 +538,7 @@ var Evernote = function () {
 var evernote_share = exports.evernote_share = new Evernote().shareWindow();
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -521,7 +618,7 @@ var facebook_share = exports.facebook_share = new Facebook().shareWindow();
 var facebook_counter = exports.facebook_counter = new Facebook().getCounter();
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -599,7 +696,7 @@ var googleplus_share = exports.googleplus_share = new GooglePlus().shareWindow()
 var googleplus_counter = exports.googleplus_counter = new GooglePlus().getCounter();
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -657,7 +754,7 @@ var Instapaper = function () {
 var instapaper_share = exports.instapaper_share = new Instapaper().shareWindow();
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -713,7 +810,7 @@ var Line = function () {
 var line_share = exports.line_share = new Line().shareWindow();
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -795,7 +892,7 @@ var linkedin_share = exports.linkedin_share = new LinkedIn().shareWindow();
 var linkedin_counter = exports.linkedin_counter = new LinkedIn().getCounter();
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -853,7 +950,7 @@ var LiveInternet = function () {
 var liveinternet_share = exports.liveinternet_share = new LiveInternet().shareWindow();
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -911,7 +1008,7 @@ var LiveJournal = function () {
 var livejournal_share = exports.livejournal_share = new LiveJournal().shareWindow();
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -996,7 +1093,7 @@ var moimir_share = exports.moimir_share = new MoiMir().shareWindow();
 var moimir_counter = exports.moimir_counter = new MoiMir().getCounter();
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1077,7 +1174,7 @@ var odnoklassniki_share = exports.odnoklassniki_share = new Odnoklassniki().shar
 var odnoklassniki_counter = exports.odnoklassniki_counter = new Odnoklassniki().getCounter();
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1158,7 +1255,7 @@ var pinterest_share = exports.pinterest_share = new Pinterest().shareWindow();
 var pinterest_counter = exports.pinterest_counter = new Pinterest().getCounter();
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1238,7 +1335,7 @@ var pocket_share = exports.pocket_share = new Pocket().shareWindow();
 var pocket_counter = exports.pocket_counter = new Pocket().getCounter();
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1328,7 +1425,7 @@ var reddit_share = exports.reddit_share = new Reddit().shareWindow();
 var reddit_counter = exports.reddit_counter = new Reddit().getCounter();
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1386,7 +1483,7 @@ var RenRen = function () {
 var renren_share = exports.renren_share = new RenRen().shareWindow();
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1466,7 +1563,7 @@ var stumbleupon_share = exports.stumbleupon_share = new StumbleUpon().shareWindo
 var stumbleupon_counter = exports.stumbleupon_counter = new StumbleUpon().getCounter();
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1548,7 +1645,7 @@ var surfingbird_share = exports.surfingbird_share = new Surfingbird().shareWindo
 var surfingbird_counter = exports.surfingbird_counter = new Surfingbird().getCounter();
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1604,7 +1701,7 @@ var Telegram = function () {
 var telegram_share = exports.telegram_share = new Telegram().shareWindow();
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1686,7 +1783,7 @@ var tumblr_share = exports.tumblr_share = new Tumblr().shareWindow();
 var tumblr_counter = exports.tumblr_counter = new Tumblr().getCounter();
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1744,7 +1841,7 @@ var Twitter = function () {
 var twitter_share = exports.twitter_share = new Twitter().shareWindow();
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1800,7 +1897,7 @@ var Viber = function () {
 var viber_share = exports.viber_share = new Viber().shareWindow();
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1885,7 +1982,7 @@ var vkontakte_share = exports.vkontakte_share = new Vkontakte().shareWindow();
 var vkontakte_counter = exports.vkontakte_counter = new Vkontakte().getCounter();
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1943,7 +2040,7 @@ var Weibo = function () {
 var weibo_share = exports.weibo_share = new Weibo().shareWindow();
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1999,7 +2096,7 @@ var WhatsApp = function () {
 var whatsapp_share = exports.whatsapp_share = new WhatsApp().shareWindow();
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2061,7 +2158,7 @@ var WordPress = function () {
 var wordpress_share = exports.wordpress_share = new WordPress().shareWindow();
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2139,71 +2236,73 @@ var xing_share = exports.xing_share = new Xing().shareWindow();
 var xing_counter = exports.xing_counter = new Xing().getCounter();
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _Vkontakte = __webpack_require__(25);
+__webpack_require__(0);
 
-var _Facebook = __webpack_require__(6);
+var _Vkontakte = __webpack_require__(26);
 
-var _Odnoklassniki = __webpack_require__(14);
+var _Facebook = __webpack_require__(7);
 
-var _MoiMir = __webpack_require__(13);
+var _Odnoklassniki = __webpack_require__(15);
 
-var _GooglePlus = __webpack_require__(7);
+var _MoiMir = __webpack_require__(14);
 
-var _LinkedIn = __webpack_require__(10);
+var _GooglePlus = __webpack_require__(8);
 
-var _Tumblr = __webpack_require__(22);
+var _LinkedIn = __webpack_require__(11);
 
-var _Pinterest = __webpack_require__(15);
+var _Tumblr = __webpack_require__(23);
 
-var _Surfingbird = __webpack_require__(20);
+var _Pinterest = __webpack_require__(16);
 
-var _Reddit = __webpack_require__(17);
+var _Surfingbird = __webpack_require__(21);
 
-var _Buffer = __webpack_require__(2);
+var _Reddit = __webpack_require__(18);
 
-var _StumbleUpon = __webpack_require__(19);
+var _Buffer = __webpack_require__(3);
 
-var _Pocket = __webpack_require__(16);
+var _StumbleUpon = __webpack_require__(20);
 
-var _Xing = __webpack_require__(29);
+var _Pocket = __webpack_require__(17);
 
-var _Twitter = __webpack_require__(23);
+var _Xing = __webpack_require__(30);
 
-var _LiveJournal = __webpack_require__(12);
+var _Twitter = __webpack_require__(24);
 
-var _Evernote = __webpack_require__(5);
+var _LiveJournal = __webpack_require__(13);
 
-var _Delicious = __webpack_require__(3);
+var _Evernote = __webpack_require__(6);
 
-var _Blogger = __webpack_require__(1);
+var _Delicious = __webpack_require__(4);
 
-var _Instapaper = __webpack_require__(8);
+var _Blogger = __webpack_require__(2);
 
-var _Digg = __webpack_require__(4);
+var _Instapaper = __webpack_require__(9);
 
-var _LiveInternet = __webpack_require__(11);
+var _Digg = __webpack_require__(5);
 
-var _WordPress = __webpack_require__(28);
+var _LiveInternet = __webpack_require__(12);
 
-var _Baidu = __webpack_require__(0);
+var _WordPress = __webpack_require__(29);
 
-var _RenRen = __webpack_require__(18);
+var _Baidu = __webpack_require__(1);
 
-var _Weibo = __webpack_require__(26);
+var _RenRen = __webpack_require__(19);
 
-var _Telegram = __webpack_require__(21);
+var _Weibo = __webpack_require__(27);
 
-var _Viber = __webpack_require__(24);
+var _Telegram = __webpack_require__(22);
 
-var _WhatsApp = __webpack_require__(27);
+var _Viber = __webpack_require__(25);
 
-var _Line = __webpack_require__(9);
+var _WhatsApp = __webpack_require__(28);
+
+var _Line = __webpack_require__(10);
 
 /***/ })
 /******/ ]);
