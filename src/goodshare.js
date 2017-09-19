@@ -11,7 +11,7 @@
  */
 
 /**
- *  add Array.from() polyfill for IE.
+ *  Add Array.from() polyfill for IE.
  */
 
 import './polyfill/array.from';
