@@ -1,6 +1,6 @@
 /**
  *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2016 Koddr https://koddr.me
+ *  Copyright (c) 2017 Koddr https://koddr.me
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -9,29 +9,32 @@
  */
 
 class WordPress {
-  constructor(url = document.location.href,
-              title = document.title,
-              description = document.querySelector('meta[name=description]'),
-              image = document.querySelector('link[rel=image_src]')) {
-    this.url = encodeURIComponent(url);
-    this.title = encodeURIComponent(title);
-    this.description = (description) ? encodeURIComponent(description.content) : '';
-    this.image = (image) ? encodeURIComponent(image.href) : '';
-  }
-  
-  shareWindow() {
-    let share_elements = document.querySelectorAll('[data-social=wordpress]');
-    let share_url = 'https://wordpress.com/wp-admin/press-this.php?u=' + this.url +
-      '&t=' + this.title + '&s=' + this.description + '&i=' + this.image + '&v=2';
-  
-    [...share_elements].forEach((item) => {
-      item
-        .addEventListener('click', function (event) {
-          event.preventDefault();
-          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+    constructor(url = document.location.href, title = document.title,
+                description = document.querySelector('meta[name=description]'),
+                image = document.querySelector('link[rel=image_src]')) {
+        this.url = encodeURIComponent(url);
+        this.title = encodeURIComponent(title);
+        this.description = (description) ? encodeURIComponent(description.content) : '';
+        this.image = (image) ? encodeURIComponent(image.href) : '';
+    }
+    
+    shareWindow() {
+        const share_elements = document.querySelectorAll('[data-social=wordpress]');
+        
+        [...share_elements].forEach((item) => {
+            const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
+            const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
+            const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
+            const image = item.dataset.image ? encodeURIComponent(item.dataset.image) : this.image;
+            const share_url = 'https://wordpress.com/wp-admin/press-this.php?u=' + url + '&t=' + title +
+                '&s=' + description + '&i=' + image + '&v=2';
+            
+            item.addEventListener('click', function (event) {
+                event.preventDefault();
+                return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+            });
         });
-    });
-  }
+    }
 }
 
-export let wordpress_share = new WordPress().shareWindow();
+export const wordpress_share = new WordPress().shareWindow();

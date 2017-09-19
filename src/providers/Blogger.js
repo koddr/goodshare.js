@@ -1,6 +1,6 @@
 /**
  *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2016 Koddr https://koddr.me
+ *  Copyright (c) 2017 Koddr https://koddr.me
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -9,23 +9,25 @@
  */
 
 class Blogger {
-  constructor(url = document.location.href, title = document.title) {
-    this.url = encodeURIComponent(url);
-    this.title = encodeURIComponent(title);
-  }
-  
-  shareWindow() {
-    let share_elements = document.querySelectorAll('[data-social=blogger]');
-    let share_url = 'https://www.blogger.com/blog-this.g?u=' + this.url + '&n=' + this.title;
-  
-    [...share_elements].forEach((item) => {
-      item
-        .addEventListener('click', function (event) {
-          event.preventDefault();
-          return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+    constructor(url = document.location.href, title = document.title) {
+        this.url = encodeURIComponent(url);
+        this.title = encodeURIComponent(title);
+    }
+    
+    shareWindow() {
+        const share_elements = document.querySelectorAll('[data-social=blogger]');
+        
+        [...share_elements].forEach((item) => {
+            const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
+            const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
+            const share_url = 'https://www.blogger.com/blog-this.g?u=' + url + '&n=' + title;
+            
+            item.addEventListener('click', function (event) {
+                event.preventDefault();
+                return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+            });
         });
-    });
-  }
+    }
 }
 
-export let blogger_share = new Blogger().shareWindow();
+export const blogger_share = new Blogger().shareWindow();

@@ -56,7 +56,6 @@ Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js
 * `liveinternet` [LiveInternet](http://liveinternet.ru)
 * `buffer` [Buffer](http://buffer.com)
 * `instapaper` [Instapaper](http://www.instapaper.com)
-* `readability` [~~Readability~~](http://www.readability.com)
 * `xing` [Xing](http://www.xing.com)
 * `wordpress` [WordPress](http://www.wordpress.com)
 * `baidu` [Baidu](http://www.baidu.com)
@@ -102,6 +101,16 @@ By default, `goodshare.js` search this tags for get description and image (for s
   ...
 </head>
 ```
+### Share elements with data-* attributes
+
+If you want to add different `url`, `title`, `description` and/or `image` to share element — use special `data-*` attributes:
+
+* `data-url` redefines `document.location.href`
+* `data-title` redefines `document.title`
+* `data-description` redefines `meta[name=description]`
+* `data-image` redefines `link[rel=image_src]`
+
+**Please keep in mind, not all social networks support all of them data attributes!**
 
 ### Note for `<a>` links
 
@@ -173,7 +182,7 @@ $ webpack ./dist/goodshare.js ./goodshare.min.js -p
 If you want to replace any default share parameters (URL, title, descripton, image)&nbsp;&mdash; just edit social network provider and re-build script.
 
 ```javascript
-export let vkontakte_share = new Vkontakte(
+export const vkontakte_share = new Vkontakte(
   'http://your-another-site.com/', // URL
   'New title of current page', // title
   'New description of current page.', // description
@@ -186,7 +195,7 @@ export let vkontakte_share = new Vkontakte(
 If you want to replace default share counter URL (get from `window.location.href`)&nbsp;&mdash; just edit social network provider and re-build script.
 
 ```javascript
-export let vkontakte_counter = new Vkontakte(
+export const vkontakte_counter = new Vkontakte(
   'http://your-another-site.com/' // URL
 ).getCounter();
 ```
