@@ -11,6 +11,12 @@
  */
 
 /**
+ *  add Array.from() polyfill for IE.
+ */
+
+import './polyfill/array.from';
+
+/**
  *  Import social networks providers with share counter.
  */
 
