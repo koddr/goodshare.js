@@ -38,7 +38,7 @@ class Buffer {
         if (count_elements.length > 0) {
             window[callback] = (counter) => {
                 [...count_elements].forEach((item) => {
-                    item.innerHTML = (counter.length > 0) ? counter.shares : 0;
+                    item.innerHTML = (counter) ? counter.shares : 0;
                 });
                 
                 script.parentNode.removeChild(script);

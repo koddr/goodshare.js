@@ -38,9 +38,14 @@ class GooglePlus {
         if (count_elements.length > 0) {
             window[callback] = (counter) => {
                 [...count_elements].forEach((item) => {
-                    item.innerHTML = ((counter.results[0]).match(/javascript">window.__SSR = \{c: (\d+).0/) !== null)
-                        ? (counter.results[0]).match(/javascript">window.__SSR = \{c: (\d+).0/)[1] / 1
-                        : 0;
+                    if (counter.results[0]) {
+                        item.innerHTML = ((counter.results[0]).match(/javascript">window.__SSR = \{c: (\d+).0/) !== null)
+                            ? (counter.results[0]).match(/javascript">window.__SSR = \{c: (\d+).0/)[1] / 1
+                            : 0;
+                    }
+                    else {
+                        item.innerHTML = 0;
+                    }
                 });
                 
                 script.parentNode.removeChild(script);

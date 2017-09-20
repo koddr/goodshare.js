@@ -40,9 +40,14 @@ class StumbleUpon {
         if (count_elements.length > 0) {
             window[callback] = (counter) => {
                 [...count_elements].forEach((item) => {
-                    item.innerHTML = ((counter.results[0]).match(/"views":(\d+),/) !== null)
-                        ? (counter.results[0]).match(/"views":(\d+),/)[1] / 1
-                        : 0;
+                    if (counter.results[0]) {
+                        item.innerHTML = ((counter.results[0]).match(/"views":(\d+),/) !== null)
+                            ? (counter.results[0]).match(/"views":(\d+),/)[1] / 1
+                            : 0;
+                    }
+                    else {
+                        item.innerHTML = 0;
+                    }
                 });
                 
                 script.parentNode.removeChild(script);
