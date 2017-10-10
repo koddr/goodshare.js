@@ -1,4 +1,4 @@
-![goodshare.js logo github](https://koddr.me/static/images/goodshare-js-logo-github.jpg)
+![goodshare-js-logo-github](https://user-images.githubusercontent.com/11155743/31406128-fc67d706-ae08-11e7-9a97-5f10a7006b31.jpg)
 
 # goodshare.js ![npm version](https://badge.fury.io/js/goodshare.js.svg)
 
