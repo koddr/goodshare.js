@@ -1,6 +1,7 @@
 ![goodshare-js-logo-github](https://user-images.githubusercontent.com/11155743/31406128-fc67d706-ae08-11e7-9a97-5f10a7006b31.jpg)
 
-# goodshare.js ![npm version](https://badge.fury.io/js/goodshare.js.svg)
+# goodshare.js
+![npm version](https://badge.fury.io/js/goodshare.js.svg)
 
 > Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website visitors share a link on social networks and microblogs or mobile messengers. Easy to install and configuring on any of your website!
 
@@ -202,7 +203,7 @@ export const vkontakte_counter = new Vkontakte(
 
 ### Modules for popular CMS and frameworks
 
-* Vue.js component: 
+* Vue.js component: https://github.com/koddr/vue-goodshare
 * Drupal 7.x: https://github.com/nosov33/drupal_goodshare
 
 ### Developers
