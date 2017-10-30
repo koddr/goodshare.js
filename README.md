@@ -2,7 +2,7 @@
 
 # goodshare.js ![npm version](https://badge.fury.io/js/goodshare.js.svg)
 
-Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website visitors share a link on social networks and microblogs or mobile messengers. Easy to install and configuring on any of your website!
+> Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website visitors share a link on social networks and microblogs or mobile messengers. Easy to install and configuring on any of your website!
 
 **Warning! No more depending on jQuery!** Since `4.0.0`, we'll no longer support the old `goodshare.js` version (`3.2.9` and lower). Thank you jQuery, but ES6 is better and cleaner.
 
@@ -11,20 +11,20 @@ Useful ~~jQuery plugin~~ modern JavaScript solution that will help your website 
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-## Install via `npm` (recommended)
+### Install via `npm` (recommended)
 
 ```bash
 $ npm install goodshare.js --save
 ```
 
-## Work through CDN
+### Work through CDN
 
 ```html
 <!-- goodshare.js minify version -->
 <script src="https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js"></script>
 ```
 
-## Old way to install
+### Old way to install
 
 Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js/master/goodshare.min.js) and place file to your project template (before close `body` tag):
 
@@ -33,7 +33,7 @@ Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js
 <script src="/path/to/goodshare.min.js"></script>
 ```
 
-## List of supported social networks and microblogs
+### List of supported social networks and microblogs
 
 * `vkontakte` [Вконтакте](http://vk.com)
 * `facebook` [Facebook](http://facebook.com)
@@ -71,7 +71,7 @@ Download [goodshare.min.js](https://raw.githubusercontent.com/koddr/goodshare.js
 * `whatsapp` [WhatsApp](http://www.whatsapp.com)
 * `line` [LINE](http://line.me/en/)
 
-## Share links
+### Share links
 
 Plugin works with any HTML tags: `<a>` or `<div>` or `<button>` or other. So you can choose any and add required attributes `data-social`. For example:
 
@@ -120,7 +120,7 @@ We use `event.preventDefault()` for event «click». So don't be afraid to use l
 <a href="#" data-social="...">My link</a>
 ```
 
-## Share counters
+### Share counters
 
 To display counter, just add `data-counter` attribute to HTML element that will contain numbers. For example:
 
@@ -159,7 +159,7 @@ Simple solution for single domain: http://opensharecount.com
 
 **Note:** We're **not** authors of the web site *opensharecount.com*, if something not working&nbsp;&mdash; write to their support please!
 
-## How to reorganize social networks? Simple!
+### How to reorganize social networks? Simple!
 
 * First, clone `goodshare.js` repository to you computer:
 
@@ -200,18 +200,29 @@ export const vkontakte_counter = new Vkontakte(
 ).getCounter();
 ```
 
-## Modules for popular CMS
+### Modules for popular CMS and frameworks
 
+* Vue.js component: 
 * Drupal 7.x: https://github.com/nosov33/drupal_goodshare
 
-## Developers
+### Developers
 
 Development and maintenance of `goodshare.js` project engaged by Vic Shóstak (aka [Koddr](https://koddr.me)). If you want to write a «thank you» or ask us about something, [use this e-mail](mailto:koddr.me@gmail.com).
 
-## Your help
+### Author & maintainers
 
-If you want help, we will be glad reviews about `goodshare.js` on personal blogs (including Twitter), online media and/or specialized IT-portals. Thank you!
+Development and maintenance engaged by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
+If you want to say «thank you» and/or ask me about `goodshare.js` — [create new issue](https://github.com/koddr/goodshare.js/issues/new).
 
-## License
+___
+### Your assistance will help make project even better!
+
+* [Donate with PayPal](https://www.paypal.me/koddr/9.99usd)
+* [Donate with Yandex.Money](https://money.yandex.ru/to/41001601525977/599)
+
+#### Thanks for supporting!
+___
+
+### License
 
 [The MIT License (MIT)](https://github.com/koddr/goodshare.js/blob/master/LICENSE.md)
