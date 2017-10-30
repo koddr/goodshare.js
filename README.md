@@ -206,10 +206,6 @@ export const vkontakte_counter = new Vkontakte(
 * Vue.js component: https://github.com/koddr/vue-goodshare
 * Drupal 7.x: https://github.com/nosov33/drupal_goodshare
 
-### Developers
-
-Development and maintenance of `goodshare.js` project engaged by Vic Shóstak (aka [Koddr](https://koddr.me)). If you want to write a «thank you» or ask us about something, [use this e-mail](mailto:koddr.me@gmail.com).
-
 ### Author & maintainers
 
 Development and maintenance engaged by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
