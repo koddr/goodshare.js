@@ -213,12 +213,12 @@ Development and maintenance engaged by [Vic Shóstak](https://github.com/koddr) 
 If you want to say «thank you» and/or ask me about `goodshare.js` — [create new issue](https://github.com/koddr/goodshare.js/issues/new).
 
 ___
-### Your assistance will help make project even better!
-
-* [Donate with PayPal](https://www.paypal.me/koddr/9.99usd)
-* [Donate with Yandex.Money](https://money.yandex.ru/to/41001601525977/599)
-
-#### Thanks for supporting!
+> ### Your assistance will help make project even better!
+> 
+> * [Donate with PayPal](https://www.paypal.me/koddr/9.99usd)
+> * [Donate with Yandex.Money](https://money.yandex.ru/to/41001601525977/599)
+> 
+> #### Thanks for supporting!
 ___
 
 ### License
