@@ -51,14 +51,14 @@ If you want to add different `url`, `title`, `description` and/or `image` to sha
 
 * `data-url` redefines `document.location.href`
 * `data-title` redefines `document.title`
-* `data-description` redefines `meta[name=description]`
-* `data-image` redefines `link[rel=apple-touch-icon]`
+* `data-description` redefines `meta[name="description"]`
+* `data-image` redefines `link[rel="apple-touch-icon"]`
 
 > Note: Please keep in mind, not all social networks support all of them data attributes!
 
 ### Notes
 
-- **Warning! No more depending on jQuery!** Since `4.0.0`, we'll no longer support the old `goodshare.js` version (`3.2.9` and lower). Thank you jQuery, but ES6 is better and cleaner.
+- **Warning! No more depending on jQuery!** Since `4.0.0`, we'll no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
 - **Browser support.** Branch `4.x` of `goodshare.js` do not support IE10 and older (check [ES6 support](https://kangax.github.io/compat-table/es6/#ie11) table). For working with zombie browsers, please use polyfills and Babel (for `goodshare.min.js` too!).
 
 ### Author & maintainers
