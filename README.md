@@ -142,7 +142,6 @@ Value of `data-counter` attribute, see in this list of supported social networks
 * `facebook` [Facebook](http://facebook.com)
 * `odnoklassniki` [Одноклассники](http://ok.ru)
 * `moimir` [Мой Мир@Mail.Ru](http://my.mail.ru)
-* `googleplus` [Google Plus](http://plus.google.ru)
 * `linkedin` [LinkedIn](http://linkedin.com)
 * `tumblr` [Tumblr](http://tumblr.com)
 * `pinterest` [Pinterest](http://pinterest.com)
@@ -153,7 +152,11 @@ Value of `data-counter` attribute, see in this list of supported social networks
 * `buffer` [Buffer](http://buffer.com)
 * `xing` [Xing](http://www.xing.com)
 
-**Note:** `Google Plus`, `Surfingbird`, `StumbleUpon`, `Pocket` and `Xing` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know&nbsp;&mdash; [write issue to us](https://github.com/enjoyiacm/goodshare.js/issues/new)).
+**Note:** `Surfingbird`, `StumbleUpon`, `Pocket` and `Xing` counters use [Yahoo Query Language](https://developer.yahoo.com/yql) (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo (we try to find another solution for this, if you know&nbsp;&mdash; [write issue to us](https://github.com/koddr/goodshare.js/issues/new)).
+
+### How to get Google Plus share counter?
+
+Google Plus drop support share counter for [official +1 buttons](https://developers.google.com/+/web/share/). There is no way to get share count from Google Plus social network. If you know solution&nbsp;&mdash; [write issue to us](https://github.com/koddr/goodshare.js/issues/new).
 
 ### How to get Twitter share counter after API 1.1 changes?
 
