@@ -42,7 +42,7 @@ By default, `goodshare.js` search this tags for get description and image (for s
 <head>
   ...
   <meta name="description" content="Current page description."/>
-  <link rel="apple-touch-icon" href="http://your-site.com/path/to/image.jpg"/>
+  <link rel="apple-touch-icon" href="http://example.com/path/to/image.png"/>
   ...
 </head>
 ```
@@ -52,7 +52,7 @@ If you want to add different `url`, `title`, `description` and/or `image` to sha
 * `data-url` redefines `document.location.href`
 * `data-title` redefines `document.title`
 * `data-description` redefines `meta[name=description]`
-* `data-image` redefines `link[rel=image_src]`
+* `data-image` redefines `link[rel=apple-touch-icon]`
 
 > Note: Please keep in mind, not all social networks support all of them data attributes!
 
