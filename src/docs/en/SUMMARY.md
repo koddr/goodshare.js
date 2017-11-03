@@ -11,6 +11,7 @@
 
 - [Installation](installation.md)
 - [Get social networks share count](get-social-networks-share-count.md)
+- [Customization guide](customization-guide.md)
 
 ### Integration
 

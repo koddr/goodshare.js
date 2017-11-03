@@ -1,5 +1,5 @@
 {
-    "title": "goodshare.js — Useful modern JavaScript solution that will help your website visitors share a link",
+    "title": "goodshare.js — Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers",
     "gitbook": ">3.0.0",
     "plugins": [
         "-fontsettings",
