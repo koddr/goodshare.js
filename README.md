@@ -47,8 +47,6 @@ By default, `goodshare.js` search this tags for get description and image (for s
 </head>
 ```
 
-### Share elements with data-* attributes
-
 If you want to add different `url`, `title`, `description` and/or `image` to share element — use special `data-*` attributes:
 
 * `data-url` redefines `document.location.href`
@@ -58,9 +56,10 @@ If you want to add different `url`, `title`, `description` and/or `image` to sha
 
 > Note: Please keep in mind, not all social networks support all of them data attributes!
 
-**Warning! No more depending on jQuery!** Since `4.0.0`, we'll no longer support the old `goodshare.js` version (`3.2.9` and lower). Thank you jQuery, but ES6 is better and cleaner.
+### Notes
 
-**Browser support.** Branch `4.x` of `goodshare.js` do not support IE10 and older (check [ES6 support](https://kangax.github.io/compat-table/es6/#ie11) table). For working with zombie browsers, please use polyfills and Babel (for `goodshare.min.js` too!).
+- **Warning! No more depending on jQuery!** Since `4.0.0`, we'll no longer support the old `goodshare.js` version (`3.2.9` and lower). Thank you jQuery, but ES6 is better and cleaner.
+- **Browser support.** Branch `4.x` of `goodshare.js` do not support IE10 and older (check [ES6 support](https://kangax.github.io/compat-table/es6/#ie11) table). For working with zombie browsers, please use polyfills and Babel (for `goodshare.min.js` too!).
 
 ### Author & maintainers
 
