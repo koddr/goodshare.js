@@ -52,7 +52,7 @@ If you want to add different `url`, `title`, `description` and/or `image` to sha
 * `data-description` redefines `meta[name="description"]`
 * `data-image` redefines `link[rel="apple-touch-icon"]`
 
-> Note: Please keep in mind, not all social networks support all of them data attributes!
+> Please keep in mind, not all social networks support all of them data attributes!
 
 ### Notes
 
