@@ -1,4 +1,4 @@
-# Customization
+# Customization guide
 
 ### Customize share link
 
