@@ -1,7 +1,10 @@
 # JetBrains IDEA
 .idea/
 
+# GitBook
+src/docs/_book/
+src/docs/node_modules/
+
 # Node.js
 node_modules/
-docs/node_modules/
 npm-debug.log

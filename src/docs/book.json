@@ -1,6 +1,5 @@
 {
-    "title": "goodshare.js",
-    "root": "./_book",
+    "title": "goodshare.js — Useful modern JavaScript solution that will help your website visitors share a link",
     "gitbook": ">3.0.0",
     "plugins": [
         "-fontsettings",

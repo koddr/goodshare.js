@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Supported messengers · goodshare.js</title>
+        <title>Installation · goodshare.js — Useful modern JavaScript solution that will help your website visitors share a link</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="installation.html" />
+    <link rel="next" href="get-social-networks-share-count.html" />
     
     
-    <link rel="prev" href="supported-social-networks.html" />
+    <link rel="prev" href="supported-social-messengers.html" />
     
 
     </head>
@@ -111,7 +111,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="supported-social-messengers.html">
+        <li class="chapter " data-level="1.3" data-path="supported-social-messengers.html">
             
                 <a href="supported-social-messengers.html">
             
@@ -131,7 +131,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="installation.html">
+        <li class="chapter active" data-level="2.1" data-path="installation.html">
             
                 <a href="installation.html">
             
@@ -260,7 +260,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Supported messengers</a>
+        <a href="." >Installation</a>
     </h1>
 </div>
 
@@ -275,16 +275,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="supported-messengers">Supported messengers</h1>
-<ul>
-<li><code>telegram</code> <a href="https://telegram.org" target="_blank">Telegram</a></li>
-<li><code>viber</code> <a href="http://www.viber.com" target="_blank">Viber</a></li>
-<li><code>whatsapp</code> <a href="http://www.whatsapp.com" target="_blank">WhatsApp</a></li>
-<li><code>line</code> <a href="http://line.me/en/" target="_blank">LINE</a></li>
-</ul>
+                                <h1 id="installation">Installation</h1>
+<h3 id="direct-download--cdn">Direct Download / CDN</h3>
+<p><a href="https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js" target="_blank">https://cdn.jsdelivr.net/npm/goodshare.js</a></p>
+<!--email_off-->
+<p><a href="https://www.jsdelivr.com" target="_blank">jsDelivr</a> is a public, open-source CDN (Content Delivery Network) developed by <a href="https://prospectone.io" target="_blank">ProspectOne</a>, focused on performance, reliability, and security. It is free to use for everyone, with no bandwidth limits.
+<!--/email_off--></p>
+<p>Include <code>goodshare.js</code> before close <code>body</code> tag:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/path/to/goodshare.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="npm">npm</h3>
+<pre><code class="lang-bash">$ npm install goodshare.js --save
+</code></pre>
+<p>When used with a module system:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;goodshare.js&apos;</span>);
+</code></pre>
 <blockquote>
-<p>Note: If you don&apos;t see your messenger, please <a href="https://github.com/koddr/goodshare.js/issues/new" target="_blank">let us know</a> and we&apos;ll try to add it!</p>
+<p>You don&apos;t need to do this when using global <code>script</code> tags.</p>
 </blockquote>
+<h3 id="dev-build">Dev Build</h3>
+<p>You will have to clone directly from GitHub and build <code>goodshare.js</code> yourself if
+you want to use the latest dev build.</p>
+<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/koddr/goodshare.js.git node_modules/goodshare.js
+$ <span class="hljs-built_in">cd</span> node_modules/goodshare.js
+$ npm install
+$ npm run build
+</code></pre>
 
                                 
                                 </section>
@@ -312,12 +328,12 @@
 
             
                 
-                <a href="supported-social-networks.html" class="navigation navigation-prev " aria-label="Previous page: Supported social networks">
+                <a href="supported-social-messengers.html" class="navigation navigation-prev " aria-label="Previous page: Supported messengers">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="installation.html" class="navigation navigation-next " aria-label="Next page: Installation">
+                <a href="get-social-networks-share-count.html" class="navigation navigation-next " aria-label="Next page: Get social networks share count">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -328,7 +344,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Supported messengers","level":"1.3","depth":1,"next":{"title":"Installation","level":"2.1","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"previous":{"title":"Supported social networks","level":"1.2","depth":1,"path":"supported-social-networks.md","ref":"supported-social-networks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/koddr/goodshare.js"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"goodshare.js","language":"en","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"supported-social-messengers.md","mtime":"2017-11-03T11:52:47.752Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:00:18.363Z"},"basePath":".","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Installation","level":"2.1","depth":1,"next":{"title":"Get social networks share count","level":"2.2","depth":1,"path":"get-social-networks-share-count.md","ref":"get-social-networks-share-count.md","articles":[]},"previous":{"title":"Supported messengers","level":"1.3","depth":1,"path":"supported-social-messengers.md","ref":"supported-social-messengers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/koddr/goodshare.js"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"goodshare.js — Useful modern JavaScript solution that will help your website visitors share a link","language":"en","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"installation.md","mtime":"2017-11-03T11:02:03.420Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T14:44:23.947Z"},"basePath":".","book":{"language":"en"}});
         });
     </script>
 </div>
