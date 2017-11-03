@@ -1,5 +1,6 @@
 {
     "title": "goodshare.js",
+    "root": "./_book",
     "gitbook": ">3.0.0",
     "plugins": [
         "-fontsettings",

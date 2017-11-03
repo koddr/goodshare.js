@@ -1,3 +1,7 @@
-/.idea/
-/node_modules/
+# JetBrains IDEA
+.idea/
+
+# Node.js
+node_modules/
+docs/node_modules/
 npm-debug.log

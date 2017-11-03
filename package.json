@@ -12,15 +12,17 @@
         "url": "git+https://github.com/koddr/goodshare.js.git"
     },
     "keywords": [
-        "share",
-        "social"
+        "share count",
+        "social share",
+        "social network share count",
+        "share link"
     ],
     "author": "Vic Shóstak <koddr.me@gmail.com>",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/koddr/goodshare.js/issues"
     },
-    "homepage": "https://koddr.github.io/goodshare-js/",
+    "homepage": "https://koddr.github.io/goodshare.js/",
     "devDependencies": {
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",

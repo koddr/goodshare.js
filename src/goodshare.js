@@ -1,6 +1,5 @@
 /**
- *  Vic Shóstak <koddr.me@gmail.com>
- *  Copyright (c) 2017 True//web/artisans https://webartisans.org
+ *  Copyright (c) 2017 Vic Shóstak https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js v4.0.8 at 03/11/2017
@@ -14,7 +13,7 @@
  *  Add Array.from() polyfill for IE.
  */
 
-import './polyfill/array.from';
+import './polyfills/array.from';
 
 /**
  *  Import social networks providers with share counter.
