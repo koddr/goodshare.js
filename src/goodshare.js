@@ -24,7 +24,6 @@ import { vkontakte_share, vkontakte_counter } from './providers/Vkontakte';
 import { facebook_share, facebook_counter } from './providers/Facebook';
 import { odnoklassniki_share, odnoklassniki_counter } from './providers/Odnoklassniki';
 import { moimir_share, moimir_counter } from './providers/MoiMir';
-import { googleplus_share, googleplus_counter } from './providers/GooglePlus';
 import { linkedin_share, linkedin_counter } from './providers/LinkedIn';
 import { tumblr_share, tumblr_counter } from './providers/Tumblr';
 import { pinterest_share, pinterest_counter } from './providers/Pinterest';
@@ -39,6 +38,7 @@ import { xing_share, xing_counter } from './providers/Xing';
  *  Import social networks providers without share counter.
  */
 
+import { googleplus_share } from './providers/GooglePlus';
 import { twitter_share } from './providers/Twitter';
 import { livejournal_share } from './providers/LiveJournal';
 import { evernote_share } from './providers/Evernote';
