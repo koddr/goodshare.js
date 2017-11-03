@@ -3,7 +3,7 @@
 # goodshare.js
 ![npm version](https://badge.fury.io/js/goodshare.js.svg) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://vuejs.org) [![license](https://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE.md)
 
-> Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers.. Easy to install and configuring on any of your website!
+> Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
 
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
@@ -12,13 +12,11 @@ Simple install, extensive documentation, developer support, **SEO friendly**, ma
 
 * https://koddr.github.io/goodshare.js/
 
-### Install
+### Install & Usage
 
 ``` bash
 $ npm install goodshare.js --save
 ```
-
-### Usage
 
 Script works with any HTML tags: `<a>` or `<div>` or `<button>` or other. So you can choose any and add required attributes `data-social`. For example:
 
