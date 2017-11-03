@@ -15,18 +15,18 @@
         "share",
         "social"
     ],
-    "author": "Vikky Shostak <vikkyshostak@gmail.com> (https://koddr.me)",
+    "author": "Vic Shóstak <koddr.me@gmail.com>",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/koddr/goodshare.js/issues"
     },
-    "homepage": "https://koddr.me/projects/goodshare-js",
+    "homepage": "https://koddr.github.io/goodshare-js/",
     "devDependencies": {
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "babel-preset-latest": "^6.24.1",
-        "extract-text-webpack-plugin": "^3.0.0",
-        "webpack": "^3.6.0"
+        "extract-text-webpack-plugin": "^3.0.2",
+        "webpack": "^3.8.1"
     }
 }

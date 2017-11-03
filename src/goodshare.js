@@ -1,9 +1,9 @@
 /**
- *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2017 Koddr https://koddr.me
+ *  Vic Shóstak <koddr.me@gmail.com>
+ *  Copyright (c) 2017 True//web/artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
- *  goodshare.js v4.0.7 at 19/09/2017 (23:00)
+ *  goodshare.js v4.0.8 at 03/11/2017
  *
  *  Useful modern JavaScript solution that will help your website visitors share a
  *  link on social networks and micro blogs. Easy to install and configuring on
