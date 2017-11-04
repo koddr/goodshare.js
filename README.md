@@ -4,7 +4,7 @@
 
 ![npm version](https://badge.fury.io/js/goodshare.js.svg) [![jsDelivr download](https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/goodshare.js) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://vuejs.org) [![license](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE.md)
 
-> Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers.. Easy to install and configuring on any of your website!
+> Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
 
 ### Features
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
@@ -13,7 +13,7 @@ Simple install, extensive documentation, developer support, **SEO friendly**, ma
 
 * https://koddr.github.io/goodshare.js/
 
-### Install
+### Installation
 
 Install via `npm`:
 
@@ -23,7 +23,7 @@ $ npm install goodshare.js --save
 
 Or include from [jsDelivr](https://www.jsdelivr.com)  CDN:
 
-``` bash
+``` html
 <script src="https://cdn.jsdelivr.net/npm/goodshare.js@4.0.0/goodshare.min.js"></script>
 ```
 
