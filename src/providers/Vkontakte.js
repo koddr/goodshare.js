@@ -1,6 +1,6 @@
 /**
- *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2017 Koddr https://koddr.me
+ *  Vic Shóstak <koddr.me@gmail.com>
+ *  Copyright (c) 2017 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -10,14 +10,14 @@
 
 class Vkontakte {
     constructor(url = document.location.href, title = document.title,
-                image = document.querySelector('link[rel=image_src]')) {
+                image = document.querySelector('link[rel="apple-touch-icon"]')) {
         this.url = encodeURIComponent(url);
         this.title = encodeURIComponent(title);
         this.image = (image) ? encodeURIComponent(image.href) : '';
     }
     
     shareWindow() {
-        const share_elements = document.querySelectorAll('[data-social=vkontakte]');
+        const share_elements = document.querySelectorAll('[data-social="vkontakte"]');
         
         [...share_elements].forEach((item) => {
             const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
@@ -34,7 +34,7 @@ class Vkontakte {
     
     getCounter() {
         const script = document.createElement('script');
-        const count_elements = document.querySelectorAll('[data-counter=vkontakte]');
+        const count_elements = document.querySelectorAll('[data-counter="vkontakte"]');
         const count_url = 'https://vk.com/share.php?act=count&index=1&url=' + this.url;
         
         window.VK = {Share: {}};

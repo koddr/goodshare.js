@@ -1,12 +1,13 @@
 /**
- *  Copyright (c) 2017 Vic Shóstak https://webartisans.org
+ *  Vic Shóstak <koddr.me@gmail.com>
+ *  Copyright (c) 2017 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
- *  goodshare.js v4.0.8 at 03/11/2017
+ *  goodshare.js v4.0.8 at 04/11/2017
  *
- *  Useful modern JavaScript solution that will help your website visitors share a
- *  link on social networks and micro blogs. Easy to install and configuring on
- *  any of your website!
+ *  Useful modern JavaScript solution for share a link from your website
+ *  to social networks or mobile messengers. Easy to install and configuring
+ *  on any of your website!
  */
 
 /**

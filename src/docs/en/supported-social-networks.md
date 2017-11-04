@@ -1,5 +1,7 @@
 # Supported social networks
 
+> If you don't see your social network, please [let us know](https://github.com/koddr/goodshare.js/issues/new) and we'll try to add it!
+
 - `vkontakte` [Вконтакте](http://vk.com)
 - `facebook` [Facebook](http://facebook.com)
 - `odnoklassniki` [Одноклассники](http://ok.ru)
@@ -26,5 +28,3 @@
 - `baidu` [Baidu](http://www.baidu.com)
 - `renren` [RenRen](http://www.renren.com)
 - `weibo` [Weibo](http://www.weibo.com)
-
-> Note: If you don't see your social network, please [let us know](https://github.com/koddr/goodshare.js/issues/new) and we'll try to add it!

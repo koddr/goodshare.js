@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Customization guide · goodshare.js — Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers</title>
+        <title>Customize share count · goodshare.js — Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -54,7 +58,7 @@
 
     
     
-    <link rel="prev" href="get-social-networks-share-count.html" />
+    <link rel="prev" href="customization-customize-share-link.html" />
     
 
     </head>
@@ -96,25 +100,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="supported-social-networks.html">
+        <li class="chapter " data-level="1.2" data-path="installation.html">
             
-                <a href="supported-social-networks.html">
-            
-                    
-                    Supported social networks
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="supported-social-messengers.html">
-            
-                <a href="supported-social-messengers.html">
+                <a href="installation.html">
             
                     
-                    Supported messengers
+                    Installation
             
                 </a>
             
@@ -129,12 +120,12 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="installation.html">
+        <li class="chapter " data-level="2.1" data-path="usage-social-share-link.html">
             
-                <a href="installation.html">
+                <a href="usage-social-share-link.html">
             
                     
-                    Installation
+                    Social share link
             
                 </a>
             
@@ -142,12 +133,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="get-social-networks-share-count.html">
+        <li class="chapter " data-level="2.2" data-path="usage-share-count.html">
             
-                <a href="get-social-networks-share-count.html">
+                <a href="usage-share-count.html">
             
                     
-                    Get social networks share count
+                    Share count
             
                 </a>
             
@@ -155,12 +146,65 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3" data-path="customization-guide.html">
+
+    
+        
+        <li class="header">Supported providers</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="supported-social-networks.html">
             
-                <a href="customization-guide.html">
+                <a href="supported-social-networks.html">
             
                     
-                    Customization guide
+                    Social networks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="supported-social-messengers.html">
+            
+                <a href="supported-social-messengers.html">
+            
+                    
+                    Messengers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Customization</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="customization-customize-share-link.html">
+            
+                <a href="customization-customize-share-link.html">
+            
+                    
+                    Customize share link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="customization-customize-share-count.html">
+            
+                <a href="customization-customize-share-count.html">
+            
+                    
+                    Customize share count
             
                 </a>
             
@@ -175,7 +219,7 @@
         
         
     
-        <li class="chapter " data-level="3.1" >
+        <li class="chapter " data-level="5.1" >
             
                 <a target="_blank" href="https://github.com/koddr/vue-goodshare">
             
@@ -188,7 +232,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" >
+        <li class="chapter " data-level="5.2" >
             
                 <a target="_blank" href="https://github.com/nosov33/drupal_goodshare">
             
@@ -208,7 +252,7 @@
         
         
     
-        <li class="chapter " data-level="4.1" >
+        <li class="chapter " data-level="6.1" >
             
                 <a target="_blank" href="https://www.paypal.me/koddr/9.99usd">
             
@@ -221,7 +265,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" >
+        <li class="chapter " data-level="6.2" >
             
                 <a target="_blank" href="https://money.yandex.ru/to/41001601525977/599">
             
@@ -271,7 +315,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Customization guide</a>
+        <a href="." >Customize share count</a>
     </h1>
 </div>
 
@@ -286,22 +330,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="customization-guide">Customization guide</h1>
-<h3 id="customize-share-link">Customize share link</h3>
-<p>If you want to replace any default share parameters (URL, title, descripton, image)&#xA0;&#x2014; just edit social network provider and re-build script.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> vkontakte_share = <span class="hljs-keyword">new</span> Vkontakte(
-  <span class="hljs-string">&apos;http://your-another-site.com/&apos;</span>, <span class="hljs-comment">// URL</span>
-  <span class="hljs-string">&apos;New title of current page&apos;</span>, <span class="hljs-comment">// title</span>
-  <span class="hljs-string">&apos;New description of current page.&apos;</span>, <span class="hljs-comment">// description</span>
-  <span class="hljs-string">&apos;http://your-another-site.com/path/to/new-image.jpg&apos;</span> <span class="hljs-comment">// image</span>
-).shareWindow();
-</code></pre>
-<h3 id="customize-share-counter">Customize share counter</h3>
-<p>If you want to replace default share counter URL (get from <code>window.location.href</code>)&#xA0;&#x2014; just edit social network provider and re-build script.</p>
+                                <h1 id="customize-share-counter">Customize share counter</h1>
+<p>If you want to replace default share counter URL&#xA0;&#x2014; edit social network provider and re-build script.</p>
 <pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> vkontakte_counter = <span class="hljs-keyword">new</span> Vkontakte(
-  <span class="hljs-string">&apos;http://your-another-site.com/&apos;</span> <span class="hljs-comment">// URL</span>
+    <span class="hljs-string">&apos;http://example.com/&apos;</span> <span class="hljs-comment">// URL</span>
 ).getCounter();
 </code></pre>
+<blockquote>
+<p>Please keep in mind, not all social networks supports share counter!</p>
+</blockquote>
 
                                 
                                 </section>
@@ -329,7 +366,7 @@
 
             
                 
-                <a href="get-social-networks-share-count.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Get social networks share count">
+                <a href="customization-customize-share-link.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Customize share link">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -341,7 +378,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Customization guide","level":"2.3","depth":1,"next":{"title":"Vue.js component","level":"3.1","depth":1,"url":"https://github.com/koddr/vue-goodshare","ref":"https://github.com/koddr/vue-goodshare","articles":[]},"previous":{"title":"Get social networks share count","level":"2.2","depth":1,"path":"get-social-networks-share-count.md","ref":"get-social-networks-share-count.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/koddr/goodshare.js"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"goodshare.js — Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers","language":"en","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"customization-guide.md","mtime":"2017-11-03T15:31:41.812Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T15:31:57.229Z"},"basePath":".","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Customize share count","level":"4.2","depth":1,"next":{"title":"Vue.js component","level":"5.1","depth":1,"url":"https://github.com/koddr/vue-goodshare","ref":"https://github.com/koddr/vue-goodshare","articles":[]},"previous":{"title":"Customize share link","level":"4.1","depth":1,"path":"customization-customize-share-link.md","ref":"customization-customize-share-link.md","articles":[]},"dir":"ltr"},"config":{"plugins":["fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/koddr/goodshare.js"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"goodshare.js — Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers","language":"en","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"customization-customize-share-count.md","mtime":"2017-11-04T18:10:50.823Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-04T18:17:00.586Z"},"basePath":".","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -349,6 +386,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>

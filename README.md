@@ -49,11 +49,11 @@ For example:
 <i class="icon-google-plus" data-social="googleplus"></i>
 ```
 
-By default, `goodshare.js` search this tags for get description and image (for some social networks):
+By default, `goodshare.js` search this tags for get title, description and image (for some social networks):
 
 ``` html
 <head>
-  ...
+  <title>Current page title</title>
   <meta name="description" content="Current page description.">
   <link rel="apple-touch-icon" href="http://example.com/path/to/image.png">
   ...
@@ -71,7 +71,7 @@ If you want to add different `url`, `title`, `description` and `image` to share 
 
 ### Notes
 
-- **No more depending on jQuery!** Since `4.x`, `goodshare.js` no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
+- **No more depending on jQuery!** Since `4.x`, no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
 - **Browser support.** Since `4.x`, `goodshare.js` do not support Internet Explorer 10 and older (check [ES6 support](https://kangax.github.io/compat-table/es6/#ie11) table).
 
 ### Author & maintainers

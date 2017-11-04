@@ -1,6 +1,6 @@
 /**
- *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2017 Koddr https://koddr.me
+ *  Vic Shóstak <koddr.me@gmail.com>
+ *  Copyright (c) 2017 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -14,7 +14,7 @@ class Xing {
     }
     
     shareWindow() {
-        const share_elements = document.querySelectorAll('[data-social=xing]');
+        const share_elements = document.querySelectorAll('[data-social="xing"]');
         
         [...share_elements].forEach((item) => {
             const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
@@ -30,7 +30,7 @@ class Xing {
     getCounter() {
         const script = document.createElement('script');
         const callback = ('goodshare_' + Math.random()).replace('.', '');
-        const count_elements = document.querySelectorAll('[data-counter=xing]');
+        const count_elements = document.querySelectorAll('[data-counter="xing"]');
         const count_url = 'https://query.yahooapis.com/v1/public/yql?q='
             + encodeURIComponent('select * from html where url="https://www.xing-share.com/app/share?op=get_share_button;counter=top;url='
                 + this.url + '" and xpath="*"') + '&callback=' + callback;

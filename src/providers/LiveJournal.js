@@ -1,6 +1,6 @@
 /**
- *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2017 Koddr https://koddr.me
+ *  Vic Shóstak <koddr.me@gmail.com>
+ *  Copyright (c) 2017 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -15,12 +15,12 @@ class LiveJournal {
     }
     
     shareWindow() {
-        const share_elements = document.querySelectorAll('[data-social=livejournal]');
+        const share_elements = document.querySelectorAll('[data-social="livejournal"]');
         
         [...share_elements].forEach((item) => {
             const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
             const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
-            const share_url = 'http://livejournal.com/update.bml?event=' + url + '&subject=' + title;
+            const share_url = 'https://livejournal.com/update.bml?event=' + url + '&subject=' + title;
             
             item.addEventListener('click', function (event) {
                 event.preventDefault();

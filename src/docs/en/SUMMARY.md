@@ -12,10 +12,10 @@
 
 ### Usage
 
-- [Share link](usage.md)
-- [Share count](usage.md)
+- [Social share link](usage-social-share-link.md)
+- [Share count](usage-share-count.md)
 
-### Supported
+### Supported providers
 
 - [Social networks](supported-social-networks.md)
 - [Messengers](supported-social-messengers.md)

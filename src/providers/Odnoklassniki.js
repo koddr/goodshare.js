@@ -1,6 +1,6 @@
 /**
- *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2017 Koddr https://koddr.me
+ *  Vic Shóstak <koddr.me@gmail.com>
+ *  Copyright (c) 2017 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -15,7 +15,7 @@ class Odnoklassniki {
     }
     
     shareWindow() {
-        const share_elements = document.querySelectorAll('[data-social=odnoklassniki]');
+        const share_elements = document.querySelectorAll('[data-social="odnoklassniki"]');
         
         [...share_elements].forEach((item) => {
             const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
@@ -32,7 +32,7 @@ class Odnoklassniki {
     
     getCounter() {
         const script = document.createElement('script');
-        const count_elements = document.querySelectorAll('[data-counter=odnoklassniki]');
+        const count_elements = document.querySelectorAll('[data-counter="odnoklassniki"]');
         const count_url = 'https://connect.ok.ru/dk?st.cmd=extLike&uid=1&ref=' + this.url;
         
         window.ODKL = {};

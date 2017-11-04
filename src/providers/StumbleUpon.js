@@ -1,6 +1,6 @@
 /**
- *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2017 Koddr https://koddr.me
+ *  Vic Shóstak <koddr.me@gmail.com>
+ *  Copyright (c) 2017 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -15,7 +15,7 @@ class StumbleUpon {
     }
     
     shareWindow() {
-        const share_elements = document.querySelectorAll('[data-social=stumbleupon]');
+        const share_elements = document.querySelectorAll('[data-social="stumbleupon"]');
         
         [...share_elements].forEach((item) => {
             const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
@@ -32,7 +32,7 @@ class StumbleUpon {
     getCounter() {
         const script = document.createElement('script');
         const callback = ('goodshare_' + Math.random()).replace('.', '');
-        const count_elements = document.querySelectorAll('[data-counter=stumbleupon]');
+        const count_elements = document.querySelectorAll('[data-counter="stumbleupon"]');
         const count_url = 'https://query.yahooapis.com/v1/public/yql?q='
             + encodeURIComponent('select * from html where url="http://www.stumbleupon.com/services/1.01/badge.getinfo?url='
                 + this.url + '" and xpath="*"') + '&callback=' + callback;

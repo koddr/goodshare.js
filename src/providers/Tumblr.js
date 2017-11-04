@@ -1,6 +1,6 @@
 /**
- *  Vikky Shostak <vikkyshostak@gmail.com>
- *  Copyright (c) 2017 Koddr https://koddr.me
+ *  Vic Shóstak <koddr.me@gmail.com>
+ *  Copyright (c) 2017 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -10,14 +10,14 @@
 
 class Tumblr {
     constructor(url = document.location.href, title = document.title,
-                description = document.querySelector('meta[name=description]')) {
+                description = document.querySelector('meta[name="description"]')) {
         this.url = encodeURIComponent(url);
         this.title = encodeURIComponent(title);
         this.description = (description) ? encodeURIComponent(description.content) : '';
     }
     
     shareWindow() {
-        const share_elements = document.querySelectorAll('[data-social=tumblr]');
+        const share_elements = document.querySelectorAll('[data-social="tumblr"]');
         
         [...share_elements].forEach((item) => {
             const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
@@ -36,7 +36,7 @@ class Tumblr {
     getCounter() {
         const script = document.createElement('script');
         const callback = ('goodshare_' + Math.random()).replace('.', '');
-        const count_elements = document.querySelectorAll('[data-counter=tumblr]');
+        const count_elements = document.querySelectorAll('[data-counter="tumblr"]');
         const count_url = 'https://api.tumblr.com/v2/share/stats?url=' + this.url + '&callback=' + callback;
         
         if (count_elements.length > 0) {
