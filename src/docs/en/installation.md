@@ -2,16 +2,22 @@
 
 ### Direct Download / CDN
 
-[https://cdn.jsdelivr.net/npm/goodshare.js](https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js)
+[https://www.jsdelivr.com/package/npm/goodshare.js](https://www.jsdelivr.com/package/npm/goodshare.js)
 
 <!--email_off-->
 [jsDelivr](https://www.jsdelivr.com) is a public, open-source CDN (Content Delivery Network) developed by [ProspectOne](https://prospectone.io), focused on performance, reliability, and security. It is free to use for everyone, with no bandwidth limits.
 <!--/email_off-->
 
-Include `goodshare.js` before close `body` tag:
+Include `goodshare.min.js` before close `body` tag:
 
 ``` html
 <script src="/path/to/goodshare.min.js"></script>
+```
+
+Also, you can use a specific version, using a link like:
+
+``` html
+<script src="https://cdn.jsdelivr.net/npm/goodshare.js@4.0.0/goodshare.min.js"></script>
 ```
 
 ### npm

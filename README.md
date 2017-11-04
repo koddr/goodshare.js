@@ -1,7 +1,8 @@
 ![goodshare-js-logo-github](https://user-images.githubusercontent.com/11155743/31406128-fc67d706-ae08-11e7-9a97-5f10a7006b31.jpg)
 
 # goodshare.js
-![npm version](https://badge.fury.io/js/goodshare.js.svg) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://vuejs.org) [![license](https://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE.md)
+
+![npm version](https://badge.fury.io/js/goodshare.js.svg) [![jsDelivr download](https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/goodshare.js) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://vuejs.org) [![license](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE.md)
 
 > Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers.. Easy to install and configuring on any of your website!
 
@@ -14,13 +15,25 @@ Simple install, extensive documentation, developer support, **SEO friendly**, ma
 
 ### Install
 
+Install via `npm`:
+
 ``` bash
 $ npm install goodshare.js --save
 ```
 
+Or include from [jsDelivr](https://www.jsdelivr.com)  CDN:
+
+``` bash
+<script src="https://cdn.jsdelivr.net/npm/goodshare.js@4.0.0/goodshare.min.js"></script>
+```
+
 ### Usage
 
-Script works with any HTML tags: `<a>` or `<div>` or `<button>` or other. So you can choose any and add required attributes `data-social`. For example:
+Script works with any HTML tags: `<a>` or `<div>` or `<button>` or other.
+
+> So you can choose any and add required attributes `data-social`.
+
+For example:
 
 ``` html
 <!-- Create button with share to Twitter -->
@@ -41,13 +54,13 @@ By default, `goodshare.js` search this tags for get description and image (for s
 ``` html
 <head>
   ...
-  <meta name="description" content="Current page description."/>
-  <link rel="apple-touch-icon" href="http://example.com/path/to/image.png"/>
+  <meta name="description" content="Current page description.">
+  <link rel="apple-touch-icon" href="http://example.com/path/to/image.png">
   ...
 </head>
 ```
 
-If you want to add different `url`, `title`, `description` and/or `image` to share element — use special `data-*` attributes:
+If you want to add different `url`, `title`, `description` and `image` to share element&nbsp;&mdash; use special `data-*` attributes:
 
 * `data-url` redefines `document.location.href`
 * `data-title` redefines `document.title`
@@ -58,8 +71,8 @@ If you want to add different `url`, `title`, `description` and/or `image` to sha
 
 ### Notes
 
-- **Warning! No more depending on jQuery!** Since `4.0.0`, we'll no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
-- **Browser support.** Branch `4.x` of `goodshare.js` do not support IE10 and older (check [ES6 support](https://kangax.github.io/compat-table/es6/#ie11) table). For working with zombie browsers, please use polyfills and Babel (for `goodshare.min.js` too!).
+- **No more depending on jQuery!** Since `4.x`, `goodshare.js` no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
+- **Browser support.** Since `4.x`, `goodshare.js` do not support Internet Explorer 10 and older (check [ES6 support](https://kangax.github.io/compat-table/es6/#ie11) table).
 
 ### Author & maintainers
 

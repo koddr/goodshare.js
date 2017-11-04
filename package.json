@@ -5,8 +5,8 @@
     "main": "goodshare.min.js",
     "scripts": {
         "docs:prepare": "gitbook install ./src/docs",
+        "docs:build": "npm run docs:prepare && rm -rf ./docs/* && rm -rf ./src/docs/_book && gitbook build ./src/docs && cp -rf ./src/docs/_book/* ./docs",
         "docs:watch": "npm run docs:prepare && gitbook serve ./src/docs",
-        "docs:build": "npm run docs:prepare && rm -rf ./src/docs/_book && gitbook build ./src/docs && cp -rf ./src/docs/_book/* ./docs",
         "build": "webpack --config webpack.config.js --display-error-details -p",
         "watch": "webpack --config webpack.config.js --watch -p"
     },
