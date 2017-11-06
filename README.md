@@ -24,7 +24,7 @@ $ npm install goodshare.js --save
 Or include from [jsDelivr](https://www.jsdelivr.com)  CDN:
 
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/goodshare.js@4.0.0/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js"></script>
 ```
 
 ### Usage
