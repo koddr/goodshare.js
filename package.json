@@ -1,38 +1,39 @@
 {
-    "name": "goodshare.js",
-    "version": "4.0.8",
-    "description": "Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.",
-    "main": "goodshare.min.js",
-    "scripts": {
-        "docs:prepare": "gitbook install ./src/docs",
-        "docs:build": "npm run docs:prepare && rm -rf ./docs/* && rm -rf ./src/docs/_book && gitbook build ./src/docs && cp -rf ./src/docs/_book/* ./docs",
-        "docs:watch": "npm run docs:prepare && gitbook serve ./src/docs",
-        "build": "webpack --config webpack.config.js --display-error-details -p",
-        "watch": "webpack --config webpack.config.js --watch -p"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/koddr/goodshare.js.git"
-    },
-    "keywords": [
-        "share count",
-        "social share",
-        "social network share count",
-        "share link"
-    ],
-    "author": "Vic Shóstak <koddr.me@gmail.com> (https://webartisans.org)",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/koddr/goodshare.js/issues"
-    },
-    "homepage": "https://koddr.github.io/goodshare.js/",
-    "devDependencies": {
-        "babel-core": "^6.26.0",
-        "babel-loader": "^7.1.2",
-        "babel-plugin-transform-class-properties": "^6.24.1",
-        "babel-preset-latest": "^6.24.1",
-        "extract-text-webpack-plugin": "^3.0.2",
-        "gitbook-cli": "^2.3.2",
-        "webpack": "^3.8.1"
-    }
+  "name": "goodshare.js",
+  "version": "4.0.9",
+  "description": "Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.",
+  "main": "goodshare.min.js",
+  "scripts": {
+    "docs:prepare": "gitbook install ./src/docs",
+    "docs:build": "npm run docs:prepare && rm -rf ./docs/* && rm -rf ./src/docs/_book && gitbook build ./src/docs && cp -rf ./src/docs/_book/* ./docs",
+    "docs:watch": "npm run docs:prepare && gitbook serve ./src/docs",
+    "build": "webpack --config webpack.config.js --display-error-details -p",
+    "watch": "webpack --config webpack.config.js --watch -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koddr/goodshare.js.git"
+  },
+  "keywords": [
+    "share count",
+    "social share",
+    "social network share count",
+    "share link"
+  ],
+  "author": "Vic Shóstak <koddr.me@gmail.com> (https://webartisans.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koddr/goodshare.js/issues",
+    "email": "koddr.me@gmail.com"
+  },
+  "homepage": "https://koddr.github.io/goodshare.js/",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "gitbook-cli": "^2.3.2",
+    "webpack": "^3.8.1"
+  }
 }

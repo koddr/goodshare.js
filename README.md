@@ -21,7 +21,7 @@ Install via `npm`:
 $ npm install goodshare.js --save
 ```
 
-Or include from [jsDelivr](https://www.jsdelivr.com)  CDN:
+Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
 
 ``` html
 <script src="https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js"></script>
@@ -68,6 +68,18 @@ If you want to add different `url`, `title`, `description` and `image` to share 
 * `data-image` redefines `link[rel="apple-touch-icon"]`
 
 > Note: Please keep in mind, not all social networks support all of them data attributes!
+
+To display share count, just add data-counter attribute to HTML element that will contain numbers. For example:
+
+``` html
+<!-- Create link with share to Facebook and counter -->
+<a href="#" data-social="facebook">
+  Share this to Facebook
+  <span data-counter="facebook"></span>
+</a>
+```
+
+> You also may put this attribute to any element.
 
 ### Notes
 
