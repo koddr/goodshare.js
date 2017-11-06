@@ -69,7 +69,7 @@ If you want to add different `url`, `title`, `description` and `image` to share 
 
 > Note: Please keep in mind, not all social networks support all of them data attributes!
 
-To display share count, just add data-counter attribute to HTML element that will contain numbers. For example:
+To display share count, just add `data-counter` attribute to HTML element that will contain numbers. For example:
 
 ``` html
 <!-- Create link with share to Facebook and counter -->
