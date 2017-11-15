@@ -34,8 +34,8 @@ class Pocket {
     const callback = ('goodshare_' + Math.random()).replace('.', '');
     const count_elements = document.querySelectorAll('[data-counter="pocket"]');
     const count_url = 'https://query.yahooapis.com/v1/public/yql?q='
-      + encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?count=horizontal&url='
-        + this.url + '" and xpath="*"') + '&callback=' + callback;
+      + encodeURIComponent('select * from html where url="https://widgets.getpocket.com/v1/button?label=pocket&count=vertical&v=1&url='
+        + this.url + '&src=' + this.url + '" and xpath="*"') + '&callback=' + callback;
     
     if (count_elements.length > 0) {
       window[callback] = (counter) => {
