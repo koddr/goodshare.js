@@ -37,7 +37,7 @@ class Vkontakte {
     const count_elements = document.querySelectorAll('[data-counter="vkontakte"]');
     const count_url = 'https://vk.com/share.php?act=count&index=1&url=' + this.url;
     
-    window.VK = { Share: {} };
+    window.VK = Object.assign({}, { Share: {} }, window.VK);
     
     if (count_elements.length > 0) {
       window.VK.Share.count = (counter) => {
