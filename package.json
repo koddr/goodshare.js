@@ -1,6 +1,6 @@
 {
   "name": "goodshare.js",
-  "version": "4.0.9",
+  "version": "4.1.0",
   "description": "Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.",
   "main": "goodshare.min.js",
   "scripts": {

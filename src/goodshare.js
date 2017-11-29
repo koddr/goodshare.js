@@ -3,7 +3,7 @@
  *  Copyright (c) 2017 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
- *  goodshare.js v4.0.9 at 06/11/2017
+ *  goodshare.js v4.1.0 at 29/11/2017
  *
  *  Useful modern JavaScript solution for share a link from your website
  *  to social networks or mobile messengers. Easy to install and configuring
@@ -56,6 +56,7 @@ import { weibo_share } from './providers/Weibo';
  *  Import mobile messengers providers.
  */
 
+import { skype_share } from './providers/Skype';
 import { telegram_share } from './providers/Telegram';
 import { viber_share } from './providers/Viber';
 import { whatsapp_share } from './providers/WhatsApp';
