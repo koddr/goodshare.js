@@ -38,7 +38,7 @@ class Odnoklassniki {
     window.ODKL = {};
     
     if (count_elements.length > 0) {
-      window.ODKL.updateCount = (counter) => {
+      window.ODKL.updateCount = (_, counter) => {
         [...count_elements].forEach((item) => {
           item.innerHTML = counter;
         });
