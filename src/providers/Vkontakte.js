@@ -40,7 +40,7 @@ class Vkontakte {
     window.VK = Object.assign({}, { Share: {} }, window.VK);
     
     if (count_elements.length > 0) {
-      window.VK.Share.count = (counter) => {
+      window.VK.Share.count = (_, counter) => {
         [...count_elements].forEach((item) => {
           item.innerHTML = counter;
         });
