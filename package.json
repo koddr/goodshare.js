@@ -1,14 +1,14 @@
 {
   "name": "goodshare.js",
-  "version": "4.1.2",
+  "version": "4.2.0",
   "description": "Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.",
   "main": "goodshare.min.js",
   "scripts": {
     "docs:prepare": "gitbook install ./src/docs",
     "docs:build": "npm run docs:prepare && rm -rf ./docs/* && rm -rf ./src/docs/_book && gitbook build ./src/docs && cp -rf ./src/docs/_book/* ./docs",
     "docs:watch": "npm run docs:prepare && gitbook serve ./src/docs",
-    "build": "webpack --config webpack.config.js --display-error-details -p",
-    "watch": "webpack --config webpack.config.js --watch -p"
+    "build": "webpack --config webpack.config.js --optimize-minimize --display-error-details --hide-modules --progress",
+    "watch": "webpack --config webpack.config.js --watch --optimize-minimize --hide-modules --progress"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,11 @@
   },
   "homepage": "https://koddr.github.io/goodshare.js/",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.35",
-    "@babel/preset-env": "^7.0.0-beta.35",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
     "babel-loader": "^8.0.0-beta.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "gitbook-cli": "^2.3.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.11.0"
   }
 }

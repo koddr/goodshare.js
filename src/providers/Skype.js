@@ -1,6 +1,6 @@
 /**
  *  Vic Shóstak <koddr.me@gmail.com>
- *  Copyright (c) 2017 True web artisans https://webartisans.org
+ *  Copyright (c) 2018 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -18,7 +18,7 @@ class Skype {
     
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
-      const share_url = 'https://web.skype.com/share?' + url;
+      const share_url = `https://web.skype.com/share?${url}`;
       
       item.addEventListener('click', function (event) {
         event.preventDefault();

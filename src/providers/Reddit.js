@@ -1,6 +1,6 @@
 /**
  *  Vic Shóstak <koddr.me@gmail.com>
- *  Copyright (c) 2017 True web artisans https://webartisans.org
+ *  Copyright (c) 2018 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -20,7 +20,7 @@ class Reddit {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
-      const share_url = 'https://reddit.com/submit?url=' + url + '&title=' + title;
+      const share_url = `https://reddit.com/submit?url=${url}&title=${title}`;
       
       item.addEventListener('click', function (event) {
         event.preventDefault();
@@ -33,7 +33,7 @@ class Reddit {
     const script = document.createElement('script');
     const callback = ('goodshare_' + Math.random()).replace('.', '');
     const count_elements = document.querySelectorAll('[data-counter="reddit"]');
-    const count_url = 'https://www.reddit.com/api/info.json?url=' + this.url + '&callback=' + callback;
+    const count_url = `https://www.reddit.com/api/info.json?url=${this.url}&callback=${callback}`;
     
     if (count_elements.length > 0) {
       window[callback] = (counter) => {

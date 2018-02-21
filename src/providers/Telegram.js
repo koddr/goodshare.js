@@ -1,6 +1,6 @@
 /**
  *  Vic Shóstak <koddr.me@gmail.com>
- *  Copyright (c) 2017 True web artisans https://webartisans.org
+ *  Copyright (c) 2018 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -19,12 +19,12 @@ class Telegram {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const rhash = item.dataset.rhash ? item.dataset.rhash : null;
-      let share_url = 'https://t.me/share/url?url=' + url;
+      let share_url = `https://t.me/share/url?url=${url}`;
       
       if (rhash !== null) {
         // For more info about Telegram Instant View read the docs:
         // https://instantview.telegram.org/docs
-        share_url = 'https://t.me/iv?url=' + url + '&rhash=' + rhash;
+        share_url = `https://t.me/iv?url=${url}&rhash=${rhash}`;
       }
       
       item.addEventListener('click', function (event) {

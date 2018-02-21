@@ -20,7 +20,7 @@ class LiveInternet {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
-      const share_url = 'http://www.liveinternet.ru/journal_post.php?action=n_add&cnurl=' + url + '&cntitle=' + title;
+      const share_url = `http://www.liveinternet.ru/journal_post.php?action=n_add&cnurl=${url}&cntitle=${title}`;
       
       item.addEventListener('click', function (event) {
         event.preventDefault();

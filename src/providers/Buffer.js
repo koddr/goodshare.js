@@ -1,6 +1,6 @@
 /**
  *  Vic Shóstak <koddr.me@gmail.com>
- *  Copyright (c) 2017 True web artisans https://webartisans.org
+ *  Copyright (c) 2018 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -20,7 +20,7 @@ class Buffer {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
-      const share_url = 'https://buffer.com/add?url=' + url + '&text=' + title;
+      const share_url = `https://buffer.com/add?url=${url}&text=${title}`;
       
       item.addEventListener('click', function (event) {
         event.preventDefault();
@@ -33,7 +33,7 @@ class Buffer {
     const script = document.createElement('script');
     const callback = ('goodshare_' + Math.random()).replace('.', '');
     const count_elements = document.querySelectorAll('[data-counter="buffer"]');
-    const count_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + this.url + '&callback=' + callback;
+    const count_url = `https://api.bufferapp.com/1/links/shares.json?url=${this.url}&callback=${callback}`;
     
     if (count_elements.length > 0) {
       window[callback] = (counter) => {

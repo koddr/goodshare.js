@@ -5,27 +5,27 @@
  *
  *  goodshare.js
  *
- *  LINE (https://line.me) provider.
+ *  SMS provider.
  */
 
-class Line {
+class SMS {
   constructor (url = document.location.href) {
     this.url = encodeURIComponent(url);
   }
   
   shareWindow () {
-    const share_elements = document.querySelectorAll('[data-social="line"]');
+    const share_elements = document.querySelectorAll('[data-social="sms"]');
     
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
-      const share_url = `line://msg/text/${url}`;
+      let share_url = `sms:?&body=${url}`;
       
       item.addEventListener('click', function (event) {
         event.preventDefault();
-        return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
+        return window.location.replace(share_url);
       });
     });
   }
 }
 
-export const line_share = new Line().shareWindow();
+export const sms_share = new SMS().shareWindow();
