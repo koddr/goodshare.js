@@ -8,10 +8,28 @@
  *  Facebook (https://facebook.com) provider.
  */
 
-class Facebook {
+import { EventWithNamespace, getUniqId } from '../utils';
+
+export class Facebook {
   constructor (url = document.location.href, title = document.title) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
+    this.events = new EventWithNamespace();
+    this.instanceId = getUniqId('facebook');
+  }
+
+  static getInstance () {
+    const _instance = new Facebook();
+
+    _instance.shareWindow();
+    _instance.getCounter();
+
+    return _instance;
+  }
+
+  reNewInstance () {
+    this.events.removeAll();
+    Facebook.getInstance();
   }
   
   shareWindow () {
@@ -22,7 +40,7 @@ class Facebook {
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://facebook.com/sharer/sharer.php?u=${url}&t=${title}`;
       
-      item.addEventListener('click', function (event) {
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -41,6 +59,10 @@ class Facebook {
           item.innerHTML = (counter.share) ? counter.share.share_count : 0;
         });
         
+        if (script.parentNode === null) {
+          return;
+        }
+
         script.parentNode.removeChild(script);
       };
       
@@ -49,6 +71,3 @@ class Facebook {
     }
   }
 }
-
-export const facebook_share = new Facebook().shareWindow();
-export const facebook_counter = new Facebook().getCounter();

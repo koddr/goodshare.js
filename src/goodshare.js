@@ -20,13 +20,13 @@ import './polyfills/array.from';
  *  Import social networks providers with share counter.
  */
 
-import { vkontakte_share, vkontakte_counter } from './providers/Vkontakte';
-import { facebook_share, facebook_counter } from './providers/Facebook';
-import { odnoklassniki_share, odnoklassniki_counter } from './providers/Odnoklassniki';
-import { moimir_share, moimir_counter } from './providers/MoiMir';
-import { linkedin_share, linkedin_counter } from './providers/LinkedIn';
-import { tumblr_share, tumblr_counter } from './providers/Tumblr';
-import { pinterest_share, pinterest_counter } from './providers/Pinterest';
+import { Vkontakte } from './providers/Vkontakte';
+import { Facebook } from './providers/Facebook';
+import { Odnoklassniki } from './providers/Odnoklassniki';
+import { MoiMir } from './providers/MoiMir';
+import { LinkedIn } from './providers/LinkedIn';
+import { Tumblr } from './providers/Tumblr';
+import { Pinterest } from './providers/Pinterest';
 import { surfingbird_share, surfingbird_counter } from './providers/Surfingbird';
 import { reddit_share, reddit_counter } from './providers/Reddit';
 import { buffer_share, buffer_counter } from './providers/Buffer';
@@ -62,3 +62,21 @@ import { telegram_share } from './providers/Telegram';
 import { viber_share } from './providers/Viber';
 import { whatsapp_share } from './providers/WhatsApp';
 import { line_share } from './providers/Line';
+import { EventWithNamespace } from './utils';
+
+const initShare = () => ([
+  Vkontakte.getInstance(),
+  Facebook.getInstance(),
+  Odnoklassniki.getInstance(),
+  MoiMir.getInstance(),
+  LinkedIn.getInstance(),
+  Tumblr.getInstance(),
+  Pinterest.getInstance(),
+]);
+
+{
+  initShare();
+}
+
+
+

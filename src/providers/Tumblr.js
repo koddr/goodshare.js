@@ -8,12 +8,30 @@
  *  Tumblr (https://tumblr.com) provider.
  */
 
-class Tumblr {
+import { EventWithNamespace, getUniqId } from '../utils';
+
+export class Tumblr {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]')) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
+    this.events = new EventWithNamespace();
+    this.instanceId = getUniqId('tumblr');
+  }
+
+  static getInstance () {
+    const _instance = new Tumblr();
+
+    _instance.shareWindow();
+    _instance.getCounter();
+
+    return _instance;
+  }
+
+  reNewInstance () {
+    this.events.removeAll();
+    Tumblr.getInstance();
   }
   
   shareWindow () {
@@ -25,7 +43,7 @@ class Tumblr {
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const share_url = `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&title=${title}&caption=${description}&posttype=link`;
       
-      item.addEventListener('click', function (event) {
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -44,6 +62,10 @@ class Tumblr {
           item.innerHTML = counter.response.note_count;
         });
         
+        if (script.parentNode === null) {
+          return;
+        }
+        
         script.parentNode.removeChild(script);
       };
       
@@ -52,6 +74,3 @@ class Tumblr {
     }
   }
 }
-
-export const tumblr_share = new Tumblr().shareWindow();
-export const tumblr_counter = new Tumblr().getCounter();

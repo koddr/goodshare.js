@@ -8,12 +8,30 @@
  *  LinkedIn (https://linkedin.com) provider.
  */
 
-class LinkedIn {
+import { EventWithNamespace, getUniqId } from '../utils';
+
+export class LinkedIn {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]')) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
+    this.events = new EventWithNamespace();
+    this.instanceId = getUniqId('linkedin');
+  }
+  
+  static getInstance () {
+    const _instance = new LinkedIn();
+
+    _instance.shareWindow();
+    _instance.getCounter();
+
+    return _instance;
+  }
+
+  reNewInstance () {
+    this.events.removeAll();
+    LinkedIn.getInstance();
   }
   
   shareWindow () {
@@ -25,7 +43,7 @@ class LinkedIn {
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const share_url = `https://www.linkedin.com/shareArticle?url=${url}&text=${title}&summary=${description}&mini=true`;
       
-      item.addEventListener('click', function (event) {
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -52,6 +70,3 @@ class LinkedIn {
     }
   }
 }
-
-export const linkedin_share = new LinkedIn().shareWindow();
-export const linkedin_counter = new LinkedIn().getCounter();
