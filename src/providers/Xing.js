@@ -8,9 +8,27 @@
  *  Xing (https://xing.com) provider.
  */
 
-class Xing {
+import {EventWithNamespace, getUniqId} from '../utils';
+
+export class Xing {
   constructor (url = document.location.href) {
     this.url = encodeURIComponent(url);
+    this.events = new EventWithNamespace();
+    this.instanceId = getUniqId('pocket');
+  }
+  
+  static getInstance () {
+    const _instance = new Xing();
+    
+    _instance.shareWindow();
+    _instance.getCounter();
+    
+    return _instance;
+  }
+  
+  reNewInstance () {
+    this.events.removeAll();
+    Xing.getInstance();
   }
   
   shareWindow () {
@@ -19,8 +37,8 @@ class Xing {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const share_url = `https://www.xing.com/spi/shares/new?url=${url}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -51,6 +69,3 @@ class Xing {
     }
   }
 }
-
-export const xing_share = new Xing().shareWindow();
-export const xing_counter = new Xing().getCounter();

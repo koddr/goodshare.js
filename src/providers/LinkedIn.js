@@ -43,7 +43,7 @@ export class LinkedIn {
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const share_url = `https://www.linkedin.com/shareArticle?url=${url}&text=${title}&summary=${description}&mini=true`;
       
-      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });

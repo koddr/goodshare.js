@@ -43,7 +43,7 @@ export class Tumblr {
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const share_url = `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&title=${title}&caption=${description}&posttype=link`;
       
-      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });

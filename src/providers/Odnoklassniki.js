@@ -39,7 +39,7 @@ export class Odnoklassniki {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=${url}&st.comments=${title}`;
-      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });

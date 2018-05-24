@@ -27,12 +27,12 @@ import { MoiMir } from './providers/MoiMir';
 import { LinkedIn } from './providers/LinkedIn';
 import { Tumblr } from './providers/Tumblr';
 import { Pinterest } from './providers/Pinterest';
-import { surfingbird_share, surfingbird_counter } from './providers/Surfingbird';
-import { reddit_share, reddit_counter } from './providers/Reddit';
-import { buffer_share, buffer_counter } from './providers/Buffer';
-import { stumbleupon_share, stumbleupon_counter } from './providers/StumbleUpon';
-import { pocket_share, pocket_counter } from './providers/Pocket';
-import { xing_share, xing_counter } from './providers/Xing';
+import { Surfingbird } from './providers/Surfingbird';
+import { Reddit } from './providers/Reddit';
+import { Buffer } from './providers/Buffer';
+import { StumbleUpon } from './providers/StumbleUpon';
+import { Pocket } from './providers/Pocket';
+import { Xing } from './providers/Xing';
 
 /**
  *  Import social networks providers without share counter.
@@ -64,19 +64,26 @@ import { whatsapp_share } from './providers/WhatsApp';
 import { line_share } from './providers/Line';
 import { EventWithNamespace } from './utils';
 
-const initShare = () => ([
-  Vkontakte.getInstance(),
-  Facebook.getInstance(),
-  Odnoklassniki.getInstance(),
-  MoiMir.getInstance(),
-  LinkedIn.getInstance(),
-  Tumblr.getInstance(),
-  Pinterest.getInstance(),
-]);
+const initShare = () => {
+  const providers = [
+    Vkontakte,
+    Facebook,
+    Odnoklassniki,
+    MoiMir,
+    LinkedIn,
+    Tumblr,
+    Pinterest,
+    Surfingbird,
+    Reddit,
+    Buffer,
+    StumbleUpon,
+    Pocket,
+    Xing,
+  ];
+  
+  providers.forEach(provider => provider.getInstance())
+};
 
-{
+(function() {
   initShare();
-}
-
-
-
+})();

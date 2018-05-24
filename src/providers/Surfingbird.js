@@ -8,12 +8,30 @@
  *  Surfingbird (https://surfingbird.ru) provider.
  */
 
-class Surfingbird {
+import {EventWithNamespace, getUniqId} from '../utils';
+
+export class Surfingbird {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]')) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
+    this.events = new EventWithNamespace();
+    this.instanceId = getUniqId('surfingbird');
+  }
+  
+  static getInstance () {
+    const _instance = new Surfingbird();
+    
+    _instance.shareWindow();
+    _instance.getCounter();
+    
+    return _instance;
+  }
+  
+  reNewInstance () {
+    this.events.removeAll();
+    Surfingbird.getInstance();
   }
   
   shareWindow () {
@@ -24,8 +42,8 @@ class Surfingbird {
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const share_url = `https://surfingbird.ru/share?url=${url}&title=${title}&description=${description}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -56,6 +74,3 @@ class Surfingbird {
     }
   }
 }
-
-export const surfingbird_share = new Surfingbird().shareWindow();
-export const surfingbird_counter = new Surfingbird().getCounter();

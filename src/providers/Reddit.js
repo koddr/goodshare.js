@@ -8,10 +8,28 @@
  *  Reddit (https://reddit.com) provider.
  */
 
-class Reddit {
+import {EventWithNamespace, getUniqId} from '../utils';
+
+export class Reddit {
   constructor (url = document.location.href, title = document.title) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
+    this.events = new EventWithNamespace();
+    this.instanceId = getUniqId('reddit');
+  }
+  
+  static getInstance () {
+    const _instance = new Reddit();
+    
+    _instance.shareWindow();
+    _instance.getCounter();
+    
+    return _instance;
+  }
+  
+  reNewInstance () {
+    this.events.removeAll();
+    Reddit.getInstance();
   }
   
   shareWindow () {
@@ -21,8 +39,8 @@ class Reddit {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://reddit.com/submit?url=${url}&title=${title}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -60,6 +78,3 @@ class Reddit {
     }
   }
 }
-
-export const reddit_share = new Reddit().shareWindow();
-export const reddit_counter = new Reddit().getCounter();

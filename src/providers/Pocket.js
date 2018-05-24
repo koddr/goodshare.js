@@ -8,10 +8,28 @@
  *  Pocket (https://getpocket.com) provider.
  */
 
-class Pocket {
+import {EventWithNamespace, getUniqId} from '../utils';
+
+export class Pocket {
   constructor (url = document.location.href, title = document.title) {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
+    this.events = new EventWithNamespace();
+    this.instanceId = getUniqId('pocket');
+  }
+  
+  static getInstance () {
+    const _instance = new Pocket();
+    
+    _instance.shareWindow();
+    _instance.getCounter();
+    
+    return _instance;
+  }
+  
+  reNewInstance () {
+    this.events.removeAll();
+    Pocket.getInstance();
   }
   
   shareWindow () {
@@ -21,8 +39,8 @@ class Pocket {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://getpocket.com/save?url=${url}&title=${title}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -53,6 +71,3 @@ class Pocket {
     }
   }
 }
-
-export const pocket_share = new Pocket().shareWindow();
-export const pocket_counter = new Pocket().getCounter();
