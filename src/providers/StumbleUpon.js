@@ -8,28 +8,13 @@
  *  StumbleUpon (https://stumbleupon.com) provider.
  */
 
-import {EventWithNamespace, getUniqId} from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class StumbleUpon {
+export class StumbleUpon extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('stumbleupon');
-  }
-  
-  static getInstance () {
-    const _instance = new StumbleUpon();
-    
-    _instance.shareWindow();
-    _instance.getCounter();
-    
-    return _instance;
-  }
-  
-  reNewInstance () {
-    this.events.removeAll();
-    StumbleUpon.getInstance();
   }
   
   shareWindow () {

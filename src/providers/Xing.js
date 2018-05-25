@@ -8,27 +8,12 @@
  *  Xing (https://xing.com) provider.
  */
 
-import {EventWithNamespace, getUniqId} from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Xing {
+export class Xing extends ProviderMixin {
   constructor (url = document.location.href) {
+    super();
     this.url = encodeURIComponent(url);
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('pocket');
-  }
-  
-  static getInstance () {
-    const _instance = new Xing();
-    
-    _instance.shareWindow();
-    _instance.getCounter();
-    
-    return _instance;
-  }
-  
-  reNewInstance () {
-    this.events.removeAll();
-    Xing.getInstance();
   }
   
   shareWindow () {

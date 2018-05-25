@@ -8,30 +8,15 @@
  *  Surfingbird (https://surfingbird.ru) provider.
  */
 
-import {EventWithNamespace, getUniqId} from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Surfingbird {
+export class Surfingbird extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('surfingbird');
-  }
-  
-  static getInstance () {
-    const _instance = new Surfingbird();
-    
-    _instance.shareWindow();
-    _instance.getCounter();
-    
-    return _instance;
-  }
-  
-  reNewInstance () {
-    this.events.removeAll();
-    Surfingbird.getInstance();
   }
   
   shareWindow () {

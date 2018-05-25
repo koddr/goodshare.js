@@ -38,34 +38,34 @@ import { Xing } from './providers/Xing';
  *  Import social networks providers without share counter.
  */
 
-import { googleplus_share } from './providers/GooglePlus';
-import { twitter_share } from './providers/Twitter';
-import { livejournal_share } from './providers/LiveJournal';
-import { evernote_share } from './providers/Evernote';
-import { delicious_share } from './providers/Delicious';
-import { blogger_share } from './providers/Blogger';
-import { instapaper_share } from './providers/Instapaper';
-import { digg_share } from './providers/Digg';
-import { liveinternet_share } from './providers/LiveInternet';
-import { wordpress_share } from './providers/WordPress';
-import { baidu_share } from './providers/Baidu';
-import { renren_share } from './providers/RenRen';
-import { weibo_share } from './providers/Weibo';
+import { GooglePlus } from './providers/GooglePlus';
+import { Twitter } from './providers/Twitter';
+import { LiveJournal } from './providers/LiveJournal';
+import { Evernote } from './providers/Evernote';
+import { Delicious } from './providers/Delicious';
+import { Blogger } from './providers/Blogger';
+import { Instapaper } from './providers/Instapaper';
+import { Digg } from './providers/Digg';
+import { LiveInternet } from './providers/LiveInternet';
+import { WordPress } from './providers/WordPress';
+import { Baidu } from './providers/Baidu';
+import { RenRen } from './providers/RenRen';
+import { Weibo } from './providers/Weibo';
 
 /**
  *  Import mobile messengers providers.
  */
 
-import { sms_share } from './providers/SMS';
-import { skype_share } from './providers/Skype';
-import { telegram_share } from './providers/Telegram';
-import { viber_share } from './providers/Viber';
-import { whatsapp_share } from './providers/WhatsApp';
-import { line_share } from './providers/Line';
-import { EventWithNamespace } from './utils';
+import { SMS } from './providers/SMS';
+import { Skype } from './providers/Skype';
+import { Telegram } from './providers/Telegram';
+import { Viber } from './providers/Viber';
+import { WhatsApp } from './providers/WhatsApp';
+import { Line } from './providers/Line';
 
 const initShare = () => {
   const providers = [
+    // Import social networks providers with share counter.
     Vkontakte,
     Facebook,
     Odnoklassniki,
@@ -79,9 +79,32 @@ const initShare = () => {
     StumbleUpon,
     Pocket,
     Xing,
+    // Import social networks providers without share counter.
+    GooglePlus,
+    Twitter,
+    LiveJournal,
+    Evernote,
+    Delicious,
+    Blogger,
+    Instapaper,
+    Digg,
+    LiveInternet,
+    WordPress,
+    Baidu,
+    RenRen,
+    Weibo,
+    // Import mobile messengers providers.
+    SMS,
+    Skype,
+    Telegram,
+    Viber,
+    WhatsApp,
+    Line,
   ];
   
-  providers.forEach(provider => provider.getInstance())
+  const share = providers.map(provider => new provider().getInstance());
+  
+  share.forEach(provider => new provider().reNewInstance());
 };
 
 (function() {

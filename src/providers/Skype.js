@@ -8,8 +8,11 @@
  *  Skype (https://skype.com) provider.
  */
 
-class Skype {
+import { ProviderMixin } from '../utils';
+
+export class Skype extends ProviderMixin {
   constructor (url = document.location.href) {
+    super();
     this.url = encodeURIComponent(url);
   }
   
@@ -19,13 +22,11 @@ class Skype {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const share_url = `https://web.skype.com/share?${url}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
 }
-
-export const skype_share = new Skype().shareWindow();

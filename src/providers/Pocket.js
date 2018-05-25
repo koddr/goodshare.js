@@ -8,28 +8,13 @@
  *  Pocket (https://getpocket.com) provider.
  */
 
-import {EventWithNamespace, getUniqId} from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Pocket {
+export class Pocket extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('pocket');
-  }
-  
-  static getInstance () {
-    const _instance = new Pocket();
-    
-    _instance.shareWindow();
-    _instance.getCounter();
-    
-    return _instance;
-  }
-  
-  reNewInstance () {
-    this.events.removeAll();
-    Pocket.getInstance();
   }
   
   shareWindow () {

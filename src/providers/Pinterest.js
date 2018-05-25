@@ -8,31 +8,16 @@
  *  Pinterest (https://pinterest.com) provider.
  */
 
-import { EventWithNamespace, getUniqId } from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Pinterest {
+export class Pinterest extends ProviderMixin {
   constructor (url = document.location.href,
                description = document.querySelector('meta[name="description"]'),
                image = document.querySelector('link[rel="apple-touch-icon"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.description = (description) ? encodeURIComponent(description.content) : '';
     this.image = (image) ? encodeURIComponent(image.href) : '';
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('pinterest');
-  }
-  
-  static getInstance () {
-    const _instance = new Pinterest();
-
-    _instance.shareWindow();
-    _instance.getCounter();
-
-    return _instance;
-  }
-
-  reNewInstance () {
-    this.events.removeAll();
-    Pinterest.getInstance();
   }
   
   shareWindow () {

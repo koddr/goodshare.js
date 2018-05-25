@@ -8,10 +8,13 @@
  *  WordPress (https://wordpress.com) provider.
  */
 
-class WordPress {
+import { ProviderMixin } from '../utils';
+
+export class WordPress extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]'),
                image = document.querySelector('link[rel="apple-touch-icon"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
@@ -27,13 +30,11 @@ class WordPress {
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const image = item.dataset.image ? encodeURIComponent(item.dataset.image) : this.image;
       const share_url = `https://wordpress.com/wp-admin/press-this.php?u=${url}&t=${title}&s=${description}&i=${image}&v=2`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
 }
-
-export const wordpress_share = new WordPress().shareWindow();

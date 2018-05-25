@@ -8,30 +8,15 @@
  *  Facebook (https://facebook.com) provider.
  */
 
-import { EventWithNamespace, getUniqId } from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Facebook {
+export class Facebook extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('facebook');
   }
 
-  static getInstance () {
-    const _instance = new Facebook();
-
-    _instance.shareWindow();
-    _instance.getCounter();
-
-    return _instance;
-  }
-
-  reNewInstance () {
-    this.events.removeAll();
-    Facebook.getInstance();
-  }
-  
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="facebook"]');
     

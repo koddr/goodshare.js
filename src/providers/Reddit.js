@@ -8,28 +8,13 @@
  *  Reddit (https://reddit.com) provider.
  */
 
-import {EventWithNamespace, getUniqId} from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Reddit {
+export class Reddit extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('reddit');
-  }
-  
-  static getInstance () {
-    const _instance = new Reddit();
-    
-    _instance.shareWindow();
-    _instance.getCounter();
-    
-    return _instance;
-  }
-  
-  reNewInstance () {
-    this.events.removeAll();
-    Reddit.getInstance();
   }
   
   shareWindow () {

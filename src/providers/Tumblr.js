@@ -8,30 +8,15 @@
  *  Tumblr (https://tumblr.com) provider.
  */
 
-import { EventWithNamespace, getUniqId } from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Tumblr {
+export class Tumblr extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('tumblr');
-  }
-
-  static getInstance () {
-    const _instance = new Tumblr();
-
-    _instance.shareWindow();
-    _instance.getCounter();
-
-    return _instance;
-  }
-
-  reNewInstance () {
-    this.events.removeAll();
-    Tumblr.getInstance();
   }
   
   shareWindow () {

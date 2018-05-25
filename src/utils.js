@@ -1,4 +1,4 @@
-export const getUniqId = (prefix) =>
+export const getUniqId = (prefix = 'id') =>
   `${prefix}-${Math.random().toString(36).substr(2, 8)}`;
 
 export class EventWithNamespace {
@@ -39,4 +39,29 @@ export class EventWithNamespace {
       this.removeEventListener(key);
     }
   }
+}
+
+export class ProviderMixin {
+  constructor() {
+    this.events = new EventWithNamespace();
+    this.instanceId = getUniqId();
+  }
+  
+  getInstance() {
+    if (typeof this.shareWindow === 'function') {
+      this.shareWindow();
+    }
+  
+    if (typeof this.getCounter === 'function') {
+      this.getCounter();
+    }
+    
+    return this;
+  }
+  
+  reNewInstance() {
+    this.events.removeAll();
+    this.getInstance();
+  }
+  
 }

@@ -8,30 +8,15 @@
  *  Odnoklassniki (https://ok.ru) provider.
  */
 
-import { EventWithNamespace, getUniqId } from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Odnoklassniki {
+export class Odnoklassniki extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('odnoklassniki');
   }
 
-  static getInstance () {
-    const _instance = new Odnoklassniki();
-
-    _instance.shareWindow();
-    _instance.getCounter();
-
-    return _instance;
-  }
-
-  reNewInstance () {
-    this.events.removeAll();
-    Odnoklassniki.getInstance();
-  }
-  
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="odnoklassniki"]');
     

@@ -8,30 +8,15 @@
  *  Vkontakte (https://vk.com) provider.
  */
 
-import { EventWithNamespace, getUniqId } from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Vkontakte {
+export class Vkontakte extends ProviderMixin  {
   constructor (url = document.location.href, title = document.title,
                image = document.querySelector('link[rel="apple-touch-icon"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.image = (image) ? encodeURIComponent(image.href) : '';
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('vkontakte');
-  }
-
-  static getInstance () {
-    const _instance = new Vkontakte();
-
-    _instance.shareWindow();
-    _instance.getCounter();
-
-    return _instance;
-  }
-
-  reNewInstance () {
-    this.events.removeAll();
-    Vkontakte.getInstance();
   }
   
   shareWindow () {

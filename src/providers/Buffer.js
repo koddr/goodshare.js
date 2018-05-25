@@ -8,28 +8,13 @@
  *  Buffer (https://buffer.com) provider.
  */
 
-import {EventWithNamespace, getUniqId} from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class Buffer {
+export class Buffer extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('buffer');
-  }
-  
-  static getInstance () {
-    const _instance = new Buffer();
-    
-    _instance.shareWindow();
-    _instance.getCounter();
-    
-    return _instance;
-  }
-  
-  reNewInstance () {
-    this.events.removeAll();
-    Buffer.getInstance();
   }
   
   shareWindow () {

@@ -8,32 +8,17 @@
  *  My@Mail.Ru (https://my.mail.ru) provider.
  */
 
-import { EventWithNamespace, getUniqId } from '../utils';
+import { ProviderMixin } from '../utils';
 
-export class MoiMir {
+export class MoiMir extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]'),
                image = document.querySelector('link[rel="apple-touch-icon"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
     this.image = (image) ? encodeURIComponent(image.href) : '';
-    this.events = new EventWithNamespace();
-    this.instanceId = getUniqId('moimir');
-  }
-
-  static getInstance () {
-    const _instance = new MoiMir();
-
-    _instance.shareWindow();
-    _instance.getCounter();
-
-    return _instance;
-  }
-
-  reNewInstance () {
-    this.events.removeAll();
-    MoiMir.getInstance();
   }
   
   shareWindow () {
