@@ -102,9 +102,7 @@ const initShare = () => {
     Line,
   ];
   
-  const share = providers.map(provider => new provider().getInstance());
-  
-  share.forEach(provider => new provider().reNewInstance());
+  providers.map(provider => new provider().getInstance());
 };
 
 (function() {
