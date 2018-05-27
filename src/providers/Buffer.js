@@ -8,7 +8,7 @@
  *  Buffer (https://buffer.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Buffer extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {

@@ -8,7 +8,7 @@
  *  LINE (https://line.me) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Line extends ProviderMixin {
   constructor (url = document.location.href) {

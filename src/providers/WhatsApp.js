@@ -8,7 +8,7 @@
  *  WhatsApp (https://whatsapp.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class WhatsApp extends ProviderMixin {
   constructor (url = document.location.href) {

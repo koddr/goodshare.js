@@ -8,7 +8,7 @@
  *  Pocket (https://getpocket.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Pocket extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {

@@ -8,7 +8,7 @@
  *  Telegram (https://telegram.org) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Telegram extends ProviderMixin {
   constructor (url = document.location.href) {

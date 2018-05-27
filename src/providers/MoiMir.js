@@ -8,7 +8,7 @@
  *  My@Mail.Ru (https://my.mail.ru) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class MoiMir extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,

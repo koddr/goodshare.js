@@ -8,7 +8,7 @@
  *  Viber (https://viber.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Viber extends ProviderMixin {
   constructor (url = document.location.href) {

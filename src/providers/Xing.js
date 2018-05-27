@@ -8,7 +8,7 @@
  *  Xing (https://xing.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Xing extends ProviderMixin {
   constructor (url = document.location.href) {

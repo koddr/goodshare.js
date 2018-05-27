@@ -8,7 +8,7 @@
  *  Weibo (http://weibo.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Weibo extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {

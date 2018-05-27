@@ -8,7 +8,7 @@
  *  Surfingbird (https://surfingbird.ru) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Surfingbird extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,

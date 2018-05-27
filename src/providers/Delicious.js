@@ -8,7 +8,7 @@
  *  Delicious (https://delicious.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Delicious extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {

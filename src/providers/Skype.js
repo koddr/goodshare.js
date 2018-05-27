@@ -8,7 +8,7 @@
  *  Skype (https://skype.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Skype extends ProviderMixin {
   constructor (url = document.location.href) {

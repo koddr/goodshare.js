@@ -8,7 +8,7 @@
  *  StumbleUpon (https://stumbleupon.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class StumbleUpon extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {

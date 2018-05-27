@@ -8,7 +8,7 @@
  *  Reddit (https://reddit.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Reddit extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {

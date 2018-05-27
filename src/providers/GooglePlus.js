@@ -8,7 +8,7 @@
  *  Google Plus (https://plus.google.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class GooglePlus extends ProviderMixin {
   constructor (url = document.location.href) {

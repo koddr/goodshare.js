@@ -8,7 +8,7 @@
  *  Pinterest (https://pinterest.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Pinterest extends ProviderMixin {
   constructor (url = document.location.href,

@@ -8,7 +8,7 @@
  *  Vkontakte (https://vk.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Vkontakte extends ProviderMixin  {
   constructor (url = document.location.href, title = document.title,

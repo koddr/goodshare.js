@@ -19,7 +19,6 @@ import './polyfills/array.from';
 /**
  *  Import social networks providers with share counter.
  */
-
 import { Vkontakte } from './providers/Vkontakte';
 import { Facebook } from './providers/Facebook';
 import { Odnoklassniki } from './providers/Odnoklassniki';
@@ -63,48 +62,61 @@ import { Viber } from './providers/Viber';
 import { WhatsApp } from './providers/WhatsApp';
 import { Line } from './providers/Line';
 
-const initShare = () => {
-  const providers = [
-    // Import social networks providers with share counter.
-    Vkontakte,
-    Facebook,
-    Odnoklassniki,
-    MoiMir,
-    LinkedIn,
-    Tumblr,
-    Pinterest,
-    Surfingbird,
-    Reddit,
-    Buffer,
-    StumbleUpon,
-    Pocket,
-    Xing,
-    // Import social networks providers without share counter.
-    GooglePlus,
-    Twitter,
-    LiveJournal,
-    Evernote,
-    Delicious,
-    Blogger,
-    Instapaper,
-    Digg,
-    LiveInternet,
-    WordPress,
-    Baidu,
-    RenRen,
-    Weibo,
-    // Import mobile messengers providers.
-    SMS,
-    Skype,
-    Telegram,
-    Viber,
-    WhatsApp,
-    Line,
-  ];
+const providers = [
+  // Import social networks providers with share counter.
+  Vkontakte,
+  Facebook,
+  Odnoklassniki,
+  MoiMir,
+  LinkedIn,
+  Tumblr,
+  Pinterest,
+  Surfingbird,
+  Reddit,
+  Buffer,
+  StumbleUpon,
+  Pocket,
+  Xing,
+  // Import social networks providers without share counter.
+  GooglePlus,
+  Twitter,
+  LiveJournal,
+  Evernote,
+  Delicious,
+  Blogger,
+  Instapaper,
+  Digg,
+  LiveInternet,
+  WordPress,
+  Baidu,
+  RenRen,
+  Weibo,
+  // Import mobile messengers providers.
+  SMS,
+  Skype,
+  Telegram,
+  Viber,
+  WhatsApp,
+  Line,
+];
+
+class Goodshare {
+  constructor () {
+    this.providers = providers;
+    this.getProviders();
+  }
   
-  providers.map(provider => new provider().getInstance());
-};
+  getProviders () {
+    this.providers = this.providers
+      .map(shareProvider => new shareProvider().getInstance());
+  }
+  
+  reNewAllInstance () {
+    this.providers = this.providers
+      .map(shareProvider => shareProvider.reNewInstance());
+  }
+}
 
 (function() {
-  initShare();
+  window._goodshare = new Goodshare();
 })();

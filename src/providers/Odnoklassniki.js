@@ -8,7 +8,7 @@
  *  Odnoklassniki (https://ok.ru) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Odnoklassniki extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {

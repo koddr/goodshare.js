@@ -8,7 +8,7 @@
  *  SMS provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class SMS extends ProviderMixin {
   constructor (url = document.location.href) {

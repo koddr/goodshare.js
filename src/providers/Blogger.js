@@ -8,7 +8,7 @@
  *  Blogger (https://blogger.com) provider.
  */
 
-import { ProviderMixin } from '../utils';
+import { ProviderMixin } from './ProviderMixin';
 
 export class Blogger extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
