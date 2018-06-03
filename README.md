@@ -69,6 +69,15 @@ If you want to add different `url`, `title`, `description` and `image` to share 
 
 > Note: Please keep in mind, not all social networks support all of them data attributes!
 
+If you want to dynamically update the data that will be used for share. You can call a method `Goodshare.reNewAllInstance()` that will update data in goodshare providers instance and update `EventListeners`
+
+> Note: For example, you have a widget to share content that generates images for sharing based on selected items or other user actions.
+
+```js
+// update all data
+// Goodshare instance expose in window._goodshare by default 
+window._goodshare.reNewAllInstance()
+```
 To display share count, just add `data-counter` attribute to HTML element that will contain numbers. For example:
 
 ``` html
