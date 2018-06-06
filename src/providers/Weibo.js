@@ -8,8 +8,11 @@
  *  Weibo (http://weibo.com) provider.
  */
 
-class Weibo {
+import { ProviderMixin } from './ProviderMixin';
+
+export class Weibo extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
   }
@@ -21,13 +24,11 @@ class Weibo {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://service.weibo.com/share/share.php?url=${url}&title=${title}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
 }
-
-export const weibo_share = new Weibo().shareWindow();

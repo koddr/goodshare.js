@@ -8,8 +8,11 @@
  *  WhatsApp (https://whatsapp.com) provider.
  */
 
-class WhatsApp {
+import { ProviderMixin } from './ProviderMixin';
+
+export class WhatsApp extends ProviderMixin {
   constructor (url = document.location.href) {
+    super();
     this.url = encodeURIComponent(url);
   }
   
@@ -19,13 +22,11 @@ class WhatsApp {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const share_url = `whatsapp://send?text=${url}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
 }
-
-export const whatsapp_share = new WhatsApp().shareWindow();

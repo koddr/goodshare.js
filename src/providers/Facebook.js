@@ -8,12 +8,15 @@
  *  Facebook (https://facebook.com) provider.
  */
 
-class Facebook {
+import { ProviderMixin } from './ProviderMixin';
+
+export class Facebook extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
   }
-  
+
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="facebook"]');
     
@@ -22,7 +25,7 @@ class Facebook {
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://facebook.com/sharer/sharer.php?u=${url}&t=${title}`;
       
-      item.addEventListener('click', function (event) {
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -41,6 +44,10 @@ class Facebook {
           item.innerHTML = (counter.share) ? counter.share.share_count : 0;
         });
         
+        if (script.parentNode === null) {
+          return;
+        }
+
         script.parentNode.removeChild(script);
       };
       
@@ -49,6 +56,3 @@ class Facebook {
     }
   }
 }
-
-export const facebook_share = new Facebook().shareWindow();
-export const facebook_counter = new Facebook().getCounter();

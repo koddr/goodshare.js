@@ -8,8 +8,11 @@
  *  Xing (https://xing.com) provider.
  */
 
-class Xing {
+import { ProviderMixin } from './ProviderMixin';
+
+export class Xing extends ProviderMixin {
   constructor (url = document.location.href) {
+    super();
     this.url = encodeURIComponent(url);
   }
   
@@ -19,8 +22,8 @@ class Xing {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const share_url = `https://www.xing.com/spi/shares/new?url=${url}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -51,6 +54,3 @@ class Xing {
     }
   }
 }
-
-export const xing_share = new Xing().shareWindow();
-export const xing_counter = new Xing().getCounter();

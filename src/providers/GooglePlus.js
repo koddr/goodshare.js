@@ -8,8 +8,11 @@
  *  Google Plus (https://plus.google.com) provider.
  */
 
-class GooglePlus {
+import { ProviderMixin } from './ProviderMixin';
+
+export class GooglePlus extends ProviderMixin {
   constructor (url = document.location.href) {
+    super();
     this.url = encodeURIComponent(url);
   }
   
@@ -19,13 +22,11 @@ class GooglePlus {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const share_url = `https://plus.google.com/share?url=${url}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
 }
-
-export const googleplus_share = new GooglePlus().shareWindow();

@@ -8,9 +8,12 @@
  *  Evernote (https://evernote.com) provider.
  */
 
-class Evernote {
+import { ProviderMixin } from './ProviderMixin';
+
+export class Evernote extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
@@ -24,13 +27,11 @@ class Evernote {
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const share_url = `https://www.evernote.com/clip.action?url=${url}&title=${title}&body=${description}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
 }
-
-export const evernote_share = new Evernote().shareWindow();

@@ -8,12 +8,15 @@
  *  Odnoklassniki (https://ok.ru) provider.
  */
 
-class Odnoklassniki {
+import { ProviderMixin } from './ProviderMixin';
+
+export class Odnoklassniki extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
   }
-  
+
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="odnoklassniki"]');
     
@@ -21,8 +24,7 @@ class Odnoklassniki {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=${url}&st.comments=${title}`;
-      
-      item.addEventListener('click', function (event) {
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -42,6 +44,10 @@ class Odnoklassniki {
           item.innerHTML = counter;
         });
         
+        if (script.parentNode === null) {
+          return;
+        }
+  
         script.parentNode.removeChild(script);
       };
       
@@ -50,6 +56,3 @@ class Odnoklassniki {
     }
   }
 }
-
-export const odnoklassniki_share = new Odnoklassniki().shareWindow();
-export const odnoklassniki_counter = new Odnoklassniki().getCounter();

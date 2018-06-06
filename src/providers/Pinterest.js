@@ -8,10 +8,13 @@
  *  Pinterest (https://pinterest.com) provider.
  */
 
-class Pinterest {
+import { ProviderMixin } from './ProviderMixin';
+
+export class Pinterest extends ProviderMixin {
   constructor (url = document.location.href,
                description = document.querySelector('meta[name="description"]'),
                image = document.querySelector('link[rel="apple-touch-icon"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.description = (description) ? encodeURIComponent(description.content) : '';
     this.image = (image) ? encodeURIComponent(image.href) : '';
@@ -26,7 +29,7 @@ class Pinterest {
       const image = item.dataset.image ? encodeURIComponent(item.dataset.image) : this.image;
       const share_url = `https://www.pinterest.com/pin/create/button/?url=${url}&description=${description}&media=${image}`;
       
-      item.addEventListener('click', function (event) {
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -45,6 +48,10 @@ class Pinterest {
           item.innerHTML = (counter.length > 0) ? counter.count : 0;
         });
         
+        if (script.parentNode === null) {
+          return;
+        }
+
         script.parentNode.removeChild(script);
       };
       
@@ -53,6 +60,3 @@ class Pinterest {
     }
   }
 }
-
-export const pinterest_share = new Pinterest().shareWindow();
-export const pinterest_counter = new Pinterest().getCounter();

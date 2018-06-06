@@ -8,8 +8,11 @@
  *  Telegram (https://telegram.org) provider.
  */
 
-class Telegram {
+import { ProviderMixin } from './ProviderMixin';
+
+export class Telegram extends ProviderMixin {
   constructor (url = document.location.href) {
+    super();
     this.url = encodeURIComponent(url);
   }
   
@@ -26,13 +29,11 @@ class Telegram {
         // https://instantview.telegram.org/docs
         share_url = `https://t.me/iv?url=${url}&rhash=${rhash}`;
       }
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
 }
-
-export const telegram_share = new Telegram().shareWindow();

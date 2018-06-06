@@ -8,8 +8,11 @@
  *  SMS provider.
  */
 
-class SMS {
+import { ProviderMixin } from './ProviderMixin';
+
+export class SMS extends ProviderMixin {
   constructor (url = document.location.href) {
+    super();
     this.url = encodeURIComponent(url);
   }
   
@@ -19,13 +22,11 @@ class SMS {
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       let share_url = `sms:?&body=${url}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.location.replace(share_url);
       });
     });
   }
 }
-
-export const sms_share = new SMS().shareWindow();

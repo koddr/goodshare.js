@@ -8,8 +8,11 @@
  *  Buffer (https://buffer.com) provider.
  */
 
-class Buffer {
+import { ProviderMixin } from './ProviderMixin';
+
+export class Buffer extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
   }
@@ -21,8 +24,8 @@ class Buffer {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://buffer.com/add?url=${url}&text=${title}`;
-      
-      item.addEventListener('click', function (event) {
+  
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -49,6 +52,3 @@ class Buffer {
     }
   }
 }
-
-export const buffer_share = new Buffer().shareWindow();
-export const buffer_counter = new Buffer().getCounter();

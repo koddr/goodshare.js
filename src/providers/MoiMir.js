@@ -8,10 +8,13 @@
  *  My@Mail.Ru (https://my.mail.ru) provider.
  */
 
-class MoiMir {
+import { ProviderMixin } from './ProviderMixin';
+
+export class MoiMir extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
                description = document.querySelector('meta[name="description"]'),
                image = document.querySelector('link[rel="apple-touch-icon"]')) {
+    super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.description = (description) ? encodeURIComponent(description.content) : '';
@@ -28,7 +31,7 @@ class MoiMir {
       const image = item.dataset.image ? encodeURIComponent(item.dataset.image) : this.image;
       const share_url = `https://connect.mail.ru/share?url=${url}&title=${title}&description=${description}&imageurl=${image}`;
       
-      item.addEventListener('click', function (event) {
+      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
@@ -48,6 +51,10 @@ class MoiMir {
           item.innerHTML = counter.share_mm;
         });
         
+        if (script.parentNode === null) {
+          return;
+        }
+
         script.parentNode.removeChild(script);
       };
       
@@ -56,6 +63,3 @@ class MoiMir {
     }
   }
 }
-
-export const moimir_share = new MoiMir().shareWindow();
-export const moimir_counter = new MoiMir().getCounter();
