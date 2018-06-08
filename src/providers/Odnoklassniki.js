@@ -8,7 +8,7 @@
  *  Odnoklassniki (https://ok.ru) provider.
  */
 
-import { ProviderMixin } from './ProviderMixin';
+import { ProviderMixin } from '../utils/ProviderMixin';
 
 export class Odnoklassniki extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
@@ -16,7 +16,8 @@ export class Odnoklassniki extends ProviderMixin {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
   }
-
+  
+  // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="odnoklassniki"]');
     
@@ -24,13 +25,15 @@ export class Odnoklassniki extends ProviderMixin {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=${url}&st.comments=${title}`;
-      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
+      
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
   
+  // Show counter event
   getCounter () {
     const script = document.createElement('script');
     const count_elements = document.querySelectorAll('[data-counter="odnoklassniki"]');
@@ -47,7 +50,7 @@ export class Odnoklassniki extends ProviderMixin {
         if (script.parentNode === null) {
           return;
         }
-  
+        
         script.parentNode.removeChild(script);
       };
       

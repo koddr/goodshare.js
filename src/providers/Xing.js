@@ -8,7 +8,7 @@
  *  Xing (https://xing.com) provider.
  */
 
-import { ProviderMixin } from './ProviderMixin';
+import { ProviderMixin } from '../utils/ProviderMixin';
 
 export class Xing extends ProviderMixin {
   constructor (url = document.location.href) {
@@ -16,20 +16,22 @@ export class Xing extends ProviderMixin {
     this.url = encodeURIComponent(url);
   }
   
+  // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="xing"]');
     
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const share_url = `https://www.xing.com/spi/shares/new?url=${url}`;
-  
-      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
+      
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
   
+  // Show counter event
   getCounter () {
     const script = document.createElement('script');
     const callback = ('goodshare_' + Math.random()).replace('.', '');

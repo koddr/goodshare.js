@@ -8,7 +8,7 @@
  *  Pinterest (https://pinterest.com) provider.
  */
 
-import { ProviderMixin } from './ProviderMixin';
+import { ProviderMixin } from '../utils/ProviderMixin';
 
 export class Pinterest extends ProviderMixin {
   constructor (url = document.location.href,
@@ -20,6 +20,7 @@ export class Pinterest extends ProviderMixin {
     this.image = (image) ? encodeURIComponent(image.href) : '';
   }
   
+  // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="pinterest"]');
     
@@ -29,13 +30,14 @@ export class Pinterest extends ProviderMixin {
       const image = item.dataset.image ? encodeURIComponent(item.dataset.image) : this.image;
       const share_url = `https://www.pinterest.com/pin/create/button/?url=${url}&description=${description}&media=${image}`;
       
-      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
   
+  // Show counter event
   getCounter () {
     const script = document.createElement('script');
     const callback = ('goodshare_' + Math.random()).replace('.', '');
@@ -51,7 +53,7 @@ export class Pinterest extends ProviderMixin {
         if (script.parentNode === null) {
           return;
         }
-
+        
         script.parentNode.removeChild(script);
       };
       

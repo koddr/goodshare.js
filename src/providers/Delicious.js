@@ -8,7 +8,7 @@
  *  Delicious (https://delicious.com) provider.
  */
 
-import { ProviderMixin } from './ProviderMixin';
+import { ProviderMixin } from '../utils/ProviderMixin';
 
 export class Delicious extends ProviderMixin {
   constructor (url = document.location.href, title = document.title) {
@@ -17,6 +17,7 @@ export class Delicious extends ProviderMixin {
     this.title = encodeURIComponent(title);
   }
   
+  // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="delicious"]');
     
@@ -24,8 +25,8 @@ export class Delicious extends ProviderMixin {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const share_url = `https://del.icio.us/save?url=${url}&title=${title}`;
-  
-      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
+      
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });

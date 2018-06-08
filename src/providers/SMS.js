@@ -8,7 +8,7 @@
  *  SMS provider.
  */
 
-import { ProviderMixin } from './ProviderMixin';
+import { ProviderMixin } from '../utils/ProviderMixin';
 
 export class SMS extends ProviderMixin {
   constructor (url = document.location.href) {
@@ -16,14 +16,15 @@ export class SMS extends ProviderMixin {
     this.url = encodeURIComponent(url);
   }
   
+  // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="sms"]');
     
     [...share_elements].forEach((item) => {
       const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
       let share_url = `sms:?&body=${url}`;
-  
-      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
+      
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.location.replace(share_url);
       });

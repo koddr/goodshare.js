@@ -1,6 +1,15 @@
-import { EventWrapper } from '../utils/EventWrapper';
+/**
+ *  Ilya Reshetnikov
+ *  Copyright (c) 2018 Ilya Reshetnikov https://github.com/devxom
+ *  http://opensource.org/licenses/MIT The MIT License (MIT)
+ *
+ *  ProviderMixin for goodshare.js
+ */
 
-const getUniqId = (prefix = 'id') =>
+import { EventWrapper } from './EventWrapper';
+
+// Generate unique ID
+const getUniqueId = (prefix = 'id') =>
   `${prefix}-${Math.random().toString(36).substr(2, 8)}`;
 
 export class ProviderMixin {
@@ -9,10 +18,7 @@ export class ProviderMixin {
     this.updateInstanceId();
   }
   
-  updateInstanceId () {
-    this.instanceId = getUniqId();
-  }
-  
+  // Get instance
   getInstance () {
     if (typeof this.shareWindow === 'function') {
       this.shareWindow();
@@ -25,6 +31,12 @@ export class ProviderMixin {
     return this;
   }
   
+  // Update instance ID
+  updateInstanceId () {
+    this.instanceId = getUniqueId();
+  }
+  
+  // Renew instance
   reNewInstance () {
     this.events.removeAll();
     this.updateInstanceId();

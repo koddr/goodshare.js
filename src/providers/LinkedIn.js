@@ -8,7 +8,7 @@
  *  LinkedIn (https://linkedin.com) provider.
  */
 
-import { ProviderMixin } from './ProviderMixin';
+import { ProviderMixin } from '../utils/ProviderMixin';
 
 export class LinkedIn extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
@@ -19,6 +19,7 @@ export class LinkedIn extends ProviderMixin {
     this.description = (description) ? encodeURIComponent(description.content) : '';
   }
   
+  // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="linkedin"]');
     
@@ -28,13 +29,14 @@ export class LinkedIn extends ProviderMixin {
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const share_url = `https://www.linkedin.com/shareArticle?url=${url}&text=${title}&summary=${description}&mini=true`;
       
-      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
   
+  // Show counter event
   getCounter () {
     const script = document.createElement('script');
     const callback = ('goodshare_' + Math.random()).replace('.', '');

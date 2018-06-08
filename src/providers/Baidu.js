@@ -8,7 +8,7 @@
  *  Baidu (https://baidu.com) provider.
  */
 
-import { ProviderMixin } from './ProviderMixin';
+import { ProviderMixin } from '../utils/ProviderMixin';
 
 export class Baidu extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
@@ -19,6 +19,7 @@ export class Baidu extends ProviderMixin {
     this.description = (description) ? encodeURIComponent(description.content) : '';
   }
   
+  // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="baidu"]');
     
@@ -27,8 +28,8 @@ export class Baidu extends ProviderMixin {
       const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
       const description = item.dataset.description ? encodeURIComponent(item.dataset.description) : this.description;
       const share_url = `https://cang.baidu.com/do/add?iu=${url}&it=${title}&dc=${description}&fr=ien`;
-  
-      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
+      
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });

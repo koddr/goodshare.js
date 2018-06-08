@@ -8,9 +8,9 @@
  *  Vkontakte (https://vk.com) provider.
  */
 
-import { ProviderMixin } from './ProviderMixin';
+import { ProviderMixin } from '../utils/ProviderMixin';
 
-export class Vkontakte extends ProviderMixin  {
+export class Vkontakte extends ProviderMixin {
   constructor (url = document.location.href, title = document.title,
                image = document.querySelector('link[rel="apple-touch-icon"]')) {
     super();
@@ -19,6 +19,7 @@ export class Vkontakte extends ProviderMixin  {
     this.image = (image) ? encodeURIComponent(image.href) : '';
   }
   
+  // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="vkontakte"]');
     
@@ -28,13 +29,14 @@ export class Vkontakte extends ProviderMixin  {
       const image = item.dataset.image ? encodeURIComponent(item.dataset.image) : this.image;
       const share_url = `https://vk.com/share.php?url=${url}&title=${title}&image=${image}`;
       
-      this.events.addEventListener(item, 'click.' + this.instanceId, function (event) {
+      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
         event.preventDefault();
         return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
       });
     });
   }
   
+  // Show counter event
   getCounter () {
     const script = document.createElement('script');
     const count_elements = document.querySelectorAll('[data-counter="vkontakte"]');
@@ -51,7 +53,7 @@ export class Vkontakte extends ProviderMixin  {
         if (script.parentNode === null) {
           return;
         }
-
+        
         script.parentNode.removeChild(script);
       };
       

@@ -1,5 +1,8 @@
-// Production steps of ECMA-262, Edition 6, 22.1.2.1
-// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill
+/**
+ *  Production steps of ECMA-262, Edition 6, 22.1.2.1
+ *  https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill
+ */
+
 export default (() => {
   if (!Array.from) {
     Array.from = (function () {

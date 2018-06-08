@@ -17,14 +17,14 @@ Simple install, extensive documentation, developer support, **SEO friendly**, ma
 
 Install via `npm`:
 
-``` bash
+```bash
 $ npm install goodshare.js --save
 ```
 
 Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
 
-``` html
-<script src="https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js"></script>
+```html
+<script src="https://cdn.jsdelivr.net/npm/goodshare.js@5/goodshare.min.js"></script>
 ```
 
 ### Usage
@@ -35,7 +35,7 @@ Script works with any HTML tags: `<a>` or `<div>` or `<button>` or other.
 
 For example:
 
-``` html
+```html
 <!-- Create button with share to Twitter -->
 <button data-social="twitter">Share this to Twitter</button>
 
@@ -51,7 +51,7 @@ For example:
 
 By default, `goodshare.js` search this tags for get title, description and image (for some social networks):
 
-``` html
+```html
 <head>
   <title>Current page title</title>
   <meta name="description" content="Current page description.">
@@ -59,6 +59,8 @@ By default, `goodshare.js` search this tags for get title, description and image
   ...
 </head>
 ```
+
+#### Change URL, title or else
 
 If you want to add different `url`, `title`, `description` and `image` to share element&nbsp;&mdash; use special `data-*` attributes:
 
@@ -69,6 +71,8 @@ If you want to add different `url`, `title`, `description` and `image` to share 
 
 > Note: Please keep in mind, not all social networks support all of them data attributes!
 
+#### Dynamically update
+
 If you want to dynamically update the data that will be used for share. You can call a method `Goodshare.reNewAllInstance()` that will update data in goodshare providers instance and update `EventListeners`
 
 > Note: For example, you have a widget to share content that generates images for sharing based on selected items or other user actions.
@@ -76,11 +80,14 @@ If you want to dynamically update the data that will be used for share. You can 
 ```js
 // update all data
 // Goodshare instance expose in window._goodshare by default 
-window._goodshare.reNewAllInstance()
+window._goodshare.reNewAllInstance();
 ```
+
+#### Display share count
+
 To display share count, just add `data-counter` attribute to HTML element that will contain numbers. For example:
 
-``` html
+```html
 <!-- Create link with share to Facebook and counter -->
 <a href="#" data-social="facebook">
   Share this to Facebook
@@ -93,7 +100,7 @@ To display share count, just add `data-counter` attribute to HTML element that w
 ### Notes
 
 - **No more depending on jQuery!** Since `4.x`, no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
-- **Browser support.** Since `4.x`, `goodshare.js` do not support Internet Explorer 10 and older (check [ES6 support](https://kangax.github.io/compat-table/es6/#ie11) table).
+- **Browser support.** Since `4.x`, `goodshare.js` do not support Microsoft Internet Explorer 8 and older.
 
 ### Author & maintainers
 
