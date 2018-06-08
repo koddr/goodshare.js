@@ -38,15 +38,3 @@ If you want to change default data for share element&nbsp;&mdash; use special `d
 * `data-image` redefines `link[rel="apple-touch-icon"]`
 
 > Please keep in mind, not all social networks support all of them data attributes!
-
-### How to dynamically update data?
-
-If you want to dynamically update the data that will be used for share. You can call a method `Goodshare.reNewAllInstance()` that will update data in goodshare providers instance and update `EventListeners`
-
-> Note: For example, you have a widget to share content that generates images for sharing based on selected items or other user actions.
-
-```js
-// update all data
-// Goodshare instance expose in window._goodshare by default 
-window._goodshare.reNewAllInstance();
-```
