@@ -18,6 +18,30 @@ export class ProviderMixin {
     this.updateInstanceId();
   }
   
+  // handler wrapper for cb manipulations
+  eventHandler(
+    event,
+    {
+      callback,
+      share_url,
+      windowTitle,
+      windowOptions,
+    }
+  ) {
+    event.preventDefault();
+    
+    const windowObject = window.open(share_url, windowTitle, windowOptions);
+    
+    const windowCloseChecker = setInterval(() => {
+      if (windowObject.closed) {
+        callback();
+        clearInterval(windowCloseChecker);
+      }
+    }, 10);
+    
+    return windowObject;
+  };
+  
   // Get instance
   getInstance () {
     if (typeof this.shareWindow === 'function') {
