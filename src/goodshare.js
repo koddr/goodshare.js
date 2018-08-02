@@ -106,9 +106,16 @@ class Goodshare {
     this.getProviders();
   }
   
+  setShareCallback(callback) {
+    this.providers = this.providers
+      .map(shareProvider => shareProvider.setShareCallback(callback));
+  }
+  
   getProviders () {
     this.providers = this.providers
       .map(shareProvider => new shareProvider().getInstance());
+    
+    return this.providers;
   }
   
   reNewAllInstance () {

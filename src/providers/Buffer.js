@@ -15,22 +15,27 @@ export class Buffer extends ProviderMixin {
     super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
+    this.createEvents = this.createEvents.bind(this);
+  }
+  
+  getPreparedData(item) {
+    const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
+    const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
+    const share_url = `https://buffer.com/add?url=${url}&text=${title}`;
+    
+    return {
+      callback: this.callback,
+      share_url: share_url,
+      windowTitle: "Share this",
+      windowOptions: "width=640,height=480,location=no,toolbar=no,menubar=no",
+    };
   }
   
   // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="buffer"]');
-    
-    [...share_elements].forEach((item) => {
-      const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
-      const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
-      const share_url = `https://buffer.com/add?url=${url}&text=${title}`;
-      
-      this.events.addEventListener(item, `click.${this.instanceId}`, function (event) {
-        event.preventDefault();
-        return window.open(share_url, 'Share this', 'width=640,height=480,location=no,toolbar=no,menubar=no');
-      });
-    });
+  
+    return this.createEvents(share_elements);
   }
   
   // Show counter event
