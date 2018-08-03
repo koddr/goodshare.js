@@ -355,6 +355,24 @@
 <blockquote>
 <p>URL is getting from current web browser address line (<code>document.location.href</code>).</p>
 </blockquote>
+<h3 id="how-to-dynamically-update">How to dynamically update?</h3>
+<p>If you want to dynamically update the data that will be used for share. You can call a method <code>Goodshare.reNewAllInstance()</code> that will update data in goodshare providers instance and update <code>EventListeners</code>.</p>
+<blockquote>
+<p>Note: For example, you have a widget to share content that generates images for sharing based on selected items or other user actions.</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-comment">// Update all data</span>
+<span class="hljs-comment">// Goodshare instance expose in window._goodshare by default</span>
+<span class="hljs-built_in">window</span>._goodshare.reNewAllInstance();
+</code></pre>
+<h3 id="how-to-detect-share-success">How to detect share success?</h3>
+<blockquote>
+<p>Simply calls the handler when the hooking window is closed. Look more at <a href="https://github.com/koddr/goodshare.js/issues/57" target="_blank">Issue #57</a></p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>._goodshare.setShareCallback(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>);
+  <span class="hljs-comment">// Some logic for handling share events</span>
+});
+</code></pre>
 <h3 id="how-to-change-default-data">How to change default data?</h3>
 <p>If you want to change default data for share element&#xA0;&#x2014; use special <code>data-*</code> attributes:</p>
 <ul>
@@ -409,7 +427,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Social share link","level":"2.1","depth":1,"next":{"title":"Share count","level":"2.2","depth":1,"path":"usage-share-count.md","ref":"usage-share-count.md","articles":[]},"previous":{"title":"Installation","level":"1.2","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/koddr/goodshare.js"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"goodshare.js — Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers","language":"en","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"usage-social-share-link.md","mtime":"2018-06-08T07:08:59.422Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-08T07:11:37.393Z"},"basePath":".","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Social share link","level":"2.1","depth":1,"next":{"title":"Share count","level":"2.2","depth":1,"path":"usage-share-count.md","ref":"usage-share-count.md","articles":[]},"previous":{"title":"Installation","level":"1.2","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/koddr/goodshare.js"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"goodshare.js — Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers","language":"en","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"usage-social-share-link.md","mtime":"2018-08-03T16:41:18.559Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-03T16:42:42.389Z"},"basePath":".","book":{"language":"en"}});
         });
     </script>
 </div>

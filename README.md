@@ -7,16 +7,17 @@
 > Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
 
 ### Features
+
 Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 ### Full Documentation & Demos
 
-* https://koddr.github.io/goodshare.js/
+- https://koddr.github.io/goodshare.js/
 
 ### Production-ready components
 
-* Vue.js — https://github.com/koddr/vue-goodshare ([docs](https://koddr.github.io/vue-goodshare/))
-* React — https://github.com/koddr/react-goodshare-components ([docs](https://koddr.github.io/react-goodshare-components/))
+- Vue.js — https://github.com/koddr/vue-goodshare ([docs](https://koddr.github.io/vue-goodshare/))
+- React — https://github.com/koddr/react-goodshare-components ([docs](https://koddr.github.io/react-goodshare-components/))
 
 ### Installation
 
@@ -69,22 +70,22 @@ By default, `goodshare.js` search this tags for get title, description and image
 
 If you want to add different `url`, `title`, `description` and `image` to share element&nbsp;&mdash; use special `data-*` attributes:
 
-* `data-url` redefines `document.location.href`
-* `data-title` redefines `document.title`
-* `data-description` redefines `meta[name="description"]`
-* `data-image` redefines `link[rel="apple-touch-icon"]`
+- `data-url` redefines `document.location.href`
+- `data-title` redefines `document.title`
+- `data-description` redefines `meta[name="description"]`
+- `data-image` redefines `link[rel="apple-touch-icon"]`
 
 > Note: Please keep in mind, not all social networks support all of them data attributes!
 
 #### Dynamically update
 
-If you want to dynamically update the data that will be used for share. You can call a method `Goodshare.reNewAllInstance()` that will update data in goodshare providers instance and update `EventListeners`
+If you want to dynamically update the data that will be used for share. You can call a method `Goodshare.reNewAllInstance()` that will update data in goodshare providers instance and update `EventListeners`.
 
 > Note: For example, you have a widget to share content that generates images for sharing based on selected items or other user actions.
 
 ```js
-// update all data
-// Goodshare instance expose in window._goodshare by default 
+// Update all data
+// Goodshare instance expose in window._goodshare by default
 window._goodshare.reNewAllInstance();
 ```
 
@@ -102,17 +103,16 @@ To display share count, just add `data-counter` attribute to HTML element that w
 
 > You also may put this attribute to any element.
 
-#### Detect Share success
+#### Detect share success
 
 > Simply calls the handler when the hooking window is closed. Look more at [Issue #57](https://github.com/koddr/goodshare.js/issues/57)
 
 ```js
-window._goodshare.setShareCallback(function () {
+window._goodshare.setShareCallback(function() {
   console.log(arguments);
   // some logic for handling share events
 });
 ```
-
 
 ### Notes
 
@@ -124,14 +124,16 @@ window._goodshare.setShareCallback(function () {
 Development and maintenance engaged by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
 If you want to say «thank you» and/or ask me about `goodshare.js` — [create new issue](https://github.com/koddr/goodshare.js/issues/new).
 
-___
+---
+
 > ### Your assistance will help make project even better!
-> 
-> * [Donate with PayPal](https://www.paypal.me/koddr/9.99usd)
-> * [Donate with Yandex.Money](https://money.yandex.ru/to/41001601525977/599)
-> 
+>
+> - [Donate with PayPal](https://www.paypal.me/koddr/9.99usd)
+> - [Donate with Yandex.Money](https://money.yandex.ru/to/41001601525977/599)
+>
 > #### Thanks for supporting!
-___
+
+---
 
 ### License
 
