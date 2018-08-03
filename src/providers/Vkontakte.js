@@ -17,18 +17,18 @@ export class Vkontakte extends ProviderMixin {
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
     this.image = (image) ? encodeURIComponent(image.href) : '';
+    this.createEvents = this.createEvents.bind(this);
   }
   
   getPreparedData(item) {
     const url = item.dataset.url ? encodeURIComponent(item.dataset.url) : this.url;
     const title = item.dataset.title ? encodeURIComponent(item.dataset.title) : this.title;
     const image = item.dataset.image ? encodeURIComponent(item.dataset.image) : this.image;
-    // TODO: remove debugging code
-    const callback = () => console.log(1);
-  
+    const share_url = `https://vk.com/share.php?url=${url}&title=${title}&image=${image}`;
+
     return {
-      callback,
-      share_url: `https://vk.com/share.php?url=${url}&title=${title}&image=${image}`,
+      callback: this.callback,
+      share_url: share_url,
       windowTitle: "Share this",
       windowOptions: "width=640,height=480,location=no,toolbar=no,menubar=no",
     };
@@ -37,13 +37,8 @@ export class Vkontakte extends ProviderMixin {
   // Share event
   shareWindow () {
     const share_elements = document.querySelectorAll('[data-social="vkontakte"]');
-    
-    [...share_elements].forEach((item) => {
-      const options = this.getPreparedData(item);
-      const eventHandler = (event) => this.eventHandler.call(this, event, options);
-      
-      this.events.addEventListener(item, `click.${this.instanceId}`, eventHandler);
-    });
+  
+    return this.createEvents(share_elements);
   }
   
   // Show counter event

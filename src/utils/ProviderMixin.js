@@ -15,6 +15,7 @@ const getUniqueId = (prefix = 'id') =>
 export class ProviderMixin {
   constructor () {
     this.events = new EventWrapper();
+    this.callback = function () {};
     this.updateInstanceId();
   }
   
@@ -22,25 +23,36 @@ export class ProviderMixin {
   eventHandler(
     event,
     {
-      callback,
       share_url,
       windowTitle,
       windowOptions,
     }
   ) {
     event.preventDefault();
-    
     const windowObject = window.open(share_url, windowTitle, windowOptions);
     
     const windowCloseChecker = setInterval(() => {
       if (windowObject.closed) {
-        callback();
+        this.callback(event, {share_url, windowTitle, windowOptions}, windowObject);
         clearInterval(windowCloseChecker);
       }
     }, 10);
     
     return windowObject;
   };
+  
+  setShareCallback(callback) {
+    this.callback = callback;
+  }
+  
+  createEvents (share_elements) {
+    [...share_elements].forEach((item) => {
+      const options = this.getPreparedData(item);
+      const eventHandler = (event) => this.eventHandler.call(this, event, options);
+    
+      this.events.addEventListener(item, `click.${this.instanceId}`, eventHandler);
+    });
+  }
   
   // Get instance
   getInstance () {

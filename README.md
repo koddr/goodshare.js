@@ -102,6 +102,18 @@ To display share count, just add `data-counter` attribute to HTML element that w
 
 > You also may put this attribute to any element.
 
+#### Detect Share success
+
+> Simply calls the handler when the hooking window is closed. Look more at [Issue #57](https://github.com/koddr/goodshare.js/issues/57)
+
+```js
+window._goodshare.setShareCallback(function () {
+  console.log(arguments);
+  // some logic for handling share events
+});
+```
+
+
 ### Notes
 
 - **No more depending on jQuery!** Since `4.x`, no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
