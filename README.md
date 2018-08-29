@@ -17,7 +17,7 @@ Simple install, extensive documentation, developer support, **SEO friendly**, ma
 ### Production-ready components
 
 - Vue.js — https://github.com/koddr/vue-goodshare ([docs](https://koddr.github.io/vue-goodshare/))
-- React — https://github.com/koddr/react-goodshare-components ([docs](https://koddr.github.io/react-goodshare-components/))
+- React — https://github.com/koddr/react-goodshare-components ([docs](https://koddr.github.io/react-goodshare-components/)) [WIP]
 
 ### Installation
 
