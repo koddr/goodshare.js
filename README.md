@@ -2,7 +2,8 @@
 
 # goodshare.js
 
-![npm version](https://badge.fury.io/js/goodshare.js.svg) [![jsDelivr download](https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/goodshare.js) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://vuejs.org) [![license](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE)
+![npm version](https://badge.fury.io/js/goodshare.js.svg) [![jsDelivr download](https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/goodshare.js) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://vuejs.org) [![license](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 
 > Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
 
