@@ -1,6 +1,6 @@
 /**
  *  Vic Shóstak <koddr.me@gmail.com>
- *  Copyright (c) 2018 True web artisans https://webartisans.org
+ *  Copyright (c) 2019 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -25,7 +25,7 @@ export class Odnoklassniki extends ProviderMixin {
     const title = item.dataset.title
       ? encodeURIComponent(item.dataset.title)
       : this.title;
-    const share_url = `https://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=${url}&st.comments=${title}`;
+    const share_url = `https://connect.ok.ru/offer?url=${url}&title=${title}`;
 
     return {
       callback: this.callback,

@@ -1,6 +1,6 @@
 {
   "name": "goodshare.js",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.",
   "main": "goodshare.min.js",
   "scripts": {
@@ -20,17 +20,17 @@
     "social network share count",
     "share link"
   ],
-  "author": "Vic Shóstak <koddr.me@gmail.com> (https://webartisans.org)",
+  "author": "Vic Shóstak <vikkyshostak@gmail.com> (https://webartisans.org)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/koddr/goodshare.js/issues",
-    "email": "koddr.me@gmail.com"
+    "email": "vikkyshostak@gmail.com"
   },
   "homepage": "https://koddr.github.io/goodshare.js/",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.49",
-    "@babel/preset-env": "^7.0.0-beta.49",
-    "babel-loader": "^8.0.0-beta.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
     "extract-text-webpack-plugin": "^3.0.2",
     "gitbook-cli": "^2.3.2",
     "webpack": "^3.12.0"
