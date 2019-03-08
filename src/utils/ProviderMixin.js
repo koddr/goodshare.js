@@ -24,6 +24,35 @@ export class ProviderMixin {
   // handler wrapper for cb manipulations
   eventHandler(event, { share_url, windowTitle, windowOptions }) {
     event.preventDefault();
+
+    // Turn the string of window options into an object we can destructure to get
+    // the width and the height.
+    const windowOptionsObject = windowOptions
+      .replace(/(^\?)/, "")
+      .split(",")
+      .map(
+        function(n) {
+          return (n = n.split("=")), (this[n[0]] = n[1]), this;
+        }.bind({})
+      )[0];
+    const { width, height } = windowOptionsObject;
+
+    // https://github.com/BrandwatchLtd/twitter-intents/blob/master/twitter-intents.js
+    const screenTop = window.screenTop;
+    const screenLeft = window.screenLeft;
+    const windowWidth =
+      window.outerWidth || window.document.documentElement.offsetWidth;
+    const windowHeight =
+      window.outerHeight || window.document.documentElement.offsetHeight;
+    let left = screenLeft;
+    let top = screenTop;
+
+    left += Math.round(windowWidth / 2 - width / 2);
+    if (windowHeight > height) {
+      top += Math.round(windowHeight / 2 - height / 2);
+    }
+
+    windowOptions = `${windowOptions},left=${left},top=${top}`;
     const windowObject = window.open(share_url, windowTitle, windowOptions);
 
     const windowCloseChecker = setInterval(() => {
