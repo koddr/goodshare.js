@@ -3,7 +3,7 @@
  *  Copyright (c) 2019 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
- *  goodshare.js v5.1.2 at 01/03/2019
+ *  goodshare.js v5.2.0 at 08/03/2019
  *
  *  Useful modern JavaScript solution for share a link from your website
  *  to social networks or mobile messengers. Easy to install and configuring

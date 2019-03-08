@@ -27,7 +27,8 @@ export class GooglePlus extends ProviderMixin {
       callback: this.callback,
       share_url: share_url,
       windowTitle: "Share this",
-      windowOptions: "width=640,height=480,location=no,toolbar=no,menubar=no"
+      windowWidth: 640,
+      windowHeight: 480
     };
   }
 

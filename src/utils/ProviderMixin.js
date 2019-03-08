@@ -21,10 +21,23 @@ export class ProviderMixin {
     this.updateInstanceId();
   }
 
-  // handler wrapper for cb manipulations
-  eventHandler(event, { share_url, windowTitle, windowOptions }) {
+  // Handler wrapper for callback manipulations
+  eventHandler(event, { share_url, windowTitle, windowWidth, windowHeight }) {
     event.preventDefault();
-    const windowObject = window.open(share_url, windowTitle, windowOptions);
+
+    // Calc top & left window position
+    const screenTop = Math.round(window.screenTop / 2 - windowHeight / 2);
+    const screenLeft = Math.round(window.screenLeft / 2 - windowWidth / 2);
+
+    // Set window size & window position
+    const windowSize = `width=${windowWidth},height=${windowHeight}`;
+    const windowPosition = `left=${screenLeft},top=${screenTop}`;
+
+    const windowObject = window.open(
+      share_url,
+      windowTitle,
+      `${windowSize},${windowPosition},location=no,toolbar=no,menubar=no`
+    );
 
     const windowCloseChecker = setInterval(() => {
       if (windowObject.closed) {
@@ -60,13 +73,8 @@ export class ProviderMixin {
 
   // Get instance
   getInstance() {
-    if (typeof this.shareWindow === "function") {
-      this.shareWindow();
-    }
-
-    if (typeof this.getCounter === "function") {
-      this.getCounter();
-    }
+    if (typeof this.shareWindow === "function") this.shareWindow();
+    if (typeof this.getCounter === "function") this.getCounter();
 
     return this;
   }
