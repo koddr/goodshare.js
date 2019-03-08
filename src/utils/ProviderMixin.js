@@ -33,11 +33,11 @@ export class ProviderMixin {
     const windowSize = `width=${windowWidth},height=${windowHeight}`;
     const windowPosition = `left=${screenLeft},top=${screenTop}`;
 
-    const windowObject = window.open(
-      share_url,
-      windowTitle,
-      `${windowSize},${windowPosition},location=no,toolbar=no,menubar=no`
-    );
+    // Build full window options
+    const windowOptions = `${windowSize},${windowPosition},location=no,toolbar=no,menubar=no`;
+
+    // Build window open object
+    const windowObject = window.open(share_url, windowTitle, windowOptions);
 
     const windowCloseChecker = setInterval(() => {
       if (windowObject.closed) {
