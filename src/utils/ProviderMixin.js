@@ -26,8 +26,12 @@ export class ProviderMixin {
     event.preventDefault();
 
     // Calc top & left window position
-    const screenTop = Math.round(window.screenTop / 2 - windowHeight / 2);
-    const screenLeft = Math.round(window.screenLeft / 2 - windowWidth / 2);
+    const screenWidth =
+      window.outerWidth || window.document.documentElement.offsetWidth;
+    const screenHeight =
+      window.outerHeight || window.document.documentElement.offsetHeight;
+    const screenTop = Math.round(screenHeight / 2 - windowHeight / 2);
+    const screenLeft = Math.round(screenWidth / 2 - windowWidth / 2);
 
     // Set window size & window position
     const windowSize = `width=${windowWidth},height=${windowHeight}`;
