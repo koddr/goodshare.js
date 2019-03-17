@@ -3,9 +3,9 @@
 .editorconfig
 .gitignore
 .prettierignore
-package.json
 package-lock.json
 goodshare.min.js
-LICENSE
+goodshare.polyfill.min.js
+docs/
 **/*.html
 *.md

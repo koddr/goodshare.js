@@ -10,27 +10,43 @@
     "documentStore": {
       "store": {
         "./": [
+          "(gzip",
+          "3.9",
           "7.x",
+          "[wip]",
+          "activ",
+          "appearance,",
           "assist",
           "better!",
+          "bundl",
+          "clean",
           "cm",
+          "code",
           "compon",
           "configur",
           "count",
           "custom",
+          "develop",
+          "documentation,",
           "donat",
           "drupal",
           "easi",
           "even",
+          "extens",
+          "friendly,",
           "goodshare.j",
           "help",
+          "high",
           "instal",
+          "install,",
           "integr",
           "introduct",
           "javascript",
           "jqueri",
+          "kb),",
           "link",
           "make",
+          "mani",
           "messeng",
           "messengers.",
           "mobil",
@@ -38,22 +54,36 @@
           "modul",
           "network",
           "note",
+          "option",
+          "page,",
           "paypal",
           "plugin",
           "project",
           "provid",
+          "react.j",
           "releas",
+          "script",
+          "seo",
           "share",
+          "simpl",
+          "size",
+          "size:",
+          "small",
           "social",
           "solut",
+          "speed.",
           "support",
+          "support,",
           "supporting!",
           "thank",
+          "track",
           "us",
           "usag",
+          "user",
           "vue.j",
           "websit",
           "website!",
+          "without",
           "yandex.money"
         ],
         "installation.html": [
@@ -481,12 +511,21 @@
             "docs": {}
           }
         },
+        "3": {
+          "docs": {},
+          ".": {
+            "9": {
+              "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+            },
+            "docs": {}
+          }
+        },
         "7": {
           "docs": {},
           ".": {
             "docs": {},
             "x": {
-              "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+              "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
             }
           }
         },
@@ -503,7 +542,7 @@
                   "docs": {},
                   "t": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -646,6 +685,38 @@
                   "tf": 0.008333333333333333
                 }
               }
+            },
+            "p": {
+              "docs": {},
+              "e": {
+                "docs": {},
+                "a": {
+                  "docs": {},
+                  "r": {
+                    "docs": {},
+                    "a": {
+                      "docs": {},
+                      "n": {
+                        "docs": {},
+                        "c": {
+                          "docs": {},
+                          "e": {
+                            "docs": {},
+                            ",": {
+                              "docs": {
+                                "./": {
+                                  "ref": "./",
+                                  "tf": 0.011111111111111112
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           },
           "c": {
@@ -670,6 +741,9 @@
                       }
                     }
                   }
+                },
+                "v": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
                 }
               }
             }
@@ -689,7 +763,7 @@
                     "docs": {},
                     "!": {
                       "docs": {
-                        "./": { "ref": "./", "tf": 0.017241379310344827 }
+                        "./": { "ref": "./", "tf": 0.011111111111111112 }
                       }
                     }
                   }
@@ -854,6 +928,15 @@
                   }
                 }
               }
+            },
+            "n": {
+              "docs": {},
+              "d": {
+                "docs": {},
+                "l": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+                }
+              }
             }
           },
           "r": {
@@ -906,7 +989,7 @@
         "c": {
           "docs": {},
           "m": {
-            "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+            "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
           },
           "o": {
             "docs": {},
@@ -918,7 +1001,7 @@
                   "docs": {},
                   "n": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.022222222222222223 }
                     }
                   }
                 }
@@ -936,7 +1019,7 @@
                       "docs": {},
                       "r": {
                         "docs": {
-                          "./": { "ref": "./", "tf": 0.017241379310344827 }
+                          "./": { "ref": "./", "tf": 0.011111111111111112 }
                         }
                       }
                     }
@@ -1027,8 +1110,7 @@
                                                     ";": {
                                                       "docs": {
                                                         "usage-social-share-link.html": {
-                                                          "ref":
-                                                            "usage-social-share-link.html",
+                                                          "ref": "usage-social-share-link.html",
                                                           "tf": 0.006711409395973154
                                                         }
                                                       }
@@ -1059,7 +1141,7 @@
                 "docs": {},
                 "t": {
                   "docs": {
-                    "./": { "ref": "./", "tf": 0.034482758620689655 },
+                    "./": { "ref": "./", "tf": 0.022222222222222223 },
                     "usage-share-count.html": {
                       "ref": "usage-share-count.html",
                       "tf": 5.033333333333333
@@ -1110,6 +1192,12 @@
                   }
                 }
               }
+            },
+            "d": {
+              "docs": {},
+              "e": {
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+              }
             }
           },
           "u": {
@@ -1122,7 +1210,7 @@
                   "docs": {},
                   "m": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.05172413793103448 },
+                      "./": { "ref": "./", "tf": 0.044444444444444446 },
                       "customization-customize-share-link.html": {
                         "ref": "customization-customize-share-link.html",
                         "tf": 3.353333333333333
@@ -1214,6 +1302,15 @@
                   }
                 }
               }
+            },
+            "e": {
+              "docs": {},
+              "a": {
+                "docs": {},
+                "n": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+                }
+              }
             }
           },
           "h": {
@@ -1302,7 +1399,7 @@
               "a": {
                 "docs": {},
                 "t": {
-                  "docs": { "./": { "ref": "./", "tf": 0.034482758620689655 } }
+                  "docs": { "./": { "ref": "./", "tf": 0.022222222222222223 } }
                 }
               },
               "'": {
@@ -1394,8 +1491,7 @@
                                                   "f": {
                                                     "docs": {
                                                       "usage-social-share-link.html": {
-                                                        "ref":
-                                                          "usage-social-share-link.html",
+                                                        "ref": "usage-social-share-link.html",
                                                         "tf": 0.006711409395973154
                                                       }
                                                     }
@@ -1423,6 +1519,29 @@
                                     "usage-social-share-link.html": {
                                       "ref": "usage-social-share-link.html",
                                       "tf": 0.006711409395973154
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "a": {
+                          "docs": {},
+                          "t": {
+                            "docs": {},
+                            "i": {
+                              "docs": {},
+                              "o": {
+                                "docs": {},
+                                "n": {
+                                  "docs": {},
+                                  ",": {
+                                    "docs": {
+                                      "./": {
+                                        "ref": "./",
+                                        "tf": 0.011111111111111112
+                                      }
                                     }
                                   }
                                 }
@@ -1467,7 +1586,7 @@
                   "docs": {},
                   "l": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -1539,7 +1658,8 @@
                         "installation.html": {
                           "ref": "installation.html",
                           "tf": 0.012658227848101266
-                        }
+                        },
+                        "./": { "ref": "./", "tf": 0.011111111111111112 }
                       }
                     }
                   }
@@ -1752,7 +1872,7 @@
             "s": {
               "docs": {},
               "i": {
-                "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
               }
             }
           },
@@ -1761,7 +1881,7 @@
             "e": {
               "docs": {},
               "n": {
-                "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } },
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } },
                 "t": {
                   "docs": {
                     "usage-social-share-link.html": {
@@ -1949,6 +2069,20 @@
                   }
                 }
               }
+            },
+            "t": {
+              "docs": {},
+              "e": {
+                "docs": {},
+                "n": {
+                  "docs": {},
+                  "s": {
+                    "docs": {
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
+                    }
+                  }
+                }
+              }
             }
           },
           "d": {
@@ -1999,7 +2133,7 @@
                               "docs": {
                                 "./": {
                                   "ref": "./",
-                                  "tf": 0.017241379310344827
+                                  "tf": 0.011111111111111112
                                 },
                                 "installation.html": {
                                   "ref": "installation.html",
@@ -2072,8 +2206,7 @@
                                                               ")": {
                                                                 "docs": {
                                                                   "usage-social-share-link.html": {
-                                                                    "ref":
-                                                                      "usage-social-share-link.html",
+                                                                    "ref": "usage-social-share-link.html",
                                                                     "tf": 0.006711409395973154
                                                                   }
                                                                 }
@@ -2218,7 +2351,7 @@
             "l": {
               "docs": {},
               "p": {
-                "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
               }
             }
           },
@@ -2303,8 +2436,7 @@
                                                                                         "t": {
                                                                                           "docs": {
                                                                                             "installation.html": {
-                                                                                              "ref":
-                                                                                                "installation.html",
+                                                                                              "ref": "installation.html",
                                                                                               "tf": 0.012658227848101266
                                                                                             }
                                                                                           }
@@ -2422,8 +2554,7 @@
                                                                                                       "j": {
                                                                                                         "docs": {
                                                                                                           "installation.html": {
-                                                                                                            "ref":
-                                                                                                              "installation.html",
+                                                                                                            "ref": "installation.html",
                                                                                                             "tf": 0.012658227848101266
                                                                                                           }
                                                                                                         }
@@ -2530,6 +2661,15 @@
                 }
               }
             }
+          },
+          "i": {
+            "docs": {},
+            "g": {
+              "docs": {},
+              "h": {
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+              }
+            }
           }
         },
         "i": {
@@ -2544,10 +2684,18 @@
                   "docs": {},
                   "l": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.034482758620689655 },
+                      "./": { "ref": "./", "tf": 0.022222222222222223 },
                       "installation.html": {
                         "ref": "installation.html",
                         "tf": 10.037974683544304
+                      }
+                    },
+                    "l": {
+                      "docs": {},
+                      ",": {
+                        "docs": {
+                          "./": { "ref": "./", "tf": 0.011111111111111112 }
+                        }
                       }
                     }
                   },
@@ -2595,7 +2743,7 @@
                   "docs": {},
                   "r": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -2683,8 +2831,7 @@
                           "'": {
                             "docs": {
                               "customization-customize-share-link.html": {
-                                "ref":
-                                  "customization-customize-share-link.html",
+                                "ref": "customization-customize-share-link.html",
                                 "tf": 0.02
                               }
                             }
@@ -2784,7 +2931,7 @@
                           "docs": {},
                           "t": {
                             "docs": {
-                              "./": { "ref": "./", "tf": 0.017241379310344827 }
+                              "./": { "ref": "./", "tf": 0.011111111111111112 }
                             }
                           }
                         }
@@ -2805,7 +2952,7 @@
                   "docs": {},
                   "i": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -2847,7 +2994,7 @@
               "docs": {},
               "k": {
                 "docs": {
-                  "./": { "ref": "./", "tf": 0.05172413793103448 },
+                  "./": { "ref": "./", "tf": 0.03333333333333333 },
                   "usage-social-share-link.html": {
                     "ref": "usage-social-share-link.html",
                     "tf": 3.3400447427293063
@@ -3092,7 +3239,13 @@
             "k": {
               "docs": {},
               "e": {
-                "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+              }
+            },
+            "n": {
+              "docs": {},
+              "i": {
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
               }
             }
           },
@@ -3108,7 +3261,7 @@
                     "docs": {},
                     "g": {
                       "docs": {
-                        "./": { "ref": "./", "tf": 0.017241379310344827 },
+                        "./": { "ref": "./", "tf": 0.011111111111111112 },
                         "supported-social-messengers.html": {
                           "ref": "supported-social-messengers.html",
                           "tf": 10.017543859649123
@@ -3124,7 +3277,7 @@
                               "docs": {
                                 "./": {
                                   "ref": "./",
-                                  "tf": 0.017241379310344827
+                                  "tf": 0.011111111111111112
                                 }
                               }
                             }
@@ -3189,8 +3342,7 @@
                                                       "]": {
                                                         "docs": {
                                                           "usage-social-share-link.html": {
-                                                            "ref":
-                                                              "usage-social-share-link.html",
+                                                            "ref": "usage-social-share-link.html",
                                                             "tf": 0.006711409395973154
                                                           }
                                                         }
@@ -3238,7 +3390,7 @@
               "i": {
                 "docs": {},
                 "l": {
-                  "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
                 }
               }
             },
@@ -3250,7 +3402,7 @@
                   "docs": {},
                   "n": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -3259,7 +3411,7 @@
                 "docs": {},
                 "l": {
                   "docs": {
-                    "./": { "ref": "./", "tf": 0.017241379310344827 },
+                    "./": { "ref": "./", "tf": 0.011111111111111112 },
                     "installation.html": {
                       "ref": "installation.html",
                       "tf": 0.012658227848101266
@@ -3341,7 +3493,7 @@
                     "docs": {},
                     "k": {
                       "docs": {
-                        "./": { "ref": "./", "tf": 0.034482758620689655 },
+                        "./": { "ref": "./", "tf": 0.022222222222222223 },
                         "usage-social-share-link.html": {
                           "ref": "usage-social-share-link.html",
                           "tf": 0.006711409395973154
@@ -3440,7 +3592,7 @@
               "docs": {},
               "e": {
                 "docs": {
-                  "./": { "ref": "./", "tf": 0.017241379310344827 },
+                  "./": { "ref": "./", "tf": 0.011111111111111112 },
                   "supported-social-messengers.html": {
                     "ref": "supported-social-messengers.html",
                     "tf": 0.017543859649122806
@@ -3511,7 +3663,7 @@
                   "docs": {},
                   "l": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -3550,6 +3702,9 @@
                       }
                     }
                   }
+                },
+                ",": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
                 }
               }
             },
@@ -3577,8 +3732,7 @@
                             "!": {
                               "docs": {
                                 "customization-customize-share-link.html": {
-                                  "ref":
-                                    "customization-customize-share-link.html",
+                                  "ref": "customization-customize-share-link.html",
                                   "tf": 0.02
                                 }
                               }
@@ -3611,7 +3765,7 @@
                   "docs": {},
                   "n": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -3671,7 +3825,7 @@
                     "docs": {},
                     "t": {
                       "docs": {
-                        "./": { "ref": "./", "tf": 0.017241379310344827 }
+                        "./": { "ref": "./", "tf": 0.011111111111111112 }
                       },
                       ".": {
                         "docs": {
@@ -3691,7 +3845,7 @@
                   "docs": {},
                   "d": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 },
+                      "./": { "ref": "./", "tf": 0.011111111111111112 },
                       "customization-customize-share-link.html": {
                         "ref": "customization-customize-share-link.html",
                         "tf": 0.02
@@ -3890,7 +4044,7 @@
                   "docs": {},
                   "s": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -3978,8 +4132,7 @@
                                                       ";": {
                                                         "docs": {
                                                           "installation.html": {
-                                                            "ref":
-                                                              "installation.html",
+                                                            "ref": "installation.html",
                                                             "tf": 0.012658227848101266
                                                           }
                                                         }
@@ -4103,6 +4256,23 @@
                   }
                 }
               }
+            },
+            "a": {
+              "docs": {},
+              "c": {
+                "docs": {},
+                "t": {
+                  "docs": {},
+                  ".": {
+                    "docs": {},
+                    "j": {
+                      "docs": {
+                        "./": { "ref": "./", "tf": 0.011111111111111112 }
+                      }
+                    }
+                  }
+                }
+              }
             }
           },
           "u": {
@@ -4144,7 +4314,7 @@
                 "docs": {},
                 "e": {
                   "docs": {
-                    "./": { "ref": "./", "tf": 0.08620689655172414 },
+                    "./": { "ref": "./", "tf": 0.05555555555555555 },
                     "usage-social-share-link.html": {
                       "ref": "usage-social-share-link.html",
                       "tf": 3.3937360178970915
@@ -4188,7 +4358,7 @@
                   "docs": {},
                   "l": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.05172413793103448 },
+                      "./": { "ref": "./", "tf": 0.03333333333333333 },
                       "usage-social-share-link.html": {
                         "ref": "usage-social-share-link.html",
                         "tf": 3.3534675615212524
@@ -4228,7 +4398,7 @@
                 "docs": {},
                 "t": {
                   "docs": {
-                    "./": { "ref": "./", "tf": 0.017241379310344827 },
+                    "./": { "ref": "./", "tf": 0.011111111111111112 },
                     "usage-share-count.html": {
                       "ref": "usage-share-count.html",
                       "tf": 0.025
@@ -4264,7 +4434,7 @@
                     "docs": {},
                     "t": {
                       "docs": {
-                        "./": { "ref": "./", "tf": 0.017241379310344827 },
+                        "./": { "ref": "./", "tf": 0.011111111111111112 },
                         "usage-social-share-link.html": {
                           "ref": "usage-social-share-link.html",
                           "tf": 0.006711409395973154
@@ -4300,11 +4470,16 @@
                               "docs": {
                                 "./": {
                                   "ref": "./",
-                                  "tf": 0.017241379310344827
+                                  "tf": 0.011111111111111112
                                 }
                               }
                             }
                           }
+                        }
+                      },
+                      ",": {
+                        "docs": {
+                          "./": { "ref": "./", "tf": 0.011111111111111112 }
                         }
                       }
                     }
@@ -4411,7 +4586,8 @@
                       "usage-social-share-link.html": {
                         "ref": "usage-social-share-link.html",
                         "tf": 0.006711409395973154
-                      }
+                      },
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     },
                     ".": {
                       "docs": {
@@ -4514,6 +4690,9 @@
                   }
                 }
               }
+            },
+            "o": {
+              "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
             }
           },
           "y": {
@@ -4559,6 +4738,17 @@
                     }
                   }
                 }
+              },
+              "e": {
+                "docs": {},
+                "d": {
+                  "docs": {},
+                  ".": {
+                    "docs": {
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
+                    }
+                  }
+                }
               }
             }
           },
@@ -4573,7 +4763,8 @@
                     "usage-share-count.html": {
                       "ref": "usage-share-count.html",
                       "tf": 0.008333333333333333
-                    }
+                    },
+                    "./": { "ref": "./", "tf": 0.011111111111111112 }
                   },
                   "i": {
                     "docs": {
@@ -4597,6 +4788,15 @@
                       "tf": 0.008333333333333333
                     }
                   }
+                }
+              }
+            },
+            "z": {
+              "docs": {},
+              "e": {
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } },
+                ":": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
                 }
               }
             }
@@ -4671,6 +4871,15 @@
                 "ref": "supported-social-messengers.html",
                 "tf": 0.03508771929824561
               }
+            },
+            "a": {
+              "docs": {},
+              "l": {
+                "docs": {},
+                "l": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+                }
+              }
             }
           }
         },
@@ -4683,7 +4892,7 @@
               "n": {
                 "docs": {},
                 "k": {
-                  "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
                 }
               }
             },
@@ -4850,6 +5059,15 @@
                   "tf": 0.017543859649122806
                 }
               }
+            },
+            "a": {
+              "docs": {},
+              "c": {
+                "docs": {},
+                "k": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+                }
+              }
             }
           },
           "e": {
@@ -4914,7 +5132,7 @@
           "docs": {},
           "s": {
             "docs": {
-              "./": { "ref": "./", "tf": 0.017241379310344827 },
+              "./": { "ref": "./", "tf": 0.011111111111111112 },
               "installation.html": {
                 "ref": "installation.html",
                 "tf": 0.05063291139240506
@@ -4931,7 +5149,7 @@
             "a": {
               "docs": {},
               "g": {
-                "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
               }
             },
             ".": {
@@ -4957,7 +5175,8 @@
                   "usage-social-share-link.html": {
                     "ref": "usage-social-share-link.html",
                     "tf": 0.006711409395973154
-                  }
+                  },
+                  "./": { "ref": "./", "tf": 0.011111111111111112 }
                 }
               }
             }
@@ -5019,7 +5238,7 @@
               ".": {
                 "docs": {},
                 "j": {
-                  "docs": { "./": { "ref": "./", "tf": 0.017241379310344827 } }
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
                 }
               }
             }
@@ -5052,13 +5271,11 @@
                           "(": {
                             "docs": {
                               "customization-customize-share-link.html": {
-                                "ref":
-                                  "customization-customize-share-link.html",
+                                "ref": "customization-customize-share-link.html",
                                 "tf": 0.02
                               },
                               "customization-customize-share-count.html": {
-                                "ref":
-                                  "customization-customize-share-count.html",
+                                "ref": "customization-customize-share-count.html",
                                 "tf": 0.02857142857142857
                               }
                             }
@@ -5074,8 +5291,7 @@
                                   "r": {
                                     "docs": {
                                       "customization-customize-share-link.html": {
-                                        "ref":
-                                          "customization-customize-share-link.html",
+                                        "ref": "customization-customize-share-link.html",
                                         "tf": 0.02
                                       }
                                     }
@@ -5094,8 +5310,7 @@
                                     "t": {
                                       "docs": {
                                         "customization-customize-share-count.html": {
-                                          "ref":
-                                            "customization-customize-share-count.html",
+                                          "ref": "customization-customize-share-count.html",
                                           "tf": 0.02857142857142857
                                         }
                                       }
@@ -5195,13 +5410,13 @@
                   "docs": {},
                   "t": {
                     "docs": {
-                      "./": { "ref": "./", "tf": 0.017241379310344827 }
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     },
                     "e": {
                       "docs": {},
                       "!": {
                         "docs": {
-                          "./": { "ref": "./", "tf": 0.017241379310344827 }
+                          "./": { "ref": "./", "tf": 0.011111111111111112 }
                         }
                       }
                     }
@@ -5413,8 +5628,7 @@
                                       "r": {
                                         "docs": {
                                           "usage-social-share-link.html": {
-                                            "ref":
-                                              "usage-social-share-link.html",
+                                            "ref": "usage-social-share-link.html",
                                             "tf": 0.006711409395973154
                                           }
                                         },
@@ -5461,8 +5675,7 @@
                                                                                 ";": {
                                                                                   "docs": {
                                                                                     "usage-social-share-link.html": {
-                                                                                      "ref":
-                                                                                        "usage-social-share-link.html",
+                                                                                      "ref": "usage-social-share-link.html",
                                                                                       "tf": 0.006711409395973154
                                                                                     }
                                                                                   }
@@ -5540,8 +5753,7 @@
                                                                                                 ")": {
                                                                                                   "docs": {
                                                                                                     "usage-social-share-link.html": {
-                                                                                                      "ref":
-                                                                                                        "usage-social-share-link.html",
+                                                                                                      "ref": "usage-social-share-link.html",
                                                                                                       "tf": 0.006711409395973154
                                                                                                     }
                                                                                                   }
@@ -5587,6 +5799,23 @@
                   }
                 }
               }
+            },
+            "t": {
+              "docs": {},
+              "h": {
+                "docs": {},
+                "o": {
+                  "docs": {},
+                  "u": {
+                    "docs": {},
+                    "t": {
+                      "docs": {
+                        "./": { "ref": "./", "tf": 0.011111111111111112 }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         },
@@ -5616,7 +5845,7 @@
                                 "docs": {
                                   "./": {
                                     "ref": "./",
-                                    "tf": 0.017241379310344827
+                                    "tf": 0.011111111111111112
                                   }
                                 }
                               }
@@ -5792,8 +6021,7 @@
                                                         ".": {
                                                           "docs": {
                                                             "usage-social-share-link.html": {
-                                                              "ref":
-                                                                "usage-social-share-link.html",
+                                                              "ref": "usage-social-share-link.html",
                                                               "tf": 0.006711409395973154
                                                             }
                                                           }
@@ -5837,6 +6065,18 @@
                       }
                     }
                   }
+                }
+              }
+            }
+          },
+          "g": {
+            "docs": {},
+            "z": {
+              "docs": {},
+              "i": {
+                "docs": {},
+                "p": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
                 }
               }
             }
@@ -5931,6 +6171,29 @@
                   }
                 }
               }
+            },
+            "i": {
+              "docs": {},
+              "e": {
+                "docs": {},
+                "n": {
+                  "docs": {},
+                  "d": {
+                    "docs": {},
+                    "l": {
+                      "docs": {},
+                      "y": {
+                        "docs": {},
+                        ",": {
+                          "docs": {
+                            "./": { "ref": "./", "tf": 0.011111111111111112 }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           },
           "a": {
@@ -6013,6 +6276,20 @@
                           }
                         }
                       }
+                    }
+                  }
+                }
+              }
+            },
+            "t": {
+              "docs": {},
+              "i": {
+                "docs": {},
+                "o": {
+                  "docs": {},
+                  "n": {
+                    "docs": {
+                      "./": { "ref": "./", "tf": 0.011111111111111112 }
                     }
                   }
                 }
@@ -6154,6 +6431,15 @@
                     "tf": 0.017543859649122806
                   }
                 }
+              }
+            }
+          },
+          "b": {
+            "docs": {},
+            ")": {
+              "docs": {},
+              ",": {
+                "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
               }
             }
           }
@@ -6422,16 +6708,14 @@
                                                 "'": {
                                                   "docs": {
                                                     "customization-customize-share-count.html": {
-                                                      "ref":
-                                                        "customization-customize-share-count.html",
+                                                      "ref": "customization-customize-share-count.html",
                                                       "tf": 0.02857142857142857
                                                     }
                                                   },
                                                   ",": {
                                                     "docs": {
                                                       "customization-customize-share-link.html": {
-                                                        "ref":
-                                                          "customization-customize-share-link.html",
+                                                        "ref": "customization-customize-share-link.html",
                                                         "tf": 0.02
                                                       }
                                                     }
@@ -6460,8 +6744,7 @@
                                                                     "w": {
                                                                       "docs": {
                                                                         "customization-customize-share-link.html": {
-                                                                          "ref":
-                                                                            "customization-customize-share-link.html",
+                                                                          "ref": "customization-customize-share-link.html",
                                                                           "tf": 0.02
                                                                         }
                                                                       }
@@ -6543,8 +6826,7 @@
                                       ";": {
                                         "docs": {
                                           "customization-customize-share-link.html": {
-                                            "ref":
-                                              "customization-customize-share-link.html",
+                                            "ref": "customization-customize-share-link.html",
                                             "tf": 0.02
                                           }
                                         }
@@ -6589,8 +6871,7 @@
                                     ";": {
                                       "docs": {
                                         "customization-customize-share-count.html": {
-                                          "ref":
-                                            "customization-customize-share-count.html",
+                                          "ref": "customization-customize-share-count.html",
                                           "tf": 0.02857142857142857
                                         }
                                       }
@@ -6656,9 +6937,24 @@
               }
             }
           }
+        },
+        "[": {
+          "docs": {},
+          "w": {
+            "docs": {},
+            "i": {
+              "docs": {},
+              "p": {
+                "docs": {},
+                "]": {
+                  "docs": { "./": { "ref": "./", "tf": 0.011111111111111112 } }
+                }
+              }
+            }
+          }
         }
       },
-      "length": 831
+      "length": 1298
     },
     "corpusTokens": [
       "#57",
@@ -6671,6 +6967,7 @@
       "(document.location.href).",
       "(for",
       "(from",
+      "(gzip",
       "(yql).",
       ").getcounter();",
       ").sharewindow();",
@@ -6680,13 +6977,17 @@
       "/",
       "//",
       "1.1",
+      "3.9",
       "7.x",
       "=",
+      "[wip]",
       "actions.",
+      "activ",
       "add",
       "address",
       "anoth",
       "api",
+      "appearance,",
       "assist",
       "associ",
       "attribut",
@@ -6703,6 +7004,7 @@
       "buffer",
       "build",
       "build.",
+      "bundl",
       "buttons.",
       "call",
       "cd",
@@ -6710,10 +7012,12 @@
       "chang",
       "changes?",
       "choos",
+      "clean",
       "clone",
       "close",
       "closed.",
       "cm",
+      "code",
       "compon",
       "configur",
       "console.log(arguments);",
@@ -6746,6 +7050,7 @@
       "doc",
       "document.location.href",
       "document.titl",
+      "documentation,",
       "domain:",
       "don't",
       "donat",
@@ -6766,11 +7071,13 @@
       "example:",
       "export",
       "expos",
+      "extens",
       "facebook",
       "file)",
       "focus",
       "follow",
       "free",
+      "friendly,",
       "gener",
       "get",
       "git",
@@ -6785,6 +7092,7 @@
       "handl",
       "handler",
       "help",
+      "high",
       "hook",
       "html",
       "https://github.com/koddr/goodshare.js.git",
@@ -6796,6 +7104,7 @@
       "impos",
       "includ",
       "instal",
+      "install,",
       "instanc",
       "instant",
       "instapap",
@@ -6807,6 +7116,7 @@
       "javascript",
       "jqueri",
       "jsdelivr",
+      "kb),",
       "keep",
       "know",
       "languag",
@@ -6822,6 +7132,7 @@
       "logic",
       "look",
       "make",
+      "mani",
       "messeng",
       "messenger,",
       "messengers.",
@@ -6848,8 +7159,10 @@
       "offici",
       "open",
       "opensharecount",
+      "option",
       "page",
       "page',",
+      "page,",
       "page.',",
       "paramet",
       "parameters!",
@@ -6869,6 +7182,7 @@
       "put",
       "queri",
       "re",
+      "react.j",
       "reddit",
       "redefin",
       "releas",
@@ -6888,22 +7202,28 @@
       "see",
       "select",
       "send",
+      "seo",
       "share",
       "share.",
       "simpl",
       "simpli",
       "singl",
+      "size",
+      "size:",
       "skype",
       "sm",
+      "small",
       "social",
       "social.",
       "solut",
       "sourc",
       "special",
+      "speed.",
       "stumbleupon",
       "stumbleupon,",
       "success?",
       "support",
+      "support,",
       "supporting!",
       "surfingbird",
       "surfingbird,",
@@ -6919,6 +7239,7 @@
       "titl",
       "title,",
       "touch",
+      "track",
       "tri",
       "tumblr",
       "twitter",
@@ -6953,6 +7274,7 @@
       "window._goodshar",
       "window._goodshare.renewallinstance();",
       "window._goodshare.setsharecallback(function()",
+      "without",
       "wordpress",
       "work",
       "write",
@@ -6977,57 +7299,49 @@
       "url": "./",
       "title": "Introduction",
       "keywords": "",
-      "body":
-        "\ngoodshare.js\n   \n\nUseful jQuery plugin modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!\n\nRelease Notes\n\nInstallation\n\nUsage\n\nSocial share link\nShare count\n\nSupported providers\n\nSocial networks\nMessengers\n\nCustomization\n\nCustomize share link\nCustomize share count\n\nIntegration\n\nVue.js component\nCMS Drupal 7.x module\n\nYour assistance will help make project even better!\n\nDonate with PayPal\nDonate with Yandex.Money\n\nThanks for supporting!\n"
+      "body": "\ngoodshare.js\n    \n\nUseful jQuery plugin modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!\nSimple install, extensive documentation, developer support, SEO friendly, small bundle size (gzipped size: 3.9 Kb), many options for customization of appearance, clean code without scripts tracking user activity on the page, high speed.\n\nRelease Notes\n\nInstallation\n\nUsage\n\nSocial share link\nShare count\n\nSupported providers\n\nSocial networks\nMessengers\n\nCustomization\n\nCustomize share link\nCustomize share count\n\nIntegration\n\nVue.js component\nReact.js components [WIP]\nCMS Drupal 7.x module\n\nYour assistance will help make project even better!\n\nDonate with PayPal\nDonate with Yandex.Money\n\nThanks for supporting!\n"
     },
     "installation.html": {
       "url": "installation.html",
       "title": "Installation",
       "keywords": "",
-      "body":
-        "Installation\nDirect Download / CDN\nhttps://www.jsdelivr.com/package/npm/goodshare.js\njsDelivr is a public, open-source CDN (Content Delivery Network) developed by ProspectOne, focused on performance, reliability, and security. It is free to use for everyone, with no bandwidth limits.\nInclude goodshare.min.js (from CDN or direct downloaded file) before close body tag:\n\n\nnpm\n$ npm install goodshare.js --save\n\nWhen used with a module system:\nrequire('goodshare.js');\n\n\nYou don't need to do this when using global script tags.\n\nDev Build\nYou will have to clone directly from GitHub and build goodshare.js yourself if\nyou want to use the latest dev build.\n$ git clone https://github.com/koddr/goodshare.js.git\n$ cd goodshare.js\n$ npm install\n$ npm run build\n\n"
+      "body": "Installation\nDirect Download / CDN\nhttps://www.jsdelivr.com/package/npm/goodshare.js\njsDelivr is a public, open-source CDN (Content Delivery Network) developed by ProspectOne, focused on performance, reliability, and security. It is free to use for everyone, with no bandwidth limits.\nInclude goodshare.min.js (from CDN or direct downloaded file) before close body tag:\n\n\nnpm\n$ npm install goodshare.js --save\n\nWhen used with a module system:\nrequire('goodshare.js');\n\n\nYou don't need to do this when using global script tags.\n\nDev Build\nYou will have to clone directly from GitHub and build goodshare.js yourself if\nyou want to use the latest dev build.\n$ git clone https://github.com/koddr/goodshare.js.git\n$ cd goodshare.js\n$ npm install\n$ npm run build\n\n"
     },
     "usage-social-share-link.html": {
       "url": "usage-social-share-link.html",
       "title": "Social share link",
       "keywords": "",
-      "body":
-        "Social share link\nScript works with any HTML tags. Choose any and add required attributes data-social. For example:\n\nShare this to Twitter\n\nShare this to Facebook\n\nShare this to LinkedIn\n\n\n\nWhich data is getting by default?\nBy default, goodshare.js search this tags for get title, description and image (for some social networks):\n\n  Current page title\n  \n  \n  ...\n\n\n\nURL is getting from current web browser address line (document.location.href).\n\nHow to dynamically update?\nIf you want to dynamically update the data that will be used for share. You can call a method Goodshare.reNewAllInstance() that will update data in goodshare providers instance and update EventListeners.\n\nNote: For example, you have a widget to share content that generates images for sharing based on selected items or other user actions.\n\n// Update all data\n// Goodshare instance expose in window._goodshare by default\nwindow._goodshare.reNewAllInstance();\n\nHow to detect share success?\n\nSimply calls the handler when the hooking window is closed. Look more at Issue #57\n\nwindow._goodshare.setShareCallback(function() {\n  console.log(arguments);\n  // Some logic for handling share events\n});\n\nHow to change default data?\nIf you want to change default data for share element — use special data-* attributes:\n\ndata-url redefines document.location.href\ndata-title redefines document.title\ndata-description redefines meta[name=\"description\"]\ndata-image redefines link[rel=\"apple-touch-icon\"]\n\n\nPlease keep in mind, not all social networks support all of them data attributes!\n\n"
+      "body": "Social share link\nScript works with any HTML tags. Choose any and add required attributes data-social. For example:\n\nShare this to Twitter\n\nShare this to Facebook\n\nShare this to LinkedIn\n\n\n\nWhich data is getting by default?\nBy default, goodshare.js search this tags for get title, description and image (for some social networks):\n\n  Current page title\n  \n  \n  ...\n\n\n\nURL is getting from current web browser address line (document.location.href).\n\nHow to dynamically update?\nIf you want to dynamically update the data that will be used for share. You can call a method Goodshare.reNewAllInstance() that will update data in goodshare providers instance and update EventListeners.\n\nNote: For example, you have a widget to share content that generates images for sharing based on selected items or other user actions.\n\n// Update all data\n// Goodshare instance expose in window._goodshare by default\nwindow._goodshare.reNewAllInstance();\n\nHow to detect share success?\n\nSimply calls the handler when the hooking window is closed. Look more at Issue #57\n\nwindow._goodshare.setShareCallback(function() {\n  console.log(arguments);\n  // Some logic for handling share events\n});\n\nHow to change default data?\nIf you want to change default data for share element — use special data-* attributes:\n\ndata-url redefines document.location.href\ndata-title redefines document.title\ndata-description redefines meta[name=\"description\"]\ndata-image redefines link[rel=\"apple-touch-icon\"]\n\n\nPlease keep in mind, not all social networks support all of them data attributes!\n\n"
     },
     "usage-share-count.html": {
       "url": "usage-share-count.html",
       "title": "Share count",
       "keywords": "",
-      "body":
-        "Share count\nTo display share count, just add data-counter attribute to HTML element that will contain numbers. For example:\n\n\n  Share this to Facebook\n  \n\n\n\nNote: You also may put this attribute to any element.\n\nSocial networks who have share counters\n\nvkontakte Вконтакте\nfacebook Facebook\nodnoklassniki Одноклассники\nmoimir Мой Мир@Mail.Ru\nlinkedin LinkedIn\ntumblr Tumblr\npinterest Pinterest\nreddit Reddit\nstumbleupon StumbleUpon\npocket Pocket\nsurfingbird Surfingbird\nbuffer Buffer\nxing Xing\n\nHow to get Twitter share counter after API 1.1 changes?\nSimple solution for only single domain: OpenShareCount project.\nHow to get Google Plus share counter?\nGoogle Plus drop support share count for official +1 buttons. There is no way to get share count from Google Plus social network.\n\nIf you know solution — write issue to us.\n\nShare counter for Surfingbird, StumbleUpon, Pocket and Xing?\nFor getting share counts from this social networks goodshare.js use Yahoo Query Language (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo.\n\nIf you know another solution — write issue to us.\n\n"
+      "body": "Share count\nTo display share count, just add data-counter attribute to HTML element that will contain numbers. For example:\n\n\n  Share this to Facebook\n  \n\n\n\nNote: You also may put this attribute to any element.\n\nSocial networks who have share counters\n\nvkontakte Вконтакте\nfacebook Facebook\nodnoklassniki Одноклассники\nmoimir Мой Мир@Mail.Ru\nlinkedin LinkedIn\ntumblr Tumblr\npinterest Pinterest\nreddit Reddit\nstumbleupon StumbleUpon\npocket Pocket\nsurfingbird Surfingbird\nbuffer Buffer\nxing Xing\n\nHow to get Twitter share counter after API 1.1 changes?\nSimple solution for only single domain: OpenShareCount project.\nHow to get Google Plus share counter?\nGoogle Plus drop support share count for official +1 buttons. There is no way to get share count from Google Plus social network.\n\nIf you know solution — write issue to us.\n\nShare counter for Surfingbird, StumbleUpon, Pocket and Xing?\nFor getting share counts from this social networks goodshare.js use Yahoo Query Language (YQL). It may impose some restrictions on use, associated with limit queries to Yahoo.\n\nIf you know another solution — write issue to us.\n\n"
     },
     "supported-social-networks.html": {
       "url": "supported-social-networks.html",
       "title": "Social networks",
       "keywords": "",
-      "body":
-        "Supported social networks\n\nIf you don't see your social network, please let us know and we'll try to add it!\n\n\nvkontakte Вконтакте\nfacebook Facebook\nodnoklassniki Одноклассники\nmoimir Мой Мир@Mail.Ru\ngoogleplus Google Plus\nlinkedin LinkedIn\ntwitter Twitter\nlivejournal LiveJournal\ntumblr Tumblr\nblogger Blogger\npinterest Pinterest\ndigg Digg\nevernote Evernote\nreddit Reddit\ndelicious Delicious\nstumbleupon StumbleUpon\npocket Pocket\nsurfingbird Surfingbird\nliveinternet LiveInternet\nbuffer Buffer\ninstapaper Instapaper\nxing Xing\nwordpress WordPress\nbaidu Baidu\nrenren RenRen\nweibo Weibo\n\n"
+      "body": "Supported social networks\n\nIf you don't see your social network, please let us know and we'll try to add it!\n\n\nvkontakte Вконтакте\nfacebook Facebook\nodnoklassniki Одноклассники\nmoimir Мой Мир@Mail.Ru\ngoogleplus Google Plus\nlinkedin LinkedIn\ntwitter Twitter\nlivejournal LiveJournal\ntumblr Tumblr\nblogger Blogger\npinterest Pinterest\ndigg Digg\nevernote Evernote\nreddit Reddit\ndelicious Delicious\nstumbleupon StumbleUpon\npocket Pocket\nsurfingbird Surfingbird\nliveinternet LiveInternet\nbuffer Buffer\ninstapaper Instapaper\nxing Xing\nwordpress WordPress\nbaidu Baidu\nrenren RenRen\nweibo Weibo\n\n"
     },
     "supported-social-messengers.html": {
       "url": "supported-social-messengers.html",
       "title": "Messengers",
       "keywords": "",
-      "body":
-        "Supported messengers\n\nIf you don't see your messenger, please let us know and we'll try to add it!\n\n\nsms Send text via SMS\nskype Skype\ntelegram Telegram\nviber Viber\nwhatsapp WhatsApp\nline LINE\n\nNote for Telegram Instant View\nIf you want to create share links with Instant View, follow the official docs please. And then, add to your Telegram share link new data-attribute data-rhash with your template ID as value.\nFor example:\n\n  Share link to Telegram\n\n\n"
+      "body": "Supported messengers\n\nIf you don't see your messenger, please let us know and we'll try to add it!\n\n\nsms Send text via SMS\nskype Skype\ntelegram Telegram\nviber Viber\nwhatsapp WhatsApp\nline LINE\n\nNote for Telegram Instant View\nIf you want to create share links with Instant View, follow the official docs please. And then, add to your Telegram share link new data-attribute data-rhash with your template ID as value.\nFor example:\n\n  Share link to Telegram\n\n\n"
     },
     "customization-customize-share-link.html": {
       "url": "customization-customize-share-link.html",
       "title": "Customize share link",
       "keywords": "",
-      "body":
-        "Customize share link\nIf you want to replace any default share parameters — edit social network provider and re-build script.\nexport const vkontakte_share = new Vkontakte(\n    'http://example.com/', // URL\n    'New title of current page', // title\n    'New description of current page.', // description\n    'http://example.com/path/to/new-image.jpg' // image\n).shareWindow();\n\n\nPlease keep in mind, not all social networks support all of them share parameters!\n\n"
+      "body": "Customize share link\nIf you want to replace any default share parameters — edit social network provider and re-build script.\nexport const vkontakte_share = new Vkontakte(\n    'http://example.com/', // URL\n    'New title of current page', // title\n    'New description of current page.', // description\n    'http://example.com/path/to/new-image.jpg' // image\n).shareWindow();\n\n\nPlease keep in mind, not all social networks support all of them share parameters!\n\n"
     },
     "customization-customize-share-count.html": {
       "url": "customization-customize-share-count.html",
       "title": "Customize share count",
       "keywords": "",
-      "body":
-        "Customize share counter\nIf you want to replace default share counter URL — edit social network provider and re-build script.\nexport const vkontakte_counter = new Vkontakte(\n    'http://example.com/' // URL\n).getCounter();\n\n\nPlease keep in mind, not all social networks supports share counter!\n\n"
+      "body": "Customize share counter\nIf you want to replace default share counter URL — edit social network provider and re-build script.\nexport const vkontakte_counter = new Vkontakte(\n    'http://example.com/' // URL\n).getCounter();\n\n\nPlease keep in mind, not all social networks supports share counter!\n\n"
     }
   }
 }

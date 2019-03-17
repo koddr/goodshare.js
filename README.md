@@ -2,14 +2,14 @@
 
 # goodshare.js
 
-![npm version](https://badge.fury.io/js/goodshare.js.svg) [![jsDelivr download](https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/goodshare.js) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://vuejs.org) [![license](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![npm version](https://badge.fury.io/js/goodshare.js.svg) [![jsDelivr download](https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/goodshare.js) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://vuejs.org) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![license](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE)
 
 
 > Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
 
 ### Features
 
-Simple install, extensive documentation, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size (gzipped size: **3.9 Kb**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 ### Full Documentation & Demos
 
@@ -31,7 +31,7 @@ $ npm install goodshare.js --save
 Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/goodshare.js@5/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/goodshare.js@6/goodshare.min.js"></script>
 ```
 
 ### Usage
@@ -119,6 +119,8 @@ window._goodshare.setShareCallback(function() {
 
 - **No more depending on jQuery!** Since `4.x`, no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
 - **Browser support.** Since `4.x`, `goodshare.js` do not support Microsoft Internet Explorer 8 and older.
+- **Bundle.** Since `5.2.0`, `goodshare.js` drop support Webpack 3 and now bundled with [Rollup.js](https://github.com/rollup/rollup). It saved over ~50 Kb of bundle size! Wow!
+- **Polyfills.** Since `6.0.0`, `goodshare.js` have two versions: with (`./goodshare.polyfill.min.js`) and without (`./goodshare.min.js`) [Array Polyfill](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill).
 
 ### Author & maintainers
 

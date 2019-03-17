@@ -1,5 +1,5 @@
 /**
- *  Vic Shóstak <koddr.me@gmail.com>
+ *  Vic Shóstak <vikkyshostak@gmail.com>
  *  Copyright (c) 2019 True web artisans https://webartisans.org
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
