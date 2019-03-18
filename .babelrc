@@ -10,8 +10,7 @@
           "firefox": 50,
           "esmodules": true
         },
-        "useBuiltIns": "entry",
-        "loose": true
+        "useBuiltIns": "entry"
       }
     ]
   ]

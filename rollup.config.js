@@ -18,7 +18,7 @@ export default [
         exclude: "node_modules/**"
       }),
       compiler({
-        compilation_level: "ADVANCED_OPTIMIZATIONS"
+        compilation_level: "SIMPLE"
       })
     ]
   }
