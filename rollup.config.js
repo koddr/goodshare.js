@@ -3,35 +3,39 @@
  */
 
 import babel from "rollup-plugin-babel";
-import { uglify } from "rollup-plugin-uglify";
+import compiler from "@ampproject/rollup-plugin-closure-compiler";
 
 export default [
   {
     input: "./src/goodshare.js",
-    plugins: [
-      babel({
-        exclude: "node_modules/**"
-      }),
-      uglify()
-    ],
     output: {
       name: "goodshareBundle",
       file: "./goodshare.min.js",
       format: "iife"
-    }
-  },
-  {
-    input: "./src/goodshare.polyfill.js",
+    },
     plugins: [
       babel({
         exclude: "node_modules/**"
       }),
-      uglify()
-    ],
+      compiler({
+        compilation_level: "ADVANCED_OPTIMIZATIONS"
+      })
+    ]
+  },
+  {
+    input: "./src/goodshare.polyfill.js",
     output: {
       name: "goodsharePolyfillBundle",
       file: "./goodshare.polyfill.min.js",
       format: "iife"
-    }
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**"
+      }),
+      compiler({
+        compilation_level: "ADVANCED_OPTIMIZATIONS"
+      })
+    ]
   }
 ];
