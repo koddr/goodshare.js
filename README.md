@@ -9,7 +9,7 @@
 
 ### Features
 
-Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size (gzipped size: **3.6 Kb**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size (gzipped size: **4.5 Kb**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 ### Full Documentation & Demos
 
