@@ -21,21 +21,5 @@ export default [
         compilation_level: "ADVANCED_OPTIMIZATIONS"
       })
     ]
-  },
-  {
-    input: "./src/goodshare.polyfill.js",
-    output: {
-      name: "goodsharePolyfillBundle",
-      file: "./goodshare.polyfill.min.js",
-      format: "iife"
-    },
-    plugins: [
-      babel({
-        exclude: "node_modules/**"
-      }),
-      compiler({
-        compilation_level: "ADVANCED_OPTIMIZATIONS"
-      })
-    ]
   }
 ];
