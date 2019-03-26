@@ -10,6 +10,7 @@
           "firefox": 50,
           "esmodules": true
         },
+        "corejs": "3.0.0",
         "useBuiltIns": "entry"
       }
     ]
