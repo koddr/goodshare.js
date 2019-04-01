@@ -9,7 +9,7 @@
 
 ### Features
 
-Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size (gzipped size: **4.5 Kb**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size **~36 KB** (or GZip **4.1 KB**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 ### Full Documentation & Demos
 
@@ -39,6 +39,8 @@ Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
 Script works with any HTML tags: `<a>` or `<div>` or `<button>` or other.
 
 > So you can choose any and add required attributes `data-social`.
+>
+> Full list of supported [social providers](https://koddr.github.io/goodshare.js/en/supported-social-networks.html) and [messengers](https://koddr.github.io/goodshare.js/en/supported-social-messengers.html).
 
 For example:
 
@@ -52,8 +54,8 @@ For example:
 <!-- Create div container with share to LinkedIn -->
 <div data-social="linkedin">Share this to LinkedIn</div>
 
-<!-- Create icon from Fontello.com with share to Google+ -->
-<i class="icon-google-plus" data-social="googleplus"></i>
+<!-- Create icon from Fontello.com with share to Tumblr -->
+<i class="icon-tumblr" data-social="tumblr"></i>
 ```
 
 By default, `goodshare.js` search this tags for get title, description and image (for some social networks):
@@ -123,6 +125,7 @@ window._goodshare.setShareCallback(function() {
 - **Polyfills.** Since `6.0.0`, `goodshare.js` have two versions: with (`./goodshare.polyfill.min.js`) and without (`./goodshare.min.js`) [Array Polyfill](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill).
 - **No need to separated polyfills.** Since `6.0.2`, `goodshare.js` drop `./goodshare.polyfill.min.js` and separated [Array Polyfill](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill) from `./src/polyfills`.
 - **Browser support (2019).** Since `6.0.3`, `goodshare.js` only support: MSIE 11+, Edge 13+, Google Chrome 59+ and FireFox 50+.
+- **Add/Switch/Delete.** Since `6.1.0`, `goodshare.js` added Flipboard and WeChat; switch StumbleUpon to Mix; deleted GooglePlus.
 
 ### Author & maintainers
 

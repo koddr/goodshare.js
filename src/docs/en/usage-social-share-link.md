@@ -5,12 +5,15 @@ Script works with **any HTML tags**. Choose any and add required attributes `dat
 ```html
 <!-- Create button with share to Twitter -->
 <button data-social="twitter">Share this to Twitter</button>
+
 <!-- Create link with share to Facebook -->
 <a href="#" data-social="facebook">Share this to Facebook</a>
+
 <!-- Create div container with share to LinkedIn -->
 <div data-social="linkedin">Share this to LinkedIn</div>
-<!-- Create icon from Fontello.com with share to Google+ -->
-<i class="icon-google-plus" data-social="googleplus"></i>
+
+<!-- Create icon from Fontello.com with share to Tumblr -->
+<i class="icon-tumblr" data-social="tumblr"></i>
 ```
 
 ### Which data is getting by default?

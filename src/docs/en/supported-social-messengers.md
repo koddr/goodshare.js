@@ -7,6 +7,7 @@
 - `telegram` [Telegram](https://telegram.org)
 - `viber` [Viber](http://www.viber.com)
 - `whatsapp` [WhatsApp](http://www.whatsapp.com)
+- `wechat` [WhatsApp](http://www.wechat.com)
 - `line` [LINE](http://line.me/en/)
 
 ## Note for Telegram Instant View

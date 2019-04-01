@@ -5,12 +5,12 @@
  *
  *  goodshare.js
  *
- *  Google Plus (https://plus.google.com) provider.
+ *  Meneame (https://www.meneame.net/) provider.
  */
 
 import { ProviderMixin } from "../utils/ProviderMixin";
 
-export class GooglePlus extends ProviderMixin {
+export class Meneame extends ProviderMixin {
   constructor(url = document.location.href) {
     super();
     this.url = encodeURIComponent(url);
@@ -21,7 +21,7 @@ export class GooglePlus extends ProviderMixin {
     const url = item.dataset.url
       ? encodeURIComponent(item.dataset.url)
       : this.url;
-    const share_url = `https://plus.google.com/share?url=${url}`;
+    const share_url = `https://www.meneame.net/submit?url=${url}`;
 
     return {
       callback: this.callback,
@@ -35,7 +35,7 @@ export class GooglePlus extends ProviderMixin {
   // Share event
   shareWindow() {
     const share_elements = document.querySelectorAll(
-      '[data-social="googleplus"]'
+      '[data-social="meneame"]'
     );
 
     return this.createEvents(share_elements);

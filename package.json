@@ -1,6 +1,6 @@
 {
   "name": "goodshare.js",
-  "version": "6.0.5",
+  "version": "6.1.0",
   "description": "Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.",
   "main": "goodshare.min.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "babel-loader": "^8.0.5",
     "core-js": "^3.0.0",
     "gitbook-cli": "^2.3.2",
-    "rollup": "^1.7.3",
+    "rollup": "^1.7.4",
     "rollup-plugin-babel": "^4.3.2"
   }
 }

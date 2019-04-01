@@ -3,7 +3,7 @@
  *  Copyright (c) 2019 True web artisans https://truewebartisans.com
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
- *  goodshare.js v6.0.5 at 26/03/2019
+ *  goodshare.js v6.1.0 at 01/04/2019
  *
  *  Useful modern JavaScript solution for share a link from your website
  *  to social networks or mobile messengers. Easy to install and configuring
@@ -17,29 +17,30 @@ import { Vkontakte } from "./providers/Vkontakte";
 import { Facebook } from "./providers/Facebook";
 import { Odnoklassniki } from "./providers/Odnoklassniki";
 import { MoiMir } from "./providers/MoiMir";
-import { LinkedIn } from "./providers/LinkedIn";
 import { Tumblr } from "./providers/Tumblr";
 import { Pinterest } from "./providers/Pinterest";
-import { Surfingbird } from "./providers/Surfingbird";
 import { Reddit } from "./providers/Reddit";
 import { Buffer } from "./providers/Buffer";
-import { StumbleUpon } from "./providers/StumbleUpon";
-import { Pocket } from "./providers/Pocket";
-import { Xing } from "./providers/Xing";
 
 /**
  *  Import social networks providers without share counter.
  */
 
-import { GooglePlus } from "./providers/GooglePlus";
 import { Twitter } from "./providers/Twitter";
 import { LiveJournal } from "./providers/LiveJournal";
+import { LinkedIn } from "./providers/LinkedIn";
 import { Evernote } from "./providers/Evernote";
 import { Delicious } from "./providers/Delicious";
+import { Flipboard } from "./providers/Flipboard";
+import { Mix } from "./providers/Mix";
+import { Meneame } from "./providers/Meneame";
 import { Blogger } from "./providers/Blogger";
+import { Pocket } from "./providers/Pocket";
 import { Instapaper } from "./providers/Instapaper";
 import { Digg } from "./providers/Digg";
 import { LiveInternet } from "./providers/LiveInternet";
+import { Surfingbird } from "./providers/Surfingbird";
+import { Xing } from "./providers/Xing";
 import { WordPress } from "./providers/WordPress";
 import { Baidu } from "./providers/Baidu";
 import { RenRen } from "./providers/RenRen";
@@ -54,6 +55,7 @@ import { Skype } from "./providers/Skype";
 import { Telegram } from "./providers/Telegram";
 import { Viber } from "./providers/Viber";
 import { WhatsApp } from "./providers/WhatsApp";
+import { WeChat } from "./providers/WeChat";
 import { Line } from "./providers/Line";
 
 const providers = [
@@ -65,22 +67,23 @@ const providers = [
   LinkedIn,
   Tumblr,
   Pinterest,
-  Surfingbird,
   Reddit,
   Buffer,
-  StumbleUpon,
-  Pocket,
-  Xing,
   // Import social networks providers without share counter.
-  GooglePlus,
   Twitter,
   LiveJournal,
   Evernote,
   Delicious,
+  Flipboard,
+  Pocket,
+  Mix,
+  Meneame,
   Blogger,
   Instapaper,
   Digg,
   LiveInternet,
+  Surfingbird,
+  Xing,
   WordPress,
   Baidu,
   RenRen,
@@ -91,6 +94,7 @@ const providers = [
   Telegram,
   Viber,
   WhatsApp,
+  WeChat,
   Line
 ];
 

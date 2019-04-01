@@ -6,7 +6,7 @@
 
 > Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
 >
-> Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size (gzipped size: **4.5 Kb**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+> Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size **~36 KB** (or GZip **4.1 KB**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 **[Release Notes](https://github.com/koddr/goodshare.js/releases)**
 

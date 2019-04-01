@@ -5,16 +5,15 @@
  *
  *  goodshare.js
  *
- *  Reddit (https://reddit.com) provider.
+ *  WeChat (http://wechat.com) provider.
  */
 
 import { ProviderMixin } from "../utils/ProviderMixin";
 
-export class Reddit extends ProviderMixin {
-  constructor(url = document.location.href, title = document.title) {
+export class WeChat extends ProviderMixin {
+  constructor(url = document.location.href) {
     super();
     this.url = encodeURIComponent(url);
-    this.title = encodeURIComponent(title);
     this.createEvents = this.createEvents.bind(this);
   }
 
@@ -22,10 +21,7 @@ export class Reddit extends ProviderMixin {
     const url = item.dataset.url
       ? encodeURIComponent(item.dataset.url)
       : this.url;
-    const title = item.dataset.title
-      ? encodeURIComponent(item.dataset.title)
-      : this.title;
-    const share_url = `https://reddit.com/submit?url=${url}&title=${title}`;
+    const share_url = `https://chart.apis.google.com/chart?cht=qr&chs=196x196&chld=Q%7C0&chl=${url}`;
 
     return {
       callback: this.callback,
@@ -38,7 +34,7 @@ export class Reddit extends ProviderMixin {
 
   // Share event
   shareWindow() {
-    const share_elements = document.querySelectorAll('[data-social="reddit"]');
+    const share_elements = document.querySelectorAll('[data-social="wechat"]');
 
     return this.createEvents(share_elements);
   }

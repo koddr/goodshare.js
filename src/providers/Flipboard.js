@@ -5,12 +5,12 @@
  *
  *  goodshare.js
  *
- *  Reddit (https://reddit.com) provider.
+ *  Flipboard (https://flipboard.com) provider.
  */
 
 import { ProviderMixin } from "../utils/ProviderMixin";
 
-export class Reddit extends ProviderMixin {
+export class Flipboard extends ProviderMixin {
   constructor(url = document.location.href, title = document.title) {
     super();
     this.url = encodeURIComponent(url);
@@ -25,7 +25,7 @@ export class Reddit extends ProviderMixin {
     const title = item.dataset.title
       ? encodeURIComponent(item.dataset.title)
       : this.title;
-    const share_url = `https://reddit.com/submit?url=${url}&title=${title}`;
+    const share_url = `https://share.flipboard.com/bookmarklet/popout?ext=sharethis&title=${title}&url=${url}&v=2`;
 
     return {
       callback: this.callback,
@@ -38,7 +38,9 @@ export class Reddit extends ProviderMixin {
 
   // Share event
   shareWindow() {
-    const share_elements = document.querySelectorAll('[data-social="reddit"]');
+    const share_elements = document.querySelectorAll(
+      '[data-social="flipboard"]'
+    );
 
     return this.createEvents(share_elements);
   }

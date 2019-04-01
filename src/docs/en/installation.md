@@ -9,7 +9,7 @@
 Include `goodshare.min.js` (from CDN or direct downloaded file) before close `body` tag:
 
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/goodshare.js@6/goodshare.min.js"></script>
 ```
 
 ### npm
