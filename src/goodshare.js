@@ -3,7 +3,7 @@
  *  Copyright (c) 2019 True web artisans https://truewebartisans.com
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
- *  goodshare.js v6.1.0 at 01/04/2019
+ *  goodshare.js v6.1.1 at 10/04/2019
  *
  *  Useful modern JavaScript solution for share a link from your website
  *  to social networks or mobile messengers. Easy to install and configuring
@@ -13,6 +13,7 @@
 /**
  *  Import social networks providers with share counter.
  */
+
 import { Vkontakte } from "./providers/Vkontakte";
 import { Facebook } from "./providers/Facebook";
 import { Odnoklassniki } from "./providers/Odnoklassniki";
@@ -58,6 +59,10 @@ import { WhatsApp } from "./providers/WhatsApp";
 import { WeChat } from "./providers/WeChat";
 import { Line } from "./providers/Line";
 
+/**
+ *  Create providers list.
+ */
+
 const providers = [
   // Import social networks providers with share counter.
   Vkontakte,
@@ -98,6 +103,10 @@ const providers = [
   Line
 ];
 
+/**
+ *  Init goodshare.js class.
+ */
+
 class Goodshare {
   constructor() {
     this.providers = providers;
@@ -124,6 +133,10 @@ class Goodshare {
     );
   }
 }
+
+/**
+ *  Create goodshare.js object.
+ */
 
 (function() {
   window._goodshare = new Goodshare();
