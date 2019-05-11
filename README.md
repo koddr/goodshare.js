@@ -24,8 +24,8 @@ Simple install, extensive documentation, developer support, **SEO friendly**, sm
 
 Install via `npm`:
 
-```bash
-$ npm install goodshare.js --save
+```console
+foo@bar:~$ npm install --save goodshare.js
 ```
 
 Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
