@@ -9,7 +9,7 @@
 
 ### Features
 
-Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size **~36 KB** (or GZip **4.1 KB**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size **~36 KB** (or GZip **2.56 KB**), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 ### Full Documentation & Demos
 
@@ -122,16 +122,11 @@ window._goodshare.setShareCallback(function() {
 ```console
 foo@bar:~$ npm run size
 
-  ✨ Built in 362ms.
-
-  dist/goodshare.js.map    137.98 KB     35ms
-  dist/goodshare.js         89.42 KB    118ms
-
   Time limit:   250 ms
   Package size: 2.56 KB with all dependencies, minified and gzipped
   Loading time: 52 ms   on slow 3G
-  Running time: 190 ms  on Snapdragon 410
-  Total time:   241 ms
+  Running time: 165 ms  on Snapdragon 410
+  Total time:   216 ms
 ```
 
 _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
@@ -145,7 +140,7 @@ _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
 - **No need to separated polyfills.** Since `6.0.2`, `goodshare.js` drop `./goodshare.polyfill.min.js` and separated [Array Polyfill](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill) from `./src/polyfills`.
 - **Browser support (2019).** Since `6.0.3`, `goodshare.js` only support: MSIE 11+, Edge 13+, Google Chrome 59+ and FireFox 50+.
 - **Add/Switch/Delete.** Since `6.1.0`, `goodshare.js` added Flipboard and WeChat; switch StumbleUpon to Mix; deleted GooglePlus.
-- **Add Size limit.** Since `6.1.2`, `goodshare.js` pushed to master only if limit `250 ms` is passed. And switched to [Parcel](https://github.com/parcel-bundler/parcel) bundler.
+- **Add Size limit.** Since `6.1.2`, `goodshare.js` pushed to master only if limit `250 ms` is passed.
 
 ### Author & maintainers
 

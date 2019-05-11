@@ -1,6 +1,6 @@
 /**
- *  Vic Shóstak <vikkyshostak@gmail.com>
- *  Copyright (c) 2019 True web artisans https://truewebartisans.com
+ *  Vic Shóstak <truewebartisans@gmail.com>
+ *  Copyright (c) 2019 True web artisans https://1wa.co
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -34,9 +34,7 @@ export class Mix extends ProviderMixin {
 
   // Share event
   shareWindow() {
-    const share_elements = document.querySelectorAll(
-      '[data-social="mix"]'
-    );
+    const share_elements = document.querySelectorAll('[data-social="mix"]');
 
     return this.createEvents(share_elements);
   }

@@ -1,11 +1,7 @@
-.idea/
 .github/
 .editorconfig
 .gitignore
 .prettierignore
-package-lock.json
 goodshare.min.js
-goodshare.polyfill.min.js
 docs/
-**/*.html
 *.md

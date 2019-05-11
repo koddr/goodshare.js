@@ -1,9 +1,9 @@
 /**
- *  Vic Shóstak <vikkyshostak@gmail.com>
- *  Copyright (c) 2019 True web artisans https://truewebartisans.com
+ *  Vic Shóstak <truewebartisans@gmail.com>
+ *  Copyright (c) 2019 True web artisans https://1wa.co
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
- *  goodshare.js v6.1.1 at 10/04/2019
+ *  goodshare.js v6.1.2 at 11/05/2019
  *
  *  Useful modern JavaScript solution for share a link from your website
  *  to social networks or mobile messengers. Easy to install and configuring

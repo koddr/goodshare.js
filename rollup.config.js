@@ -9,7 +9,7 @@ export default [
   {
     input: "./src/goodshare.js",
     output: {
-      name: "goodshareBundle",
+      name: "goodshare",
       file: "./goodshare.min.js",
       format: "iife"
     },
