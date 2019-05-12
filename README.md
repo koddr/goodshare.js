@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://badge.fury.io/js/a2hs.js.svg" alt="npm version"/>
+  <img src="https://badge.fury.io/js/goodshare.js.svg" alt="npm version"/>
   <img src="https://img.shields.io/badge/minified_and_gzipped-2.56_KB-blue.svg" alt="bundle size"/>
   <a href="https://www.jsdelivr.com/package/npm/goodshare.js" target="_blank">
     <img src="https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded" alt="jsDelivr download"/>
