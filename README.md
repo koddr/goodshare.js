@@ -136,7 +136,9 @@ _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
 Development and maintenance engaged by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
 If you want to say «thank you» and/or ask me about `goodshare.js` — [create new issue](https://github.com/koddr/goodshare.js/issues/new).
 
-<a href="https://www.patreon.com/bePatron?u=20124951" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+<a href="https://www.patreon.com/bePatron?u=20124951">
+  <img width="200px" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="Become a Patron!"/>
+</a>
 
 ## License
 
