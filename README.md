@@ -19,7 +19,8 @@
 </p>
 
 <p align="center">
-  A useful modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
+  A useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.<br/>
+  Easy to install and configuring on any of your website!
 </p>
 
 ## The Why?
