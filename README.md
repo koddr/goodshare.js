@@ -13,7 +13,7 @@ Simple install, extensive documentation, developer support, **SEO friendly**, sm
 
 ### Full Documentation & Demos
 
-- https://koddr.github.io/goodshare.js/
+- https://goodsharejs.1wa.co
 
 ### Production-ready components
 
