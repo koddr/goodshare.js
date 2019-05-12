@@ -5,7 +5,7 @@
 ![npm version](https://badge.fury.io/js/goodshare.js.svg) [![gzip](https://img.shields.io/badge/GZip_size-2.56_KB-green.svg?style=flat)](https://en.wikipedia.org/wiki/ECMAScript) [![jsDelivr download](https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/goodshare.js) [![js es6](https://img.shields.io/badge/ECMAScript-6+-blue.svg?style=flat)](https://en.wikipedia.org/wiki/ECMAScript) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier) [![license](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](https://github.com/koddr/vue-goodshare/blob/master/LICENSE)
 
 
-> Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
+Useful ~~jQuery plugin~~ modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
 
 ### Features
 
@@ -131,33 +131,13 @@ foo@bar:~$ npm run size
 
 _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
 
-### Notes
-
-- **No more depending on jQuery!** Since `4.x`, no longer support the old `goodshare.js` version ([3.2.9](https://github.com/koddr/goodshare.js/tree/3.2.9) and lower). Thank you jQuery, but ES6 is better and cleaner.
-- **Browser support.** Since `4.x`, `goodshare.js` do not support Microsoft Internet Explorer 8 and older.
-- **Bundle.** Since `5.2.0`, `goodshare.js` drop support Webpack 3 and now bundled with [Rollup.js](https://github.com/rollup/rollup). It saved over ~55 Kb of bundle size! Wow!
-- **Polyfills.** Since `6.0.0`, `goodshare.js` have two versions: with (`./goodshare.polyfill.min.js`) and without (`./goodshare.min.js`) [Array Polyfill](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill).
-- **No need to separated polyfills.** Since `6.0.2`, `goodshare.js` drop `./goodshare.polyfill.min.js` and separated [Array Polyfill](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from?v=control#Polyfill) from `./src/polyfills`.
-- **Browser support (2019).** Since `6.0.3`, `goodshare.js` only support: MSIE 11+, Edge 13+, Google Chrome 59+ and FireFox 50+.
-- **Add/Switch/Delete.** Since `6.1.0`, `goodshare.js` added Flipboard and WeChat; switch StumbleUpon to Mix; deleted GooglePlus.
-- **Add Size limit.** Since `6.1.2`, `goodshare.js` pushed to master only if limit `250 ms` is passed.
-
 ### Author & maintainers
 
 Development and maintenance engaged by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
 If you want to say «thank you» and/or ask me about `goodshare.js` — [create new issue](https://github.com/koddr/goodshare.js/issues/new).
 
----
+<a href="https://www.patreon.com/bePatron?u=20124951" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
 
-> ### Your assistance will help make project even better!
->
-> - [Donate with PayPal](https://www.paypal.me/koddr/9.99usd)
-> - [Donate with Yandex.Money](https://money.yandex.ru/to/41001601525977/599)
->
-> #### Thanks for supporting!
+## License
 
----
-
-### License
-
-[The MIT License (MIT)](https://github.com/koddr/goodshare.js/blob/master/LICENSE.md)
+MIT
