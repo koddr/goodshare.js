@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="code style: prettier"/>
   <img src="https://img.shields.io/badge/license-MIT-yellow.svg?style=flat" alt="license"/>
   <a href="https://twitter.com/intent/tweet?text=Wow%20%F0%9F%91%8D%20Useful%20%23js%20solution%20for%20%23share%20a%20link%20from%20your%20%23website%20to%20%23social%20networks%20and%20mobile%20%23messengers%3A&url=https%3A%2F%2Fgithub.com%2Fkoddr%2Fgoodshare.js" target="_blank">
-    <img src="https://img.shields.io/twitter/url/https/github.com/koddr/a2hs.js.svg" alt="twit link"/>
+    <img src="https://img.shields.io/twitter/url/https/github.com/koddr/goodshare.js.svg" alt="twit link"/>
   </a>
 </p>
 
@@ -24,7 +24,7 @@
 
 ## The Why?
 
-Simple install, extensive documentation, developer support, **SEO friendly**, small bundle size **~36 KB** (not gzipped), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+Simple install, **extensive documentation**, developer support, **SEO friendly**, small bundle size **~36 KB** (not gzipped), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 ## Installation
 
@@ -87,13 +87,9 @@ If you want to add different `url`, `title`, `description` and `image` to share 
 - `data-description` redefines `meta[name="description"]`
 - `data-image` redefines `link[rel="apple-touch-icon"]`
 
-> Note: Please keep in mind, not all social networks support all of them data attributes!
-
 ### Dynamically update
 
-If you want to dynamically update the data that will be used for share. You can call a method `Goodshare.reNewAllInstance()` that will update data in goodshare providers instance and update `EventListeners`.
-
-> Note: For example, you have a widget to share content that generates images for sharing based on selected items or other user actions.
+If you want to dynamically update the data that will be used for share. You can call a method `reNewAllInstance()` that will update data in goodshare providers instance and update `EventListeners`.
 
 ```js
 // Update all data
@@ -103,7 +99,7 @@ window._goodshare.reNewAllInstance();
 
 ### Display share count
 
-To display share count, just add `data-counter` attribute to HTML element that will contain numbers. For example:
+To display share count, just add `data-counter` attribute to HTML element that will contain numbers.
 
 ```html
 <!-- Create link with share to Facebook and counter -->
@@ -117,7 +113,7 @@ To display share count, just add `data-counter` attribute to HTML element that w
 
 ### Detect share success
 
-> Simply calls the handler when the hooking window is closed. Look more at [Issue #57](https://github.com/koddr/goodshare.js/issues/57)
+Calls the handler, when the hooking window is closed.
 
 ```js
 window._goodshare.setShareCallback(function() {
@@ -125,6 +121,8 @@ window._goodshare.setShareCallback(function() {
   // some logic for handling share events
 });
 ```
+
+> Look more at [Issue #57](https://github.com/koddr/goodshare.js/issues/57)
 
 ## Size limit report
 
@@ -140,11 +138,19 @@ foo@bar:~$ npm run size
 
 _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
 
-## Author & maintainers
+## Developers
 
-Development and maintenance engaged by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
+- Idea and active development by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
+- Collaborators: 
+- - [Ilya Reshetnikov](https://github.com/devxom) (aka devxom).
 
-If you want to say «thank you» or/and support active development `goodshare.js` — become a Patron!
+## Project assistance
+
+If you want to say «thank you» or/and support active development `goodshare.js`:
+
+1. Add a GitHub Star to project.
+2. Twit about project [on your Twitter](https://twitter.com/intent/tweet?text=Wow%20%F0%9F%91%8D%20Useful%20%23js%20solution%20for%20%23share%20a%20link%20from%20your%20%23website%20to%20%23social%20networks%20and%20mobile%20%23messengers%3A&url=https%3A%2F%2Fgithub.com%2Fkoddr%2Fgoodshare.js).
+3. Help project with some money, become a Patron:
 
 <a href="https://www.patreon.com/bePatron?u=20124951">
   <img width="200px" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="Become a Patron!"/>
