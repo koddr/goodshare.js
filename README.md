@@ -142,7 +142,7 @@ _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
 
 - Idea and active development by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
 - Collaborators: 
-- - [Ilya Reshetnikov](https://github.com/devxom) (aka devxom).
+  - [Ilya Reshetnikov](https://github.com/devxom) (aka devxom).
 
 ## Project assistance
 
