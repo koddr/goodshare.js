@@ -19,70 +19,31 @@
 </p>
 
 <p align="center">
-  A useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.<br/>
-  Easy to install and configuring on any of your website!
+  A useful modern JavaScript solution for share a link from your website to social networks or mobile messengers. Easy to install and configuring on any of your website!
 </p>
 
 ## The Why?
 
 Simple install, **extensive documentation**, developer support, **SEO friendly**, small bundle size **~36 KB** (not gzipped), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-## [Docs](https://goodsharejs.1wa.co), [Change log](https://github.com/koddr/goodshare.js/blob/master/CHANGELOG.md)
-
 ## Installation
 
 Install via `npm`:
 
-```console
-foo@bar:~$ npm install --save goodshare.js
+``` bash
+npm install --save goodshare.js
 ```
 
 Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/goodshare.js@6/goodshare.min.js"></script>
+``` html
+<script src="//cdn.jsdelivr.net/npm/goodshare.js@6/goodshare.min.js"></script>
 ```
-
-## Usage
-
-Works with any HTML tags: `<a>`, `<div>`, `<button>` or other. Choose any and add required attributes `data-social`.
-
-> Full list of supported [social providers](https://goodsharejs.1wa.co/supported-social-networks) and [mobile messengers](https://goodsharejs.1wa.co/supported-mobile-messengers).
-
-```html
-<!-- Create button with share to Twitter -->
-<button data-social="twitter">Share this to Twitter</button>
-
-<!-- Create link with share to Facebook -->
-<a href="#" data-social="facebook">Share this to Facebook</a>
-
-<!-- Create div container with share to LinkedIn -->
-<div data-social="linkedin">Share this to LinkedIn</div>
-
-<!-- Create icon from Fontello.com with share to Tumblr -->
-<i class="icon-tumblr" data-social="tumblr"></i>
-```
-
-By default, `goodshare.js` search this tags for get title, description and image (for some social networks):
-
-```html
-<head>
-  <title>Current page title</title>
-  <meta name="description" content="Current page description.">
-  <link rel="apple-touch-icon" href="http://example.com/path/to/image.png">
-  ...
-</head>
-```
-
-## Framework components
-
-- Vue.js — https://github.com/koddr/vue-goodshare
-- React.js — https://github.com/koddr/react-goodshare-components
 
 ## Size limit report
 
-```console
-foo@bar:~$ npm run size
+``` bash
+$ npm run size
 
   Time limit:   250 ms
   Package size: 2.56 KB with all dependencies, minified and gzipped
@@ -97,7 +58,7 @@ _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
 
 - Idea and active development by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
 - Collaborators: 
-  - [Ilya Reshetnikov](https://github.com/devxom) (aka devxom).
+    - [Ilya Reshetnikov](https://github.com/devxom) (aka devxom).
 
 ## Project assistance
 

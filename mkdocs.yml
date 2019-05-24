@@ -1,0 +1,55 @@
+site_name: goodshare.js
+site_description: "A useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.
+Easy to install and configuring on any of your website!"
+
+nav:
+    - Get started: "index.md"
+    - Installation: "installation.md"
+    - Usage:
+      - Basic usage: "basic-usage.md"
+      - Share counter: "usage-share-counter.md"
+      - Changes elements: "changes-elements.md"
+      - Detect share success: "detect-share-success.md"
+      - Dynamically update: "dynamically-update.md"
+    - Supported providers:
+      - Social networks: "supported-social-networks.md"
+      - Mobile messengers: "supported-mobile-messengers.md"
+    - Customization:
+      - Share link: "customize-share-link.md"
+      - Share counter: "customize-share-counter.md"
+    - Framework components: "framework-components.md"
+    - Developer's build: "developer-build.md"
+
+theme:
+  name: "material"
+  language: "en"
+  logo:
+    icon: "🚀"
+  feature:
+    tabs: false
+  font:
+    text: "Open Sans"
+    code: "Hack"
+  palette:
+      primary: "white"
+      accent: "red"
+
+edit_uri: ""
+copyright: 'Copyright &copy; 2019 Vic Shóstak'
+
+repo_name: koddr/goodshare.js
+repo_url: https://github.com/koddr/goodshare.js
+
+extra:
+  social:
+    - type: 'twitter'
+      link: 'https://twitter.com/true_koddr'
+    - type: 'link'
+      link: 'https://1wa.co'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - extra
