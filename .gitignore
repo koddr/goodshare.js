@@ -2,9 +2,8 @@
 *~
 
 node_modules/
-src/docs/node_modules/
+site/
+coverage/
+
 npm-debug.log
 yarn-error.log
-
-src/docs/_book/
-coverage/
