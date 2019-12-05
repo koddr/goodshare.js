@@ -105,11 +105,7 @@ If you want to say «thank you» or/and support active development `goodshare.js
 
 1. Add a GitHub Star to project.
 2. Twit about project [on your Twitter](https://twitter.com/intent/tweet?text=Wow%20%F0%9F%91%8D%20Useful%20%23js%20solution%20for%20%23share%20a%20link%20from%20your%20%23website%20to%20%23social%20networks%20and%20mobile%20%23messengers%3A&url=https%3A%2F%2Fgithub.com%2Fkoddr%2Fgoodshare.js).
-3. Help project with some money, become a Patron:
-
-<a href="https://www.patreon.com/bePatron?u=20124951">
-  <img width="200px" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="Become a Patron!"/>
-</a>
+3. If you want, send to project's author some money via PayPal: [@paypal.me/koddr](https://paypal.me/koddr?locale.x=en_EN).
 
 ## License
 
