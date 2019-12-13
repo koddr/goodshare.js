@@ -110,6 +110,10 @@ If you want to say «thank you» or/and support active development `goodshare.js
 
 Thanks for your support! 😘 Together, we make this project better every day.
 
+### Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/koddr/goodshare.js.svg)](https://starchart.cc/koddr/goodshare.js)
+
 ## License
 
 MIT
