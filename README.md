@@ -27,7 +27,7 @@
 
 Simple install, **extensive documentation**, developer support, **SEO friendly**, small bundle size **~36 KB** (not gzipped), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-## [Docs](https://goodsharejs.1wa.co), [Change log](https://github.com/koddr/goodshare.js/blob/master/CHANGELOG.md)
+## [Docs](https://goodshare.js.org), [Change log](https://github.com/koddr/goodshare.js/blob/master/CHANGELOG.md)
 
 ## Installation
 
@@ -47,7 +47,7 @@ Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
 
 Works with any HTML tags: `<a>`, `<div>`, `<button>` or other. Choose any and add required attributes `data-social`.
 
-> Full list of supported [social providers](https://goodsharejs.1wa.co/supported-social-networks) and [mobile messengers](https://goodsharejs.1wa.co/supported-mobile-messengers).
+> Full list of supported [social providers](https://goodshare.js.org/supported-social-networks) and [mobile messengers](https://goodshare.js.org/supported-mobile-messengers).
 
 ```html
 <!-- Create button with share to Twitter -->
