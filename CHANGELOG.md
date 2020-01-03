@@ -2,6 +2,7 @@
 
 ## 6.x
 
+- `6.1.4`: pushed to master only if limit `80 ms` is passed, switch docs to [js.org](https://js.org).
 - `6.1.3`: pushed to master only if limit `140 ms` is passed.
 - `6.1.2`: pushed to master only if limit `250 ms` is passed.
 - `6.1.0`: added Flipboard and WeChat; switch StumbleUpon to Mix; deleted GooglePlus.

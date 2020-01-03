@@ -1,9 +1,12 @@
+# macOS
 .DS_Store
-*~
 
+# IDE
+.vscode/
+.idea/
+
+# Node.js
 node_modules/
-site/
-coverage/
 
-npm-debug.log
-yarn-error.log
+# MkDocs
+site/

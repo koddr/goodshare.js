@@ -17,6 +17,7 @@ nav:
     - Customization:
       - Share link: "customize-share-link.md"
       - Share counter: "customize-share-counter.md"
+    - Size-limit report: "size-limit-report.md"
     - Framework components: "framework-components.md"
     - Developer's build: "developer-build.md"
 
@@ -35,7 +36,7 @@ theme:
       accent: "red"
 
 edit_uri: ""
-copyright: 'Copyright &copy; 2019 Vic Shóstak'
+copyright: 'Copyright &copy; 2020 Vic Shóstak'
 
 repo_name: koddr/goodshare.js
 repo_url: https://github.com/koddr/goodshare.js
