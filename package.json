@@ -1,12 +1,9 @@
 {
   "name": "goodshare.js",
-  "version": "6.1.2",
+  "version": "6.1.3",
   "description": "Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.",
   "main": "goodshare.min.js",
   "scripts": {
-    "docs:prepare": "gitbook install ./src/docs",
-    "docs:build": "npm run docs:prepare && rm -rf ./docs/* && rm -rf ./src/docs/_book && gitbook build ./src/docs && cp -rf ./src/docs/_book/* ./docs",
-    "docs:watch": "npm run docs:prepare && gitbook serve ./src/docs",
     "build": "rollup --config rollup.config.js --compact",
     "watch": "rollup --config rollup.config.js --watch --compact",
     "size": "npm run build && size-limit"
@@ -21,8 +18,6 @@
     "social network share count",
     "share link"
   ],
-  "author": "Vic Shóstak <truewebartisans@gmail.com> (https://1wa.co)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/koddr/goodshare.js/issues",
     "email": "truewebartisans@gmail.com"
@@ -30,19 +25,20 @@
   "homepage": "https://koddr.github.io/goodshare.js/",
   "devDependencies": {
     "@ampproject/rollup-plugin-closure-compiler": "^0.9.0",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "babel-loader": "^8.0.5",
-    "core-js": "^3.0.1",
-    "gitbook-cli": "^2.3.2",
-    "rollup": "^1.11.3",
-    "rollup-plugin-babel": "^4.3.2",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.6.1",
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel": "^4.3.3",
     "size-limit": "^1.3.1"
   },
   "size-limit": [
     {
       "path": "./src/goodshare.js",
-      "limit": "250 ms"
+      "limit": "140 ms"
     }
-  ]
+  ],
+  "author": "Vic Shóstak <truewebartisans@gmail.com> (https://1wa.co)",
+  "license": "MIT"
 }

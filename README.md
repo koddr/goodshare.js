@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="https://badge.fury.io/js/goodshare.js.svg" alt="npm version"/>
-  <img src="https://img.shields.io/badge/minified_and_gzipped-2.56_KB-blue.svg" alt="bundle size"/>
+  <img src="https://img.shields.io/badge/minified_and_gzipped-2.55_KB-blue.svg" alt="bundle size"/>
   <a href="https://www.jsdelivr.com/package/npm/goodshare.js" target="_blank">
     <img src="https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded" alt="jsDelivr download"/>
   </a>
@@ -25,9 +25,9 @@
 
 ## The Why?
 
-Simple install, **extensive documentation**, developer support, **SEO friendly**, small bundle size **~36 KB** (not gzipped), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+Simple install, **extensive documentation**, developer support, **SEO friendly**, small bundle size **~2.55 KB** (with all dependencies, minified and gzipped), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-## [Docs](https://goodshare.js.org), [Change log](https://github.com/koddr/goodshare.js/blob/master/CHANGELOG.md)
+## [Docs](https://goodshare.js.org), [Change log](CHANGELOG.md)
 
 ## Installation
 
@@ -84,11 +84,11 @@ By default, `goodshare.js` search this tags for get title, description and image
 ```console
 foo@bar:~$ npm run size
 
-  Time limit:   250 ms
-  Package size: 2.56 KB with all dependencies, minified and gzipped
+  Time limit:   140 ms
+  Package size: 2.55 KB with all dependencies, minified and gzipped
   Loading time: 52 ms   on slow 3G
-  Running time: 165 ms  on Snapdragon 410
-  Total time:   216 ms
+  Running time: 82 ms   on Snapdragon 410
+  Total time:   133 ms
 ```
 
 _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
@@ -96,7 +96,7 @@ _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
 ## Developers
 
 - Idea and active development by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
-- Collaborators: 
+- Collaborators:
   - [Ilya Reshetnikov](https://github.com/devxom) (aka devxom).
 
 ## Project assistance

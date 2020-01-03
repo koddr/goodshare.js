@@ -2,6 +2,7 @@
 
 ## 6.x
 
+- `6.1.3`: pushed to master only if limit `140 ms` is passed.
 - `6.1.2`: pushed to master only if limit `250 ms` is passed.
 - `6.1.0`: added Flipboard and WeChat; switch StumbleUpon to Mix; deleted GooglePlus.
 - `6.0.3`: goodshare.js only support: MSIE 11+, Edge 13+, Google Chrome 59+ and FireFox 50+.

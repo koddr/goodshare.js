@@ -24,7 +24,7 @@
 
 ## The Why?
 
-Simple install, **extensive documentation**, developer support, **SEO friendly**, small bundle size **~36 KB** (not gzipped), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
+Simple install, **extensive documentation**, developer support, **SEO friendly**, small bundle size **~2.55 KB** (with all dependencies, minified and gzipped), many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
 ## Installation
 
@@ -43,13 +43,13 @@ Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
 ## Size limit report
 
 ``` bash
-$ npm run size
+npm run size
 
-  Time limit:   250 ms
-  Package size: 2.56 KB with all dependencies, minified and gzipped
+  Time limit:   140 ms
+  Package size: 2.55 KB with all dependencies, minified and gzipped
   Loading time: 52 ms   on slow 3G
-  Running time: 165 ms  on Snapdragon 410
-  Total time:   216 ms
+  Running time: 82 ms   on Snapdragon 410
+  Total time:   133 ms
 ```
 
 _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
@@ -57,8 +57,8 @@ _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
 ## Developers
 
 - Idea and active development by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
-- Collaborators: 
-    - [Ilya Reshetnikov](https://github.com/devxom) (aka devxom).
+- Collaborators:
+  - [Ilya Reshetnikov](https://github.com/devxom) (aka devxom).
 
 ## Project assistance
 
@@ -66,11 +66,14 @@ If you want to say «thank you» or/and support active development `goodshare.js
 
 1. Add a GitHub Star to project.
 2. Twit about project [on your Twitter](https://twitter.com/intent/tweet?text=Wow%20%F0%9F%91%8D%20Useful%20%23js%20solution%20for%20%23share%20a%20link%20from%20your%20%23website%20to%20%23social%20networks%20and%20mobile%20%23messengers%3A&url=https%3A%2F%2Fgithub.com%2Fkoddr%2Fgoodshare.js).
-3. Help project with some money, become a Patron:
+3. Donate some money to project author via PayPal: [@paypal.me/koddr](https://paypal.me/koddr?locale.x=en_EN).
+4. Join DigitalOcean at our [referral link](https://m.do.co/c/b41859fa9b6e) (your profit is **$100** and we get $25).
 
-<a href="https://www.patreon.com/bePatron?u=20124951">
-  <img width="200px" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="Become a Patron!"/>
-</a>
+Thanks for your support! 😘 Together, we make this project better every day.
+
+### Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/koddr/goodshare.js.svg)](https://starchart.cc/koddr/goodshare.js)
 
 ## License
 
