@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://badge.fury.io/js/goodshare.js.svg" alt="npm version"/>
+  <a href="https://opencollective.com/goodsharejs" alt="Financial Contributors on Open Collective"><img src="https://opencollective.com/goodsharejs/all/badge.svg?label=financial+contributors" /></a> <img src="https://badge.fury.io/js/goodshare.js.svg" alt="npm version"/>
   <img src="https://img.shields.io/badge/minified_and_gzipped-1.04_KB-blue.svg" alt="bundle size"/>
   <a href="https://www.jsdelivr.com/package/npm/goodshare.js" target="_blank">
     <img src="https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded" alt="jsDelivr download"/>
@@ -113,6 +113,36 @@ Thanks for your support! 😘 Together, we make this project better every day.
 ### Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/koddr/goodshare.js.svg)](https://starchart.cc/koddr/goodshare.js)
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/koddr/goodshare.js/graphs/contributors"><img src="https://opencollective.com/goodsharejs/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/goodsharejs/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/goodsharejs"><img src="https://opencollective.com/goodsharejs/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/goodsharejs/contribute)]
+
+<a href="https://opencollective.com/goodsharejs/organization/0/website"><img src="https://opencollective.com/goodsharejs/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/1/website"><img src="https://opencollective.com/goodsharejs/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/2/website"><img src="https://opencollective.com/goodsharejs/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/3/website"><img src="https://opencollective.com/goodsharejs/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/4/website"><img src="https://opencollective.com/goodsharejs/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/5/website"><img src="https://opencollective.com/goodsharejs/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/6/website"><img src="https://opencollective.com/goodsharejs/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/7/website"><img src="https://opencollective.com/goodsharejs/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/8/website"><img src="https://opencollective.com/goodsharejs/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/goodsharejs/organization/9/website"><img src="https://opencollective.com/goodsharejs/organization/9/avatar.svg"></a>
 
 ## License
 
