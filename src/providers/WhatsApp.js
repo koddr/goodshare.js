@@ -1,6 +1,6 @@
 /**
  *  Vic Shóstak <truewebartisans@gmail.com>
- *  Copyright (c) 2019 True web artisans https://1wa.co
+ *  Copyright (c) 2020 True web artisans https://1wa.co
  *  http://opensource.org/licenses/MIT The MIT License (MIT)
  *
  *  goodshare.js
@@ -21,14 +21,14 @@ export class WhatsApp extends ProviderMixin {
     const url = item.dataset.url
       ? encodeURIComponent(item.dataset.url)
       : this.url;
-    const share_url = `https://wa.me/?text=${url}`;
+    const share_url = `https://api.whatsapp.com/send?text=${url}`;
 
     return {
       callback: this.callback,
       share_url: share_url,
       windowTitle: "Share this",
       windowWidth: 640,
-      windowHeight: 480
+      windowHeight: 480,
     };
   }
 

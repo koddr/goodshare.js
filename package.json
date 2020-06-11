@@ -1,6 +1,6 @@
 {
   "name": "goodshare.js",
-  "version": "6.1.4",
+  "version": "6.1.5",
   "description": "Useful modern JavaScript solution for share a link from your website to social networks or mobile messengers.",
   "main": "goodshare.min.js",
   "scripts": {
@@ -9,14 +9,14 @@
     "size": "npm run build && size-limit"
   },
   "devDependencies": {
-    "@ampproject/rollup-plugin-closure-compiler": "^0.18.1",
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "@size-limit/preset-app": "^2.2.4",
-    "babel-loader": "^8.0.6",
-    "core-js": "^3.6.1",
-    "rollup": "^1.27.14",
-    "rollup-plugin-babel": "^4.3.3"
+    "@ampproject/rollup-plugin-closure-compiler": "^0.26.0",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@size-limit/preset-app": "^4.5.0",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "rollup": "^2.15.0",
+    "rollup-plugin-babel": "^4.4.0"
   },
   "repository": {
     "type": "git",
