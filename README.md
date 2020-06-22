@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://opencollective.com/goodsharejs" alt="Financial Contributors on Open Collective"><img src="https://opencollective.com/goodsharejs/all/badge.svg?label=financial+contributors" /></a> <img src="https://badge.fury.io/js/goodshare.js.svg" alt="npm version"/>
+  <img src="https://badge.fury.io/js/goodshare.js.svg" alt="npm version"/>
   <img src="https://img.shields.io/badge/minified_and_gzipped-1.04_KB-blue.svg" alt="bundle size"/>
   <a href="https://www.jsdelivr.com/package/npm/goodshare.js" target="_blank">
     <img src="https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded" alt="jsDelivr download"/>
