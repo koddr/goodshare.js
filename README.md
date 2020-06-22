@@ -116,7 +116,8 @@ Thanks for your support! 😘 Together, we make this project better every day.
 
 ## Code Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+This project exists thanks to all the people who contribute.
+
 <a href="https://github.com/koddr/goodshare.js/graphs/contributors"><img src="https://opencollective.com/goodsharejs/contributors.svg?width=890&button=false" /></a>
 
 ## License
