@@ -3,7 +3,7 @@
 ## npm
 
 ```console
-foo@bar:~$ npm install --save goodshare.js
+npm install --save goodshare.js
 ```
 
 ## CDN / Direct Download
