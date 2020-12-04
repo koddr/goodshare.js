@@ -34,7 +34,7 @@ Simple install, **extensive documentation**, developer support, **SEO friendly**
 Install via `npm`:
 
 ```console
-foo@bar:~$ npm install --save goodshare.js
+npm install --save goodshare.js
 ```
 
 Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
@@ -82,7 +82,7 @@ By default, `goodshare.js` search this tags for get title, description and image
 ## Size limit report
 
 ```console
-foo@bar:~$ npm run size
+npm run size
 
   Time limit:   80 ms
   Size:         1.04 KB
