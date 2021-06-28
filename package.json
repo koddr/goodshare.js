@@ -12,7 +12,7 @@
     "@ampproject/rollup-plugin-closure-compiler": "^0.26.0",
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
-    "@size-limit/preset-app": "^4.5.0",
+    "@size-limit/preset-app": "^5.0.1",
     "babel-loader": "^8.1.0",
     "core-js": "^3.6.5",
     "rollup": "^2.15.0",
