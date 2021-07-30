@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="https://badge.fury.io/js/goodshare.js.svg" alt="npm version"/>
-  <img src="https://img.shields.io/badge/minified_and_gzipped-1.04_KB-blue.svg" alt="bundle size"/>
+  <img src="https://img.shields.io/badge/minified_and_gzipped-1.06_KB-blue.svg" alt="bundle size"/>
   <a href="https://www.jsdelivr.com/package/npm/goodshare.js" target="_blank">
     <img src="https://data.jsdelivr.com/v1/package/npm/goodshare.js/badge?style=rounded" alt="jsDelivr download"/>
   </a>
@@ -85,10 +85,10 @@ By default, `goodshare.js` search this tags for get title, description and image
 npm run size
 
   Time limit:   80 ms
-  Size:         1.04 KB
+  Size:         1.06 kB gzipped
   Loading time: 21 ms   on slow 3G
-  Running time: 54 ms   on Snapdragon 410
-  Total time:   75 ms
+  Running time: 58 ms   on Snapdragon 410
+  Total time:   79 ms
 ```
 
 _Thanks to Andrey Sitnik [@ai/size-limit](https://github.com/ai/size-limit)._
