@@ -11,9 +11,10 @@
 import { ProviderMixin } from "../utils/ProviderMixin";
 
 export class Skype extends ProviderMixin {
-  constructor(url = document.location.href) {
+  constructor(url = document.location.href, title = document.title) {
     super();
     this.url = encodeURIComponent(url);
+    this.title = encodeURIComponent(title);
     this.createEvents = this.createEvents.bind(this);
   }
 
@@ -21,7 +22,10 @@ export class Skype extends ProviderMixin {
     const url = item.dataset.url
       ? encodeURIComponent(item.dataset.url)
       : this.url;
-    const share_url = `https://web.skype.com/share?${url}`;
+    const title = item.dataset.title
+      ? encodeURIComponent(item.dataset.title)
+      : this.title;
+    const share_url = `https://web.skype.com/share?url=${url}&text=${title}`;
 
     return {
       callback: this.callback,
