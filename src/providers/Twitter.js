@@ -11,10 +11,12 @@
 import { ProviderMixin } from "../utils/ProviderMixin";
 
 export class Twitter extends ProviderMixin {
-  constructor(url = document.location.href, title = document.title) {
+  constructor(url = document.location.href, title = document.title, hashtags = "") {
     super();
     this.url = encodeURIComponent(url);
     this.title = encodeURIComponent(title);
+    // Allow easy discovery of Tweets by topic by including a comma-separated list of hashtag values without the preceding # character.	
+    this.hashtags = encodeURIComponent(hashtags);
     this.createEvents = this.createEvents.bind(this);
   }
 
@@ -25,7 +27,12 @@ export class Twitter extends ProviderMixin {
     const title = item.dataset.title
       ? encodeURIComponent(item.dataset.title)
       : this.title;
-    const share_url = `https://twitter.com/share?url=${url}&text=${title}`;
+    // Allow easy discovery of Tweets by topic by including a comma-separated list of hashtag values without the preceding # character.	
+    // example: nature,sunset
+    const hashtags = item.dataset.hashtags
+      ? encodeURIComponent(item.dataset.hashtags)
+      : this.hashtags;
+    const share_url = `https://twitter.com/share?url=${url}&text=${title}&hashtags=${hashtags}`;
 
     return {
       callback: this.callback,
