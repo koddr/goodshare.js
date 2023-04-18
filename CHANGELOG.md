@@ -2,6 +2,10 @@
 
 ## 6.x
 
+- `6.3.0`: Add `copy to clipboard` provider and update deps
+- `6.2.1`: Update non-secure packages (thanks to GitHub Security bot)
+- `6.2.0`: Update dependencies
+- `6.1.5`: Fix WhatsApp API #79 + Update deps
 - `6.1.4`: pushed to master only if limit `80 ms` is passed, switch docs to [js.org](https://js.org).
 - `6.1.3`: pushed to master only if limit `140 ms` is passed.
 - `6.1.2`: pushed to master only if limit `250 ms` is passed.

@@ -60,6 +60,12 @@ import { WeChat } from "./providers/WeChat";
 import { Line } from "./providers/Line";
 
 /**
+ * Imports others providers
+ */
+
+import { CopyToClipboard } from "./providers/CopyToClipboard"
+
+/**
  *  Create providers list.
  */
 
@@ -100,7 +106,9 @@ const providers = [
   Viber,
   WhatsApp,
   WeChat,
-  Line
+  Line,
+  // Imports other provides
+  CopyToClipboard
 ];
 
 /**

@@ -16,6 +16,9 @@ Works with any HTML tags: `<a>`, `<div>`, `<button>` or other. Choose any and ad
 
 <!-- Create icon from Fontello.com with share to Tumblr -->
 <i class="icon-tumblr" data-social="tumblr"></i>
+
+<!-- Create button with copy share url to clipboard -->
+<button data-social="copy-to-clipboard">Copy to clipboard</button>
 ```
 
 By default, `goodshare.js` search this tags for get title, description and image (for some social networks):
