@@ -2,7 +2,7 @@
  *  Rollup.js Config
  */
 
-import babel from "rollup-plugin-babel";
+import { babel } from "@rollup/plugin-babel";
 import compiler from "@ampproject/rollup-plugin-closure-compiler";
 
 export default [
@@ -15,7 +15,8 @@ export default [
     },
     plugins: [
       babel({
-        exclude: "node_modules/**"
+        exclude: "node_modules/**",
+        babelHelpers: "bundled"
       }),
       compiler({
         compilation_level: "SIMPLE"
