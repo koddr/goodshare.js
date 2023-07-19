@@ -11,13 +11,13 @@
   },
   "devDependencies": {
     "@ampproject/rollup-plugin-closure-compiler": "^0.27.0",
-    "@babel/core": "^7.21.5",
-    "@babel/preset-env": "^7.21.5",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
     "@rollup/plugin-babel": "^6.0.3",
-    "@size-limit/preset-app": "^8.2.4",
-    "babel-loader": "^9.1.2",
-    "core-js": "^3.30.1",
-    "rollup": "^3.21.2"
+    "@size-limit/preset-app": "^8.2.6",
+    "babel-loader": "^9.1.3",
+    "core-js": "^3.31.1",
+    "rollup": "^3.26.3"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
   },
   "bugs": {
     "url": "https://github.com/koddr/goodshare.js/issues",
-    "email": "vic@shostak.dev"
+    "email": "koddr.me@gmail.com"
   },
   "homepage": "https://goodshare.js.org",
   "keywords": [
@@ -34,6 +34,6 @@
     "social network share count",
     "share link"
   ],
-  "author": "Vic Shóstak <vic@shostak.dev> (https://shostak.dev)",
+  "author": "Vic Shóstak <koddr.me@gmail.com> (https://github.com/koddr)",
   "license": "MIT"
 }
