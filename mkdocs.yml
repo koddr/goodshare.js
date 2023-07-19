@@ -36,17 +36,17 @@ theme:
       accent: "red"
 
 edit_uri: ""
-copyright: 'Copyright &copy; 2020 Vic Shóstak'
+copyright: 'Copyright &copy; 2023 Vic Shóstak'
 
 repo_name: koddr/goodshare.js
 repo_url: https://github.com/koddr/goodshare.js
 
 extra:
   social:
-    - type: 'twitter'
-      link: 'https://twitter.com/true_koddr'
     - type: 'link'
-      link: 'https://1wa.co'
+      link: 'https://dev.to/koddr'
+    - type: 'link'
+      link: 'https://github.com/koddr'
 
 markdown_extensions:
   - admonition
