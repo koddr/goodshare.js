@@ -31,10 +31,18 @@ Simple install, **extensive documentation**, developer support, **SEO friendly**
 
 ## Installation
 
-Install via `npm`:
+Install via `npm` or `pnpm` or `yarn` :
 
 ```console
-npm install --save goodshare.js
+npm install goodshare.js
+```
+
+```console
+pnpm add goodshare.js
+```
+
+```console
+yarn add goodshare.js
 ```
 
 Or include from [jsDelivr](https://www.jsdelivr.com) CDN:
