@@ -10,14 +10,12 @@ import { EventWrapper } from "./EventWrapper";
 
 // Generate unique ID
 const getUniqueId = (prefix = "id") =>
-  `${prefix}-${Math.random()
-    .toString(36)
-    .substr(2, 8)}`;
+  `${prefix}-${Math.random().toString(36).substr(2, 8)}`;
 
 export class ProviderMixin {
   constructor() {
     this.events = new EventWrapper();
-    this.callback = function() {};
+    this.callback = function () {};
     this.updateInstanceId();
   }
 
@@ -25,13 +23,19 @@ export class ProviderMixin {
   eventHandler(event, { share_url, windowTitle, windowWidth, windowHeight }) {
     event.preventDefault();
 
+    const HALF_DIVIDER = 2;
+
     // Calc top & left window position
     const screenWidth =
       window.outerWidth || window.document.documentElement.offsetWidth;
     const screenHeight =
       window.outerHeight || window.document.documentElement.offsetHeight;
-    const screenTop = Math.round(screenHeight / 2 - windowHeight / 2);
-    const screenLeft = Math.round(screenWidth / 2 - windowWidth / 2);
+    const screenTop = Math.round(
+      screenHeight / HALF_DIVIDER - windowHeight / HALF_DIVIDER
+    );
+    const screenLeft = Math.round(
+      screenWidth / HALF_DIVIDER - windowWidth / HALF_DIVIDER
+    );
 
     // Set window size & window position
     const windowSize = `width=${windowWidth},height=${windowHeight}`;
@@ -62,9 +66,9 @@ export class ProviderMixin {
   }
 
   createEvents(share_elements) {
-    [...share_elements].forEach(item => {
+    [...share_elements].forEach((item) => {
       const options = this.getPreparedData(item);
-      const eventHandler = event =>
+      const eventHandler = (event) =>
         this.eventHandler.call(this, event, options);
 
       this.events.addEventListener(
